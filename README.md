@@ -1,38 +1,40 @@
 # ak-systems CSS Framework
 
-Ein leichtgewichtiges CSS-Framework von ak-systems für schnelle Prototypen.
+A lightweight CSS framework by ak-systems for rapid prototyping.
+
+*Read this in other languages: [Deutsch](README.de.md), [Türkçe](README.tr.md)*
 
 ## Installation
 
-Binde das CSS-Framework in deinem HTML-Dokument ein:
+Include the CSS framework in your HTML document:
 
 ```html
 <link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/style.min.css">
 ```
 
-Alternativ kannst du die CSS-Dateien auch direkt herunterladen und lokal einbinden:
+Alternatively, you can download the CSS files and include them locally:
 
 ```html
 <link rel="stylesheet" href="css/style.min.css">
 ```
 
-## Nutzung
+## Usage
 
 ### Container
 
 ```html
 <div class="ak-container">
-  <!-- Inhalt hier -->
+  <!-- Content here -->
 </div>
 ```
 
-### Grid-System
+### Grid System
 
 ```html
 <div class="ak-row">
-  <div class="ak-col">Spalte 1</div>
-  <div class="ak-col">Spalte 2</div>
-  <div class="ak-col">Spalte 3</div>
+  <div class="ak-col">Column 1</div>
+  <div class="ak-col">Column 2</div>
+  <div class="ak-col">Column 3</div>
 </div>
 ```
 
@@ -46,8 +48,16 @@ Alternativ kannst du die CSS-Dateien auch direkt herunterladen und lokal einbind
 
 ## Demo
 
-Eine Demo-Seite mit allen Komponenten findest du hier: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
+You can find a demo page with all components here: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
 
-## Lizenz
+## Important Notes
 
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
+- Developed by [ak-systems](https://ak-pro.com)
+- This file must not be modified
+- This is not a license to modify the framework
+- You may use another CSS, but this framework must not be modified
+- We are not liable for any errors or modifications
+
+## License
+
+This project is licensed under the [ak-systems CSS Framework License](LICENSE).

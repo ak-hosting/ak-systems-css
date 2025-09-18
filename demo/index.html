@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ak-systems CSS Framework Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="ak-header">
+        <div class="ak-container">
+            <h1>ak-systems CSS Framework</h1>
+            <p class="ak-lead">Ein leichtgewichtiges CSS-Framework für schnelle Prototypen</p>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        <section class="ak-section">
+            <h2>Typografie</h2>
+            <h1>Überschrift 1</h1>
+            <h2>Überschrift 2</h2>
+            <h3>Überschrift 3</h3>
+            <h4>Überschrift 4</h4>
+            <h5>Überschrift 5</h5>
+            <h6>Überschrift 6</h6>
+            
+            <p>Dies ist ein normaler Absatz mit <a href="#">einem Link</a> und etwas Text.</p>
+            <p class="ak-lead">Dies ist ein Lead-Absatz, der etwas größer und auffälliger ist.</p>
+            
+            <blockquote>
+                <p>Dies ist ein Zitat-Block, der sich vom normalen Text abhebt.</p>
+                <footer>— Ein weiser Mensch</footer>
+            </blockquote>
+        </section>
+
+        <section class="ak-section">
+            <h2>Buttons</h2>
+            <div class="ak-mb-2">
+                <button class="ak-btn">Standard Button</button>
+                <button class="ak-btn ak-btn-primary">Primary Button</button>
+                <button class="ak-btn ak-btn-danger">Danger Button</button>
+            </div>
+            <div>
+                <button class="ak-btn ak-btn-sm">Small Button</button>
+                <button class="ak-btn ak-btn-lg ak-btn-primary">Large Primary Button</button>
+                <button class="ak-btn" disabled>Disabled Button</button>
+            </div>
+        </section>
+
+        <section class="ak-section">
+            <h2>Grid System</h2>
+            <div class="ak-row">
+                <div class="ak-col ak-bg-light ak-p-2">Spalte 1</div>
+                <div class="ak-col ak-bg-light ak-p-2">Spalte 2</div>
+            </div>
+            
+            <div class="ak-row ak-mt-2">
+                <div class="ak-col ak-bg-light ak-p-2">Spalte 1</div>
+                <div class="ak-col ak-bg-light ak-p-2">Spalte 2</div>
+                <div class="ak-col ak-bg-light ak-p-2">Spalte 3</div>
+            </div>
+        </section>
+
+        <section class="ak-section">
+            <h2>Utility-Klassen</h2>
+            
+            <h3>Text-Ausrichtung</h3>
+            <p class="ak-text-left">Linksbündiger Text</p>
+            <p class="ak-text-center">Zentrierter Text</p>
+            <p class="ak-text-right">Rechtsbündiger Text</p>
+            
+            <h3>Abstände</h3>
+            <div class="ak-bg-light ak-p-1">Padding 1</div>
+            <div class="ak-bg-light ak-p-2 ak-mt-2">Padding 2 mit Margin-Top 2</div>
+            <div class="ak-bg-light ak-p-3 ak-mt-3">Padding 3 mit Margin-Top 3</div>
+            
+            <h3>Farben</h3>
+            <div class="ak-bg-primary ak-text-white ak-p-2 ak-mt-2">Primärfarbe Hintergrund</div>
+            <div class="ak-bg-danger ak-text-white ak-p-2 ak-mt-2">Gefahrenfarbe Hintergrund</div>
+            <div class="ak-bg-light ak-p-2 ak-mt-2">Heller Hintergrund</div>
+            <div class="ak-bg-dark ak-text-white ak-p-2 ak-mt-2">Dunkler Hintergrund</div>
+        </section>
+    </main>
+
+    <footer class="ak-footer">
+        <div class="ak-container">
+            <p>&copy; 2023 ak-systems. Veröffentlicht unter der <a href="../LICENSE">MIT-Lizenz</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# OS/macOS
+.DS_Store
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# Python build artifacts
+build/
+dist/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+htmlcov/
+.coverage
+coverage.xml
+
+# Virtual environments (not used, but avoid accidental commits)
+.venv/
+venv/
+
+# Environment files (keep only example in VCS)
+.env
+.env.*
+!.env.example
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.swp
+
+# Logs and temp files
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+
+# Translations: ignore compiled MO files, keep PO/POT in repo
+translations/*/LC_MESSAGES/*.mo
+
+# Node (precaution if tooling is ever used)
+node_modules/

@@ -9,13 +9,15 @@ Ein leichtgewichtiges CSS-Framework von ak-systems für schnelle Prototypen.
 Binde das CSS-Framework in deinem HTML-Dokument ein:
 
 ```html
-<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/style.min.css">
+<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css">
 ```
+
+Hinweis: GitHub Pages muss für dieses Repository aktiviert sein, damit der CDN-Link funktioniert. Andernfalls liefert der Link einen 404-Fehler.
 
 Alternativ kannst du die CSS-Dateien auch direkt herunterladen und lokal einbinden:
 
 ```html
-<link rel="stylesheet" href="css/style.min.css">
+<link rel="stylesheet" href="css/ak-design-system.css">
 ```
 
 ## Nutzung
@@ -50,6 +52,8 @@ Alternativ kannst du die CSS-Dateien auch direkt herunterladen und lokal einbind
 
 Eine Demo-Seite mit allen Komponenten findest du hier: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
 
+Hinweis: Die Demo-Seite ist verfügbar, sobald GitHub Pages für das Repository aktiviert ist. Bis dahin öffne die lokale Demo unter `demo/index.html` über einen lokalen Server.
+
 ## Wichtige Hinweise
 
 - Entwickelt von ak-systems (Website: [ak-pro.com](https://ak-pro.com))
@@ -63,7 +67,3 @@ Dieses Projekt ist unter der [ak-systems CSS Framework License](LICENSE) lizenzi
 - Es handelt sich nicht um eine Lizenz zum Ändern des Frameworks
 - Sie können gerne eine andere CSS einbauen, aber dieses Framework darf nicht geändert werden
 - Wir haften nicht für Fehler oder Änderungen
-
-## Lizenz
-
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).

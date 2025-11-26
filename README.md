@@ -9,13 +9,15 @@ A lightweight CSS framework by ak-systems for rapid prototyping.
 Include the CSS framework in your HTML document:
 
 ```html
-<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/style.min.css">
+<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css">
 ```
+
+Note: GitHub Pages must be enabled for this repository to serve the CDN link. If not enabled, the link will return 404.
 
 Alternatively, you can download the CSS files and include them locally:
 
 ```html
-<link rel="stylesheet" href="css/style.min.css">
+<link rel="stylesheet" href="css/ak-design-system.css">
 ```
 
 ## Usage
@@ -49,6 +51,8 @@ Alternatively, you can download the CSS files and include them locally:
 ## Demo
 
 You can find a demo page with all components here: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
+
+Note: The demo page is available once GitHub Pages is enabled for the repository. Until then, open the local demo at `demo/index.html` via a local server.
 
 ## Important Notes
 

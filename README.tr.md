@@ -9,13 +9,15 @@ ak-systems tarafından hızlı prototipler için geliştirilmiş hafif bir CSS f
 CSS framework'ünü HTML belgenize ekleyin:
 
 ```html
-<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/style.min.css">
+<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css">
 ```
+
+Not: Bu depo için GitHub Pages etkinleştirilmelidir; aksi halde CDN bağlantısı 404 döner.
 
 Alternatif olarak, CSS dosyalarını doğrudan indirebilir ve yerel olarak kullanabilirsiniz:
 
 ```html
-<link rel="stylesheet" href="css/style.min.css">
+<link rel="stylesheet" href="css/ak-design-system.css">
 ```
 
 ## Kullanım
@@ -50,6 +52,8 @@ Alternatif olarak, CSS dosyalarını doğrudan indirebilir ve yerel olarak kulla
 
 Tüm bileşenleri içeren bir demo sayfasını burada bulabilirsiniz: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
 
+Not: Demo sayfası, GitHub Pages etkinleştirildiğinde kullanılabilir. O zamana kadar yerel sunucu ile `demo/index.html` dosyasını açabilirsiniz.
+
 ## Önemli Notlar
 
 - ak-systems tarafından geliştirilmiştir (Web sitesi: [ak-pro.com](https://ak-pro.com))
@@ -63,7 +67,3 @@ Bu proje [ak-systems CSS Framework License](LICENSE) altında lisanslanmıştır
 - Bu, framework'ü değiştirmek için bir lisans değildir
 - Başka bir CSS kullanabilirsiniz, ancak bu framework değiştirilemez
 - Herhangi bir hata veya değişiklikten sorumlu değiliz
-
-## Lisans
-
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.

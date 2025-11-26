@@ -2,6 +2,8 @@
 
 ak-systems tarafından hızlı prototipler için geliştirilmiş hafif bir CSS framework'ü.
 
+*Bu belgeyi [English](README.md) | [Deutsch](README.de.md) dillerinde okuyun*
+
 ## Kurulum
 
 CSS framework'ünü HTML belgenize ekleyin:
@@ -50,8 +52,14 @@ Tüm bileşenleri içeren bir demo sayfasını burada bulabilirsiniz: [ak-system
 
 ## Önemli Notlar
 
-- [ak-systems](https://ak-pro.com) tarafından geliştirilmiştir
-- Bu dosya değiştirilemez
+- ak-systems tarafından geliştirilmiştir (Web sitesi: [ak-pro.com](https://ak-pro.com))
+- Bu framework değiştirilemez
+- Değişiklikler için alt lisanslama izni yoktur
+- Hatalar veya zararlar için sorumluluk kabul edilmez
+
+## Lisans
+
+Bu proje [ak-systems CSS Framework License](LICENSE) altında lisanslanmıştır.
 - Bu, framework'ü değiştirmek için bir lisans değildir
 - Başka bir CSS kullanabilirsiniz, ancak bu framework değiştirilemez
 - Herhangi bir hata veya değişiklikten sorumlu değiliz

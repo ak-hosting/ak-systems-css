@@ -1,0 +1,25 @@
+/* ak-utilities-position.css */
+
+.ak-relative { position: relative; }
+.ak-absolute { position: absolute; }
+.ak-fixed { position: fixed; }
+.ak-sticky { position: sticky; }
+
+.ak-top-0 { top: 0; }
+.ak-right-0 { right: 0; }
+.ak-bottom-0 { bottom: 0; }
+.ak-left-0 { left: 0; }
+
+.ak-z-hide { z-index: var(--ak-z-hide); }
+.ak-z-auto { z-index: var(--ak-z-auto); }
+.ak-z-base { z-index: var(--ak-z-base); }
+.ak-z-docked { z-index: var(--ak-z-docked); }
+.ak-z-dropdown { z-index: var(--ak-z-dropdown); }
+.ak-z-sticky { z-index: var(--ak-z-sticky); }
+.ak-z-banner { z-index: var(--ak-z-banner); }
+.ak-z-overlay { z-index: var(--ak-z-overlay); }
+.ak-z-modal { z-index: var(--ak-z-modal); }
+.ak-z-popover { z-index: var(--ak-z-popover); }
+.ak-z-skiplink { z-index: var(--ak-z-skiplink); }
+.ak-z-toast { z-index: var(--ak-z-toast); }
+.ak-z-tooltip { z-index: var(--ak-z-tooltip); }

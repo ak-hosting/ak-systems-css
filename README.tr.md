@@ -6,18 +6,19 @@ ak-systems tarafından hızlı prototipler için geliştirilmiş hafif bir CSS f
 
 ## Kurulum
 
-CSS framework'ünü HTML belgenize ekleyin:
+Tek desteklenen giriş (geliştirme):
 
 ```html
-<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css">
+<link rel="stylesheet" href="css/ak-design-system/index.css">
 ```
 
-Not: Bu depo için GitHub Pages etkinleştirilmelidir; aksi halde CDN bağlantısı 404 döner.
-
-Alternatif olarak, CSS dosyalarını doğrudan indirebilir ve yerel olarak kullanabilirsiniz:
+Üretim/CDN girişi:
 
 ```html
-<link rel="stylesheet" href="css/ak-design-system.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.0/dist/ak-design-system.min.css"
+/>
 ```
 
 ## Kullanım

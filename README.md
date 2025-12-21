@@ -6,18 +6,19 @@ A lightweight CSS framework by ak-systems for rapid prototyping.
 
 ## Installation
 
-Include the CSS framework in your HTML document:
+Use the canonical CSS entry (development):
 
 ```html
-<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css">
+<link rel="stylesheet" href="css/ak-design-system/index.css">
 ```
 
-Note: GitHub Pages must be enabled for this repository to serve the CDN link. If not enabled, the link will return 404.
-
-Alternatively, you can download the CSS files and include them locally:
+Production/CDN entry:
 
 ```html
-<link rel="stylesheet" href="css/ak-design-system.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.0/dist/ak-design-system.min.css"
+/>
 ```
 
 ## Usage
@@ -48,23 +49,6 @@ Alternatively, you can download the CSS files and include them locally:
 <button class="ak-btn ak-btn-destructive">Destructive Button</button>
 ```
 
-### Optional Utility Modules (opt-in)
-
-Load after the core file when you need them:
-
-```html
-<link rel="stylesheet" href="css/ak-design-system.css">
-<link rel="stylesheet" href="css/ak-utilities-bg.css">
-<link rel="stylesheet" href="css/ak-utilities-border.css">
-<link rel="stylesheet" href="css/ak-utilities-shadow.css">
-<link rel="stylesheet" href="css/ak-utilities-position.css">
-<link rel="stylesheet" href="css/ak-utilities-size.css">
-<link rel="stylesheet" href="css/ak-layout-helpers.css">
-<link rel="stylesheet" href="css/ak-accessibility.css">
-```
-
-Modules are independent and optional. Use only what you need.
-
 ## Demo
 
 You can find a demo page with all components here: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
@@ -80,8 +64,8 @@ Note: The demo page is available once GitHub Pages is enabled for the repository
 
 ## Versioning and CDN Usage
 
-- Pin to release tags when available to avoid unintentional updates, e.g. `https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css?v=<tag>`.
-- Keep optional modules on the same tag/version as the core file to ensure token compatibility.
+- Pin to release tags when available to avoid unintentional updates, e.g. `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.0/dist/ak-design-system.min.css`.
+- Supported entries only: `css/ak-design-system/index.css` for development and `dist/ak-design-system.min.css` for production/CDN.
 
 ## Important Notes
 

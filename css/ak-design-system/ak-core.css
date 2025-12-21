@@ -1,0 +1,160 @@
+:root {
+  --ak-color-bg: hsl(222, 84%, 5%);
+  --ak-color-surface: hsl(217, 33%, 17%);
+  --ak-color-text: hsl(213, 31%, 91%);
+  --ak-color-text-muted: hsl(215, 20%, 65%);
+  --ak-color-primary: hsl(217, 91%, 60%);
+  --ak-color-primary-text: hsl(0, 0%, 100%);
+  --ak-color-secondary: hsl(217, 19%, 27%);
+  --ak-color-secondary-text: hsl(213, 31%, 91%);
+  --ak-color-accent: hsl(142, 76%, 36%);
+  --ak-color-accent-text: hsl(0, 0%, 100%);
+  --ak-color-muted: hsl(215, 27%, 33%);
+  --ak-color-muted-text: hsl(215, 20%, 65%);
+  --ak-color-destructive: hsl(0, 84%, 60%);
+  --ak-color-destructive-text: hsl(0, 0%, 100%);
+  --ak-color-success: hsl(142, 76%, 36%);
+  --ak-color-success-text: hsl(0, 0%, 100%);
+  --ak-color-border: hsl(215, 27%, 33%);
+  --ak-color-input-bg: hsl(217, 19%, 27%);
+  --ak-color-ring: hsl(217, 91%, 60%);
+}
+
+.ak-theme-light {
+  --ak-color-bg: hsl(0, 0%, 98%);
+  --ak-color-surface: hsl(0, 0%, 100%);
+  --ak-color-text: hsl(222, 84%, 5%);
+  --ak-color-text-muted: hsl(215, 16%, 47%);
+  --ak-color-primary: hsl(217, 91%, 50%);
+  --ak-color-primary-text: hsl(0, 0%, 100%);
+  --ak-color-secondary: hsl(210, 40%, 96%);
+  --ak-color-secondary-text: hsl(222, 84%, 5%);
+  --ak-color-accent: hsl(142, 76%, 36%);
+  --ak-color-accent-text: hsl(0, 0%, 100%);
+  --ak-color-muted: hsl(210, 40%, 96%);
+  --ak-color-muted-text: hsl(215, 16%, 47%);
+  --ak-color-destructive: hsl(0, 84%, 60%);
+  --ak-color-destructive-text: hsl(0, 0%, 100%);
+  --ak-color-success: hsl(142, 76%, 36%);
+  --ak-color-success-text: hsl(0, 0%, 100%);
+  --ak-color-border: hsl(214, 32%, 91%);
+  --ak-color-input-bg: hsl(0, 0%, 100%);
+  --ak-color-ring: hsl(217, 91%, 50%);
+}
+
+:root {
+  --ak-font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  --ak-font-family-serif: Georgia, serif;
+  --ak-font-family-mono: Menlo, Monaco, Cascadia Code, Segoe UI Mono, Roboto Mono, monospace;
+  --ak-font-size-xs: 12px;
+  --ak-font-size-sm: 14px;
+  --ak-font-size-base: 16px;
+  --ak-font-size-lg: 18px;
+  --ak-font-size-xl: 20px;
+  --ak-font-size-2xl: 24px;
+  --ak-font-size-3xl: 30px;
+  --ak-font-size-4xl: 36px;
+  --ak-font-size-5xl: 48px;
+  --ak-font-size-6xl: 60px;
+  --ak-font-weight-light: 300;
+  --ak-font-weight-normal: 400;
+  --ak-font-weight-medium: 500;
+  --ak-font-weight-semibold: 600;
+  --ak-font-weight-bold: 700;
+  --ak-line-height-tight: 1.25;
+  --ak-line-height-normal: 1.5;
+  --ak-line-height-relaxed: 1.625;
+  --ak-line-height-loose: 2;
+}
+
+:root {
+  --ak-space-0: 0;
+  --ak-space-1: 4px;
+  --ak-space-2: 8px;
+  --ak-space-3: 12px;
+  --ak-space-4: 16px;
+  --ak-space-5: 20px;
+  --ak-space-6: 24px;
+  --ak-space-7: 28px;
+  --ak-space-8: 32px;
+  --ak-space-9: 36px;
+  --ak-space-10: 40px;
+  --ak-space-11: 44px;
+  --ak-space-12: 48px;
+  --ak-space-14: 56px;
+  --ak-space-16: 64px;
+  --ak-space-20: 80px;
+  --ak-space-24: 96px;
+  --ak-space-28: 112px;
+  --ak-space-32: 128px;
+  --ak-space-36: 144px;
+  --ak-space-40: 160px;
+  --ak-space-44: 176px;
+  --ak-space-48: 192px;
+  --ak-space-52: 208px;
+  --ak-space-56: 224px;
+  --ak-space-60: 240px;
+  --ak-space-64: 256px;
+  --ak-space-72: 288px;
+  --ak-space-80: 320px;
+  --ak-space-96: 384px;
+}
+
+:root {
+  --ak-radius-none: 0;
+  --ak-radius-sm: 4px;
+  --ak-radius-base: 6px;
+  --ak-radius-md: 8px;
+  --ak-radius-lg: 12px;
+  --ak-radius-xl: 16px;
+  --ak-radius-2xl: 20px;
+  --ak-radius-3xl: 24px;
+  --ak-radius-full: 9999px;
+}
+
+:root {
+  --ak-shadow-none: none;
+  --ak-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  --ak-shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 1px 2px -1px rgba(0, 0, 0, 0.15);
+  --ak-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -2px rgba(0, 0, 0, 0.15);
+  --ak-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.15);
+  --ak-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
+  --ak-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --ak-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.ak-theme-light {
+  --ak-shadow-none: none;
+  --ak-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --ak-shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+  --ak-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  --ak-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+  --ak-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  --ak-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.16);
+  --ak-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+:root {
+  --ak-z-hide: -1;
+  --ak-z-auto: auto;
+  --ak-z-base: 0;
+  --ak-z-docked: 10;
+  --ak-z-dropdown: 1000;
+  --ak-z-sticky: 1020;
+  --ak-z-banner: 1030;
+  --ak-z-overlay: 1040;
+  --ak-z-modal: 1050;
+  --ak-z-popover: 1060;
+  --ak-z-skiplink: 1070;
+  --ak-z-toast: 1080;
+  --ak-z-tooltip: 1090;
+}
+
+:root {
+  --ak-breakpoint-xs: 0;
+  --ak-breakpoint-sm: 640px;
+  --ak-breakpoint-md: 768px;
+  --ak-breakpoint-lg: 1024px;
+  --ak-breakpoint-xl: 1280px;
+  --ak-breakpoint-2xl: 1536px;
+}

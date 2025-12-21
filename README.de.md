@@ -6,18 +6,19 @@ Ein leichtgewichtiges CSS-Framework von ak-systems für schnelle Prototypen.
 
 ## Installation
 
-Binde das CSS-Framework in deinem HTML-Dokument ein:
+Einziger unterstützter Einstieg (Entwicklung):
 
 ```html
-<link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css">
+<link rel="stylesheet" href="css/ak-design-system/index.css">
 ```
 
-Hinweis: GitHub Pages muss für dieses Repository aktiviert sein, damit der CDN-Link funktioniert. Andernfalls liefert der Link einen 404-Fehler.
-
-Alternativ kannst du die CSS-Dateien auch direkt herunterladen und lokal einbinden:
+Production/CDN-Einstieg:
 
 ```html
-<link rel="stylesheet" href="css/ak-design-system.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.0/dist/ak-design-system.min.css"
+/>
 ```
 
 ## Nutzung

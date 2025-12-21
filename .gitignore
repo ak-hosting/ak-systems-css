@@ -10,7 +10,6 @@ __pycache__/
 
 # Python build artifacts
 build/
-dist/
 eggs/
 .eggs/
 *.egg-info/

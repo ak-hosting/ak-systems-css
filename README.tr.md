@@ -49,6 +49,23 @@ Tek desteklenen giriş (geliştirme):
 <button class="ak-btn ak-btn-danger">Tehlike Butonu</button>
 ```
 
+## Mobil ve Dokunmatik En İyi Uygulamalar
+
+- Önerilen viewport meta etiketi:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  ```
+  Duyarlı breakpoints ve mobile-first davranışı sağlar.
+- Mobil için optimize edilmiş bileşenler:
+  - Dokunmatik için boyutlandırılmış butonlar ve ikon butonlar
+  - Duyarlı grid ve layout davranışı
+  - Mobilde sidebar ve footer navigasyon davranışı
+- Erişilebilirlik ve hareket:
+  - `prefers-reduced-motion` desteği
+  - Klavye ve focus-visible desteği
+
+**Öneri:** Özel bileşenler (örn. checkbox, radio, link) için en az 24×24px dokunma hedefleri kullanın. Bu, erişilebilirlik en iyi uygulamalarıyla uyumludur ve framework tarafından zorlanmayan bir kullanım önerisidir.
+
 ## Demo
 
 Tüm bileşenleri içeren bir demo sayfasını burada bulabilirsiniz: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)

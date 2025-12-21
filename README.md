@@ -49,6 +49,23 @@ Production/CDN entry:
 <button class="ak-btn ak-btn-destructive">Destructive Button</button>
 ```
 
+## Mobile & Touch Best Practices
+
+- Recommended viewport meta tag:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  ```
+  Ensures responsive breakpoints and mobile-first behavior.
+- Mobile-optimized components:
+  - Buttons and icon buttons sized for touch
+  - Responsive grid and layout behavior
+  - Sidebar and footer navigation behavior on mobile
+- Accessibility & motion:
+  - Support for `prefers-reduced-motion`
+  - Keyboard and focus-visible support
+
+**Recommendations:** For custom components (e.g., checkboxes, radios, links), use touch targets of at least 24×24px. This aligns with accessibility best practices and is a usage recommendation, not enforced by the framework.
+
 ## Demo
 
 You can find a demo page with all components here: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)

@@ -49,6 +49,23 @@ Production/CDN-Einstieg:
 <button class="ak-btn ak-btn-danger">Danger Button</button>
 ```
 
+## Mobile- & Touch-Best-Practices
+
+- Empfohlener Viewport-Meta-Tag:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  ```
+  Stellt responsive Breakpoints und ein mobile-first Verhalten sicher.
+- Mobil-optimierte Komponenten:
+  - Buttons und Icon-Buttons mit Touch-gerechter Größe
+  - Responsives Grid- und Layout-Verhalten
+  - Sidebar- und Footer-Navigation auf Mobilgeräten
+- Accessibility & Motion:
+  - Unterstützung für `prefers-reduced-motion`
+  - Tastatur- und Focus-Visible-Unterstützung
+
+**Empfehlung:** Für eigene Komponenten (z. B. Checkboxen, Radios, Links) Touch-Targets von mindestens 24×24px vorsehen. Dies entspricht Accessibility-Best-Practices und ist eine Nutzungsempfehlung, nicht vom Framework erzwungen.
+
 ## Demo
 
 Eine Demo-Seite mit allen Komponenten findest du hier: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)

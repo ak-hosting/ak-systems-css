@@ -136,48 +136,68 @@
                 <i data-lucide="x"></i>
             </button>
         </div>
-        <nav class="ak-sidebar-content">
-            <a href="#overview" class="ak-sidebar-link active" data-section="overview">
-                <i data-lucide="home"></i>
-                <span>Overview</span>
-            </a>
-            <a href="#typography" class="ak-sidebar-link" data-section="typography">
-                <i data-lucide="type"></i>
-                <span>Typography</span>
-            </a>
-            <a href="#colors" class="ak-sidebar-link" data-section="colors">
-                <i data-lucide="palette"></i>
-                <span>Colors</span>
-            </a>
-            <a href="#buttons" class="ak-sidebar-link" data-section="buttons">
-                <i data-lucide="mouse-pointer-click"></i>
-                <span>Buttons</span>
-            </a>
-            <a href="#forms" class="ak-sidebar-link" data-section="forms">
-                <i data-lucide="form-input"></i>
-                <span>Forms</span>
-            </a>
-            <a href="#cards" class="ak-sidebar-link" data-section="cards">
-                <i data-lucide="credit-card"></i>
-                <span>Cards</span>
-            </a>
-            <a href="#alerts" class="ak-sidebar-link" data-section="alerts">
-                <i data-lucide="alert-circle"></i>
-                <span>Alerts</span>
-            </a>
-            <a href="#modals" class="ak-sidebar-link" data-section="modals">
-                <i data-lucide="layout-dashboard"></i>
-                <span>Modals</span>
-            </a>
-            <a href="#tables" class="ak-sidebar-link" data-section="tables">
-                <i data-lucide="table"></i>
-                <span>Tables</span>
-            </a>
-            <a href="#utilities" class="ak-sidebar-link" data-section="utilities">
-                <i data-lucide="wrench"></i>
-                <span>Utilities</span>
-            </a>
-        </nav>
+        <ul class="ak-sidebar-nav">
+            <li>
+                <a href="#overview" class="ak-active" data-section="overview">
+                    <i data-lucide="home"></i>
+                    <span>Overview</span>
+                </a>
+            </li>
+            <li>
+                <a href="#typography" data-section="typography">
+                    <i data-lucide="type"></i>
+                    <span>Typography</span>
+                </a>
+            </li>
+            <li>
+                <a href="#colors" data-section="colors">
+                    <i data-lucide="palette"></i>
+                    <span>Colors</span>
+                </a>
+            </li>
+            <li>
+                <a href="#buttons" data-section="buttons">
+                    <i data-lucide="mouse-pointer-click"></i>
+                    <span>Buttons</span>
+                </a>
+            </li>
+            <li>
+                <a href="#forms" data-section="forms">
+                    <i data-lucide="form-input"></i>
+                    <span>Forms</span>
+                </a>
+            </li>
+            <li>
+                <a href="#cards" data-section="cards">
+                    <i data-lucide="credit-card"></i>
+                    <span>Cards</span>
+                </a>
+            </li>
+            <li>
+                <a href="#alerts" data-section="alerts">
+                    <i data-lucide="alert-circle"></i>
+                    <span>Alerts</span>
+                </a>
+            </li>
+            <li>
+                <a href="#modals" data-section="modals">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Modals</span>
+                </a>
+            </li>
+            <li>
+                <a href="#tables" data-section="tables">
+                    <i data-lucide="table"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+            <li>
+                <a href="#utilities" data-section="utilities">
+                    <i data-lucide="wrench"></i>
+                    <span>Utilities</span>
+                </a>
+            </li>
+        </ul>
     </aside>
 
     <!-- Main Content -->
@@ -707,7 +727,7 @@
         });
         
         // Section navigation
-        const sidebarLinks = document.querySelectorAll('.ak-sidebar-link');
+        const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
         const sections = document.querySelectorAll('.ak-section');
         
         sidebarLinks.forEach(link => {
@@ -717,8 +737,8 @@
                 const sectionId = link.getAttribute('data-section');
                 
                 // Update active link
-                sidebarLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
+                sidebarLinks.forEach(l => l.classList.remove('ak-active'));
+                link.classList.add('ak-active');
                 
                 // Update active section
                 sections.forEach(section => {

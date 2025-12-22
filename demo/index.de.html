@@ -115,28 +115,38 @@
                 <i data-lucide="x"></i>
             </button>
         </div>
-        <nav class="ak-sidebar-content">
-            <a href="#overview" class="ak-sidebar-link active" data-section="overview">
-                <i data-lucide="home"></i>
-                Übersicht
-            </a>
-            <a href="#tokens" class="ak-sidebar-link" data-section="tokens">
-                <i data-lucide="palette"></i>
-                Design Tokens
-            </a>
-            <a href="#components" class="ak-sidebar-link" data-section="components">
-                <i data-lucide="layout"></i>
-                Komponenten
-            </a>
-            <a href="#utilities" class="ak-sidebar-link" data-section="utilities">
-                <i data-lucide="wrench"></i>
-                Utility Klassen
-            </a>
-            <a href="#examples" class="ak-sidebar-link" data-section="examples">
-                <i data-lucide="code"></i>
-                Code Beispiele
-            </a>
-        </nav>
+        <ul class="ak-sidebar-nav">
+            <li>
+                <a href="#overview" class="ak-active" data-section="overview">
+                    <i data-lucide="home"></i>
+                    Übersicht
+                </a>
+            </li>
+            <li>
+                <a href="#tokens" data-section="tokens">
+                    <i data-lucide="palette"></i>
+                    Design Tokens
+                </a>
+            </li>
+            <li>
+                <a href="#components" data-section="components">
+                    <i data-lucide="layout"></i>
+                    Komponenten
+                </a>
+            </li>
+            <li>
+                <a href="#utilities" data-section="utilities">
+                    <i data-lucide="wrench"></i>
+                    Utility Klassen
+                </a>
+            </li>
+            <li>
+                <a href="#examples" data-section="examples">
+                    <i data-lucide="code"></i>
+                    Code Beispiele
+                </a>
+            </li>
+        </ul>
     </aside>
 
     <!-- Main Content -->
@@ -640,7 +650,7 @@
         });
 
         // Navigation
-        const sidebarLinks = document.querySelectorAll('.ak-sidebar-link');
+        const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
         const footerLinks = document.querySelectorAll('.ak-footer-nav-item');
         const sections = document.querySelectorAll('.content-section');
 
@@ -658,12 +668,12 @@
 
             // Update active states
             [...sidebarLinks, ...footerLinks].forEach(link => {
-                link.classList.remove('active');
+                link.classList.remove('ak-active');
             });
 
             [...sidebarLinks, ...footerLinks].forEach(link => {
                 if (link.dataset.section === sectionName) {
-                    link.classList.add('active');
+                    link.classList.add('ak-active');
                 }
             });
 

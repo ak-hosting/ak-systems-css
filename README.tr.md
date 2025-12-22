@@ -17,7 +17,7 @@ Tek desteklenen giriş (geliştirme):
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.1/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.3/dist/ak-design-system.min.css"
 />
 ```
 

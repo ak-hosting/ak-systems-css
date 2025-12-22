@@ -584,20 +584,22 @@
 
     <!-- Modal -->
     <div id="modal-overlay" class="modal-overlay" data-testid="modal-overlay">
-        <div class="ak-card ak-w-full ak-max-w-md">
-            <div class="ak-card-header">
-                <h3 class="ak-card-title">Example Modal</h3>
-                <p class="ak-card-description">This is an example of a modal dialog.</p>
+        <div class="ak-modal">
+            <div class="ak-modal-header">
+                <h3 class="ak-modal-title">Example Modal</h3>
+                <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm" data-testid="button-close-modal">
+                    <i data-lucide="x"></i>
+                </button>
             </div>
-            <div class="ak-card-content">
+            <div class="ak-modal-body">
                 <p class="ak-mb-4">This is the main content of the modal. You can place any content here.</p>
-                <div class="ak-form-field">
+                <div class="ak-form-group">
                     <label class="ak-form-label" for="modal-input">Example Input</label>
                     <input type="text" id="modal-input" class="ak-input" placeholder="Input..." data-testid="input-modal">
                 </div>
             </div>
-            <div class="ak-card-footer">
-                <button id="close-modal" class="ak-btn ak-btn-outline" data-testid="button-close-modal">
+            <div class="ak-modal-footer">
+                <button class="ak-btn ak-btn-ghost" data-testid="button-modal-cancel">
                     Cancel
                 </button>
                 <button class="ak-btn ak-btn-primary" data-testid="button-modal-confirm">
@@ -678,7 +680,7 @@
             });
 
             // Close sidebar on mobile
-            sidebar.classList.remove('active');
+            sidebar.classList.remove('ak-sidebar-open');
         }
 
         // Add click handlers to navigation links
@@ -691,21 +693,28 @@
         });
 
         // Modal functionality
-        const modal = document.getElementById('modal-overlay');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modal = modalOverlay.querySelector('.ak-modal');
         const openModalBtn = document.getElementById('open-modal');
         const closeModalBtn = document.getElementById('close-modal');
 
         openModalBtn.addEventListener('click', () => {
-            modal.classList.add('active');
+            modal.classList.add('ak-modal-open');
+            document.body.classList.add('ak-modal-open');
+            modalOverlay.classList.add('active');
         });
 
         closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
+            modal.classList.remove('ak-modal-open');
+            document.body.classList.remove('ak-modal-open');
+            modalOverlay.classList.remove('active');
         });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modal.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+                modalOverlay.classList.remove('active');
             }
         });
 

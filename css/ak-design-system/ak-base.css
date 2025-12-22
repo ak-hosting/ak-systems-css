@@ -233,3 +233,51 @@ blockquote {
   color: var(--ak-color-text-muted);
 }
 
+.ak-link {
+  color: var(--ak-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.ak-link:hover {
+  color: var(--ak-color-accent);
+  text-decoration: underline;
+}
+
+.ak-code {
+  font-family: var(--ak-font-family-mono);
+  font-size: 0.875em;
+  background-color: var(--ak-color-muted);
+  padding: var(--ak-space-1) var(--ak-space-2);
+  border-radius: var(--ak-radius-sm);
+  color: var(--ak-color-text);
+}
+
+.ak-blockquote {
+  border-left: 4px solid var(--ak-color-primary);
+  padding-left: var(--ak-space-4);
+  margin: var(--ak-space-6) 0;
+  font-style: italic;
+  color: var(--ak-color-text-muted);
+}
+
+.ak-section {
+  margin-bottom: var(--ak-space-8);
+  padding: var(--ak-space-6) 0;
+}
+
+.ak-code-block {
+  font-family: var(--ak-font-family-mono);
+  background-color: var(--ak-color-muted);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  padding: var(--ak-space-4);
+  overflow-x: auto;
+  margin-bottom: var(--ak-space-4);
+  white-space: pre;
+}
+.ak-code-block code {
+  background: none;
+  padding: 0;
+  font-size: var(--ak-font-size-sm);
+}
+

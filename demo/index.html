@@ -14,81 +14,7 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
-        /* Additional demo-specific styles */
-        .demo-section {
-            margin-bottom: var(--ak-space-8);
-            padding: var(--ak-space-6);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-lg);
-            background: var(--ak-card);
-        }
-        
-        .color-demo {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--ak-radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: var(--ak-font-weight-medium);
-            font-size: var(--ak-font-size-sm);
-        }
-        
-        .spacing-demo {
-            background: var(--ak-accent);
-            color: white;
-            display: inline-block;
-            margin: var(--ak-space-1);
-        }
-        
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: var(--ak-z-modal);
-        }
-        
-        .modal-overlay.active {
-            display: flex;
-        }
-        
-        .toast {
-            position: fixed;
-            top: var(--ak-space-4);
-            right: var(--ak-space-4);
-            background: var(--ak-card);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            box-shadow: var(--ak-shadow-lg);
-            z-index: var(--ak-z-toast);
-            display: none;
-            align-items: center;
-            gap: var(--ak-space-2);
-        }
-        
-        .toast.active {
-            display: flex;
-        }
-        
-        .code-block {
-            background: var(--ak-muted);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            font-family: var(--ak-font-mono);
-            font-size: var(--ak-font-size-sm);
-            overflow-x: auto;
-            white-space: pre;
-        }
-
+        /* Minimal demo-specific styles - using Design System classes where possible */
         .language-selector {
             margin-left: var(--ak-space-4);
         }
@@ -96,11 +22,11 @@
         .language-selector a {
             margin-right: var(--ak-space-2);
             text-decoration: none;
-            color: var(--ak-muted-foreground);
+            color: var(--ak-color-text-muted);
         }
         
-        .language-selector a.active {
-            color: var(--ak-accent);
+        .language-selector a.ak-active {
+            color: var(--ak-color-accent);
             font-weight: var(--ak-font-weight-medium);
         }
     </style>
@@ -242,7 +168,7 @@
                 
                 <div class="ak-mt-8">
                     <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Getting Started</h3>
-                    <div class="code-block">
+                    <div class="ak-code-block">
 &lt;link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css"&gt;</div>
                 </div>
             </section>
@@ -251,7 +177,7 @@
             <section id="typography" class="ak-section" data-testid="section-typography">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Typography</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <h1 class="ak-text-4xl ak-font-bold ak-mb-4">Heading 1</h1>
                     <h2 class="ak-text-3xl ak-font-bold ak-mb-4">Heading 2</h2>
                     <h3 class="ak-text-2xl ak-font-bold ak-mb-4">Heading 3</h3>
@@ -278,19 +204,19 @@
             <section id="colors" class="ak-section" data-testid="section-colors">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Colors</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Primary Colors</h3>
                     <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-6">
                         <div>
-                            <div class="color-demo" style="background: var(--ak-primary);">Primary</div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-primary);">Primary</div>
                             <p class="ak-text-center ak-text-sm ak-mt-2">--ak-primary</p>
                         </div>
                         <div>
-                            <div class="color-demo" style="background: var(--ak-accent);">Accent</div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-accent);">Accent</div>
                             <p class="ak-text-center ak-text-sm ak-mt-2">--ak-accent</p>
                         </div>
                         <div>
-                            <div class="color-demo" style="background: var(--ak-secondary);">Secondary</div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-secondary);">Secondary</div>
                             <p class="ak-text-center ak-text-sm ak-mt-2">--ak-secondary</p>
                         </div>
                     </div>
@@ -298,19 +224,19 @@
                     <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Status Colors</h3>
                     <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-6">
                         <div>
-                            <div class="color-demo" style="background: var(--ak-success);">Success</div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-success);">Success</div>
                             <p class="ak-text-center ak-text-sm ak-mt-2">--ak-success</p>
                         </div>
                         <div>
-                            <div class="color-demo" style="background: var(--ak-warning);">Warning</div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-warning);">Warning</div>
                             <p class="ak-text-center ak-text-sm ak-mt-2">--ak-warning</p>
                         </div>
                         <div>
-                            <div class="color-demo" style="background: var(--ak-danger);">Danger</div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-destructive);">Danger</div>
                             <p class="ak-text-center ak-text-sm ak-mt-2">--ak-danger</p>
                         </div>
                         <div>
-                            <div class="color-demo" style="background: var(--ak-info);">Info</div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-primary);">Info</div>
                             <p class="ak-text-center ak-text-sm ak-mt-2">--ak-info</p>
                         </div>
                     </div>
@@ -321,7 +247,7 @@
             <section id="buttons" class="ak-section" data-testid="section-buttons">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Buttons</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Button Variants</h3>
                     <div class="ak-flex ak-flex-wrap ak-gap-2 ak-mb-6">
                         <button class="ak-btn">Default</button>
@@ -371,7 +297,7 @@
             <section id="forms" class="ak-section" data-testid="section-forms">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Forms</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <form class="ak-form">
                         <div class="ak-form-group">
                             <label for="name" class="ak-form-label">Name</label>
@@ -477,7 +403,7 @@
             <section id="alerts" class="ak-section" data-testid="section-alerts">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Alerts</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <div class="ak-alert ak-mb-4">
                         <i data-lucide="info" class="ak-alert-icon"></i>
                         <div>
@@ -516,18 +442,18 @@
             <section id="modals" class="ak-section" data-testid="section-modals">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Modals</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <button id="open-modal" class="ak-btn ak-btn-primary">Open Modal</button>
                     
-                    <div class="modal-overlay" id="modal">
-                        <div class="ak-modal">
+                    <div id="modal-overlay" class="ak-modal" data-testid="modal-overlay">
+                        <div class="ak-modal-content">
                             <div class="ak-modal-header">
                                 <h3 class="ak-modal-title">Modal Title</h3>
                                 <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm">
                                     <i data-lucide="x"></i>
                                 </button>
                             </div>
-                            <div class="ak-modal-content">
+                            <div class="ak-modal-body">
                                 <p>This is the modal content. You can put any HTML here.</p>
                             </div>
                             <div class="ak-modal-footer">
@@ -540,7 +466,7 @@
                     <div class="ak-mt-6">
                         <button id="show-toast" class="ak-btn ak-btn-secondary">Show Toast</button>
                         
-                        <div class="toast" id="toast">
+                        <div class="ak-toast" id="toast">
                             <i data-lucide="check-circle" class="ak-text-success"></i>
                             <div>
                                 <h4 class="ak-text-sm ak-font-semibold">Success</h4>
@@ -558,7 +484,7 @@
             <section id="tables" class="ak-section" data-testid="section-tables">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Tables</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <div class="ak-table-container">
                         <table class="ak-table">
                             <thead>
@@ -629,15 +555,15 @@
             <section id="utilities" class="ak-section" data-testid="section-utilities">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Utilities</h2>
                 
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Spacing</h3>
                     <div class="ak-mb-6">
-                        <div class="spacing-demo ak-p-1">p-1</div>
-                        <div class="spacing-demo ak-p-2">p-2</div>
-                        <div class="spacing-demo ak-p-3">p-3</div>
-                        <div class="spacing-demo ak-p-4">p-4</div>
-                        <div class="spacing-demo ak-p-6">p-6</div>
-                        <div class="spacing-demo ak-p-8">p-8</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-1">p-1</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-2">p-2</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-3">p-3</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-4">p-4</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-6">p-6</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-8">p-8</div>
                     </div>
                     
                     <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Flex</h3>
@@ -764,28 +690,27 @@
         const openModal = document.getElementById('open-modal');
         const closeModal = document.getElementById('close-modal');
         const cancelModal = document.getElementById('cancel-modal');
-        const modalOverlay = document.getElementById('modal');
-        const modal = modalOverlay.querySelector('.ak-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
         
         openModal.addEventListener('click', () => {
-            modal.classList.add('ak-modal-open');
+            modalOverlay.classList.add('ak-modal-open');
             document.body.classList.add('ak-modal-open');
         });
         
         closeModal.addEventListener('click', () => {
-            modal.classList.remove('ak-modal-open');
+            modalOverlay.classList.remove('ak-modal-open');
             document.body.classList.remove('ak-modal-open');
         });
         
         cancelModal.addEventListener('click', () => {
-            modal.classList.remove('ak-modal-open');
+            modalOverlay.classList.remove('ak-modal-open');
             document.body.classList.remove('ak-modal-open');
         });
         
         // Close modal when clicking outside
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
-                modal.classList.remove('ak-modal-open');
+                modalOverlay.classList.remove('ak-modal-open');
                 document.body.classList.remove('ak-modal-open');
             }
         });
@@ -796,16 +721,16 @@
         const toast = document.getElementById('toast');
         
         showToast.addEventListener('click', () => {
-            toast.classList.add('active');
+            toast.classList.add('ak-toast-show');
             
             // Auto hide after 3 seconds
             setTimeout(() => {
-                toast.classList.remove('active');
+                toast.classList.remove('ak-toast-show');
             }, 3000);
         });
         
         closeToast.addEventListener('click', () => {
-            toast.classList.remove('active');
+            toast.classList.remove('ak-toast-show');
         });
     </script>
 </body>

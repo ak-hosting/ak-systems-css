@@ -65,6 +65,65 @@
   display: none;
   z-index: var(--ak-z-docked);
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                    Hero                                    */
+/* -------------------------------------------------------------------------- */
+
+.ak-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--ak-space-20) var(--ak-space-6);
+  background-color: var(--ak-color-surface);
+  border-bottom: 1px solid var(--ak-color-border);
+}
+
+.ak-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ak-hero-title {
+  font-size: var(--ak-font-size-4xl);
+  font-weight: var(--ak-font-weight-bold);
+  margin-bottom: var(--ak-space-6);
+  line-height: 1.2;
+}
+
+.ak-hero-subtitle {
+  font-size: var(--ak-font-size-xl);
+  color: var(--ak-color-text-muted);
+  margin-bottom: var(--ak-space-8);
+  line-height: 1.6;
+}
+
+.ak-hero-actions {
+  display: flex;
+  gap: var(--ak-space-4);
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ak-hero {
+    padding: var(--ak-space-12) var(--ak-space-4);
+  }
+  .ak-hero-title {
+    font-size: var(--ak-font-size-3xl);
+  }
+  .ak-hero-subtitle {
+    font-size: var(--ak-font-size-lg);
+  }
+  .ak-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ak-hero-actions .ak-btn {
+    width: 100%;
+  }
+}
 .ak-footer-nav-items {
   display: flex;
   justify-content: space-around;

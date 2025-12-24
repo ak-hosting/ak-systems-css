@@ -3026,3 +3026,41 @@
   background-color: var(--ak-color-primary) !important;
   color: var(--ak-color-primary-text) !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                               Image Utilities                              */
+/* -------------------------------------------------------------------------- */
+
+.ak-img-fluid {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.ak-img-thumbnail {
+  padding: var(--ak-space-1) !important;
+  background-color: var(--ak-color-surface) !important;
+  border: 1px solid var(--ak-color-border) !important;
+  border-radius: var(--ak-radius-sm) !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.ak-object-contain {
+  object-fit: contain !important;
+}
+
+.ak-object-cover {
+  object-fit: cover !important;
+}
+
+.ak-object-fill {
+  object-fit: fill !important;
+}
+
+.ak-object-scale-down {
+  object-fit: scale-down !important;
+}
+
+.ak-object-none {
+  object-fit: none !important;
+}

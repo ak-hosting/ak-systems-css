@@ -508,6 +508,65 @@ blockquote {
   display: none;
   z-index: var(--ak-z-docked);
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                    Hero                                    */
+/* -------------------------------------------------------------------------- */
+
+.ak-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--ak-space-20) var(--ak-space-6);
+  background-color: var(--ak-color-surface);
+  border-bottom: 1px solid var(--ak-color-border);
+}
+
+.ak-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ak-hero-title {
+  font-size: var(--ak-font-size-4xl);
+  font-weight: var(--ak-font-weight-bold);
+  margin-bottom: var(--ak-space-6);
+  line-height: 1.2;
+}
+
+.ak-hero-subtitle {
+  font-size: var(--ak-font-size-xl);
+  color: var(--ak-color-text-muted);
+  margin-bottom: var(--ak-space-8);
+  line-height: 1.6;
+}
+
+.ak-hero-actions {
+  display: flex;
+  gap: var(--ak-space-4);
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ak-hero {
+    padding: var(--ak-space-12) var(--ak-space-4);
+  }
+  .ak-hero-title {
+    font-size: var(--ak-font-size-3xl);
+  }
+  .ak-hero-subtitle {
+    font-size: var(--ak-font-size-lg);
+  }
+  .ak-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ak-hero-actions .ak-btn {
+    width: 100%;
+  }
+}
 .ak-footer-nav-items {
   display: flex;
   justify-content: space-around;
@@ -2130,6 +2189,214 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 }
 .ak-accordion-flush .ak-accordion-item {
   border-bottom: 1px solid var(--ak-color-border);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Badges                                   */
+/* -------------------------------------------------------------------------- */
+
+.ak-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ak-radius-full);
+  border: 1px solid transparent;
+  padding: 2px 10px;
+  font-size: var(--ak-font-size-xs);
+  font-weight: var(--ak-font-weight-semibold);
+  transition: colors 0.2s ease;
+  white-space: nowrap;
+}
+
+.ak-badge-default {
+  background-color: var(--ak-color-primary);
+  color: var(--ak-color-primary-text);
+  border-color: transparent;
+}
+
+.ak-badge-secondary {
+  background-color: var(--ak-color-secondary);
+  color: var(--ak-color-secondary-text);
+  border-color: transparent;
+}
+
+.ak-badge-outline {
+  color: var(--ak-color-text);
+  border-color: var(--ak-color-border);
+  background-color: transparent;
+}
+
+.ak-badge-destructive {
+  background-color: var(--ak-color-destructive);
+  color: var(--ak-color-destructive-text);
+  border-color: transparent;
+}
+
+.ak-badge-success {
+  background-color: var(--ak-color-success);
+  color: var(--ak-color-success-text);
+  border-color: transparent;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Progress                                  */
+/* -------------------------------------------------------------------------- */
+
+.ak-progress {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--ak-radius-full);
+  background-color: var(--ak-color-bg-subtle);
+}
+
+.ak-progress-bar {
+  height: 100%;
+  width: 0%; /* Set via inline style */
+  background-color: var(--ak-color-primary);
+  transition: width 0.5s ease;
+}
+
+.ak-progress-sm {
+  height: 4px;
+}
+
+.ak-progress-lg {
+  height: 12px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Switch/Toggle                               */
+/* -------------------------------------------------------------------------- */
+
+.ak-switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.ak-switch-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ak-switch-track {
+  width: 44px;
+  height: 24px;
+  background-color: var(--ak-color-input);
+  border-radius: 9999px;
+  position: relative;
+  transition: background-color 0.2s ease;
+  border: 1px solid var(--ak-color-border);
+}
+
+.ak-switch-thumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.2s ease;
+  box-shadow: var(--ak-shadow-sm);
+}
+
+.ak-switch-input:checked + .ak-switch-track {
+  background-color: var(--ak-color-primary);
+  border-color: var(--ak-color-primary);
+}
+
+.ak-switch-input:checked + .ak-switch-track .ak-switch-thumb {
+  transform: translateX(20px);
+}
+
+.ak-switch-input:disabled + .ak-switch-track {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ak-switch-label {
+  margin-left: var(--ak-space-3);
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text);
+  user-select: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Dropdown                                  */
+/* -------------------------------------------------------------------------- */
+
+.ak-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.ak-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+  min-width: 180px;
+  padding: var(--ak-space-1);
+  margin-top: var(--ak-space-1);
+  background-color: var(--ak-color-surface);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  box-shadow: var(--ak-shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s ease;
+}
+
+.ak-dropdown:hover .ak-dropdown-menu,
+.ak-dropdown-menu.ak-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.ak-dropdown-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--ak-space-2) var(--ak-space-3);
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text);
+  text-decoration: none;
+  border-radius: var(--ak-radius-sm);
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.ak-dropdown-item:hover {
+  background-color: var(--ak-color-bg-subtle);
+  color: var(--ak-color-text);
+}
+
+.ak-dropdown-divider {
+  height: 1px;
+  background-color: var(--ak-color-border);
+  margin: var(--ak-space-1) 0;
+}
+
+.ak-dropdown-header {
+  padding: var(--ak-space-2) var(--ak-space-3);
+  font-size: var(--ak-font-size-xs);
+  font-weight: var(--ak-font-weight-semibold);
+  color: var(--ak-color-text-muted);
 }
 
 /* AK Loader Framework v1.1.0 */
@@ -5482,4 +5749,42 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 .ak-active {
   background-color: var(--ak-color-primary) !important;
   color: var(--ak-color-primary-text) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Image Utilities                              */
+/* -------------------------------------------------------------------------- */
+
+.ak-img-fluid {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.ak-img-thumbnail {
+  padding: var(--ak-space-1) !important;
+  background-color: var(--ak-color-surface) !important;
+  border: 1px solid var(--ak-color-border) !important;
+  border-radius: var(--ak-radius-sm) !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.ak-object-contain {
+  object-fit: contain !important;
+}
+
+.ak-object-cover {
+  object-fit: cover !important;
+}
+
+.ak-object-fill {
+  object-fit: fill !important;
+}
+
+.ak-object-scale-down {
+  object-fit: scale-down !important;
+}
+
+.ak-object-none {
+  object-fit: none !important;
 }

@@ -18,7 +18,7 @@ Tek desteklenen giriş (geliştirme):
 <!-- Belirli bir sürümü kullanın (önerilen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.1.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css"
 />
 
 <!-- Veya ana daldan en son sürümü kullanın (sadece geliştirme) -->

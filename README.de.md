@@ -18,7 +18,7 @@ Production/CDN-Einstieg:
 <!-- Spezifische Version nutzen (empfohlen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.1.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css"
 />
 
 <!-- Oder neueste Version vom Main-Branch (nur für Entwicklung) -->

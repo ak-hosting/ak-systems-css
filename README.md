@@ -18,7 +18,7 @@ Production/CDN entry:
 <!-- Use a specific version (recommended) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.1.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css"
 />
 
 <!-- Or use the latest version from main branch (development only) -->
@@ -110,7 +110,8 @@ Note: The demo page is available once GitHub Pages is enabled for the repository
 
 ## Versioning and CDN Usage
 
-- Pin to release tags when available to avoid unintentional updates, e.g. `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.3/dist/ak-design-system.min.css`.
+- Pin to release tags when available to avoid unintentional updates, e.g. `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css`.
+- See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 - Supported entries only: `css/ak-design-system/index.css` for development and `dist/ak-design-system.min.css` for production/CDN.
 
 ## Important Notes

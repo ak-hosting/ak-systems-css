@@ -534,8 +534,71 @@
             <!-- Tables Section (Placeholder as original DE file didn't have one explicitly populated, but structure requires it) -->
             <section id="tables" class="ak-section" data-testid="section-tables">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Tabellen</h2>
-                <div class="demo-section">
-                    <p>Tabellen-Beispiele folgen.</p>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <div class="ak-table-container">
+                        <table class="ak-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Rolle</th>
+                                    <th>Status</th>
+                                    <th>Aktionen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Max Mustermann</td>
+                                    <td>max@beispiel.de</td>
+                                    <td>Admin</td>
+                                    <td><span class="ak-badge ak-badge-success">Aktiv</span></td>
+                                    <td>
+                                        <div class="ak-flex ak-gap-2">
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="edit" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="trash-2" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Erika Musterfrau</td>
+                                    <td>erika@beispiel.de</td>
+                                    <td>Benutzer</td>
+                                    <td><span class="ak-badge ak-badge-warning">Ausstehend</span></td>
+                                    <td>
+                                        <div class="ak-flex ak-gap-2">
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="edit" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="trash-2" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Johannes Schmidt</td>
+                                    <td>johannes@beispiel.de</td>
+                                    <td>Benutzer</td>
+                                    <td><span class="ak-badge ak-badge-destructive">Inaktiv</span></td>
+                                    <td>
+                                        <div class="ak-flex ak-gap-2">
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="edit" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="trash-2" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 

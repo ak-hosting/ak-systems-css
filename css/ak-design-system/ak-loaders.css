@@ -1,0 +1,196 @@
+/* AK Loader Framework v1.0 */
+
+/* Keyframes */
+@keyframes ak-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ak-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+
+@keyframes ak-progress-indeterminate {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Base Shared Properties */
+[class*="ak-loader-"] {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* -----------------------
+   Type: Spinner
+   ----------------------- */
+.ak-loader-spinner {
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 50%;
+  animation: ak-spin 1s linear infinite;
+  border-top-color: currentColor;
+  border-left-color: currentColor;
+  border-bottom-color: currentColor;
+  
+  /* Default Size (sm) */
+  width: var(--ak-space-4);
+  height: var(--ak-space-4);
+  border-width: 2px;
+}
+
+/* -----------------------
+   Type: Dots
+   ----------------------- */
+.ak-loader-dots {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.ak-loader-dots span {
+  display: block;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: ak-pulse 1.4s ease-in-out infinite both;
+  
+  /* Default Size (sm) */
+  width: 6px;
+  height: 6px;
+}
+
+.ak-loader-dots span:nth-child(1) { animation-delay: -0.32s; }
+.ak-loader-dots span:nth-child(2) { animation-delay: -0.16s; }
+.ak-loader-dots span:nth-child(3) { animation-delay: 0s; }
+
+/* -----------------------
+   Type: Bar (Progress)
+   ----------------------- */
+.ak-loader-bar {
+  width: 100%;
+  background-color: var(--ak-color-muted);
+  border-radius: var(--ak-radius-full);
+  overflow: hidden;
+  position: relative;
+  
+  /* Default Size (sm) */
+  height: 4px;
+}
+
+.ak-loader-bar-value {
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  transform-origin: left center;
+}
+
+/* Indeterminate State for Bar */
+.ak-loader-bar-indeterminate .ak-loader-bar-value {
+  width: 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  animation: ak-progress-indeterminate 1.5s infinite linear;
+}
+
+/* -----------------------
+   Colors (Variants)
+   ----------------------- */
+.ak-loader-primary { color: var(--ak-color-primary); }
+.ak-loader-secondary { color: var(--ak-color-secondary); }
+.ak-loader-neutral { color: currentColor; }
+.ak-loader-white { color: #ffffff; }
+.ak-loader-muted { color: var(--ak-color-text-muted); }
+.ak-loader-success { color: var(--ak-color-success); }
+.ak-loader-destructive { color: var(--ak-color-destructive); }
+
+/* -----------------------
+   Sizes
+   ----------------------- */
+
+/* XS */
+.ak-loader-xs.ak-loader-spinner {
+  width: var(--ak-space-3);
+  height: var(--ak-space-3);
+  border-width: 1.5px;
+}
+.ak-loader-xs.ak-loader-dots span {
+  width: 4px;
+  height: 4px;
+}
+.ak-loader-xs.ak-loader-bar {
+  height: 2px;
+}
+
+/* SM (Default - redefined for explicit use) */
+.ak-loader-sm.ak-loader-spinner {
+  width: var(--ak-space-4);
+  height: var(--ak-space-4);
+  border-width: 2px;
+}
+.ak-loader-sm.ak-loader-dots span {
+  width: 6px;
+  height: 6px;
+}
+.ak-loader-sm.ak-loader-bar {
+  height: 4px;
+}
+
+/* MD */
+.ak-loader-md.ak-loader-spinner {
+  width: var(--ak-space-6);
+  height: var(--ak-space-6);
+  border-width: 2.5px;
+}
+.ak-loader-md.ak-loader-dots span {
+  width: 8px;
+  height: 8px;
+}
+.ak-loader-md.ak-loader-bar {
+  height: 8px;
+}
+
+/* LG */
+.ak-loader-lg.ak-loader-spinner {
+  width: var(--ak-space-12);
+  height: var(--ak-space-12);
+  border-width: 3px;
+}
+.ak-loader-lg.ak-loader-dots span {
+  width: 12px;
+  height: 12px;
+}
+.ak-loader-lg.ak-loader-bar {
+  height: 12px;
+}
+
+/* XL */
+.ak-loader-xl.ak-loader-spinner {
+  width: var(--ak-space-16);
+  height: var(--ak-space-16);
+  border-width: 4px;
+}
+.ak-loader-xl.ak-loader-dots span {
+  width: 16px;
+  height: 16px;
+}
+.ak-loader-xl.ak-loader-bar {
+  height: 16px;
+}
+
+/* -----------------------
+   Accessibility
+   ----------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .ak-loader-spinner,
+  .ak-loader-dots span,
+  .ak-loader-bar-value,
+  .ak-loader-bar-indeterminate .ak-loader-bar-value {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK Tasarım Sistemi - Demo</title>
-    <meta name="description" content="Modern arayüz bileşenleri, tema desteği ve duyarlı tasarımla AK Tasarım Sistemi'nin kapsamlı demosu.">
+    <title>AK Design System - Demo</title>
+    <meta name="description" content="Modern arayüz bileşenleri, tema desteği ve duyarlı tasarımla AK Design System'in kapsamlı demosu.">
     
     <!-- AK Design System CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
@@ -39,7 +39,7 @@
                 <button id="open-sidebar" class="ak-btn ak-btn-ghost ak-md:ak-hidden" data-testid="button-open-sidebar">
                     <i data-lucide="menu"></i>
                 </button>
-                <h1 class="ak-text-2xl ak-font-bold">AK Tasarım Sistemi</h1>
+                <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
                 <div class="language-selector">
                     <a href="index.html">EN</a>
                     <a href="index.de.html">DE</a>
@@ -130,6 +130,12 @@
                 </a>
             </li>
             <li>
+                <a href="#layout" data-section="layout">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Düzen</span>
+                </a>
+            </li>
+            <li>
                 <a href="#utilities" data-section="utilities">
                     <i data-lucide="wrench"></i>
                     <span>Yardımcı Sınıflar</span>
@@ -143,7 +149,7 @@
         <div class="ak-container">
             <!-- Overview Section -->
             <section id="overview" class="ak-section active" data-testid="section-overview">
-                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">AK Tasarım Sistemi</h2>
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">AK Design System</h2>
                 <p class="ak-text-xl ak-mb-4">Hızlı prototipleme ve üretime hazır uygulamalar için hafif, modern bir CSS çatısı.</p>
                 
                 <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6 ak-mt-8">
@@ -228,10 +234,16 @@
                             </button>
                             <div class="ak-dropdown-menu">
                                 <div class="ak-dropdown-header">İşlemler</div>
-                                <button class="ak-dropdown-item">Düzenle</button>
-                                <button class="ak-dropdown-item">Çoğalt</button>
+                                <button class="ak-dropdown-item">
+                                    <i data-lucide="edit" class="ak-w-4 ak-h-4 ak-mr-2"></i> Düzenle
+                                </button>
+                                <button class="ak-dropdown-item">
+                                    <i data-lucide="copy" class="ak-w-4 ak-h-4 ak-mr-2"></i> Çoğalt
+                                </button>
                                 <div class="ak-dropdown-divider"></div>
-                                <button class="ak-dropdown-item ak-text-destructive">Sil</button>
+                                <button class="ak-dropdown-item ak-text-destructive">
+                                    <i data-lucide="trash" class="ak-w-4 ak-h-4 ak-mr-2"></i> Sil
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -572,6 +584,92 @@
                 </div>
             </section>
 
+            <!-- Layout Section -->
+            <section id="layout" class="ak-section" data-testid="section-layout">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Düzen Bileşenleri</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Hero Bölümü</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-6">Landing sayfaları ve öne çıkan çağrı-aksiyon bölümleri için mükemmel.</p>
+                    
+                    <section class="ak-hero ak-mb-8" style="background: var(--ak-color-bg-subtle); border-radius: var(--ak-radius-lg);">
+                        <div class="ak-hero-content">
+                            <h1 class="ak-hero-title">AK Systems'e Hoş Geldiniz</h1>
+                            <p class="ak-hero-subtitle">Modern tasarım ilkeleriyle dijital altyapının geleceğini inşa ediyoruz.</p>
+                            <div class="ak-hero-actions">
+                                <button class="ak-btn ak-btn-primary">Başlayın</button>
+                                <button class="ak-btn ak-btn-outline">Daha Fazla Bilgi</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <div class="ak-code-block ak-mb-8">
+&lt;section class="ak-hero"&gt;
+  &lt;div class="ak-hero-content"&gt;
+    &lt;h1 class="ak-hero-title"&gt;AK Systems'e Hoş Geldiniz&lt;/h1&gt;
+    &lt;p class="ak-hero-subtitle"&gt;Modern tasarım ilkeleriyle...&lt;/p&gt;
+    &lt;div class="ak-hero-actions"&gt;
+      &lt;button class="ak-btn ak-btn-primary"&gt;Başlayın&lt;/button&gt;
+      &lt;button class="ak-btn ak-btn-outline"&gt;Daha Fazla Bilgi&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Görüntü Yardımcıları</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-6">Esnek görüntü işleme için duyarlı görüntüler ve object-fit yardımcıları.</p>
+                    
+                    <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6 ak-mb-8">
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Duyarlı Görüntü (ak-img-fluid)</h4>
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%234a90e2'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'>Duyarlı</text></svg>" 
+                                 alt="Duyarlı görüntü" 
+                                 class="ak-img-fluid ak-rounded ak-mb-4">
+                            <p class="ak-text-xs ak-text-muted">Otomatik olarak konteyner genişliğine ölçeklenir</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Küçük Resim (ak-img-thumbnail)</h4>
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%25' height='100%25' fill='%237b68ee'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='white'>Küçük Resim</text></svg>" 
+                                 alt="Küçük resim" 
+                                 class="ak-img-thumbnail ak-mb-4">
+                            <p class="ak-text-xs ak-text-muted">Çerçeve ve dolgu ile galeri stili</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Object Cover (ak-object-cover)</h4>
+                            <div class="ak-w-32 ak-h-32 ak-bg-muted ak-rounded ak-overflow-hidden ak-mb-4">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='100%25' height='100%25' fill='%23e74c3c'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='white'>Cover</text></svg>" 
+                                     alt="Cover" 
+                                     class="ak-w-full ak-h-full ak-object-cover">
+                            </div>
+                            <p class="ak-text-xs ak-text-muted">Konteyneri doldurur, en-boy oranını korur</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Object Contain (ak-object-contain)</h4>
+                            <div class="ak-w-32 ak-h-32 ak-bg-muted ak-rounded ak-overflow-hidden ak-mb-4">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='100%25' height='100%25' fill='%2327ae60'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='white'>Contain</text></svg>" 
+                                     alt="Contain" 
+                                     class="ak-w-full ak-h-full ak-object-contain">
+                            </div>
+                            <p class="ak-text-xs ak-text-muted">Konteyner içine sığar, tam görüntüyü gösterir</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-code-block">
+&lt;!-- Duyarlı Görüntü --&gt;
+&lt;img src="image.jpg" class="ak-img-fluid ak-rounded" alt="Duyarlı Görüntü"&gt;
+
+&lt;!-- Küçük Resim --&gt;
+&lt;img src="thumb.jpg" class="ak-img-thumbnail" alt="Küçük Resim"&gt;
+
+&lt;!-- Object Fit --&gt;
+&lt;img src="avatar.jpg" class="ak-w-20 ak-h-20 ak-object-cover ak-rounded-full"&gt;
+                    </div>
+                </div>
+            </section>
+
             <!-- Tables Section -->
             <section id="tables" class="ak-section" data-testid="section-tables">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Tablolar</h2>
@@ -810,10 +908,9 @@
     <footer class="ak-footer">
         <div class="ak-container">
             <div class="ak-flex ak-flex-col ak-md:ak-flex-row ak-flex-between ak-items-center ak-gap-4">
-                <p class="ak-text-muted">&copy; 2024 AK Tasarım Sistemi. Tüm hakları saklıdır.</p>
+                <p class="ak-text-muted">&copy; 2024 AK Design System. Tüm hakları saklıdır.</p>
                 <div class="ak-flex ak-gap-4">
                     <a href="https://github.com/ak-hosting/ak-systems-css" class="ak-text-muted ak-hover:ak-text-primary">
-                        <i data-lucide="github"></i>
                     </a>
                 </div>
             </div>

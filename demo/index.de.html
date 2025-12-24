@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
-        /* Minimale Demo-spezifische Styles - Design System Klassen werden bevorzugt verwendet */
+        /* Minimal demo-specific styles - using Design System classes where possible */
         .language-selector {
             margin-left: var(--ak-space-4);
         }
@@ -28,44 +28,6 @@
         .language-selector a.ak-active {
             color: var(--ak-color-accent);
             font-weight: var(--ak-font-weight-medium);
-        }
-
-        .demo-section {
-            margin-bottom: var(--ak-space-8);
-            padding: var(--ak-space-6);
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-lg);
-            background: var(--ak-color-bg-default);
-        }
-        
-        .color-demo {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--ak-radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: var(--ak-font-weight-medium);
-            font-size: var(--ak-font-size-sm);
-        }
-        
-        .spacing-demo {
-            background: var(--ak-color-accent);
-            color: white;
-            display: inline-block;
-            margin: var(--ak-space-1);
-        }
-        
-        .code-block {
-            background: var(--ak-color-bg-subtle);
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            font-family: monospace;
-            font-size: var(--ak-font-size-sm);
-            overflow-x: auto;
-            white-space: pre;
         }
     </style>
 </head>
@@ -169,7 +131,7 @@
             </li>
             <li>
                 <a href="#layout" data-section="layout">
-                    <i data-lucide="layout"></i>
+                    <i data-lucide="layout-dashboard"></i>
                     <span>Layout</span>
                 </a>
             </li>
@@ -311,10 +273,16 @@
                             </button>
                             <div class="ak-dropdown-menu">
                                 <div class="ak-dropdown-header">Aktionen</div>
-                                <button class="ak-dropdown-item">Bearbeiten</button>
-                                <button class="ak-dropdown-item">Duplizieren</button>
+                                <button class="ak-dropdown-item">
+                                    <i data-lucide="edit" class="ak-w-4 ak-h-4 ak-mr-2"></i> Bearbeiten
+                                </button>
+                                <button class="ak-dropdown-item">
+                                    <i data-lucide="copy" class="ak-w-4 ak-h-4 ak-mr-2"></i> Duplizieren
+                                </button>
                                 <div class="ak-dropdown-divider"></div>
-                                <button class="ak-dropdown-item ak-text-destructive">Löschen</button>
+                                <button class="ak-dropdown-item ak-text-destructive">
+                                    <i data-lucide="trash" class="ak-w-4 ak-h-4 ak-mr-2"></i> Löschen
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -324,27 +292,27 @@
             <!-- Colors Section -->
             <section id="colors" class="ak-section" data-testid="section-colors">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Farben</h2>
-                <div class="ak-grid ak-grid-4 ak-gap-4 demo-section">
+                <div class="ak-grid ak-grid-4 ak-gap-4">
                     <div class="ak-text-center">
-                        <div class="color-demo" style="background: var(--ak-color-primary);" data-testid="color-primary">
+                        <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium" style="background: var(--ak-color-primary);">
                             Primary
                         </div>
                         <p class="ak-text-sm ak-mt-2">hsl(217, 91%, 60%)</p>
                     </div>
                     <div class="ak-text-center">
-                        <div class="color-demo" style="background: var(--ak-color-secondary);" data-testid="color-secondary">
+                        <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium" style="background: var(--ak-color-secondary);">
                             Secondary
                         </div>
                         <p class="ak-text-sm ak-mt-2">hsl(217, 19%, 27%)</p>
                     </div>
                     <div class="ak-text-center">
-                        <div class="color-demo" style="background: var(--ak-color-accent);" data-testid="color-accent">
+                        <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium" style="background: var(--ak-color-accent);">
                             Accent
                         </div>
                         <p class="ak-text-sm ak-mt-2">hsl(142, 76%, 36%)</p>
                     </div>
                     <div class="ak-text-center">
-                        <div class="color-demo" style="background: var(--ak-color-destructive);" data-testid="color-destructive">
+                        <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium" style="background: var(--ak-color-destructive);">
                             Destructive
                         </div>
                         <p class="ak-text-sm ak-mt-2">hsl(0, 84%, 60%)</p>
@@ -355,19 +323,48 @@
             <!-- Buttons Section -->
             <section id="buttons" class="ak-section" data-testid="section-buttons">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Buttons</h2>
-                <div class="demo-section">
-                    <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-4">
-                        <button class="ak-btn ak-btn-primary" data-testid="button-primary">Primary</button>
-                        <button class="ak-btn ak-btn-secondary" data-testid="button-secondary">Secondary</button>
-                        <button class="ak-btn ak-btn-outline" data-testid="button-outline">Outline</button>
-                        <button class="ak-btn ak-btn-ghost" data-testid="button-ghost">Ghost</button>
-                        <button class="ak-btn ak-btn-destructive" data-testid="button-destructive">Destructive</button>
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Button Variants</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-mb-6">
+                        <button class="ak-btn">Default</button>
+                        <button class="ak-btn ak-btn-primary">Primary</button>
+                        <button class="ak-btn ak-btn-accent">Accent</button>
+                        <button class="ak-btn ak-btn-secondary">Secondary</button>
+                        <button class="ak-btn ak-btn-ghost">Ghost</button>
+                        <button class="ak-btn ak-btn-link">Link</button>
                     </div>
-                    <div class="ak-flex ak-flex-wrap ak-gap-4">
-                        <button class="ak-btn ak-btn-primary ak-btn-sm" data-testid="button-small">Small</button>
-                        <button class="ak-btn ak-btn-primary" data-testid="button-default">Default</button>
-                        <button class="ak-btn ak-btn-primary ak-btn-lg" data-testid="button-large">Large</button>
-                        <button class="ak-btn ak-btn-primary" disabled data-testid="button-disabled">Disabled</button>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Button Sizes</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-items-center ak-mb-6">
+                        <button class="ak-btn ak-btn-sm">Small</button>
+                        <button class="ak-btn">Default</button>
+                        <button class="ak-btn ak-btn-lg">Large</button>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Button States</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-mb-6">
+                        <button class="ak-btn ak-btn-primary">Normal</button>
+                        <button class="ak-btn ak-btn-primary" disabled>Disabled</button>
+                        <button class="ak-btn ak-btn-primary ak-loading">
+                            <span class="ak-loading-spinner"></span>
+                            Loading
+                        </button>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Button with Icon</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-mb-6">
+                        <button class="ak-btn ak-btn-primary">
+                            <i data-lucide="save" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            Save
+                        </button>
+                        <button class="ak-btn ak-btn-accent">
+                            <i data-lucide="send" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            Send
+                        </button>
+                        <button class="ak-btn ak-btn-secondary">
+                            <i data-lucide="trash-2" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            Delete
+                        </button>
                     </div>
                 </div>
             </section>
@@ -375,7 +372,7 @@
             <!-- Loaders Section -->
             <section id="loaders" class="ak-section" data-testid="section-loaders">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Loader & Animationen</h2>
-                <div class="demo-section">
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
                     <p class="ak-text-lg ak-mb-6">Ein umfassendes Framework für Ladeindikatoren inklusive Spinner, Punkten, Fortschrittsbalken und fortgeschrittenen Animationen.</p>
                     
                     <div class="ak-flex ak-flex-wrap ak-gap-8 ak-items-center ak-mb-8">
@@ -412,65 +409,64 @@
             <!-- Forms Section -->
             <section id="forms" class="ak-section" data-testid="section-forms">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Formulare</h2>
-                <div class="demo-section">
-                    <form class="ak-form ak-space-y-4" data-testid="form-example">
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-name">Name</label>
-                            <input 
-                                type="text" 
-                                id="demo-name" 
-                                class="ak-input" 
-                                placeholder="Ihr Name"
-                                data-testid="input-name"
-                            >
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <form class="ak-form">
+                        <div class="ak-form-group">
+                            <label for="name" class="ak-form-label">Name</label>
+                            <input type="text" id="name" class="ak-input" placeholder="Enter your name">
                         </div>
-
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-email">E-Mail</label>
-                            <input 
-                                type="email" 
-                                id="demo-email" 
-                                class="ak-input" 
-                                placeholder="ihre@email.com"
-                                data-testid="input-email"
-                            >
+                        
+                        <div class="ak-form-group">
+                            <label for="email" class="ak-form-label">Email</label>
+                            <input type="email" id="email" class="ak-input" placeholder="Enter your email">
+                            <div class="ak-form-hint">We'll never share your email with anyone else.</div>
                         </div>
-
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-select">Kategorie</label>
-                            <select id="demo-select" class="ak-select" data-testid="select-category">
-                                <option value="">Wählen Sie eine Kategorie</option>
-                                <option value="general">Allgemein</option>
-                                <option value="support">Support</option>
-                                <option value="feedback">Feedback</option>
+                        
+                        <div class="ak-form-group">
+                            <label for="password" class="ak-form-label">Password</label>
+                            <input type="password" id="password" class="ak-input" placeholder="Enter your password">
+                        </div>
+                        
+                        <div class="ak-form-group">
+                            <label for="message" class="ak-form-label">Message</label>
+                            <textarea id="message" class="ak-textarea" rows="3" placeholder="Enter your message"></textarea>
+                        </div>
+                        
+                        <div class="ak-form-group">
+                            <label for="country" class="ak-form-label">Country</label>
+                            <select id="country" class="ak-select">
+                                <option value="">Select a country</option>
+                                <option value="us">United States</option>
+                                <option value="ca">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="au">Australia</option>
                             </select>
                         </div>
-
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-textarea">Nachricht</label>
-                            <textarea 
-                                id="demo-textarea" 
-                                class="ak-textarea" 
-                                rows="4" 
-                                placeholder="Ihre Nachricht..."
-                                data-testid="textarea-message"
-                            ></textarea>
+                        
+                        <div class="ak-form-group">
+                            <div class="ak-checkbox">
+                                <input type="checkbox" id="terms" class="ak-checkbox-input">
+                                <label for="terms" class="ak-checkbox-label">I agree to the terms and conditions</label>
+                            </div>
                         </div>
-
-                        <div class="ak-checkbox-group">
-                            <input type="checkbox" id="demo-checkbox" class="ak-checkbox" data-testid="checkbox-agree">
-                            <label for="demo-checkbox" class="ak-checkbox-label">
-                                Ich stimme den Nutzungsbedingungen zu
-                            </label>
+                        
+                        <div class="ak-form-group">
+                            <div class="ak-radio">
+                                <input type="radio" id="option1" name="options" class="ak-radio-input" checked>
+                                <label for="option1" class="ak-radio-label">Option 1</label>
+                            </div>
+                            <div class="ak-radio">
+                                <input type="radio" id="option2" name="options" class="ak-radio-input">
+                                <label for="option2" class="ak-radio-label">Option 2</label>
+                            </div>
                         </div>
-
-                        <div class="ak-flex ak-gap-4">
-                            <button type="submit" class="ak-btn ak-btn-primary" data-testid="button-submit">
-                                Absenden
-                            </button>
-                            <button type="button" class="ak-btn ak-btn-outline" data-testid="button-reset">
-                                Zurücksetzen
-                            </button>
+                        
+                        <div class="ak-form-group">
+                            <label class="ak-form-label">Toggle Switch</label>
+                            <div class="ak-switch">
+                                <input type="checkbox" class="ak-switch-input">
+                                <label for="notifications" class="ak-switch-label">Enable notifications</label>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -480,7 +476,7 @@
             <section id="cards" class="ak-section" data-testid="section-cards">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Cards</h2>
                 <div class="ak-grid ak-grid-2 ak-gap-6 demo-section">
-                    <div class="ak-card" data-testid="card-basic">
+                    <div class="ak-card">
                         <div class="ak-card-header">
                             <h3 class="ak-card-title">Card Titel</h3>
                             <p class="ak-card-description">Eine Beschreibung der Card.</p>
@@ -494,7 +490,7 @@
                         </div>
                     </div>
 
-                    <div class="ak-card" data-testid="card-with-image">
+                    <div class="ak-card">
                         <div class="ak-card-header">
                             <h3 class="ak-card-title">Erweiterte Card</h3>
                         </div>

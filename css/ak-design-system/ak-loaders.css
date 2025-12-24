@@ -16,6 +16,11 @@
   100% { transform: translateX(100%); }
 }
 
+@keyframes ak-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 /* Base Shared Properties */
 [class*="ak-loader-"] {
   box-sizing: border-box;
@@ -39,6 +44,12 @@
   width: var(--ak-space-4);
   height: var(--ak-space-4);
   border-width: 2px;
+}
+
+.ak-loader-track {
+  border-color: var(--ak-color-muted);
+  border-top-color: currentColor;
+  border-left-color: currentColor;
 }
 
 /* -----------------------
@@ -94,6 +105,41 @@
   left: 0;
   bottom: 0;
   animation: ak-progress-indeterminate 1.5s infinite linear;
+}
+
+/* -----------------------
+   Type: Skeleton (Business)
+   ----------------------- */
+.ak-skeleton {
+  background: linear-gradient(90deg, 
+    var(--ak-color-surface) 25%, 
+    var(--ak-color-muted) 50%, 
+    var(--ak-color-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: ak-shimmer 2s infinite linear;
+  border-radius: var(--ak-radius-sm);
+  display: inline-block;
+  width: 100%;
+  height: 1em;
+}
+
+.ak-skeleton-text { 
+  height: 0.8em; 
+  margin-bottom: 0.5em; 
+  border-radius: var(--ak-radius-sm);
+}
+
+.ak-skeleton-circle { 
+  width: var(--ak-space-12); 
+  height: var(--ak-space-12); 
+  border-radius: 50%; 
+}
+
+.ak-skeleton-rect { 
+  width: 100%; 
+  height: 200px; 
+  border-radius: var(--ak-radius-md);
 }
 
 /* -----------------------

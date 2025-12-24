@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AK Design System - Loader Demo</title>
-    <!-- AK Design System CSS (CDN - Main Branch for Demo) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <!-- AK Design System CSS (Local for Testing) -->
+    <link rel="stylesheet" href="../dist/ak-design-system.css">
     <style>
         body {
             background-color: var(--ak-color-bg);
@@ -121,6 +121,30 @@
                 <span class="ak-loader-spinner ak-loader-sm ak-loader-primary"></span>
             </button>
         </div>
+    </div>
+
+    <!-- Business Loaders -->
+    <div class="demo-section">
+        <h2>Business Loaders</h2>
+        
+        <h3>Track Spinner</h3>
+        <div class="demo-row">
+            <span class="ak-loader-spinner ak-loader-track ak-loader-md ak-loader-primary"></span>
+            <span class="ak-loader-spinner ak-loader-track ak-loader-xl ak-loader-secondary"></span>
+            <span class="ak-loader-spinner ak-loader-track ak-loader-lg ak-loader-muted"></span>
+        </div>
+
+        <h3>Skeleton Loading</h3>
+        <div class="ak-grid ak-grid-2 ak-gap-4" style="display: grid; grid-template-columns: 100px 1fr; gap: 20px; align-items: center;">
+            <div class="ak-skeleton ak-skeleton-circle"></div>
+            <div>
+                <div class="ak-skeleton ak-skeleton-text" style="width: 60%;"></div>
+                <div class="ak-skeleton ak-skeleton-text" style="width: 90%;"></div>
+                <div class="ak-skeleton ak-skeleton-text" style="width: 40%;"></div>
+            </div>
+        </div>
+        <br>
+        <div class="ak-skeleton ak-skeleton-rect"></div>
     </div>
 
 </body>

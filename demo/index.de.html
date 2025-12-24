@@ -919,26 +919,32 @@
         // Initialize Lucide icons
         lucide.createIcons();
         
-        // Theme toggle
+        // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
-        
+
+        // Check local storage for theme
+        const savedTheme = localStorage.getItem('ak-theme') || 'dark';
+        body.className = `ak-theme-${savedTheme}`;
+        updateThemeIcon(savedTheme);
+
         themeToggle.addEventListener('click', () => {
-            if (body.classList.contains('ak-theme-dark')) {
-                body.classList.remove('ak-theme-dark');
-                themeIcon.setAttribute('name', 'moon');
-            } else {
-                body.classList.add('ak-theme-dark');
-                themeIcon.setAttribute('name', 'sun');
-            }
+            const currentTheme = body.classList.contains('ak-theme-dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.className = `ak-theme-${newTheme}`;
+            localStorage.setItem('ak-theme', newTheme);
+            updateThemeIcon(newTheme);
         });
-        
-        // Update theme icon based on initial theme
-        if (body.classList.contains('ak-theme-dark')) {
-            themeIcon.setAttribute('name', 'sun');
-        } else {
-            themeIcon.setAttribute('name', 'moon');
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.setAttribute('data-lucide', 'sun');
+            } else {
+                themeIcon.setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons();
         }
         
         // Sidebar navigation

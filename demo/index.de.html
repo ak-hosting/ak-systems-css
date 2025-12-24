@@ -74,6 +74,12 @@
                 </a>
             </li>
             <li>
+                <a href="#extended" data-section="extended">
+                    <i data-lucide="layout-grid"></i>
+                    Erweitert
+                </a>
+            </li>
+            <li>
                 <a href="#examples" data-section="examples">
                     <i data-lucide="code"></i>
                     Code Beispiele
@@ -388,6 +394,115 @@
                         <button id="show-error-toast" class="ak-btn ak-btn-destructive" data-testid="button-error-toast">
                             Fehlermeldung
                         </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extended Components Section -->
+        <section id="extended-section" class="content-section" style="display: none;">
+            <div class="ak-container">
+                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Erweiterte Komponenten</h1>
+                
+                <div class="ak-grid ak-grid-2 ak-gap-6 ak-mb-8">
+                    <!-- Avatars -->
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Avatare</h3>
+                        <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
+                            <div class="ak-avatar ak-avatar-sm">
+                                <span class="ak-avatar-fallback">KL</span>
+                            </div>
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">MD</span>
+                                <div class="ak-avatar-status ak-avatar-status-online"></div>
+                            </div>
+                            <div class="ak-avatar ak-avatar-lg">
+                                <span class="ak-avatar-fallback">GR</span>
+                                <div class="ak-avatar-status ak-avatar-status-busy"></div>
+                            </div>
+                        </div>
+                        <div class="ak-avatar-group">
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">A</span>
+                            </div>
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">B</span>
+                            </div>
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">C</span>
+                            </div>
+                            <div class="ak-avatar ak-bg-subtle">
+                                <span class="ak-avatar-fallback">+3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Breadcrumbs & Pagination -->
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Navigation</h3>
+                        
+                        <div class="ak-mb-6">
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Brotkrümel (Breadcrumbs)</h4>
+                            <nav aria-label="Breadcrumb">
+                                <ol class="ak-breadcrumb">
+                                    <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Start</a></li>
+                                    <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Bibliothek</a></li>
+                                    <li class="ak-breadcrumb-item ak-active" aria-current="page">Daten</li>
+                                </ol>
+                            </nav>
+                        </div>
+
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Seitennummerierung (Pagination)</h4>
+                            <ul class="ak-pagination">
+                                <li class="ak-page-item ak-disabled">
+                                    <a class="ak-page-link" href="#"><i data-lucide="chevron-left" class="ak-w-4 ak-h-4"></i></a>
+                                </li>
+                                <li class="ak-page-item ak-active"><a class="ak-page-link" href="#">1</a></li>
+                                <li class="ak-page-item"><a class="ak-page-link" href="#">2</a></li>
+                                <li class="ak-page-item"><a class="ak-page-link" href="#">3</a></li>
+                                <li class="ak-page-item">
+                                    <a class="ak-page-link" href="#"><i data-lucide="chevron-right" class="ak-w-4 ak-h-4"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tooltips & Accordion -->
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Interaktiv</h3>
+                        
+                        <div class="ak-flex ak-gap-4 ak-mb-8">
+                            <div class="ak-tooltip-trigger ak-btn">
+                                Oben Tooltip
+                                <div class="ak-tooltip-content">Tooltip Inhalt</div>
+                            </div>
+                            <div class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
+                                Rechts Tooltip
+                                <div class="ak-tooltip-content">Mehr Info</div>
+                            </div>
+                        </div>
+
+                        <div class="ak-accordion">
+                            <details class="ak-accordion-item" open>
+                                <summary class="ak-accordion-summary">
+                                    Akkordeon Element 1
+                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
+                                </summary>
+                                <div class="ak-accordion-content">
+                                    Inhalt für das erste Element. Es kann ein- und ausgeklappt werden.
+                                </div>
+                            </details>
+                            <details class="ak-accordion-item">
+                                <summary class="ak-accordion-summary">
+                                    Akkordeon Element 2
+                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
+                                </summary>
+                                <div class="ak-accordion-content">
+                                    Inhalt für das zweite Element.
+                                </div>
+                            </details>
+                        </div>
                     </div>
                 </div>
             </div>

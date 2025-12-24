@@ -1110,3 +1110,333 @@ body.ak-modal-open {
   margin-left: var(--ak-space-2);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                  Avatars                                   */
+/* -------------------------------------------------------------------------- */
+
+.ak-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow: hidden;
+  user-select: none;
+  border-radius: 50%;
+  background-color: var(--ak-color-muted);
+  width: var(--ak-space-10);
+  height: var(--ak-space-10);
+}
+
+.ak-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.ak-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ak-color-text-muted);
+  font-size: var(--ak-font-size-sm);
+  font-weight: var(--ak-font-weight-medium);
+  text-transform: uppercase;
+}
+
+/* Sizes */
+.ak-avatar-sm {
+  width: var(--ak-space-8);
+  height: var(--ak-space-8);
+}
+.ak-avatar-sm .ak-avatar-fallback {
+  font-size: var(--ak-font-size-xs);
+}
+
+.ak-avatar-lg {
+  width: var(--ak-space-16);
+  height: var(--ak-space-16);
+}
+.ak-avatar-lg .ak-avatar-fallback {
+  font-size: var(--ak-font-size-lg);
+}
+
+.ak-avatar-xl {
+  width: var(--ak-space-20);
+  height: var(--ak-space-20);
+}
+
+/* Status Indicator */
+.ak-avatar-status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--ak-color-surface);
+  background-color: var(--ak-color-muted);
+}
+.ak-avatar-status-online { background-color: var(--ak-color-success); }
+.ak-avatar-status-busy { background-color: var(--ak-color-destructive); }
+.ak-avatar-status-away { background-color: var(--ak-color-warning); }
+
+/* Avatar Group */
+.ak-avatar-group {
+  display: flex;
+  flex-direction: row;
+}
+.ak-avatar-group .ak-avatar {
+  border: 2px solid var(--ak-color-surface);
+  margin-left: -8px;
+}
+.ak-avatar-group .ak-avatar:first-child {
+  margin-left: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Breadcrumbs                                */
+/* -------------------------------------------------------------------------- */
+
+.ak-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--ak-font-size-sm);
+}
+
+.ak-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  color: var(--ak-color-text-muted);
+}
+
+.ak-breadcrumb-item:not(:last-child)::after {
+  content: "/";
+  margin: 0 var(--ak-space-2);
+  opacity: 0.5;
+}
+
+.ak-breadcrumb-link {
+  color: var(--ak-color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ak-breadcrumb-link:hover {
+  color: var(--ak-color-primary);
+  text-decoration: underline;
+}
+
+.ak-breadcrumb-item.ak-active {
+  color: var(--ak-color-text);
+  font-weight: var(--ak-font-weight-medium);
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Pagination                                 */
+/* -------------------------------------------------------------------------- */
+
+.ak-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--ak-space-1);
+}
+
+.ak-page-item {
+  display: flex;
+}
+
+.ak-page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--ak-space-9);
+  height: var(--ak-space-9);
+  padding: 0 var(--ak-space-3);
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text);
+  background-color: transparent;
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.ak-page-link:hover {
+  background-color: var(--ak-color-muted);
+  border-color: var(--ak-color-muted);
+}
+
+.ak-page-item.ak-active .ak-page-link {
+  background-color: var(--ak-color-primary);
+  border-color: var(--ak-color-primary);
+  color: var(--ak-color-primary-text);
+  z-index: 1;
+}
+
+.ak-page-item.ak-disabled .ak-page-link {
+  color: var(--ak-color-text-muted);
+  pointer-events: none;
+  background-color: var(--ak-color-bg-subtle);
+  border-color: var(--ak-color-border);
+  opacity: 0.6;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Tooltips                                  */
+/* -------------------------------------------------------------------------- */
+
+.ak-tooltip-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Content of the tooltip (hidden by default) */
+.ak-tooltip-content {
+  position: absolute;
+  z-index: 100;
+  padding: var(--ak-space-2) var(--ak-space-3);
+  font-size: var(--ak-font-size-xs);
+  line-height: 1.4;
+  color: var(--ak-color-inverse-text);
+  background-color: var(--ak-color-inverse);
+  border-radius: var(--ak-radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--ak-shadow-md);
+  
+  /* Positioning defaults (top) */
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  margin-bottom: var(--ak-space-2);
+}
+
+.ak-tooltip-trigger:hover .ak-tooltip-content,
+.ak-tooltip-trigger:focus-visible .ak-tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Tooltip positions modifiers */
+.ak-tooltip-bottom .ak-tooltip-content {
+  bottom: auto;
+  top: 100%;
+  margin-bottom: 0;
+  margin-top: var(--ak-space-2);
+  transform: translateX(-50%) translateY(-4px);
+}
+.ak-tooltip-bottom:hover .ak-tooltip-content {
+  transform: translateX(-50%) translateY(0);
+}
+
+.ak-tooltip-left .ak-tooltip-content {
+  bottom: auto;
+  left: auto;
+  top: 50%;
+  right: 100%;
+  margin-right: var(--ak-space-2);
+  transform: translateY(-50%) translateX(4px);
+}
+.ak-tooltip-left:hover .ak-tooltip-content {
+  transform: translateY(-50%) translateX(0);
+}
+
+.ak-tooltip-right .ak-tooltip-content {
+  bottom: auto;
+  left: 100%;
+  top: 50%;
+  margin-left: var(--ak-space-2);
+  transform: translateY(-50%) translateX(-4px);
+}
+.ak-tooltip-right:hover .ak-tooltip-content {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Accordion                                  */
+/* -------------------------------------------------------------------------- */
+
+.ak-accordion {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  overflow: hidden;
+  background-color: var(--ak-color-surface);
+}
+
+.ak-accordion-item {
+  border-bottom: 1px solid var(--ak-color-border);
+}
+
+.ak-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.ak-accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ak-space-4);
+  font-weight: var(--ak-font-weight-medium);
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  list-style: none; /* Hide default details marker */
+}
+
+/* Hide default marker for Webkit */
+.ak-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.ak-accordion-summary:hover {
+  background-color: var(--ak-color-bg-subtle);
+}
+
+.ak-accordion-trigger-icon {
+  transition: transform 0.2s ease;
+  color: var(--ak-color-text-muted);
+}
+
+details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
+  transform: rotate(180deg);
+}
+
+.ak-accordion-content {
+  padding: var(--ak-space-4);
+  border-top: 1px solid var(--ak-color-border);
+  background-color: var(--ak-color-bg-subtle);
+  font-size: var(--ak-font-size-sm);
+  line-height: 1.6;
+}
+
+/* Flush variant (no outer border) */
+.ak-accordion-flush {
+  border: none;
+  border-radius: 0;
+}
+.ak-accordion-flush .ak-accordion-item {
+  border-bottom: 1px solid var(--ak-color-border);
+}
+

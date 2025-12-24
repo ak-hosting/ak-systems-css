@@ -2124,6 +2124,228 @@ body.ak-modal-open {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                  Popover                                   */
+/* -------------------------------------------------------------------------- */
+
+.ak-popover-trigger {
+  position: relative;
+  display: inline-block;
+}
+
+.ak-popover-content {
+  position: absolute;
+  z-index: var(--ak-z-popover);
+  min-width: 200px;
+  max-width: 320px;
+  padding: var(--ak-space-4);
+  font-size: var(--ak-font-size-sm);
+  line-height: 1.5;
+  color: var(--ak-color-text);
+  background-color: var(--ak-color-surface);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  box-shadow: var(--ak-shadow-lg);
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  
+  /* Positioning defaults (top) */
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  margin-bottom: var(--ak-space-2);
+}
+
+.ak-popover-trigger:hover .ak-popover-content,
+.ak-popover-trigger:focus-visible .ak-popover-content,
+.ak-popover-content.ak-popover-show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Popover arrow */
+.ak-popover-content::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Arrow for top position (default) */
+.ak-popover-content::before {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-color: var(--ak-color-border) transparent transparent transparent;
+}
+
+.ak-popover-content::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0 5px;
+  border-color: var(--ak-color-surface) transparent transparent transparent;
+}
+
+/* Popover positions */
+.ak-popover-bottom .ak-popover-content {
+  bottom: auto;
+  top: 100%;
+  margin-bottom: 0;
+  margin-top: var(--ak-space-2);
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.ak-popover-bottom:hover .ak-popover-content,
+.ak-popover-bottom .ak-popover-content.ak-popover-show {
+  transform: translateX(-50%) translateY(0);
+}
+
+.ak-popover-bottom .ak-popover-content::before {
+  bottom: auto;
+  top: -6px;
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent var(--ak-color-border) transparent;
+}
+
+.ak-popover-bottom .ak-popover-content::after {
+  bottom: auto;
+  top: -5px;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent var(--ak-color-surface) transparent;
+}
+
+.ak-popover-left .ak-popover-content {
+  bottom: auto;
+  left: auto;
+  top: 50%;
+  right: 100%;
+  margin-right: var(--ak-space-2);
+  transform: translateY(-50%) translateX(4px);
+}
+
+.ak-popover-left:hover .ak-popover-content,
+.ak-popover-left .ak-popover-content.ak-popover-show {
+  transform: translateY(-50%) translateX(0);
+}
+
+.ak-popover-left .ak-popover-content::before {
+  bottom: auto;
+  left: auto;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent var(--ak-color-border);
+}
+
+.ak-popover-left .ak-popover-content::after {
+  bottom: auto;
+  left: auto;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent var(--ak-color-surface);
+}
+
+.ak-popover-right .ak-popover-content {
+  bottom: auto;
+  left: 100%;
+  top: 50%;
+  margin-left: var(--ak-space-2);
+  transform: translateY(-50%) translateX(-4px);
+}
+
+.ak-popover-right:hover .ak-popover-content,
+.ak-popover-right .ak-popover-content.ak-popover-show {
+  transform: translateY(-50%) translateX(0);
+}
+
+.ak-popover-right .ak-popover-content::before {
+  bottom: auto;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 6px 6px 0;
+  border-color: transparent var(--ak-color-border) transparent transparent;
+}
+
+.ak-popover-right .ak-popover-content::after {
+  bottom: auto;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 5px 5px 0;
+  border-color: transparent var(--ak-color-surface) transparent transparent;
+}
+
+/* Popover header and body structure */
+.ak-popover-header {
+  margin-bottom: var(--ak-space-3);
+  padding-bottom: var(--ak-space-3);
+  border-bottom: 1px solid var(--ak-color-border);
+  font-weight: var(--ak-font-weight-semibold);
+  font-size: var(--ak-font-size-base);
+}
+
+.ak-popover-header:empty {
+  display: none;
+}
+
+.ak-popover-body {
+  margin: 0;
+}
+
+.ak-popover-footer {
+  margin-top: var(--ak-space-3);
+  padding-top: var(--ak-space-3);
+  border-top: 1px solid var(--ak-color-border);
+  display: flex;
+  gap: var(--ak-space-2);
+  justify-content: flex-end;
+}
+
+.ak-popover-footer:empty {
+  display: none;
+}
+
+/* Popover sizes */
+.ak-popover-sm .ak-popover-content {
+  min-width: 160px;
+  max-width: 240px;
+  padding: var(--ak-space-3);
+}
+
+.ak-popover-lg .ak-popover-content {
+  min-width: 280px;
+  max-width: 400px;
+  padding: var(--ak-space-6);
+}
+
+/* Interactive popover (can contain clickable elements) */
+.ak-popover-interactive .ak-popover-content {
+  pointer-events: auto;
+}
+
+.ak-popover-interactive:hover .ak-popover-content,
+.ak-popover-interactive:focus-within .ak-popover-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                 Accordion                                  */
 /* -------------------------------------------------------------------------- */
 

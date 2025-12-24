@@ -130,6 +130,12 @@
                 </a>
             </li>
             <li>
+                <a href="#layout" data-section="layout">
+                    <i data-lucide="layout"></i>
+                    <span>Layout</span>
+                </a>
+            </li>
+            <li>
                 <a href="#utilities" data-section="utilities">
                     <i data-lucide="wrench"></i>
                     <span>Utilities</span>
@@ -143,8 +149,20 @@
         <div class="ak-container">
             <!-- Overview Section -->
             <section id="overview" class="ak-section active" data-testid="section-overview">
-                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">AK Design System</h2>
-                <p class="ak-text-xl ak-mb-4">A lightweight, modern CSS framework for rapid prototyping and production-ready applications.</p>
+                <!-- Hero Section Example -->
+                <section class="ak-hero ak-mb-12">
+                    <div class="ak-hero-content">
+                        <h1 class="ak-hero-title">AK Design System</h1>
+                        <p class="ak-hero-subtitle">A lightweight, modern CSS framework for rapid prototyping and production-ready applications.</p>
+                        <div class="ak-hero-actions">
+                            <button class="ak-btn ak-btn-primary">Get Started</button>
+                            <button class="ak-btn ak-btn-outline">View Documentation</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Overview</h2>
+                <p class="ak-text-xl ak-mb-4">Build beautiful, responsive interfaces with our comprehensive component library.</p>
                 
                 <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6 ak-mt-8">
                     <div class="ak-card">
@@ -528,6 +546,92 @@
                                 <i data-lucide="x"></i>
                             </button>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Layout Section -->
+            <section id="layout" class="ak-section" data-testid="section-layout">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Layout Components</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Hero Section</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-6">Perfect for landing pages and prominent call-to-action sections.</p>
+                    
+                    <section class="ak-hero ak-mb-8" style="background: var(--ak-color-bg-subtle); border-radius: var(--ak-radius-lg);">
+                        <div class="ak-hero-content">
+                            <h1 class="ak-hero-title">Welcome to AK Systems</h1>
+                            <p class="ak-hero-subtitle">Building the future of digital infrastructure with modern design principles.</p>
+                            <div class="ak-hero-actions">
+                                <button class="ak-btn ak-btn-primary">Get Started</button>
+                                <button class="ak-btn ak-btn-outline">Learn More</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <div class="ak-code-block ak-mb-8">
+&lt;section class="ak-hero"&gt;
+  &lt;div class="ak-hero-content"&gt;
+    &lt;h1 class="ak-hero-title"&gt;Welcome to AK Systems&lt;/h1&gt;
+    &lt;p class="ak-hero-subtitle"&gt;Building the future...&lt;/p&gt;
+    &lt;div class="ak-hero-actions"&gt;
+      &lt;button class="ak-btn ak-btn-primary"&gt;Get Started&lt;/button&gt;
+      &lt;button class="ak-btn ak-btn-outline"&gt;Learn More&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Image Utilities</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-6">Responsive images and object-fit utilities for flexible image handling.</p>
+                    
+                    <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6 ak-mb-8">
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Responsive Image (ak-img-fluid)</h4>
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%23' + '4a90e2'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'>Responsive</text></svg>" 
+                                 alt="Responsive image" 
+                                 class="ak-img-fluid ak-rounded ak-mb-4">
+                            <p class="ak-text-xs ak-text-muted">Automatically scales to container width</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Thumbnail (ak-img-thumbnail)</h4>
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%25' height='100%25' fill='%23' + '7b68ee'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='white'>Thumbnail</text></svg>" 
+                                 alt="Thumbnail" 
+                                 class="ak-img-thumbnail ak-mb-4">
+                            <p class="ak-text-xs ak-text-muted">Gallery-style with border and padding</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Object Cover (ak-object-cover)</h4>
+                            <div class="ak-w-32 ak-h-32 ak-bg-muted ak-rounded ak-overflow-hidden ak-mb-4">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='100%25' height='100%25' fill='%23' + 'e74c3c'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='white'>Cover</text></svg>" 
+                                     alt="Cover" 
+                                     class="ak-w-full ak-h-full ak-object-cover">
+                            </div>
+                            <p class="ak-text-xs ak-text-muted">Fills container, maintains aspect ratio</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Object Contain (ak-object-contain)</h4>
+                            <div class="ak-w-32 ak-h-32 ak-bg-muted ak-rounded ak-overflow-hidden ak-mb-4">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='100%25' height='100%25' fill='%23' + '27ae60'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='white'>Contain</text></svg>" 
+                                     alt="Contain" 
+                                     class="ak-w-full ak-h-full ak-object-contain">
+                            </div>
+                            <p class="ak-text-xs ak-text-muted">Fits within container, shows full image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-code-block">
+&lt;!-- Responsive Image --&gt;
+&lt;img src="image.jpg" class="ak-img-fluid ak-rounded" alt="Responsive Image"&gt;
+
+&lt;!-- Thumbnail --&gt;
+&lt;img src="thumb.jpg" class="ak-img-thumbnail" alt="Thumbnail"&gt;
+
+&lt;!-- Object Fit --&gt;
+&lt;img src="avatar.jpg" class="ak-w-20 ak-h-20 ak-object-cover ak-rounded-full"&gt;
                     </div>
                 </div>
             </section>

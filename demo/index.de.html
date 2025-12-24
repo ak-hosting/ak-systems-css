@@ -67,14 +67,6 @@
             overflow-x: auto;
             white-space: pre;
         }
-
-        .ak-section {
-            display: none;
-        }
-
-        .ak-section.active {
-            display: block;
-        }
     </style>
 </head>
 <body class="ak-theme-dark">
@@ -524,16 +516,38 @@
 
             <!-- Alerts Section -->
             <section id="alerts" class="ak-section" data-testid="section-alerts">
-                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Alerts & Toasts</h2>
-                <div class="demo-section">
-                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Toast Nachrichten</h3>
-                    <div class="ak-flex ak-gap-4">
-                        <button id="show-success-toast" class="ak-btn ak-btn-primary" data-testid="button-success-toast">
-                            Erfolgsmeldung
-                        </button>
-                        <button id="show-error-toast" class="ak-btn ak-btn-destructive" data-testid="button-error-toast">
-                            Fehlermeldung
-                        </button>
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Alerts</h2>
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <div class="ak-alert ak-alert-info ak-mb-4">
+                        <i data-lucide="info" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Information</h4>
+                            <p class="ak-alert-description">Dies ist eine Informationsmeldung.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-alert ak-alert-success ak-mb-4">
+                        <i data-lucide="check-circle" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Erfolg</h4>
+                            <p class="ak-alert-description">Ihre Aktion wurde erfolgreich abgeschlossen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-alert ak-alert-warning ak-mb-4">
+                        <i data-lucide="alert-triangle" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Warnung</h4>
+                            <p class="ak-alert-description">Bitte seien Sie bei dieser Aktion vorsichtig.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-alert ak-alert-danger ak-mb-4">
+                        <i data-lucide="alert-circle" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Fehler</h4>
+                            <p class="ak-alert-description">Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -541,11 +555,41 @@
             <!-- Modals Section -->
             <section id="modals" class="ak-section" data-testid="section-modals">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Modals</h2>
-                <div class="demo-section">
-                    <button id="open-modal" class="ak-btn ak-btn-primary" data-testid="button-open-modal">
-                        <i data-lucide="external-link"></i>
-                        Modal öffnen
-                    </button>
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <button id="open-modal" class="ak-btn ak-btn-primary">Modal öffnen</button>
+                    
+                    <div id="modal-overlay" class="ak-modal" data-testid="modal-overlay">
+                        <div class="ak-modal-content">
+                            <div class="ak-modal-header">
+                                <h3 class="ak-modal-title">Modal Titel</h3>
+                                <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm">
+                                    <i data-lucide="x"></i>
+                                </button>
+                            </div>
+                            <div class="ak-modal-body">
+                                <p>Dies ist der Modal-Inhalt. Sie können hier beliebige HTML-Inhalte platzieren.</p>
+                            </div>
+                            <div class="ak-modal-footer">
+                                <button id="cancel-modal" class="ak-btn">Abbrechen</button>
+                                <button class="ak-btn ak-btn-primary">Bestätigen</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mt-6">
+                        <button id="show-toast" class="ak-btn ak-btn-secondary">Toast anzeigen</button>
+                        
+                        <div class="ak-toast" id="toast">
+                            <i data-lucide="check-circle" class="ak-text-success"></i>
+                            <div>
+                                <h4 class="ak-text-sm ak-font-semibold">Erfolg</h4>
+                                <p class="ak-text-xs">Ihre Aktion wurde erfolgreich abgeschlossen.</p>
+                            </div>
+                            <button id="close-toast" class="ak-btn ak-btn-ghost ak-btn-sm">
+                                <i data-lucide="x"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -869,284 +913,131 @@
         </div>
     </main>
 
-    <!-- Footer Navigation (Mobile) -->
-    <footer class="ak-footer-nav ak-md:ak-hidden">
-        <a href="#overview" class="ak-footer-nav-item" data-section="overview" data-testid="footer-nav-home">
-            <i data-lucide="home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#buttons" class="ak-footer-nav-item" data-section="buttons" data-testid="footer-nav-components">
-            <i data-lucide="layout"></i>
-            <span>Komponenten</span>
-        </a>
-        <a href="#colors" class="ak-footer-nav-item" data-section="colors" data-testid="footer-nav-tokens">
-            <i data-lucide="palette"></i>
-            <span>Farben</span>
-        </a>
-        <a href="#utilities" class="ak-footer-nav-item" data-section="utilities" data-testid="footer-nav-utilities">
-            <i data-lucide="wrench"></i>
-            <span>Utils</span>
-        </a>
-    </footer>
-
     <footer class="ak-footer">
         <div class="ak-container">
             <p class="ak-text-sm" style="font-weight: var(--ak-font-weight-light);">&copy; 2025 ak-systems. Published under the <a href="../LICENSE">ak-systems CSS Framework License</a>.</p>
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div id="modal-overlay" class="ak-modal" data-testid="modal-overlay">
-        <div class="ak-modal-content">
-            <div class="ak-modal-header">
-                <h3 class="ak-modal-title">Beispiel Modal</h3>
-                <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm" data-testid="button-close-modal">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <div class="ak-modal-body">
-                <p>Hier steht der Hauptinhalt des Modals. Sie können hier beliebige Inhalte platzieren.</p>
-            </div>
-            <div class="ak-modal-footer">
-                <button class="ak-btn" data-testid="button-modal-cancel">
-                    Abbrechen
-                </button>
-                <button class="ak-btn ak-btn-primary" data-testid="button-modal-confirm">
-                    Bestätigen
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Container -->
-    <div class="ak-toast" id="toast">
-        <i data-lucide="check-circle" class="ak-text-success"></i>
-        <div>
-            <h4 class="ak-text-sm ak-font-semibold">Erfolg</h4>
-            <p class="ak-text-xs">Ihre Aktion wurde erfolgreich abgeschlossen.</p>
-        </div>
-        <button id="close-toast" class="ak-btn ak-btn-ghost ak-btn-sm">
-            <i data-lucide="x"></i>
-        </button>
-    </div>
-
     <script>
-        // Theme Toggle
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
-
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Check for saved theme preference or use system preference
-        const savedTheme = localStorage.getItem('ak-theme');
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const initialTheme = savedTheme || 'dark'; // Default to dark as per body class
-
-        // Apply theme
-        if (initialTheme === 'light') {
-            body.classList.remove('ak-theme-dark');
-            body.classList.add('ak-theme-light');
-            themeIcon.setAttribute('name', 'moon');
-        } else {
-            body.classList.add('ak-theme-dark');
-            body.classList.remove('ak-theme-light');
-            themeIcon.setAttribute('name', 'sun');
-        }
-
+        
         themeToggle.addEventListener('click', () => {
             if (body.classList.contains('ak-theme-dark')) {
                 body.classList.remove('ak-theme-dark');
-                body.classList.add('ak-theme-light');
                 themeIcon.setAttribute('name', 'moon');
-                localStorage.setItem('ak-theme', 'light');
             } else {
-                body.classList.remove('ak-theme-light');
                 body.classList.add('ak-theme-dark');
                 themeIcon.setAttribute('name', 'sun');
-                localStorage.setItem('ak-theme', 'dark');
-            }
-            lucide.createIcons();
-        });
-
-        // Sidebar Toggle
-        const sidebar = document.getElementById('sidebar');
-        const openSidebarBtn = document.getElementById('open-sidebar');
-        const closeSidebarBtn = document.getElementById('close-sidebar');
-
-        openSidebarBtn.addEventListener('click', () => {
-            sidebar.classList.add('ak-sidebar-open');
-        });
-
-        closeSidebarBtn.addEventListener('click', () => {
-            sidebar.classList.remove('ak-sidebar-open');
-        });
-
-        // Navigation
-        const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
-        const footerLinks = document.querySelectorAll('.ak-footer-nav-item');
-        const sections = document.querySelectorAll('.ak-section');
-
-        function showSection(sectionId) {
-            // Hide all sections
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Show target section
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
-
-            // Update active states
-            [...sidebarLinks, ...footerLinks].forEach(link => {
-                link.classList.remove('ak-active');
-            });
-
-            [...sidebarLinks, ...footerLinks].forEach(link => {
-                if (link.getAttribute('data-section') === sectionId) {
-                    link.classList.add('ak-active');
-                }
-            });
-
-            // Close sidebar on mobile
-            sidebar.classList.remove('ak-sidebar-open');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        // Add click handlers to navigation links
-        [...sidebarLinks, ...footerLinks].forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const sectionId = link.getAttribute('data-section');
-                showSection(sectionId);
-            });
-        });
-
-        // Modal functionality
-        const modalOverlay = document.getElementById('modal-overlay');
-        const openModalBtn = document.getElementById('open-modal');
-        const closeModalBtn = document.getElementById('close-modal');
-        const modalCancelBtn = document.querySelector('[data-testid="button-modal-cancel"]');
-        const modalConfirmBtn = document.querySelector('[data-testid="button-modal-confirm"]');
-
-        function openModal() {
-            modalOverlay.classList.add('ak-modal-open');
-            document.body.classList.add('ak-modal-open');
-        }
-
-        function closeModal() {
-            modalOverlay.classList.remove('ak-modal-open');
-            document.body.classList.remove('ak-modal-open');
-        }
-
-        if (openModalBtn) openModalBtn.addEventListener('click', openModal);
-        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-        if (modalCancelBtn) modalCancelBtn.addEventListener('click', closeModal);
-        if (modalConfirmBtn) modalConfirmBtn.addEventListener('click', () => {
-            closeModal();
-            showToast('Aktion bestätigt', 'success');
-        });
-
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                closeModal();
             }
         });
         
-        // Handle initial hash
-        if (window.location.hash) {
-            const sectionId = window.location.hash.substring(1);
-            showSection(sectionId);
+        // Update theme icon based on initial theme
+        if (body.classList.contains('ak-theme-dark')) {
+            themeIcon.setAttribute('name', 'sun');
+        } else {
+            themeIcon.setAttribute('name', 'moon');
         }
-
-        // Toast functionality
-        const toast = document.getElementById('toast');
-        const closeToastBtn = document.getElementById('close-toast');
-        const successToastBtn = document.getElementById('show-success-toast');
-        const errorToastBtn = document.getElementById('show-error-toast');
-
-        function showToast(message, type = 'success') {
-            // Update toast content
-            const toastContent = toast.querySelector('div');
-            if (toastContent) {
-                const title = toastContent.querySelector('h4');
-                const description = toastContent.querySelector('p');
-                if (title && description) {
-                    if (type === 'success') {
-                        title.textContent = 'Erfolg';
-                        description.textContent = message;
-                        toast.className = 'ak-toast ak-toast-success ak-toast-show';
-                    } else {
-                        title.textContent = 'Fehler';
-                        description.textContent = message;
-                        toast.className = 'ak-toast ak-toast-error ak-toast-show';
+        
+        // Sidebar navigation
+        const openSidebar = document.getElementById('open-sidebar');
+        const closeSidebar = document.getElementById('close-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        
+        openSidebar.addEventListener('click', () => {
+            sidebar.classList.add('ak-sidebar-open');
+        });
+        
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('ak-sidebar-open');
+        });
+        
+        // Section navigation
+        const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
+        const sections = document.querySelectorAll('.ak-section');
+        
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const sectionId = link.getAttribute('data-section');
+                
+                // Update active link
+                sidebarLinks.forEach(l => l.classList.remove('ak-active'));
+                link.classList.add('ak-active');
+                
+                // Update active section
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === sectionId) {
+                        section.classList.add('active');
                     }
+                });
+                
+                // Close sidebar on mobile
+                if (window.innerWidth < 768) {
+                    sidebar.classList.remove('ak-sidebar-open');
                 }
+                
+                // Scroll to section
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Modal
+        const openModal = document.getElementById('open-modal');
+        const closeModal = document.getElementById('close-modal');
+        const cancelModal = document.getElementById('cancel-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        
+        openModal.addEventListener('click', () => {
+            modalOverlay.classList.add('ak-modal-open');
+            document.body.classList.add('ak-modal-open');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('ak-modal-open');
+            document.body.classList.remove('ak-modal-open');
+        });
+        
+        cancelModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('ak-modal-open');
+            document.body.classList.remove('ak-modal-open');
+        });
+        
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
             }
+        });
+        
+        // Toast
+        const showToast = document.getElementById('show-toast');
+        const closeToast = document.getElementById('close-toast');
+        const toast = document.getElementById('toast');
+        
+        showToast.addEventListener('click', () => {
+            toast.classList.add('ak-toast-show');
             
-            // Update icon
-            const icon = toast.querySelector('i[data-lucide]');
-            if (icon) {
-                icon.setAttribute('data-lucide', type === 'success' ? 'check-circle' : 'alert-circle');
-            }
-            
-            lucide.createIcons();
-
-            // Auto-hide after 3 seconds
+            // Auto hide after 3 seconds
             setTimeout(() => {
                 toast.classList.remove('ak-toast-show');
             }, 3000);
-        }
-
-        if (successToastBtn) successToastBtn.addEventListener('click', () => {
-            showToast('Ihre Aktion wurde erfolgreich abgeschlossen.', 'success');
-        });
-
-        if (errorToastBtn) errorToastBtn.addEventListener('click', () => {
-            showToast('Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.', 'error');
-        });
-
-        if (closeToastBtn) closeToastBtn.addEventListener('click', () => {
-            toast.classList.remove('ak-toast-show');
-        });
-
-        // Form handling
-        const form = document.querySelector('.ak-form');
-        const resetBtn = document.querySelector('[data-testid="button-reset"]');
-
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                showToast('Formular erfolgreich übermittelt!', 'success');
-            });
-        }
-
-        if (resetBtn) {
-            resetBtn.addEventListener('click', () => {
-                if (form) form.reset();
-            });
-        }
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768 && 
-                !sidebar.contains(e.target) && 
-                !openSidebarBtn.contains(e.target) && 
-                sidebar.classList.contains('ak-sidebar-open')) {
-                sidebar.classList.remove('ak-sidebar-open');
-            }
         });
         
-        // Handle initial hash
-        if (window.location.hash) {
-            const sectionId = window.location.hash.substring(1);
-            showSection(sectionId);
-        }
+        closeToast.addEventListener('click', () => {
+            toast.classList.remove('ak-toast-show');
+        });
     </script>
 </body>
 </html>

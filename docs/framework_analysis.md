@@ -354,7 +354,7 @@ This document provides a comprehensive overview of all components and utilities 
 ### S. Loaders/Spinners
 *   **Status:** ✅ Existing
 *   **Location:** `css/ak-design-system/ak-loaders.css`
-*   **Documentation:** See `docs/loader-framework.md` for complete documentation
+*   **Documentation:** See archived `docs/Archiv/loader-framework.md` for detailed documentation (key information integrated below)
 *   **Features:**
     *   Multiple types: spinner, dots, bar, wave, grid, flip, skeleton
     *   Size variants: xs, sm, md, lg, xl
@@ -505,24 +505,55 @@ When building new pages using `ak-design-system`:
 
 ## 5. Coverage Assessment
 
-### Current Coverage: ~85-90%
+### Current Coverage: ~90-93%
 
 **Implemented Components:**
 - ✅ Layout: Header, Footer, Hero, Sidebar
 - ✅ Content: Cards, Modals, Alerts, Badges, Tables
 - ✅ Forms: Inputs, Textarea, Select, Form Groups, Switch
 - ✅ Navigation: Breadcrumbs, Tabs, Pagination
-- ✅ Interactive: Dropdown, Tooltip, Accordion
-- ✅ Feedback: Toast, Loaders (multiple types)
+- ✅ Interactive: Dropdown, Tooltip, Popover, Accordion
+- ✅ Feedback: Toast, Loaders (multiple types), Progress Bars
 - ✅ Utilities: Image handling, responsive utilities
 
 **Potential Gaps for 95% Coverage:**
-- Popover components (tooltip-like but with more content)
 - Date/Time pickers (may require JavaScript - should remain separate)
 - Advanced form controls (checkbox/radio groups with enhanced styling)
 - Carousel/Slider components (may require JavaScript)
 - Stepper/Wizard components (useful for multi-step forms)
 
-**Note:** Progress bars are already implemented (`.ak-progress` and `.ak-loader-bar` for indeterminate).
+**Note:** Progress bars (`.ak-progress` and `.ak-loader-bar` for indeterminate) and Popover components are now fully implemented!
+
+### Implementation Roadmap
+
+**Phase 1: Critical Gaps** ✅ **COMPLETED**
+- Progress Bars ✅
+- Popover ✅
+- **Current Coverage:** ~90-93%
+
+**Phase 2: Optional Components (Medium-term)**
+- Stepper/Wizard - Useful for forms, CSS-only possible (+1-2% Coverage)
+- Enhanced Skeleton variants - Low effort, good UX improvement (+0.5% Coverage)
+- **Expected Coverage after Phase 2:** ~93-95%
+
+**Phase 3: JavaScript-dependent Components (Long-term)**
+- Carousel/Slider - Only if CSS-only variant possible
+- Date/Time Picker - Should remain as separate JS library
+
+### Decision Criteria
+
+**Should a component be added to the framework?**
+
+✅ **Yes, if:**
+- CSS-only implementation possible
+- Frequently needed in projects (>3% usage)
+- Consistent design important
+- Fast prototyping support
+
+❌ **No, if:**
+- JavaScript strictly required
+- Very specific use case (<1% usage)
+- Complex interactivity required
+- Better as separate library
 
 This structure ensures we meet the "90-95% CDN coverage" goal, reducing the need for custom CSS in individual projects. Most common UI patterns are covered, allowing rapid prototyping with consistent styling.

@@ -10,14 +10,15 @@ This plan focuses on deliberate UX improvements.
 
 ---
 
-## Current Status (v1.0.x)
+## Current Status (v1.2.0)
 - Responsive breakpoints fully implemented
-- Mobile layouts and components behave corctly
+- Mobile layouts and components behave correctly
 - Touch-friendly buttons and icon buttons
 - Accessibility and reduced-motion support
 - No breaking mobile issues
+- Mobile UX refinements implemented (v1.2.0)
 
-Mobile readiness: ~85–90%
+Mobile readiness: ~90–95%
 
 ---
 
@@ -39,16 +40,18 @@ Breaking change: No
 
 ---
 
-### v1.2.0 — Mobile UX Refinements
+### v1.2.0 — Mobile UX Refinements ✅ COMPLETED
 Focus: Better readability and spacing on small screens.
 
-- Adjust heading sizes on very small viewports
-- Reduce vertical spacing on XS screens where appropriate
-- Improve scroll and overflow affordances for tabs and navigation
+- ✅ Adjust heading sizes on very small viewports
+- ✅ Reduce vertical spacing on XS screens where appropriate
+- ✅ Improve scroll and overflow affordances for tabs and navigation
+- ✅ Hero component with responsive design
+- ✅ Image utilities for mobile optimization
 
 Risk level: Medium  
 Visual impact: Moderate  
-Breaking change: Possibly (minor)
+Breaking change: No (successfully implemented without breaking changes)
 
 ---
 

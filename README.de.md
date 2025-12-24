@@ -15,10 +15,25 @@ Einziger unterstützter Einstieg (Entwicklung):
 Production/CDN-Einstieg:
 
 ```html
+<!-- Spezifische Version nutzen (empfohlen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.3/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.1.0/dist/ak-design-system.min.css"
 />
+
+<!-- Oder neueste Version vom Main-Branch (nur für Entwicklung) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css"
+/>
+```
+
+## Build Prozess
+
+Um die Distributionsdateien in `dist/` zu generieren:
+
+```bash
+./build.sh
 ```
 
 ## Nutzung

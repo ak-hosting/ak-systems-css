@@ -15,11 +15,28 @@ Use the canonical CSS entry (development):
 Production/CDN entry:
 
 ```html
+<!-- Use a specific version (recommended) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.3/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.1.0/dist/ak-design-system.min.css"
+/>
+
+<!-- Or use the latest version from main branch (development only) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css"
 />
 ```
+
+## Build Process
+
+To generate the distribution files in `dist/`, run the build script:
+
+```bash
+./build.sh
+```
+
+This will concatenate all source files into `dist/ak-design-system.css` and create a placeholder minified file.
 
 ## Usage
 

@@ -15,10 +15,25 @@ Tek desteklenen giriş (geliştirme):
 Üretim/CDN girişi:
 
 ```html
+<!-- Belirli bir sürümü kullanın (önerilen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.0.3/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.1.0/dist/ak-design-system.min.css"
 />
+
+<!-- Veya ana daldan en son sürümü kullanın (sadece geliştirme) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css"
+/>
+```
+
+## Derleme (Build) Süreci
+
+`dist/` klasöründeki dosyaları oluşturmak için:
+
+```bash
+./build.sh
 ```
 
 ## Kullanım

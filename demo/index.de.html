@@ -8,12 +8,73 @@
     
     <!-- AK Design System CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
         /* Minimale Demo-spezifische Styles - Design System Klassen werden bevorzugt verwendet */
+        .language-selector {
+            margin-left: var(--ak-space-4);
+        }
+        
+        .language-selector a {
+            margin-right: var(--ak-space-2);
+            text-decoration: none;
+            color: var(--ak-color-text-muted);
+        }
+        
+        .language-selector a.ak-active {
+            color: var(--ak-color-accent);
+            font-weight: var(--ak-font-weight-medium);
+        }
+
+        .demo-section {
+            margin-bottom: var(--ak-space-8);
+            padding: var(--ak-space-6);
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-lg);
+            background: var(--ak-color-bg-default);
+        }
+        
+        .color-demo {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--ak-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: var(--ak-font-weight-medium);
+            font-size: var(--ak-font-size-sm);
+        }
+        
+        .spacing-demo {
+            background: var(--ak-color-accent);
+            color: white;
+            display: inline-block;
+            margin: var(--ak-space-1);
+        }
+        
+        .code-block {
+            background: var(--ak-color-bg-subtle);
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-md);
+            padding: var(--ak-space-4);
+            font-family: monospace;
+            font-size: var(--ak-font-size-sm);
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .ak-section {
+            display: none;
+        }
+
+        .ak-section.active {
+            display: block;
+        }
     </style>
 </head>
 <body class="ak-theme-dark">
@@ -25,6 +86,11 @@
                     <i data-lucide="menu"></i>
                 </button>
                 <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
+                <div class="language-selector">
+                    <a href="index.html">EN</a>
+                    <a href="index.de.html" class="ak-active">DE</a>
+                    <a href="index.tr.html">TR</a>
+                </div>
             </div>
             <div class="ak-flex ak-items-center ak-gap-2">
                 <button id="theme-toggle" class="ak-btn ak-btn-ghost" data-testid="button-theme-toggle">
@@ -46,43 +112,73 @@
             <li>
                 <a href="#overview" class="ak-active" data-section="overview">
                     <i data-lucide="home"></i>
-                    Übersicht
+                    <span>Übersicht</span>
                 </a>
             </li>
             <li>
-                <a href="#tokens" data-section="tokens">
+                <a href="#typography" data-section="typography">
+                    <i data-lucide="type"></i>
+                    <span>Typografie</span>
+                </a>
+            </li>
+            <li>
+                <a href="#colors" data-section="colors">
                     <i data-lucide="palette"></i>
-                    Design Tokens
+                    <span>Farben</span>
                 </a>
             </li>
             <li>
-                <a href="#components" data-section="components">
-                    <i data-lucide="layout"></i>
-                    Komponenten
-                </a>
-            </li>
-            <li>
-                <a href="#utilities" data-section="utilities">
-                    <i data-lucide="wrench"></i>
-                    Utility Klassen
+                <a href="#buttons" data-section="buttons">
+                    <i data-lucide="mouse-pointer-click"></i>
+                    <span>Buttons</span>
                 </a>
             </li>
             <li>
                 <a href="#loaders" data-section="loaders">
                     <i data-lucide="loader"></i>
-                    Loader & Animationen
+                    <span>Loader</span>
+                </a>
+            </li>
+            <li>
+                <a href="#forms" data-section="forms">
+                    <i data-lucide="form-input"></i>
+                    <span>Formulare</span>
+                </a>
+            </li>
+            <li>
+                <a href="#cards" data-section="cards">
+                    <i data-lucide="credit-card"></i>
+                    <span>Cards</span>
+                </a>
+            </li>
+            <li>
+                <a href="#alerts" data-section="alerts">
+                    <i data-lucide="alert-circle"></i>
+                    <span>Alerts</span>
+                </a>
+            </li>
+            <li>
+                <a href="#modals" data-section="modals">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Modals</span>
+                </a>
+            </li>
+            <li>
+                <a href="#tables" data-section="tables">
+                    <i data-lucide="table"></i>
+                    <span>Tabellen</span>
                 </a>
             </li>
             <li>
                 <a href="#extended" data-section="extended">
                     <i data-lucide="layout-grid"></i>
-                    Erweitert
+                    <span>Erweitert</span>
                 </a>
             </li>
             <li>
-                <a href="#examples" data-section="examples">
-                    <i data-lucide="code"></i>
-                    Code Beispiele
+                <a href="#utilities" data-section="utilities">
+                    <i data-lucide="wrench"></i>
+                    <span>Utilities</span>
                 </a>
             </li>
         </ul>
@@ -90,16 +186,16 @@
 
     <!-- Main Content -->
     <main class="ak-main">
-        <!-- Übersicht Section -->
-        <section id="overview-section" class="content-section">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-6">AK Design System</h1>
+        <div class="ak-container">
+            <!-- Overview Section -->
+            <section id="overview" class="ak-section active" data-testid="section-overview">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">AK Design System</h2>
                 <p class="ak-text-xl ak-text-muted ak-mb-8">
                     Ein modernes SCSS-basiertes Design System mit ak- prefixed Klassen, 
                     responsivem Design und umfassendem Theming-Support.
                 </p>
 
-                <div class="ak-grid ak-grid-3 ak-gap-6 ak-mb-8">
+                <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6 ak-mb-8">
                     <div class="ak-card">
                         <div class="ak-card-header">
                             <i data-lucide="layers" class="ak-w-8 ak-h-8 ak-text-primary"></i>
@@ -141,87 +237,115 @@
                         Dokumentation
                     </button>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Design Tokens Section -->
-        <section id="tokens-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Design Tokens</h1>
-
-                <!-- Colors -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Farben</h2>
-                    <div class="ak-grid ak-grid-4 ak-gap-4">
-                        <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-primary);" data-testid="color-primary">
-                                Primary
-                            </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(217, 91%, 60%)</p>
-                        </div>
-                        <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-secondary);" data-testid="color-secondary">
-                                Secondary
-                            </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(217, 19%, 27%)</p>
-                        </div>
-                        <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-accent);" data-testid="color-accent">
-                                Accent
-                            </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(142, 76%, 36%)</p>
-                        </div>
-                        <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-destructive);" data-testid="color-destructive">
-                                Destructive
-                            </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(0, 84%, 60%)</p>
-                        </div>
+            <!-- Typography Section -->
+            <section id="typography" class="ak-section" data-testid="section-typography">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Typografie</h2>
+                <div class="ak-space-y-4 demo-section">
+                    <div data-testid="typography-heading-1">
+                        <h1 class="ak-text-4xl ak-font-bold">Heading 1 - 36px Bold</h1>
+                    </div>
+                    <div data-testid="typography-heading-2">
+                        <h2 class="ak-text-3xl ak-font-semibold">Heading 2 - 30px Semibold</h2>
+                    </div>
+                    <div data-testid="typography-body">
+                        <p class="ak-text-base">Body Text - 16px Regular mit optimaler Lesbarkeit</p>
+                    </div>
+                    <div data-testid="typography-small">
+                        <p class="ak-text-sm ak-text-muted">Small Text - 14px Muted für Zusatzinformationen</p>
                     </div>
                 </div>
 
-                <!-- Typography -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Typografie</h2>
-                    <div class="ak-space-y-4">
-                        <div data-testid="typography-heading-1">
-                            <h1 class="ak-text-4xl ak-font-bold">Heading 1 - 36px Bold</h1>
+                <!-- Verschiedene Komponenten -->
+                <div class="ak-card ak-p-6 ak-mt-6">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Verschiedene Komponenten</h3>
+                    
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Badges</h4>
+                        <div class="ak-flex ak-gap-2 ak-flex-wrap">
+                            <span class="ak-badge ak-badge-default">Standard</span>
+                            <span class="ak-badge ak-badge-secondary">Sekundär</span>
+                            <span class="ak-badge ak-badge-outline">Outline</span>
+                            <span class="ak-badge ak-badge-destructive">Gefahr</span>
+                            <span class="ak-badge ak-badge-success">Erfolg</span>
                         </div>
-                        <div data-testid="typography-heading-2">
-                            <h2 class="ak-text-3xl ak-font-semibold">Heading 2 - 30px Semibold</h2>
+                    </div>
+
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Fortschritt</h4>
+                        <div class="ak-progress ak-mb-2">
+                            <div class="ak-progress-bar" style="width: 75%"></div>
                         </div>
-                        <div data-testid="typography-body">
-                            <p class="ak-text-base">Body Text - 16px Regular mit optimaler Lesbarkeit</p>
+                        <div class="ak-progress ak-progress-sm ak-mb-2">
+                            <div class="ak-progress-bar" style="width: 50%"></div>
                         </div>
-                        <div data-testid="typography-small">
-                            <p class="ak-text-sm ak-text-muted">Small Text - 14px Muted für Zusatzinformationen</p>
+                    </div>
+
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Schalter</h4>
+                        <label class="ak-switch">
+                            <input type="checkbox" class="ak-switch-input" checked>
+                            <span class="ak-switch-track">
+                                <span class="ak-switch-thumb"></span>
+                            </span>
+                            <span class="ak-switch-label">Benachrichtigungen</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Dropdown</h4>
+                        <div class="ak-dropdown">
+                            <button class="ak-btn ak-btn-secondary">
+                                Optionen <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i>
+                            </button>
+                            <div class="ak-dropdown-menu">
+                                <div class="ak-dropdown-header">Aktionen</div>
+                                <button class="ak-dropdown-item">Bearbeiten</button>
+                                <button class="ak-dropdown-item">Duplizieren</button>
+                                <div class="ak-dropdown-divider"></div>
+                                <button class="ak-dropdown-item ak-text-destructive">Löschen</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Spacing -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Abstände</h2>
-                    <div class="ak-flex ak-flex-wrap ak-gap-2">
-                        <div class="spacing-demo ak-p-1" data-testid="spacing-1">4px</div>
-                        <div class="spacing-demo ak-p-2" data-testid="spacing-2">8px</div>
-                        <div class="spacing-demo ak-p-3" data-testid="spacing-3">12px</div>
-                        <div class="spacing-demo ak-p-4" data-testid="spacing-4">16px</div>
-                        <div class="spacing-demo ak-p-6" data-testid="spacing-6">24px</div>
-                        <div class="spacing-demo ak-p-8" data-testid="spacing-8">32px</div>
+            <!-- Colors Section -->
+            <section id="colors" class="ak-section" data-testid="section-colors">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Farben</h2>
+                <div class="ak-grid ak-grid-4 ak-gap-4 demo-section">
+                    <div class="ak-text-center">
+                        <div class="color-demo" style="background: var(--ak-color-primary);" data-testid="color-primary">
+                            Primary
+                        </div>
+                        <p class="ak-text-sm ak-mt-2">hsl(217, 91%, 60%)</p>
+                    </div>
+                    <div class="ak-text-center">
+                        <div class="color-demo" style="background: var(--ak-color-secondary);" data-testid="color-secondary">
+                            Secondary
+                        </div>
+                        <p class="ak-text-sm ak-mt-2">hsl(217, 19%, 27%)</p>
+                    </div>
+                    <div class="ak-text-center">
+                        <div class="color-demo" style="background: var(--ak-color-accent);" data-testid="color-accent">
+                            Accent
+                        </div>
+                        <p class="ak-text-sm ak-mt-2">hsl(142, 76%, 36%)</p>
+                    </div>
+                    <div class="ak-text-center">
+                        <div class="color-demo" style="background: var(--ak-color-destructive);" data-testid="color-destructive">
+                            Destructive
+                        </div>
+                        <p class="ak-text-sm ak-mt-2">hsl(0, 84%, 60%)</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Components Section -->
-        <section id="components-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Komponenten</h1>
-
-                <!-- Buttons -->
+            <!-- Buttons Section -->
+            <section id="buttons" class="ak-section" data-testid="section-buttons">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Buttons</h2>
                 <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Buttons</h2>
                     <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-4">
                         <button class="ak-btn ak-btn-primary" data-testid="button-primary">Primary</button>
                         <button class="ak-btn ak-btn-secondary" data-testid="button-secondary">Secondary</button>
@@ -236,48 +360,49 @@
                         <button class="ak-btn ak-btn-primary" disabled data-testid="button-disabled">Disabled</button>
                     </div>
                 </div>
+            </section>
 
-                <!-- Cards -->
+            <!-- Loaders Section -->
+            <section id="loaders" class="ak-section" data-testid="section-loaders">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Loader & Animationen</h2>
                 <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Cards</h2>
-                    <div class="ak-grid ak-grid-2 ak-gap-6">
-                        <div class="ak-card" data-testid="card-basic">
-                            <div class="ak-card-header">
-                                <h3 class="ak-card-title">Card Titel</h3>
-                                <p class="ak-card-description">Eine Beschreibung der Card.</p>
-                            </div>
-                            <div class="ak-card-content">
-                                <p>Der Hauptinhalt der Card mit allen wichtigen Informationen.</p>
-                            </div>
-                            <div class="ak-card-footer">
-                                <button class="ak-btn ak-btn-primary">Aktion</button>
-                                <button class="ak-btn ak-btn-outline">Abbrechen</button>
-                            </div>
+                    <p class="ak-text-lg ak-mb-6">Ein umfassendes Framework für Ladeindikatoren inklusive Spinner, Punkten, Fortschrittsbalken und fortgeschrittenen Animationen.</p>
+                    
+                    <div class="ak-flex ak-flex-wrap ak-gap-8 ak-items-center ak-mb-8">
+                        <!-- Spinner -->
+                        <div class="ak-text-center">
+                            <div class="ak-loader-spinner ak-loader-primary ak-loader-md ak-mb-2"></div>
+                            <p class="ak-text-sm ak-text-muted">Spinner</p>
                         </div>
-
-                        <div class="ak-card" data-testid="card-with-image">
-                            <div class="ak-card-header">
-                                <h3 class="ak-card-title">Erweiterte Card</h3>
+                        
+                        <!-- Dots -->
+                        <div class="ak-text-center">
+                            <div class="ak-loader-dots ak-loader-primary ak-loader-md ak-mb-2">
+                                <span></span><span></span><span></span>
                             </div>
-                            <div class="ak-card-content">
-                                <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
-                                    <div class="ak-w-12 ak-h-12 ak-bg-primary ak-rounded-full ak-flex ak-items-center ak-justify-center">
-                                        <i data-lucide="user" class="ak-text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="ak-font-semibold">Benutzer Name</h4>
-                                        <p class="ak-text-sm ak-text-muted">user@example.com</p>
-                                    </div>
-                                </div>
-                                <p>Zusätzliche Informationen und Details über den Benutzer.</p>
+                            <p class="ak-text-sm ak-text-muted">Punkte</p>
+                        </div>
+                        
+                        <!-- Wave -->
+                        <div class="ak-text-center">
+                            <div class="ak-loader-wave ak-loader-primary ak-mb-2">
+                                <span></span><span></span><span></span><span></span><span></span>
                             </div>
+                            <p class="ak-text-sm ak-text-muted">Welle</p>
                         </div>
                     </div>
+                    
+                    <a href="loaders.html" class="ak-btn ak-btn-primary">
+                        <i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Alle Loader & Beispiele ansehen
+                    </a>
                 </div>
+            </section>
 
-                <!-- Forms -->
+            <!-- Forms Section -->
+            <section id="forms" class="ak-section" data-testid="section-forms">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Formulare</h2>
                 <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Formulare</h2>
                     <form class="ak-form ak-space-y-4" data-testid="form-example">
                         <div class="ak-form-field">
                             <label class="ak-form-label" for="demo-name">Name</label>
@@ -339,54 +464,51 @@
                         </div>
                     </form>
                 </div>
+            </section>
 
-                <!-- Loaders -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Loader & Animationen</h2>
-                    <p class="ak-text-lg ak-mb-6">Ein umfassendes Framework für Ladeindikatoren inklusive Spinner, Punkten, Fortschrittsbalken und fortgeschrittenen Animationen.</p>
-                    
-                    <div class="ak-flex ak-flex-wrap ak-gap-8 ak-items-center ak-mb-8">
-                        <!-- Spinner -->
-                        <div class="ak-text-center">
-                            <div class="ak-loader-spinner ak-loader-primary ak-loader-md ak-mb-2"></div>
-                            <p class="ak-text-sm ak-text-muted">Spinner</p>
+            <!-- Cards Section -->
+            <section id="cards" class="ak-section" data-testid="section-cards">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Cards</h2>
+                <div class="ak-grid ak-grid-2 ak-gap-6 demo-section">
+                    <div class="ak-card" data-testid="card-basic">
+                        <div class="ak-card-header">
+                            <h3 class="ak-card-title">Card Titel</h3>
+                            <p class="ak-card-description">Eine Beschreibung der Card.</p>
                         </div>
-                        
-                        <!-- Dots -->
-                        <div class="ak-text-center">
-                            <div class="ak-loader-dots ak-loader-primary ak-loader-md ak-mb-2">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <p class="ak-text-sm ak-text-muted">Punkte</p>
+                        <div class="ak-card-content">
+                            <p>Der Hauptinhalt der Card mit allen wichtigen Informationen.</p>
                         </div>
-                        
-                        <!-- Wave -->
-                        <div class="ak-text-center">
-                            <div class="ak-loader-wave ak-loader-primary ak-mb-2">
-                                <span></span><span></span><span></span><span></span><span></span>
-                            </div>
-                            <p class="ak-text-sm ak-text-muted">Welle</p>
+                        <div class="ak-card-footer">
+                            <button class="ak-btn ak-btn-primary">Aktion</button>
+                            <button class="ak-btn ak-btn-outline">Abbrechen</button>
                         </div>
                     </div>
-                    
-                    <a href="loaders.html" class="ak-btn ak-btn-primary">
-                        <i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                        Alle Loader & Beispiele ansehen
-                    </a>
-                </div>
 
-                <!-- Modal Button -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Modal</h2>
-                    <button id="open-modal" class="ak-btn ak-btn-primary" data-testid="button-open-modal">
-                        <i data-lucide="external-link"></i>
-                        Modal öffnen
-                    </button>
+                    <div class="ak-card" data-testid="card-with-image">
+                        <div class="ak-card-header">
+                            <h3 class="ak-card-title">Erweiterte Card</h3>
+                        </div>
+                        <div class="ak-card-content">
+                            <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
+                                <div class="ak-w-12 ak-h-12 ak-bg-primary ak-rounded-full ak-flex ak-items-center ak-justify-center">
+                                    <i data-lucide="user" class="ak-text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="ak-font-semibold">Benutzer Name</h4>
+                                    <p class="ak-text-sm ak-text-muted">user@example.com</p>
+                                </div>
+                            </div>
+                            <p>Zusätzliche Informationen und Details über den Benutzer.</p>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <!-- Toast Button -->
+            <!-- Alerts Section -->
+            <section id="alerts" class="ak-section" data-testid="section-alerts">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Alerts & Toasts</h2>
                 <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Toast Nachrichten</h2>
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Toast Nachrichten</h3>
                     <div class="ak-flex ak-gap-4">
                         <button id="show-success-toast" class="ak-btn ak-btn-primary" data-testid="button-success-toast">
                             Erfolgsmeldung
@@ -396,13 +518,30 @@
                         </button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Extended Components Section -->
-        <section id="extended-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Erweiterte Komponenten</h1>
+            <!-- Modals Section -->
+            <section id="modals" class="ak-section" data-testid="section-modals">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Modals</h2>
+                <div class="demo-section">
+                    <button id="open-modal" class="ak-btn ak-btn-primary" data-testid="button-open-modal">
+                        <i data-lucide="external-link"></i>
+                        Modal öffnen
+                    </button>
+                </div>
+            </section>
+
+            <!-- Tables Section (Placeholder as original DE file didn't have one explicitly populated, but structure requires it) -->
+            <section id="tables" class="ak-section" data-testid="section-tables">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Tabellen</h2>
+                <div class="demo-section">
+                    <p>Tabellen-Beispiele folgen.</p>
+                </div>
+            </section>
+
+            <!-- Extended Components Section -->
+            <section id="extended" class="ak-section" data-testid="section-extended">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Erweiterte Komponenten</h2>
                 
                 <div class="ak-grid ak-grid-2 ak-gap-6 ak-mb-8">
                     <!-- Avatars -->
@@ -505,49 +644,25 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Utilities Section -->
-        <section id="utilities-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Utility Klassen</h1>
-
-                <!-- Spacing Utilities -->
+            <!-- Utilities Section -->
+            <section id="utilities" class="ak-section" data-testid="section-utilities">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Utility Klassen</h2>
                 <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Abstände</h2>
-                    <div class="ak-space-y-4">
-                        <div class="ak-p-4 ak-bg-muted ak-rounded" data-testid="utility-padding-4">
-                            .ak-p-4 - Padding 16px
-                        </div>
-                        <div class="ak-m-4 ak-p-2 ak-bg-accent ak-text-white ak-rounded" data-testid="utility-margin-4">
-                            .ak-m-4 - Margin 16px
-                        </div>
-                        <div class="ak-px-6 ak-py-3 ak-bg-primary ak-text-white ak-rounded" data-testid="utility-padding-xy">
-                            .ak-px-6 .ak-py-3 - Horizontal 24px, Vertikal 12px
-                        </div>
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Abstände</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2">
+                        <div class="spacing-demo ak-p-1" data-testid="spacing-1">4px</div>
+                        <div class="spacing-demo ak-p-2" data-testid="spacing-2">8px</div>
+                        <div class="spacing-demo ak-p-3" data-testid="spacing-3">12px</div>
+                        <div class="spacing-demo ak-p-4" data-testid="spacing-4">16px</div>
+                        <div class="spacing-demo ak-p-6" data-testid="spacing-6">24px</div>
+                        <div class="spacing-demo ak-p-8" data-testid="spacing-8">32px</div>
                     </div>
                 </div>
-
-                <!-- Text Utilities -->
+                
                 <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Text</h2>
-                    <div class="ak-space-y-4">
-                        <p class="ak-text-center ak-p-4 ak-bg-muted ak-rounded" data-testid="utility-text-center">
-                            .ak-text-center - Zentrierter Text
-                        </p>
-                        <p class="ak-text-muted ak-p-4 ak-bg-card ak-rounded" data-testid="utility-text-muted">
-                            .ak-text-muted - Gedämpfte Textfarbe für weniger wichtige Informationen
-                        </p>
-                        <p class="ak-truncate ak-p-4 ak-bg-muted ak-rounded" style="max-width: 200px;" data-testid="utility-text-truncate">
-                            .ak-truncate - Dieser sehr lange Text wird abgeschnitten wenn er zu lang wird
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Flex Utilities -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Flexbox</h2>
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Flexbox</h3>
                     <div class="ak-space-y-4">
                         <div class="ak-flex-center ak-p-4 ak-bg-muted ak-rounded ak-h-20" data-testid="utility-flex-center">
                             <span>.ak-flex-center - Zentriert horizontal und vertikal</span>
@@ -559,84 +674,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Examples Section -->
-        <section id="examples-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Code Beispiele</h1>
-
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">CSS Einbindung</h2>
-                    <div class="code-block">
-&lt;!-- In Ihrem HTML Head --&gt;
-&lt;link rel="stylesheet" href="dist/ak-design-system.css"&gt;
-
-&lt;!-- Theme-Klasse auf Body --&gt;
-&lt;body class="ak-theme-dark"&gt; &lt;!-- oder ak-theme-light --&gt;
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Button Beispiele</h2>
-                    <div class="code-block">
-&lt;!-- Primary Button --&gt;
-&lt;button class="ak-btn ak-btn-primary"&gt;
-  Primäre Aktion
-&lt;/button&gt;
-
-&lt;!-- Button mit Icon --&gt;
-&lt;button class="ak-btn ak-btn-outline"&gt;
-  &lt;i data-lucide="download"&gt;&lt;/i&gt;
-  Download
-&lt;/button&gt;
-
-&lt;!-- Button Größen --&gt;
-&lt;button class="ak-btn ak-btn-primary ak-btn-sm"&gt;Klein&lt;/button&gt;
-&lt;button class="ak-btn ak-btn-primary"&gt;Standard&lt;/button&gt;
-&lt;button class="ak-btn ak-btn-primary ak-btn-lg"&gt;Groß&lt;/button&gt;
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Card Beispiele</h2>
-                    <div class="code-block">
-&lt;div class="ak-card"&gt;
-  &lt;div class="ak-card-header"&gt;
-    &lt;h3 class="ak-card-title"&gt;Card Titel&lt;/h3&gt;
-    &lt;p class="ak-card-description"&gt;Beschreibung&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="ak-card-content"&gt;
-    &lt;p&gt;Hauptinhalt der Card&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="ak-card-footer"&gt;
-    &lt;button class="ak-btn ak-btn-primary"&gt;Aktion&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Grid System</h2>
-                    <div class="code-block">
-&lt;!-- Responsive Grid --&gt;
-&lt;div class="ak-grid ak-grid-4 ak-gap-6"&gt;
-  &lt;div class="ak-card"&gt;Element 1&lt;/div&gt;
-  &lt;div class="ak-card"&gt;Element 2&lt;/div&gt;
-  &lt;div class="ak-card"&gt;Element 3&lt;/div&gt;
-  &lt;div class="ak-card"&gt;Element 4&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Flexbox Layout --&gt;
-&lt;div class="ak-flex ak-flex-between ak-items-center"&gt;
-  &lt;h2&gt;Titel&lt;/h2&gt;
-  &lt;button class="ak-btn ak-btn-primary"&gt;Action&lt;/button&gt;
-&lt;/div&gt;
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <!-- Footer Navigation (Mobile) -->
@@ -645,13 +684,13 @@
             <i data-lucide="home"></i>
             <span>Home</span>
         </a>
-        <a href="#components" class="ak-footer-nav-item" data-section="components" data-testid="footer-nav-components">
+        <a href="#buttons" class="ak-footer-nav-item" data-section="buttons" data-testid="footer-nav-components">
             <i data-lucide="layout"></i>
             <span>Komponenten</span>
         </a>
-        <a href="#tokens" class="ak-footer-nav-item" data-section="tokens" data-testid="footer-nav-tokens">
+        <a href="#colors" class="ak-footer-nav-item" data-section="colors" data-testid="footer-nav-tokens">
             <i data-lucide="palette"></i>
-            <span>Tokens</span>
+            <span>Farben</span>
         </a>
         <a href="#utilities" class="ak-footer-nav-item" data-section="utilities" data-testid="footer-nav-utilities">
             <i data-lucide="wrench"></i>
@@ -707,18 +746,38 @@
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
 
-        let isDark = true;
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('ak-theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const initialTheme = savedTheme || 'dark'; // Default to dark as per body class
+
+        // Apply theme
+        if (initialTheme === 'light') {
+            body.classList.remove('ak-theme-dark');
+            body.classList.add('ak-theme-light');
+            themeIcon.setAttribute('name', 'moon');
+        } else {
+            body.classList.add('ak-theme-dark');
+            body.classList.remove('ak-theme-light');
+            themeIcon.setAttribute('name', 'sun');
+        }
 
         themeToggle.addEventListener('click', () => {
-            isDark = !isDark;
-            if (isDark) {
-                body.className = 'ak-theme-dark';
-                themeIcon.setAttribute('data-lucide', 'sun');
+            if (body.classList.contains('ak-theme-dark')) {
+                body.classList.remove('ak-theme-dark');
+                body.classList.add('ak-theme-light');
+                themeIcon.setAttribute('name', 'moon');
+                localStorage.setItem('ak-theme', 'light');
             } else {
-                body.className = 'ak-theme-light';
-                themeIcon.setAttribute('data-lucide', 'moon');
+                body.classList.remove('ak-theme-light');
+                body.classList.add('ak-theme-dark');
+                themeIcon.setAttribute('name', 'sun');
+                localStorage.setItem('ak-theme', 'dark');
             }
-            lucide.createIcons(); // Re-render icons
+            lucide.createIcons();
         });
 
         // Sidebar Toggle
@@ -737,18 +796,18 @@
         // Navigation
         const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
         const footerLinks = document.querySelectorAll('.ak-footer-nav-item');
-        const sections = document.querySelectorAll('.content-section');
+        const sections = document.querySelectorAll('.ak-section');
 
-        function showSection(sectionName) {
+        function showSection(sectionId) {
             // Hide all sections
             sections.forEach(section => {
-                section.style.display = 'none';
+                section.classList.remove('active');
             });
 
             // Show target section
-            const targetSection = document.getElementById(sectionName + '-section');
+            const targetSection = document.getElementById(sectionId);
             if (targetSection) {
-                targetSection.style.display = 'block';
+                targetSection.classList.add('active');
             }
 
             // Update active states
@@ -757,21 +816,24 @@
             });
 
             [...sidebarLinks, ...footerLinks].forEach(link => {
-                if (link.dataset.section === sectionName) {
+                if (link.getAttribute('data-section') === sectionId) {
                     link.classList.add('ak-active');
                 }
             });
 
             // Close sidebar on mobile
             sidebar.classList.remove('ak-sidebar-open');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
         }
 
         // Add click handlers to navigation links
         [...sidebarLinks, ...footerLinks].forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const section = link.dataset.section;
-                showSection(section);
+                const sectionId = link.getAttribute('data-section');
+                showSection(sectionId);
             });
         });
 
@@ -780,24 +842,30 @@
         const modal = modalOverlay.querySelector('.ak-modal');
         const openModalBtn = document.getElementById('open-modal');
         const closeModalBtn = document.getElementById('close-modal');
+        const modalCancelBtn = document.querySelector('[data-testid="button-modal-cancel"]');
+        const modalConfirmBtn = document.querySelector('[data-testid="button-modal-confirm"]');
 
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.add('ak-modal-open');
-            document.body.classList.add('ak-modal-open');
+        function openModal() {
             modalOverlay.classList.add('active');
-        });
+            document.body.style.overflow = 'hidden';
+        }
 
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('ak-modal-open');
-            document.body.classList.remove('ak-modal-open');
+        function closeModal() {
             modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        if (modalCancelBtn) modalCancelBtn.addEventListener('click', closeModal);
+        if (modalConfirmBtn) modalConfirmBtn.addEventListener('click', () => {
+            closeModal();
+            showToast('Aktion bestätigt', 'success');
         });
 
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
-                modal.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-                modalOverlay.classList.remove('active');
+                closeModal();
             }
         });
 
@@ -813,11 +881,11 @@
             toastMessage.textContent = message;
             
             if (type === 'success') {
-                toastIcon.setAttribute('data-lucide', 'check-circle');
-                toast.style.borderColor = 'var(--ak-accent)';
+                toastIcon.setAttribute('name', 'check-circle');
+                toast.style.borderColor = 'var(--ak-color-accent)';
             } else {
-                toastIcon.setAttribute('data-lucide', 'alert-circle');
-                toast.style.borderColor = 'var(--ak-destructive)';
+                toastIcon.setAttribute('name', 'alert-circle');
+                toast.style.borderColor = 'var(--ak-color-destructive)';
             }
 
             toast.classList.add('active');
@@ -829,15 +897,15 @@
             }, 3000);
         }
 
-        successToastBtn.addEventListener('click', () => {
+        if (successToastBtn) successToastBtn.addEventListener('click', () => {
             showToast('Erfolgreich! Die Aktion wurde ausgeführt.', 'success');
         });
 
-        errorToastBtn.addEventListener('click', () => {
+        if (errorToastBtn) errorToastBtn.addEventListener('click', () => {
             showToast('Fehler! Etwas ist schief gelaufen.', 'error');
         });
 
-        closeToastBtn.addEventListener('click', () => {
+        if (closeToastBtn) closeToastBtn.addEventListener('click', () => {
             toast.classList.remove('active');
         });
 
@@ -845,28 +913,35 @@
         const form = document.querySelector('.ak-form');
         const resetBtn = document.querySelector('[data-testid="button-reset"]');
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Formular erfolgreich übermittelt!', 'success');
-        });
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                showToast('Formular erfolgreich übermittelt!', 'success');
+            });
+        }
 
-        resetBtn.addEventListener('click', () => {
-            form.reset();
-            showToast('Formular zurückgesetzt.', 'success');
-        });
-
-        // Initialize Lucide icons
-        lucide.createIcons();
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                if (form) form.reset();
+                showToast('Formular zurückgesetzt.', 'success');
+            });
+        }
 
         // Close sidebar when clicking outside on mobile
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 768 && 
                 !sidebar.contains(e.target) && 
                 !openSidebarBtn.contains(e.target) && 
-                sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
+                sidebar.classList.contains('ak-sidebar-open')) {
+                sidebar.classList.remove('ak-sidebar-open');
             }
         });
+        
+        // Handle initial hash
+        if (window.location.hash) {
+            const sectionId = window.location.hash.substring(1);
+            showSection(sectionId);
+        }
     </script>
 </body>
 </html>

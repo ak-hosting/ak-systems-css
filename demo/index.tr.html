@@ -8,84 +8,26 @@
     
     <!-- AK Design System CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
-        /* Ek demo stil dosyaları */
-        .demo-section {
-            margin-bottom: var(--ak-space-8);
-            padding: var(--ak-space-6);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-lg);
-            background: var(--ak-card);
+        /* Minimal demo-specific styles - using Design System classes where possible */
+        .language-selector {
+            margin-left: var(--ak-space-4);
         }
         
-        .color-demo {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--ak-radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+        .language-selector a {
+            margin-right: var(--ak-space-2);
+            text-decoration: none;
+            color: var(--ak-color-text-muted);
+        }
+        
+        .language-selector a.ak-active {
+            color: var(--ak-color-accent);
             font-weight: var(--ak-font-weight-medium);
-            font-size: var(--ak-font-size-sm);
-        }
-        
-        .spacing-demo {
-            background: var(--ak-accent);
-            color: white;
-            display: inline-block;
-            margin: var(--ak-space-1);
-        }
-        
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: var(--ak-z-modal);
-        }
-        
-        .modal-overlay.active {
-            display: flex;
-        }
-        
-        .toast {
-            position: fixed;
-            top: var(--ak-space-4);
-            right: var(--ak-space-4);
-            background: var(--ak-card);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            box-shadow: var(--ak-shadow-lg);
-            z-index: var(--ak-z-toast);
-            display: none;
-            align-items: center;
-            gap: var(--ak-space-2);
-        }
-        
-        .toast.active {
-            display: flex;
-        }
-        
-        .code-block {
-            background: var(--ak-muted);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            font-family: var(--ak-font-mono);
-            font-size: var(--ak-font-size-sm);
-            overflow-x: auto;
-            white-space: pre;
         }
     </style>
 </head>
@@ -98,6 +40,11 @@
                     <i data-lucide="menu"></i>
                 </button>
                 <h1 class="ak-text-2xl ak-font-bold">AK Tasarım Sistemi</h1>
+                <div class="language-selector">
+                    <a href="index.html">EN</a>
+                    <a href="index.de.html">DE</a>
+                    <a href="index.tr.html" class="ak-active">TR</a>
+                </div>
             </div>
             <div class="ak-flex ak-items-center ak-gap-2">
                 <button id="theme-toggle" class="ak-btn ak-btn-ghost" data-testid="button-theme-toggle">
@@ -119,43 +66,73 @@
             <li>
                 <a href="#overview" class="ak-active" data-section="overview">
                     <i data-lucide="home"></i>
-                    Genel Bakış
+                    <span>Genel Bakış</span>
                 </a>
             </li>
             <li>
-                <a href="#tokens" data-section="tokens">
+                <a href="#typography" data-section="typography">
+                    <i data-lucide="type"></i>
+                    <span>Tipografi</span>
+                </a>
+            </li>
+            <li>
+                <a href="#colors" data-section="colors">
                     <i data-lucide="palette"></i>
-                    Tasarım Tokenları
+                    <span>Renkler</span>
                 </a>
             </li>
             <li>
-                <a href="#components" data-section="components">
-                    <i data-lucide="layout"></i>
-                    Bileşenler
-                </a>
-            </li>
-            <li>
-                <a href="#utilities" data-section="utilities">
-                    <i data-lucide="wrench"></i>
-                    Yardımcı Sınıflar
+                <a href="#buttons" data-section="buttons">
+                    <i data-lucide="mouse-pointer-click"></i>
+                    <span>Butonlar</span>
                 </a>
             </li>
             <li>
                 <a href="#loaders" data-section="loaders">
                     <i data-lucide="loader"></i>
-                    Yükleyiciler
+                    <span>Yükleyiciler</span>
+                </a>
+            </li>
+            <li>
+                <a href="#forms" data-section="forms">
+                    <i data-lucide="form-input"></i>
+                    <span>Formlar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#cards" data-section="cards">
+                    <i data-lucide="credit-card"></i>
+                    <span>Kartlar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#alerts" data-section="alerts">
+                    <i data-lucide="alert-circle"></i>
+                    <span>Uyarılar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#modals" data-section="modals">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Modallar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#tables" data-section="tables">
+                    <i data-lucide="table"></i>
+                    <span>Tablolar</span>
                 </a>
             </li>
             <li>
                 <a href="#extended" data-section="extended">
                     <i data-lucide="layout-grid"></i>
-                    Genişletilmiş
+                    <span>Genişletilmiş</span>
                 </a>
             </li>
             <li>
-                <a href="#examples" data-section="examples">
-                    <i data-lucide="code"></i>
-                    Kod Örnekleri
+                <a href="#utilities" data-section="utilities">
+                    <i data-lucide="wrench"></i>
+                    <span>Yardımcı Sınıflar</span>
                 </a>
             </li>
         </ul>
@@ -163,372 +140,512 @@
 
     <!-- Main Content -->
     <main class="ak-main">
-        <!-- Overview Section -->
-        <section id="overview-section" class="content-section">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-6">AK Tasarım Sistemi</h1>
-                <p class="ak-text-xl ak-text-muted ak-mb-8">
-                    <code>ak-</code> ön ekli sınıflar, duyarlı tasarım ve kapsamlı tema desteği sunan modern bir SCSS tabanlı tasarım sistemi.
-                </p>
-
-                <div class="ak-grid ak-grid-3 ak-gap-6 ak-mb-8">
+        <div class="ak-container">
+            <!-- Overview Section -->
+            <section id="overview" class="ak-section active" data-testid="section-overview">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">AK Tasarım Sistemi</h2>
+                <p class="ak-text-xl ak-mb-4">Hızlı prototipleme ve üretime hazır uygulamalar için hafif, modern bir CSS çatısı.</p>
+                
+                <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6 ak-mt-8">
                     <div class="ak-card">
                         <div class="ak-card-header">
-                            <i data-lucide="layers" class="ak-w-8 ak-h-8 ak-text-primary"></i>
-                            <h3 class="ak-card-title">Modüler</h3>
+                            <i data-lucide="zap" class="ak-text-accent"></i>
+                            <h3 class="ak-card-title">Hafif</h3>
                         </div>
                         <div class="ak-card-content">
-                            <p>En iyi performans için modern SCSS @use/@forward ile inşa edildi.</p>
+                            <p>Maksimum etki ile minimum boyut. Sadece 14KB (minified ve gzipped).</p>
                         </div>
                     </div>
-
+                    
                     <div class="ak-card">
                         <div class="ak-card-header">
-                            <i data-lucide="smartphone" class="ak-w-8 ak-h-8 ak-text-primary"></i>
+                            <i data-lucide="palette" class="ak-text-accent"></i>
+                            <h3 class="ak-card-title">Temalanabilir</h3>
+                        </div>
+                        <div class="ak-card-content">
+                            <p>Kolay özelleştirme için CSS değişkenleri ile oluşturuldu. Aydınlık ve karanlık modlar dahil.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-card">
+                        <div class="ak-card-header">
+                            <i data-lucide="smartphone" class="ak-text-accent"></i>
                             <h3 class="ak-card-title">Duyarlı</h3>
                         </div>
                         <div class="ak-card-content">
-                            <p>Esnek grid sistemi ve uyarlanabilir bileşenlerle mobil öncelikli tasarım.</p>
-                        </div>
-                    </div>
-
-                    <div class="ak-card">
-                        <div class="ak-card-header">
-                            <i data-lucide="moon" class="ak-w-8 ak-h-8 ak-text-primary"></i>
-                            <h3 class="ak-card-title">Tema</h3>
-                        </div>
-                        <div class="ak-card-content">
-                            <p>CSS özel değişkenleriyle Karanlık/Aydınlık tema desteği.</p>
+                            <p>Mobil öncelikli yaklaşım, arayüzünüzün tüm cihazlarda harika görünmesini sağlar.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="ak-flex ak-gap-4">
-                    <button class="ak-btn ak-btn-primary" data-testid="button-get-started">
-                        <i data-lucide="download"></i>
-                        Şimdi Başla
-                    </button>
-                    <button class="ak-btn ak-btn-outline" data-testid="button-view-docs">
-                        <i data-lucide="book"></i>
-                        Dokümantasyon
-                    </button>
+                
+                <div class="ak-mt-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Başlarken</h3>
+                    <div class="ak-code-block">
+&lt;link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css"&gt;</div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Design Tokens Section -->
-        <section id="tokens-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Tasarım Tokenları</h1>
+                <!-- Çeşitli Bileşenler -->
+                <div class="ak-card ak-p-6 ak-mt-6">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Çeşitli Bileşenler</h3>
+                    
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Rozetler</h4>
+                        <div class="ak-flex ak-gap-2 ak-flex-wrap">
+                            <span class="ak-badge ak-badge-default">Varsayılan</span>
+                            <span class="ak-badge ak-badge-secondary">İkincil</span>
+                            <span class="ak-badge ak-badge-outline">Anahat</span>
+                            <span class="ak-badge ak-badge-destructive">Yıkıcı</span>
+                            <span class="ak-badge ak-badge-success">Başarılı</span>
+                        </div>
+                    </div>
 
-                <!-- Colors -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Renkler</h2>
-                    <div class="ak-grid ak-grid-4 ak-gap-4">
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">İlerleme</h4>
+                        <div class="ak-progress ak-mb-2">
+                            <div class="ak-progress-bar" style="width: 75%"></div>
+                        </div>
+                        <div class="ak-progress ak-progress-sm ak-mb-2">
+                            <div class="ak-progress-bar" style="width: 50%"></div>
+                        </div>
+                    </div>
+
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Anahtar</h4>
+                        <label class="ak-switch">
+                            <input type="checkbox" class="ak-switch-input" checked>
+                            <span class="ak-switch-track">
+                                <span class="ak-switch-thumb"></span>
+                            </span>
+                            <span class="ak-switch-label">Bildirimler</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Açılır Menü</h4>
+                        <div class="ak-dropdown">
+                            <button class="ak-btn ak-btn-secondary">
+                                Seçenekler <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i>
+                            </button>
+                            <div class="ak-dropdown-menu">
+                                <div class="ak-dropdown-header">İşlemler</div>
+                                <button class="ak-dropdown-item">Düzenle</button>
+                                <button class="ak-dropdown-item">Çoğalt</button>
+                                <div class="ak-dropdown-divider"></div>
+                                <button class="ak-dropdown-item ak-text-destructive">Sil</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typography Section -->
+            <section id="typography" class="ak-section" data-testid="section-typography">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Tipografi</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h1 class="ak-text-4xl ak-font-bold ak-mb-4">Başlık 1</h1>
+                    <h2 class="ak-text-3xl ak-font-bold ak-mb-4">Başlık 2</h2>
+                    <h3 class="ak-text-2xl ak-font-bold ak-mb-4">Başlık 3</h3>
+                    <h4 class="ak-text-xl ak-font-semibold ak-mb-4">Başlık 4</h4>
+                    <h5 class="ak-text-lg ak-font-semibold ak-mb-4">Başlık 5</h5>
+                    <h6 class="ak-text-base ak-font-semibold ak-mb-4">Başlık 6</h6>
+                    
+                    <p class="ak-text-base ak-mb-4">Bu, <a href="#" class="ak-link">bir bağlantı</a> ve biraz metin içeren standart bir paragraftır.</p>
+                    <p class="ak-text-lg ak-mb-4">Bu, daha fazla dikkat çeken daha büyük bir paragraftır.</p>
+                    <p class="ak-text-sm ak-mb-4">Bu, daha az önemli bilgiler için daha küçük bir paragraftır.</p>
+                    
+                    <blockquote class="ak-blockquote ak-my-6">
+                        <p>Tasarım sadece nasıl göründüğü ve hissettirdiği değildir. Tasarım nasıl çalıştığıdır.</p>
+                        <footer>— Steve Jobs</footer>
+                    </blockquote>
+                    
+                    <div class="ak-mt-6">
+                        <code class="ak-code">Bu satır içi kod örneğidir</code>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colors Section -->
+            <section id="colors" class="ak-section" data-testid="section-colors">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Renkler</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Ana Renkler</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-6">
+                        <div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-primary);">Birincil</div>
+                            <p class="ak-text-center ak-text-sm ak-mt-2">--ak-primary</p>
+                        </div>
+                        <div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-accent);">Vurgu</div>
+                            <p class="ak-text-center ak-text-sm ak-mt-2">--ak-accent</p>
+                        </div>
+                        <div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-secondary);">İkincil</div>
+                            <p class="ak-text-center ak-text-sm ak-mt-2">--ak-secondary</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Durum Renkleri</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-6">
+                        <div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-success);">Başarılı</div>
+                            <p class="ak-text-center ak-text-sm ak-mt-2">--ak-success</p>
+                        </div>
+                        <div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-warning);">Uyarı</div>
+                            <p class="ak-text-center ak-text-sm ak-mt-2">--ak-warning</p>
+                        </div>
+                        <div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-destructive);">Tehlike</div>
+                            <p class="ak-text-center ak-text-sm ak-mt-2">--ak-danger</p>
+                        </div>
+                        <div>
+                            <div class="ak-w-20 ak-h-20 ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-medium ak-text-sm" style="background: var(--ak-color-primary);">Bilgi</div>
+                            <p class="ak-text-center ak-text-sm ak-mt-2">--ak-info</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Buttons Section -->
+            <section id="buttons" class="ak-section" data-testid="section-buttons">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Butonlar</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Buton Varyasyonları</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-mb-6">
+                        <button class="ak-btn">Varsayılan</button>
+                        <button class="ak-btn ak-btn-primary">Birincil</button>
+                        <button class="ak-btn ak-btn-accent">Vurgu</button>
+                        <button class="ak-btn ak-btn-secondary">İkincil</button>
+                        <button class="ak-btn ak-btn-ghost">Hayalet</button>
+                        <button class="ak-btn ak-btn-link">Bağlantı</button>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Buton Boyutları</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-items-center ak-mb-6">
+                        <button class="ak-btn ak-btn-sm">Küçük</button>
+                        <button class="ak-btn">Varsayılan</button>
+                        <button class="ak-btn ak-btn-lg">Büyük</button>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Buton Durumları</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-mb-6">
+                        <button class="ak-btn ak-btn-primary">Normal</button>
+                        <button class="ak-btn ak-btn-primary" disabled>Devre Dışı</button>
+                        <button class="ak-btn ak-btn-primary ak-loading">
+                            <span class="ak-loading-spinner"></span>
+                            Yükleniyor
+                        </button>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">İkonlu Buton</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2 ak-mb-6">
+                        <button class="ak-btn ak-btn-primary">
+                            <i data-lucide="save" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            Kaydet
+                        </button>
+                        <button class="ak-btn ak-btn-accent">
+                            <i data-lucide="send" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            Gönder
+                        </button>
+                        <button class="ak-btn ak-btn-secondary">
+                            <i data-lucide="trash-2" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            Sil
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loaders Section -->
+            <section id="loaders" class="ak-section" data-testid="section-loaders">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Yükleyiciler</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <p class="ak-text-lg ak-mb-6">İşaretçiler, noktalar, ilerleme çubukları ve gelişmiş animasyonlar dahil olmak üzere kapsamlı bir yükleme göstergeleri çerçevesi.</p>
+                    
+                    <div class="ak-flex ak-flex-wrap ak-gap-8 ak-items-center ak-mb-8">
+                        <!-- Spinner -->
                         <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-primary);" data-testid="color-primary">
-                                Birincil
-                            </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(217, 91%, 60%)</p>
+                            <div class="ak-loader-spinner ak-loader-primary ak-loader-md ak-mb-2"></div>
+                            <p class="ak-text-sm ak-text-muted">İşaretçi</p>
                         </div>
+                        
+                        <!-- Dots -->
                         <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-secondary);" data-testid="color-secondary">
-                                İkincil
+                            <div class="ak-loader-dots ak-loader-primary ak-loader-md ak-mb-2">
+                                <span></span><span></span><span></span>
                             </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(217, 19%, 27%)</p>
+                            <p class="ak-text-sm ak-text-muted">Noktalar</p>
                         </div>
+                        
+                        <!-- Wave -->
                         <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-accent);" data-testid="color-accent">
-                                Vurgu
+                            <div class="ak-loader-wave ak-loader-primary ak-mb-2">
+                                <span></span><span></span><span></span><span></span><span></span>
                             </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(142, 76%, 36%)</p>
-                        </div>
-                        <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-destructive);" data-testid="color-destructive">
-                                Tehlikeli
-                            </div>
-                            <p class="ak-text-sm ak-mt-2">hsl(0, 84%, 60%)</p>
+                            <p class="ak-text-sm ak-text-muted">Dalga</p>
                         </div>
                     </div>
+                    
+                    <a href="loaders.html" class="ak-btn ak-btn-primary">
+                        <i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Tüm Yükleyicileri ve Örnekleri Görüntüle
+                    </a>
                 </div>
+            </section>
 
-                <!-- Typography -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Tipografi</h2>
-                    <div class="ak-space-y-4">
-                        <div data-testid="typography-heading-1">
-                            <h1 class="ak-text-4xl ak-font-bold">Başlık 1 - 36px Kalın</h1>
+            <!-- Forms Section -->
+            <section id="forms" class="ak-section" data-testid="section-forms">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Formlar</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <form class="ak-form">
+                        <div class="ak-form-group">
+                            <label for="name" class="ak-form-label">Ad</label>
+                            <input type="text" id="name" class="ak-input" placeholder="Adınızı girin">
                         </div>
-                        <div data-testid="typography-heading-2">
-                            <h2 class="ak-text-3xl ak-font-semibold">Başlık 2 - 30px Yarı Kalın</h2>
+                        
+                        <div class="ak-form-group">
+                            <label for="email" class="ak-form-label">E-posta</label>
+                            <input type="email" id="email" class="ak-input" placeholder="E-posta adresinizi girin">
+                            <div class="ak-form-hint">E-posta adresinizi asla başkalarıyla paylaşmayacağız.</div>
                         </div>
-                        <div data-testid="typography-body">
-                            <p class="ak-text-base">Gövde Metni - 16px, yüksek okunabilirlik</p>
+                        
+                        <div class="ak-form-group">
+                            <label for="password" class="ak-form-label">Şifre</label>
+                            <input type="password" id="password" class="ak-input" placeholder="Şifrenizi girin">
                         </div>
-                        <div data-testid="typography-small">
-                            <p class="ak-text-sm ak-text-muted">Küçük Metin - 14px, ek bilgiler için soluk renk</p>
+                        
+                        <div class="ak-form-group">
+                            <label for="message" class="ak-form-label">Mesaj</label>
+                            <textarea id="message" class="ak-textarea" rows="3" placeholder="Mesajınızı girin"></textarea>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Spacing -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Boşluklar</h2>
-                    <div class="ak-flex ak-flex-wrap ak-gap-2">
-                        <div class="spacing-demo ak-p-1" data-testid="spacing-1">4px</div>
-                        <div class="spacing-demo ak-p-2" data-testid="spacing-2">8px</div>
-                        <div class="spacing-demo ak-p-3" data-testid="spacing-3">12px</div>
-                        <div class="spacing-demo ak-p-4" data-testid="spacing-4">16px</div>
-                        <div class="spacing-demo ak-p-6" data-testid="spacing-6">24px</div>
-                        <div class="spacing-demo ak-p-8" data-testid="spacing-8">32px</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Components Section -->
-        <section id="components-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Bileşenler</h1>
-
-                <!-- Buttons -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Butonlar</h2>
-                    <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-4">
-                        <button class="ak-btn ak-btn-primary" data-testid="button-primary">Birincil</button>
-                        <button class="ak-btn ak-btn-secondary" data-testid="button-secondary">İkincil</button>
-                        <button class="ak-btn ak-btn-outline" data-testid="button-outline">Çerçeve</button>
-                        <button class="ak-btn ak-btn-ghost" data-testid="button-ghost">Görünmez</button>
-                        <button class="ak-btn ak-btn-destructive" data-testid="button-destructive">Tehlikeli</button>
-                    </div>
-                    <div class="ak-flex ak-flex-wrap ak-gap-4">
-                        <button class="ak-btn ak-btn-primary ak-btn-sm" data-testid="button-small">Küçük</button>
-                        <button class="ak-btn ak-btn-primary" data-testid="button-default">Standart</button>
-                        <button class="ak-btn ak-btn-primary ak-btn-lg" data-testid="button-large">Büyük</button>
-                        <button class="ak-btn ak-btn-primary" disabled data-testid="button-disabled">Devre Dışı</button>
-                    </div>
-                </div>
-
-                <!-- Cards -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Kartlar</h2>
-                    <div class="ak-grid ak-grid-2 ak-gap-6">
-                        <div class="ak-card" data-testid="card-basic">
-                            <div class="ak-card-header">
-                                <h3 class="ak-card-title">Kart Başlığı</h3>
-                                <p class="ak-card-description">Kart için kısa bir açıklama.</p>
-                            </div>
-                            <div class="ak-card-content">
-                                <p>Kartın ana içeriği ve ilgili bilgiler.</p>
-                            </div>
-                            <div class="ak-card-footer">
-                                <button class="ak-btn ak-btn-primary">Aksiyon</button>
-                                <button class="ak-btn ak-btn-outline">İptal</button>
-                            </div>
-                        </div>
-
-                        <div class="ak-card" data-testid="card-with-image">
-                            <div class="ak-card-header">
-                                <h3 class="ak-card-title">Gelişmiş Kart</h3>
-                            </div>
-                            <div class="ak-card-content">
-                                <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
-                                    <div class="ak-w-12 ak-h-12 ak-bg-primary ak-rounded-full ak-flex ak-items-center ak-justify-center">
-                                        <i data-lucide="user" class="ak-text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="ak-font-semibold">Kullanıcı Adı</h4>
-                                        <p class="ak-text-sm ak-text-muted">user@example.com</p>
-                                    </div>
-                                </div>
-                                <p>Kullanıcı hakkında ek bilgiler ve detaylar.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Forms -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Formlar</h2>
-                    <form class="ak-form ak-space-y-4" data-testid="form-example">
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-name">Ad</label>
-                            <input 
-                                type="text" 
-                                id="demo-name" 
-                                class="ak-input" 
-                                placeholder="Adınız"
-                                data-testid="input-name"
-                            >
-                        </div>
-
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-email">E‑posta</label>
-                            <input 
-                                type="email" 
-                                id="demo-email" 
-                                class="ak-input" 
-                                placeholder="eposta@ornek.com"
-                                data-testid="input-email"
-                            >
-                        </div>
-
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-select">Kategori</label>
-                            <select id="demo-select" class="ak-select" data-testid="select-category">
-                                <option value="">Bir kategori seçin</option>
-                                <option value="general">Genel</option>
-                                <option value="support">Destek</option>
-                                <option value="feedback">Geri Bildirim</option>
+                        
+                        <div class="ak-form-group">
+                            <label for="country" class="ak-form-label">Ülke</label>
+                            <select id="country" class="ak-select">
+                                <option value="">Bir ülke seçin</option>
+                                <option value="tr">Türkiye</option>
+                                <option value="us">Amerika Birleşik Devletleri</option>
+                                <option value="de">Almanya</option>
+                                <option value="uk">Birleşik Krallık</option>
                             </select>
                         </div>
-
-                        <div class="ak-form-field">
-                            <label class="ak-form-label" for="demo-textarea">Mesaj</label>
-                            <textarea 
-                                id="demo-textarea" 
-                                class="ak-textarea" 
-                                rows="4" 
-                                placeholder="Mesajınız..."
-                                data-testid="textarea-message"
-                            ></textarea>
+                        
+                        <div class="ak-form-group">
+                            <div class="ak-checkbox">
+                                <input type="checkbox" id="terms" class="ak-checkbox-input">
+                                <label for="terms" class="ak-checkbox-label">Şartlar ve koşulları kabul ediyorum</label>
+                            </div>
                         </div>
-
-                        <div class="ak-checkbox-group">
-                            <input type="checkbox" id="demo-checkbox" class="ak-checkbox" data-testid="checkbox-agree">
-                            <label for="demo-checkbox" class="ak-checkbox-label">
-                                Kullanım şartlarını kabul ediyorum
+                        
+                        <div class="ak-form-group">
+                            <label class="ak-form-label">Geçiş Anahtarı</label>
+                            <label class="ak-switch">
+                                <input type="checkbox" class="ak-switch-input">
+                                <span class="ak-switch-slider"></span>
                             </label>
                         </div>
-
-                        <div class="ak-flex ak-gap-4">
-                            <button type="submit" class="ak-btn ak-btn-primary" data-testid="button-submit">
-                                Gönder
-                            </button>
-                            <button type="button" class="ak-btn ak-btn-outline" data-testid="button-reset">
-                                Sıfırla
-                            </button>
-                        </div>
+                        
+                        <button type="submit" class="ak-btn ak-btn-primary">Gönder</button>
                     </form>
                 </div>
+            </section>
 
-                <!-- Loaders -->
-        <div class="demo-section">
-            <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Yükleyiciler & Animasyonlar</h2>
-            <p class="ak-text-lg ak-mb-6">İşaretçiler, noktalar, ilerleme çubukları ve gelişmiş animasyonlar dahil olmak üzere kapsamlı bir yükleme göstergeleri çerçevesi.</p>
-            
-            <div class="ak-flex ak-flex-wrap ak-gap-8 ak-items-center ak-mb-8">
-                <!-- Spinner -->
-                <div class="ak-text-center">
-                    <div class="ak-loader-spinner ak-loader-primary ak-loader-md ak-mb-2"></div>
-                    <p class="ak-text-sm ak-text-muted">İşaretçi</p>
-                </div>
+            <!-- Cards Section -->
+            <section id="cards" class="ak-section" data-testid="section-cards">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Kartlar</h2>
                 
-                <!-- Dots -->
-                <div class="ak-text-center">
-                    <div class="ak-loader-dots ak-loader-primary ak-loader-md ak-mb-2">
-                        <span></span><span></span><span></span>
+                <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6">
+                    <div class="ak-card">
+                        <div class="ak-card-header">
+                            <h3 class="ak-card-title">Temel Kart</h3>
+                        </div>
+                        <div class="ak-card-content">
+                            <p>Bu, başlık ve içeriğe sahip temel bir karttır.</p>
+                        </div>
                     </div>
-                    <p class="ak-text-sm ak-text-muted">Noktalar</p>
+                    
+                    <div class="ak-card">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%23999999'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='32' fill='%23000000'>AK Demo</text></svg>" alt="Kart resmi" class="ak-card-img">
+                        <div class="ak-card-content">
+                            <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Resimli Kart</h3>
+                            <p>Bu kart üst kısımda bir resim içerir.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-card">
+                        <div class="ak-card-header">
+                            <h3 class="ak-card-title">Alt Bilgili Kart</h3>
+                        </div>
+                        <div class="ak-card-content">
+                            <p>Bu kart, eylemler içeren bir alt bilgiye sahiptir.</p>
+                        </div>
+                        <div class="ak-card-footer">
+                            <button class="ak-btn ak-btn-sm">İptal</button>
+                            <button class="ak-btn ak-btn-primary ak-btn-sm">Kaydet</button>
+                        </div>
+                    </div>
                 </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section id="alerts" class="ak-section" data-testid="section-alerts">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Uyarılar</h2>
                 
-                <!-- Wave -->
-                <div class="ak-text-center">
-                    <div class="ak-loader-wave ak-loader-primary ak-mb-2">
-                        <span></span><span></span><span></span><span></span><span></span>
-                    </div>
-                    <p class="ak-text-sm ak-text-muted">Dalga</p>
-                </div>
-            </div>
-            
-            <a href="loaders.html" class="ak-btn ak-btn-primary">
-                <i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                Tüm Yükleyicileri & Örnekleri Görüntüle
-            </a>
-        </div>
-
-        <!-- Modal Button -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Modal</h2>
-                    <button id="open-modal" class="ak-btn ak-btn-primary" data-testid="button-open-modal">
-                        <i data-lucide="external-link"></i>
-                        Modal Aç
-                    </button>
-                </div>
-
-                <!-- Toast Button -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Bildirimler</h2>
-                    <div class="ak-flex ak-gap-4">
-                        <button id="show-success-toast" class="ak-btn ak-btn-primary" data-testid="button-success-toast">
-                            Başarılı
-                        </button>
-                        <button id="show-error-toast" class="ak-btn ak-btn-destructive" data-testid="button-error-toast">
-                            Hata
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Utilities Section -->
-        <section id="utilities-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Yardımcı Sınıflar</h1>
-
-                <!-- Spacing Utilities -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Boşluklar</h2>
-                    <div class="ak-space-y-4">
-                        <div class="ak-p-4 ak-bg-muted ak-rounded" data-testid="utility-padding-4">
-                            .ak-p-4 - 16px iç boşluk
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <div class="ak-alert ak-mb-4">
+                        <i data-lucide="info" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Bilgi</h4>
+                            <p class="ak-alert-description">Bu bir bilgilendirme mesajıdır.</p>
                         </div>
-                        <div class="ak-m-4 ak-p-2 ak-bg-accent ak-text-white ak-rounded" data-testid="utility-margin-4">
-                            .ak-m-4 - 16px dış boşluk
+                    </div>
+                    
+                    <div class="ak-alert ak-alert-success ak-mb-4">
+                        <i data-lucide="check-circle" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Başarılı</h4>
+                            <p class="ak-alert-description">İşleminiz başarıyla tamamlandı.</p>
                         </div>
-                        <div class="ak-px-6 ak-py-3 ak-bg-primary ak-text-white ak-rounded" data-testid="utility-padding-xy">
-                            .ak-px-6 .ak-py-3 - Yatay 24px, Dikey 12px
+                    </div>
+                    
+                    <div class="ak-alert ak-alert-warning ak-mb-4">
+                        <i data-lucide="alert-triangle" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Uyarı</h4>
+                            <p class="ak-alert-description">Lütfen bu işlemde dikkatli olun.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-alert ak-alert-danger ak-mb-4">
+                        <i data-lucide="alert-circle" class="ak-alert-icon"></i>
+                        <div>
+                            <h4 class="ak-alert-title">Hata</h4>
+                            <p class="ak-alert-description">Bir şeyler ters gitti. Lütfen tekrar deneyin.</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Text Utilities -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Metin</h2>
-                    <div class="ak-space-y-4">
-                        <p class="ak-text-center ak-p-4 ak-bg-muted ak-rounded" data-testid="utility-text-center">
-                            .ak-text-center - Ortalanmış metin
-                        </p>
-                        <p class="ak-text-muted ak-p-4 ak-bg-card ak-rounded" data-testid="utility-text-muted">
-                            .ak-text-muted - Daha az önemli bilgiler için soluk metin rengi
-                        </p>
-                        <p class="ak-truncate ak-p-4 ak-bg-muted ak-rounded" style="max-width: 200px;" data-testid="utility-text-truncate">
-                            .ak-truncate - Çok uzun metin fazla uzun olduğunda kısaltılır
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Flex Utilities -->
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Flexbox</h2>
-                    <div class="ak-space-y-4">
-                        <div class="ak-flex-center ak-p-4 ak-bg-muted ak-rounded ak-h-20" data-testid="utility-flex-center">
-                            <span>.ak-flex-center - Yatay ve dikey ortalanmış</span>
-                        </div>
-                        <div class="ak-flex-between ak-p-4 ak-bg-primary ak-text-white ak-rounded" data-testid="utility-flex-between">
-                            <span>Sol</span>
-                            <span>.ak-flex-between</span>
-                            <span>Sağ</span>
+            <!-- Modals Section -->
+            <section id="modals" class="ak-section" data-testid="section-modals">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Modallar</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <button id="open-modal" class="ak-btn ak-btn-primary">Modalı Aç</button>
+                    
+                    <div id="modal-overlay" class="ak-modal" data-testid="modal-overlay">
+                        <div class="ak-modal-content">
+                            <div class="ak-modal-header">
+                                <h3 class="ak-modal-title">Modal Başlığı</h3>
+                                <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm">
+                                    <i data-lucide="x"></i>
+                                </button>
+                            </div>
+                            <div class="ak-modal-body">
+                                <p>Bu modal içeriğidir. Herhangi bir HTML buraya gelebilir.</p>
+                            </div>
+                            <div class="ak-modal-footer">
+                                <button id="cancel-modal" class="ak-btn">İptal</button>
+                                <button class="ak-btn ak-btn-primary">Onayla</button>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="ak-mt-6">
+                        <button id="show-toast" class="ak-btn ak-btn-secondary">Bildirim Göster</button>
+                        
+                        <div class="ak-toast" id="toast">
+                            <i data-lucide="check-circle" class="ak-text-success"></i>
+                            <div>
+                                <h4 class="ak-text-sm ak-font-semibold">Başarılı</h4>
+                                <p class="ak-text-xs">İşleminiz başarıyla tamamlandı.</p>
+                            </div>
+                            <button id="close-toast" class="ak-btn ak-btn-ghost ak-btn-sm">
+                                <i data-lucide="x"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Extended Components Section -->
-        <section id="extended-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Gelişmiş Bileşenler</h1>
+            <!-- Tables Section -->
+            <section id="tables" class="ak-section" data-testid="section-tables">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Tablolar</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <div class="ak-table-container">
+                        <table class="ak-table">
+                            <thead>
+                                <tr>
+                                    <th>İsim</th>
+                                    <th>E-posta</th>
+                                    <th>Rol</th>
+                                    <th>Durum</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ahmet Yılmaz</td>
+                                    <td>ahmet@ornek.com</td>
+                                    <td>Yönetici</td>
+                                    <td><span class="ak-badge ak-badge-success">Aktif</span></td>
+                                    <td>
+                                        <div class="ak-flex ak-gap-2">
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="edit" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="trash-2" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ayşe Demir</td>
+                                    <td>ayse@ornek.com</td>
+                                    <td>Kullanıcı</td>
+                                    <td><span class="ak-badge ak-badge-warning">Beklemede</span></td>
+                                    <td>
+                                        <div class="ak-flex ak-gap-2">
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="edit" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="trash-2" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mehmet Kaya</td>
+                                    <td>mehmet@ornek.com</td>
+                                    <td>Kullanıcı</td>
+                                    <td><span class="ak-badge ak-badge-danger">Pasif</span></td>
+                                    <td>
+                                        <div class="ak-flex ak-gap-2">
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="edit" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                            <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                                <i data-lucide="trash-2" class="ak-w-4 ak-h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Extended Components Section -->
+            <section id="extended" class="ak-section" data-testid="section-extended">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Genişletilmiş Bileşenler</h2>
                 
                 <div class="ak-grid ak-grid-2 ak-gap-6 ak-mb-8">
                     <!-- Avatars -->
@@ -536,53 +653,68 @@
                         <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Avatarlar</h3>
                         <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
                             <div class="ak-avatar ak-avatar-sm">
-                                <span class="ak-avatar-fallback">KL</span>
+                                <span class="ak-avatar-fallback">K</span>
                             </div>
                             <div class="ak-avatar">
-                                <span class="ak-avatar-fallback">NM</span>
+                                <span class="ak-avatar-fallback">O</span>
+                                <div class="ak-avatar-status ak-avatar-status-online"></div>
                             </div>
                             <div class="ak-avatar ak-avatar-lg">
-                                <span class="ak-avatar-fallback">BY</span>
+                                <span class="ak-avatar-fallback">B</span>
+                                <div class="ak-avatar-status ak-avatar-status-busy"></div>
                             </div>
                         </div>
-                        <div class="ak-flex ak-items-center ak-gap-4">
-                             <div class="ak-avatar">
-                                <img src="https://i.pravatar.cc/150?u=1" alt="Kullanıcı" />
+                        <div class="ak-avatar-group">
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">A</span>
                             </div>
-                            <div class="ak-avatar ak-avatar-lg">
-                                <img src="https://i.pravatar.cc/150?u=2" alt="Kullanıcı" />
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">B</span>
+                            </div>
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">C</span>
+                            </div>
+                            <div class="ak-avatar ak-bg-subtle">
+                                <span class="ak-avatar-fallback">+3</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Breadcrumbs & Pagination -->
                     <div class="ak-card ak-p-6">
-                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Navigasyon</h3>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Gezinme</h3>
                         
-                        <h4 class="ak-text-sm ak-font-medium ak-text-muted ak-mb-2">Ekmek Kırıntıları (Breadcrumbs)</h4>
-                        <ol class="ak-breadcrumb ak-mb-6">
-                            <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Başlangıç</a></li>
-                            <li class="ak-breadcrumb-separator"><i data-lucide="chevron-right"></i></li>
-                            <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Bileşenler</a></li>
-                            <li class="ak-breadcrumb-separator"><i data-lucide="chevron-right"></i></li>
-                            <li class="ak-breadcrumb-item ak-active">Gelişmiş</li>
-                        </ol>
+                        <div class="ak-mb-6">
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Ekmek Kırıntıları (Breadcrumbs)</h4>
+                            <nav aria-label="Breadcrumb">
+                                <ol class="ak-breadcrumb">
+                                    <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Ana Sayfa</a></li>
+                                    <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Kütüphane</a></li>
+                                    <li class="ak-breadcrumb-item ak-active" aria-current="page">Veri</li>
+                                </ol>
+                            </nav>
+                        </div>
 
-                        <h4 class="ak-text-sm ak-font-medium ak-text-muted ak-mb-2">Sayfalama (Pagination)</h4>
-                        <ul class="ak-pagination">
-                            <li class="ak-page-item ak-disabled"><a class="ak-page-link" href="#"><i data-lucide="chevron-left"></i></a></li>
-                            <li class="ak-page-item ak-active"><a class="ak-page-link" href="#">1</a></li>
-                            <li class="ak-page-item"><a class="ak-page-link" href="#">2</a></li>
-                            <li class="ak-page-item"><a class="ak-page-link" href="#">3</a></li>
-                            <li class="ak-page-item"><a class="ak-page-link" href="#"><i data-lucide="chevron-right"></i></a></li>
-                        </ul>
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Sayfalama</h4>
+                            <ul class="ak-pagination">
+                                <li class="ak-page-item ak-disabled">
+                                    <a class="ak-page-link" href="#"><i data-lucide="chevron-left" class="ak-w-4 ak-h-4"></i></a>
+                                </li>
+                                <li class="ak-page-item ak-active"><a class="ak-page-link" href="#">1</a></li>
+                                <li class="ak-page-item"><a class="ak-page-link" href="#">2</a></li>
+                                <li class="ak-page-item"><a class="ak-page-link" href="#">3</a></li>
+                                <li class="ak-page-item">
+                                    <a class="ak-page-link" href="#"><i data-lucide="chevron-right" class="ak-w-4 ak-h-4"></i></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="ak-grid ak-grid-2 ak-gap-6">
-                    <!-- Tooltips -->
+                    <!-- Tooltips & Accordion -->
                     <div class="ak-card ak-p-6">
-                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">İpuçları (Tooltips)</h3>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Etkileşimli</h3>
+                        
                         <div class="ak-flex ak-gap-4 ak-mb-8">
                             <div class="ak-tooltip-trigger ak-btn">
                                 Üst İpucu
@@ -593,341 +725,225 @@
                                 <div class="ak-tooltip-content">Daha Fazla Bilgi</div>
                             </div>
                         </div>
-                        <div class="ak-flex ak-gap-4">
-                            <div class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary">
-                                Alt İpucu
-                                <div class="ak-tooltip-content">Alt Bilgi</div>
-                            </div>
-                            <div class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost">
-                                Sol İpucu
-                                <div class="ak-tooltip-content">Sol Detay</div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Accordion -->
-                    <div class="ak-card ak-p-6">
-                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Akordiyon</h3>
                         <div class="ak-accordion">
                             <details class="ak-accordion-item" open>
                                 <summary class="ak-accordion-summary">
-                                    Bölüm 1: Giriş
-                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon"></i>
+                                    Akordeon Öğesi 1
+                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
                                 </summary>
                                 <div class="ak-accordion-content">
-                                    Bu akordiyon bileşeninin ilk bölümüdür. Varsayılan olarak açık gelebilir.
+                                    İlk akordeon öğesi için içerik. Genişletilip daraltılabilir.
                                 </div>
                             </details>
                             <details class="ak-accordion-item">
                                 <summary class="ak-accordion-summary">
-                                    Bölüm 2: Detaylar
-                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon"></i>
+                                    Akordeon Öğesi 2
+                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
                                 </summary>
                                 <div class="ak-accordion-content">
-                                    Burada daha fazla detaylı bilgi yer alır. Kullanıcı tıkladığında açılır.
-                                </div>
-                            </details>
-                            <details class="ak-accordion-item">
-                                <summary class="ak-accordion-summary">
-                                    Bölüm 3: Sonuç
-                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon"></i>
-                                </summary>
-                                <div class="ak-accordion-content">
-                                    Sonuç bölümü ve kapanış bilgileri.
+                                    İkinci akordeon öğesi için içerik.
                                 </div>
                             </details>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Examples Section -->
-        <section id="examples-section" class="content-section" style="display: none;">
-            <div class="ak-container">
-                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Kod Örnekleri</h1>
-
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">CSS Dahil Etme</h2>
-                    <div class="code-block">
-&lt;!-- HTML &lt;head&gt; içinde --&gt;
-&lt;link rel="stylesheet" href="dist/ak-design-system.css"&gt;
-
-&lt;!-- Tema sınıfı body üzerinde --&gt;
-&lt;body class="ak-theme-dark"&gt; &lt;!-- veya ak-theme-light --&gt;
+            <!-- Utilities Section -->
+            <section id="utilities" class="ak-section" data-testid="section-utilities">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Yardımcı Sınıflar</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Boşluklar</h3>
+                    <div class="ak-mb-6">
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-1">p-1</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-2">p-2</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-3">p-3</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-4">p-4</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-6">p-6</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-8">p-8</div>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Flex</h3>
+                    <div class="ak-mb-6">
+                        <div class="ak-flex ak-gap-2 ak-mb-2">
+                            <div class="ak-bg-primary ak-p-2 ak-text-white">Öğe 1</div>
+                            <div class="ak-bg-primary ak-p-2 ak-text-white">Öğe 2</div>
+                            <div class="ak-bg-primary ak-p-2 ak-text-white">Öğe 3</div>
+                        </div>
+                        
+                        <div class="ak-flex ak-justify-between ak-mb-2">
+                            <div class="ak-bg-accent ak-p-2 ak-text-white">Sol</div>
+                            <div class="ak-bg-accent ak-p-2 ak-text-white">Orta</div>
+                            <div class="ak-bg-accent ak-p-2 ak-text-white">Sağ</div>
+                        </div>
+                        
+                        <div class="ak-flex ak-items-center ak-gap-2">
+                            <i data-lucide="user" class="ak-text-primary"></i>
+                            <span>İkon ile hizalı</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Grid</h3>
+                    <div class="ak-grid ak-grid-cols-1 ak-sm:ak-grid-cols-2 ak-md:ak-grid-cols-3 ak-gap-4 ak-mb-6">
+                        <div class="ak-bg-muted ak-p-4">Grid Öğe 1</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Öğe 2</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Öğe 3</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Öğe 4</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Öğe 5</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Öğe 6</div>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Metin Hizalama</h3>
+                    <div class="ak-mb-6">
+                        <p class="ak-text-left ak-mb-2">Sola hizalı metin</p>
+                        <p class="ak-text-center ak-mb-2">Ortalanmış metin</p>
+                        <p class="ak-text-right ak-mb-2">Sağa hizalı metin</p>
                     </div>
                 </div>
-
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Buton Örnekleri</h2>
-                    <div class="code-block">
-&lt;!-- Birincil buton --&gt;
-&lt;button class="ak-btn ak-btn-primary"&gt;
-  Birincil aksiyon
-&lt;/button&gt;
-
-&lt;!-- İkonlu buton --&gt;
-&lt;button class="ak-btn ak-btn-outline"&gt;
-  &lt;i data-lucide="download"&gt;&lt;/i&gt;
-  İndir
-&lt;/button&gt;
-
-&lt;!-- Buton boyutları --&gt;
-&lt;button class="ak-btn ak-btn-primary ak-btn-sm"&gt;Küçük&lt;/button&gt;
-&lt;button class="ak-btn ak-btn-primary"&gt;Standart&lt;/button&gt;
-&lt;button class="ak-btn ak-btn-primary ak-btn-lg"&gt;Büyük&lt;/button&gt;
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Grid Sistemi</h2>
-                    <div class="code-block">
-&lt;!-- Duyarlı grid --&gt;
-&lt;div class="ak-grid ak-grid-4 ak-gap-6"&gt;
-  &lt;div class="ak-card"&gt;Öğe 1&lt;/div&gt;
-  &lt;div class="ak-card"&gt;Öğe 2&lt;/div&gt;
-  &lt;div class="ak-card"&gt;Öğe 3&lt;/div&gt;
-  &lt;div class="ak-card"&gt;Öğe 4&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Flexbox yerleşimi --&gt;
-&lt;div class="ak-flex ak-flex-between ak-items-center"&gt;
-  &lt;h2&gt;Başlık&lt;/h2&gt;
-  &lt;button class="ak-btn ak-btn-primary"&gt;Aksiyon&lt;/button&gt;
-&lt;/div&gt;
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
-    <!-- Footer Navigation (Mobile) -->
-    <footer class="ak-footer-nav ak-md:ak-hidden">
-        <a href="#overview" class="ak-footer-nav-item" data-section="overview" data-testid="footer-nav-home">
-            <i data-lucide="home"></i>
-            <span>Ana Sayfa</span>
-        </a>
-        <a href="#components" class="ak-footer-nav-item" data-section="components" data-testid="footer-nav-components">
-            <i data-lucide="layout"></i>
-            <span>Bileşenler</span>
-        </a>
-        <a href="#tokens" class="ak-footer-nav-item" data-section="tokens" data-testid="footer-nav-tokens">
-            <i data-lucide="palette"></i>
-            <span>Tokenlar</span>
-        </a>
-        <a href="#utilities" class="ak-footer-nav-item" data-section="utilities" data-testid="footer-nav-utilities">
-            <i data-lucide="wrench"></i>
-            <span>Araçlar</span>
-        </a>
-    </footer>
-
+    <!-- Footer -->
     <footer class="ak-footer">
         <div class="ak-container">
-            <p class="ak-text-sm" style="font-weight: var(--ak-font-weight-light);">&copy; 2025 ak-systems. Published under the <a href="../LICENSE">ak-systems CSS Framework License</a>.</p>
+            <div class="ak-flex ak-flex-col ak-md:ak-flex-row ak-flex-between ak-items-center ak-gap-4">
+                <p class="ak-text-muted">&copy; 2024 AK Tasarım Sistemi. Tüm hakları saklıdır.</p>
+                <div class="ak-flex ak-gap-4">
+                    <a href="https://github.com/ak-hosting/ak-systems-css" class="ak-text-muted ak-hover:ak-text-primary">
+                        <i data-lucide="github"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div id="modal-overlay" class="modal-overlay" data-testid="modal-overlay">
-        <div class="ak-modal">
-            <div class="ak-modal-header">
-                <h3 class="ak-modal-title">Örnek Modal</h3>
-                <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm" data-testid="button-close-modal">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <div class="ak-modal-body">
-                <p class="ak-mb-4">Modalın ana içeriği. Buraya istediğiniz içeriği ekleyebilirsiniz.</p>
-                <div class="ak-form-group">
-                    <label class="ak-form-label" for="modal-input">Örnek Girdi</label>
-                    <input type="text" id="modal-input" class="ak-input" placeholder="Girdi..." data-testid="input-modal">
-                </div>
-            </div>
-            <div class="ak-modal-footer">
-                <button class="ak-btn ak-btn-ghost" data-testid="button-modal-cancel">
-                    İptal
-                </button>
-                <button class="ak-btn ak-btn-primary" data-testid="button-modal-confirm">
-                    Onayla
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Container -->
-    <div id="toast" class="toast" data-testid="toast">
-        <i id="toast-icon" data-lucide="check-circle"></i>
-        <span id="toast-message">Bildirim</span>
-        <button id="close-toast" class="ak-btn ak-btn-ghost ak-btn-sm">
-            <i data-lucide="x"></i>
-        </button>
-    </div>
-
     <script>
-        // Tema Değiştir
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
 
-        let isDark = true;
+        // Check local storage for theme
+        const savedTheme = localStorage.getItem('ak-theme') || 'dark';
+        body.className = `ak-theme-${savedTheme}`;
+        updateThemeIcon(savedTheme);
 
         themeToggle.addEventListener('click', () => {
-            isDark = !isDark;
-            if (isDark) {
-                body.className = 'ak-theme-dark';
+            const currentTheme = body.classList.contains('ak-theme-dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.className = `ak-theme-${newTheme}`;
+            localStorage.setItem('ak-theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
                 themeIcon.setAttribute('data-lucide', 'sun');
             } else {
-                body.className = 'ak-theme-light';
                 themeIcon.setAttribute('data-lucide', 'moon');
             }
-            lucide.createIcons(); // İkonları yeniden oluştur
-        });
+            lucide.createIcons();
+        }
 
-        // Kenar Çubuğu
+        // Sidebar
+        const openSidebar = document.getElementById('open-sidebar');
+        const closeSidebar = document.getElementById('close-sidebar');
         const sidebar = document.getElementById('sidebar');
-        const openSidebarBtn = document.getElementById('open-sidebar');
-        const closeSidebarBtn = document.getElementById('close-sidebar');
-
-        openSidebarBtn.addEventListener('click', () => {
+        
+        openSidebar.addEventListener('click', () => {
             sidebar.classList.add('ak-sidebar-open');
         });
-
-        closeSidebarBtn.addEventListener('click', () => {
+        
+        closeSidebar.addEventListener('click', () => {
             sidebar.classList.remove('ak-sidebar-open');
         });
-
-        // Gezinme
+        
+        // Section navigation
         const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
-        const footerLinks = document.querySelectorAll('.ak-footer-nav-item');
-        const sections = document.querySelectorAll('.content-section');
-
-        function showSection(sectionName) {
-            // Tüm bölümleri gizle
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-
-            // Hedef bölümü göster
-            const targetSection = document.getElementById(sectionName + '-section');
-            if (targetSection) {
-                targetSection.style.display = 'block';
-            }
-
-            // Aktif durumları güncelle
-            [...sidebarLinks, ...footerLinks].forEach(link => {
-                link.classList.remove('ak-active');
-            });
-
-            [...sidebarLinks, ...footerLinks].forEach(link => {
-                if (link.dataset.section === sectionName) {
-                    link.classList.add('ak-active');
-                }
-            });
-
-            // Mobilde kenar çubuğunu kapat
-            sidebar.classList.remove('ak-sidebar-open');
-        }
-
-        // Bağlantı tıklamalarını dinle
-        [...sidebarLinks, ...footerLinks].forEach(link => {
+        const sections = document.querySelectorAll('.ak-section');
+        
+        sidebarLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const section = link.dataset.section;
-                showSection(section);
+                
+                const sectionId = link.getAttribute('data-section');
+                
+                // Update active link
+                sidebarLinks.forEach(l => l.classList.remove('ak-active'));
+                link.classList.add('ak-active');
+                
+                // Update active section
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === sectionId) {
+                        section.classList.add('active');
+                    }
+                });
+                
+                // Close sidebar on mobile
+                if (window.innerWidth < 768) {
+                    sidebar.classList.remove('ak-sidebar-open');
+                }
+                
+                // Scroll to section
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-
+        
         // Modal
+        const openModal = document.getElementById('open-modal');
+        const closeModal = document.getElementById('close-modal');
+        const cancelModal = document.getElementById('cancel-modal');
         const modalOverlay = document.getElementById('modal-overlay');
-        const modal = modalOverlay.querySelector('.ak-modal');
-        const openModalBtn = document.getElementById('open-modal');
-        const closeModalBtn = document.getElementById('close-modal');
-
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.add('ak-modal-open');
+        
+        openModal.addEventListener('click', () => {
+            modalOverlay.classList.add('ak-modal-open');
             document.body.classList.add('ak-modal-open');
-            modalOverlay.classList.add('active');
         });
-
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('ak-modal-open');
+        
+        closeModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('ak-modal-open');
             document.body.classList.remove('ak-modal-open');
-            modalOverlay.classList.remove('active');
         });
-
+        
+        cancelModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('ak-modal-open');
+            document.body.classList.remove('ak-modal-open');
+        });
+        
+        // Close modal when clicking outside
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
-                modal.classList.remove('ak-modal-open');
+                modalOverlay.classList.remove('ak-modal-open');
                 document.body.classList.remove('ak-modal-open');
-                modalOverlay.classList.remove('active');
             }
         });
-
-        // Bildirimler
+        
+        // Toast
+        const showToast = document.getElementById('show-toast');
+        const closeToast = document.getElementById('close-toast');
         const toast = document.getElementById('toast');
-        const toastIcon = document.getElementById('toast-icon');
-        const toastMessage = document.getElementById('toast-message');
-        const closeToastBtn = document.getElementById('close-toast');
-        const successToastBtn = document.getElementById('show-success-toast');
-        const errorToastBtn = document.getElementById('show-error-toast');
-
-        function showToast(message, type = 'success') {
-            toastMessage.textContent = message;
+        
+        showToast.addEventListener('click', () => {
+            toast.classList.add('ak-toast-show');
             
-            if (type === 'success') {
-                toastIcon.setAttribute('data-lucide', 'check-circle');
-                toast.style.borderColor = 'var(--ak-accent)';
-            } else {
-                toastIcon.setAttribute('data-lucide', 'alert-circle');
-                toast.style.borderColor = 'var(--ak-destructive)';
-            }
-
-            toast.classList.add('active');
-            lucide.createIcons();
-
-            // 3 saniye sonra otomatik gizle
+            // Auto hide after 3 seconds
             setTimeout(() => {
-                toast.classList.remove('active');
+                toast.classList.remove('ak-toast-show');
             }, 3000);
-        }
-
-        successToastBtn.addEventListener('click', () => {
-            showToast('Başarılı! İşlem tamamlandı.', 'success');
         });
-
-        errorToastBtn.addEventListener('click', () => {
-            showToast('Hata! Bir şeyler ters gitti.', 'error');
-        });
-
-        closeToastBtn.addEventListener('click', () => {
-            toast.classList.remove('active');
-        });
-
-        // Form işlemleri
-        const form = document.querySelector('.ak-form');
-        const resetBtn = document.querySelector('[data-testid="button-reset"]');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Form başarıyla gönderildi!', 'success');
-        });
-
-        resetBtn.addEventListener('click', () => {
-            form.reset();
-            showToast('Form sıfırlandı.', 'success');
-        });
-
-        // Lucide ikonlarını başlat
-        lucide.createIcons();
-
-        // Mobile dışına tıklayınca kenar çubuğunu kapat
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768 && 
-                !sidebar.contains(e.target) && 
-                !openSidebarBtn.contains(e.target) && 
-                sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
-            }
+        
+        closeToast.addEventListener('click', () => {
+            toast.classList.remove('ak-toast-show');
         });
     </script>
 </body>

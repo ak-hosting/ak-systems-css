@@ -176,6 +176,12 @@
                 </a>
             </li>
             <li>
+                <a href="#layout" data-section="layout">
+                    <i data-lucide="layout"></i>
+                    <span>Layout</span>
+                </a>
+            </li>
+            <li>
                 <a href="#utilities" data-section="utilities">
                     <i data-lucide="wrench"></i>
                     <span>Utilities</span>
@@ -189,71 +195,83 @@
         <div class="ak-container">
             <!-- Overview Section -->
             <section id="overview" class="ak-section active" data-testid="section-overview">
-                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">AK Design System</h2>
-                <p class="ak-text-xl ak-text-muted ak-mb-8">
-                    Ein modernes SCSS-basiertes Design System mit ak- prefixed Klassen, 
-                    responsivem Design und umfassendem Theming-Support.
-                </p>
-
-                <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6 ak-mb-8">
-                    <div class="ak-card">
-                        <div class="ak-card-header">
-                            <i data-lucide="layers" class="ak-w-8 ak-h-8 ak-text-primary"></i>
-                            <h3 class="ak-card-title">Modular</h3>
-                        </div>
-                        <div class="ak-card-content">
-                            <p>Aufgebaut mit modernem SCSS @use/@forward für optimale Performance.</p>
+                <!-- Hero Section Example -->
+                <section class="ak-hero ak-mb-12">
+                    <div class="ak-hero-content">
+                        <h1 class="ak-hero-title">AK Design System</h1>
+                        <p class="ak-hero-subtitle">Ein leichtgewichtiges, modernes CSS-Framework für schnelle Prototypen und produktionsreife Anwendungen.</p>
+                        <div class="ak-hero-actions">
+                            <button class="ak-btn ak-btn-primary">Jetzt Starten</button>
+                            <button class="ak-btn ak-btn-outline">Dokumentation</button>
                         </div>
                     </div>
+                </section>
+                
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Übersicht</h2>
+                <p class="ak-text-xl ak-mb-4">Erstelle schöne, responsive Benutzeroberflächen mit unserer umfassenden Komponentenbibliothek.</p>
 
+                <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6 ak-mt-8">
                     <div class="ak-card">
                         <div class="ak-card-header">
-                            <i data-lucide="smartphone" class="ak-w-8 ak-h-8 ak-text-primary"></i>
+                            <i data-lucide="zap" class="ak-text-accent"></i>
+                            <h3 class="ak-card-title">Hafif</h3>
+                        </div>
+                        <div class="ak-card-content">
+                            <p>Minimaler Fußabdruck mit maximaler Wirkung. Nur 14KB (minified und gzipped).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-card">
+                        <div class="ak-card-header">
+                            <i data-lucide="palette" class="ak-text-accent"></i>
+                            <h3 class="ak-card-title">Temalanabilir</h3>
+                        </div>
+                        <div class="ak-card-content">
+                            <p>Erstellt mit CSS-Variablen für einfache Anpassung. Hell- und Dunkelmodi enthalten.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-card">
+                        <div class="ak-card-header">
+                            <i data-lucide="smartphone" class="ak-text-accent"></i>
                             <h3 class="ak-card-title">Responsive</h3>
                         </div>
                         <div class="ak-card-content">
-                            <p>Mobile-first Design mit flexiblen Grid-Systemen und adaptiven Komponenten.</p>
-                        </div>
-                    </div>
-
-                    <div class="ak-card">
-                        <div class="ak-card-header">
-                            <i data-lucide="moon" class="ak-w-8 ak-h-8 ak-text-primary"></i>
-                            <h3 class="ak-card-title">Theming</h3>
-                        </div>
-                        <div class="ak-card-content">
-                            <p>Dark/Light Theme Support mit CSS Custom Properties.</p>
+                            <p>Mobile-first Ansatz sorgt dafür, dass deine UI auf allen Geräten großartig aussieht.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="ak-flex ak-gap-4">
-                    <button class="ak-btn ak-btn-primary" data-testid="button-get-started">
-                        <i data-lucide="download"></i>
-                        Jetzt Starten
-                    </button>
-                    <button class="ak-btn ak-btn-outline" data-testid="button-view-docs">
-                        <i data-lucide="book"></i>
-                        Dokumentation
-                    </button>
+                
+                <div class="ak-mt-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Erste Schritte</h3>
+                    <div class="ak-code-block">
+&lt;link rel="stylesheet" href="https://ak-hosting.github.io/ak-systems-css/css/ak-design-system.css"&gt;</div>
                 </div>
             </section>
 
             <!-- Typography Section -->
             <section id="typography" class="ak-section" data-testid="section-typography">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Typografie</h2>
-                <div class="ak-space-y-4 demo-section">
-                    <div data-testid="typography-heading-1">
-                        <h1 class="ak-text-4xl ak-font-bold">Heading 1 - 36px Bold</h1>
-                    </div>
-                    <div data-testid="typography-heading-2">
-                        <h2 class="ak-text-3xl ak-font-semibold">Heading 2 - 30px Semibold</h2>
-                    </div>
-                    <div data-testid="typography-body">
-                        <p class="ak-text-base">Body Text - 16px Regular mit optimaler Lesbarkeit</p>
-                    </div>
-                    <div data-testid="typography-small">
-                        <p class="ak-text-sm ak-text-muted">Small Text - 14px Muted für Zusatzinformationen</p>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h1 class="ak-text-4xl ak-font-bold ak-mb-4">Überschrift 1</h1>
+                    <h2 class="ak-text-3xl ak-font-bold ak-mb-4">Überschrift 2</h2>
+                    <h3 class="ak-text-2xl ak-font-bold ak-mb-4">Überschrift 3</h3>
+                    <h4 class="ak-text-xl ak-font-semibold ak-mb-4">Überschrift 4</h4>
+                    <h5 class="ak-text-lg ak-font-semibold ak-mb-4">Überschrift 5</h5>
+                    <h6 class="ak-text-base ak-font-semibold ak-mb-4">Überschrift 6</h6>
+                    
+                    <p class="ak-text-base ak-mb-4">Dies ist ein Standardabsatz mit <a href="#" class="ak-link">einem Link</a> und etwas Text.</p>
+                    <p class="ak-text-lg ak-mb-4">Dies ist ein größerer Absatz, der mehr auffällt.</p>
+                    <p class="ak-text-sm ak-mb-4">Dies ist ein kleinerer Absatz für weniger wichtige Informationen.</p>
+                    
+                    <blockquote class="ak-blockquote ak-my-6">
+                        <p>Design ist nicht nur, wie es aussieht und sich anfühlt. Design ist, wie es funktioniert.</p>
+                        <footer>— Steve Jobs</footer>
+                    </blockquote>
+                    
+                    <div class="ak-mt-6">
+                        <code class="ak-code">Dies ist inline Code</code>
                     </div>
                 </div>
 
@@ -531,7 +549,93 @@
                 </div>
             </section>
 
-            <!-- Tables Section (Placeholder as original DE file didn't have one explicitly populated, but structure requires it) -->
+            <!-- Layout Section -->
+            <section id="layout" class="ak-section" data-testid="section-layout">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Layout-Komponenten</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Hero-Section</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-6">Perfekt für Landing Pages und prominente Call-to-Action-Bereiche.</p>
+                    
+                    <section class="ak-hero ak-mb-8" style="background: var(--ak-color-bg-subtle); border-radius: var(--ak-radius-lg);">
+                        <div class="ak-hero-content">
+                            <h1 class="ak-hero-title">Willkommen bei AK Systems</h1>
+                            <p class="ak-hero-subtitle">Wir bauen die Zukunft der digitalen Infrastruktur mit modernen Designprinzipien.</p>
+                            <div class="ak-hero-actions">
+                                <button class="ak-btn ak-btn-primary">Jetzt Starten</button>
+                                <button class="ak-btn ak-btn-outline">Mehr Erfahren</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <div class="ak-code-block ak-mb-8">
+&lt;section class="ak-hero"&gt;
+  &lt;div class="ak-hero-content"&gt;
+    &lt;h1 class="ak-hero-title"&gt;Willkommen bei AK Systems&lt;/h1&gt;
+    &lt;p class="ak-hero-subtitle"&gt;Wir bauen die Zukunft...&lt;/p&gt;
+    &lt;div class="ak-hero-actions"&gt;
+      &lt;button class="ak-btn ak-btn-primary"&gt;Jetzt Starten&lt;/button&gt;
+      &lt;button class="ak-btn ak-btn-outline"&gt;Mehr Erfahren&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Bild-Utilities</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-6">Responsive Bilder und Object-Fit-Utilities für flexible Bildbehandlung.</p>
+                    
+                    <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6 ak-mb-8">
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Responsives Bild (ak-img-fluid)</h4>
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%234a90e2'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'>Responsive</text></svg>" 
+                                 alt="Responsives Bild" 
+                                 class="ak-img-fluid ak-rounded ak-mb-4">
+                            <p class="ak-text-xs ak-text-muted">Skaliert automatisch zur Containerbreite</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Vorschaubild (ak-img-thumbnail)</h4>
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%25' height='100%25' fill='%237b68ee'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='white'>Vorschaubild</text></svg>" 
+                                 alt="Vorschaubild" 
+                                 class="ak-img-thumbnail ak-mb-4">
+                            <p class="ak-text-xs ak-text-muted">Galerie-Stil mit Rahmen und Padding</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Object Cover (ak-object-cover)</h4>
+                            <div class="ak-w-32 ak-h-32 ak-bg-muted ak-rounded ak-overflow-hidden ak-mb-4">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='100%25' height='100%25' fill='%23e74c3c'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='white'>Cover</text></svg>" 
+                                     alt="Cover" 
+                                     class="ak-w-full ak-h-full ak-object-cover">
+                            </div>
+                            <p class="ak-text-xs ak-text-muted">Füllt Container, behält Seitenverhältnis bei</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Object Contain (ak-object-contain)</h4>
+                            <div class="ak-w-32 ak-h-32 ak-bg-muted ak-rounded ak-overflow-hidden ak-mb-4">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150'><rect width='100%25' height='100%25' fill='%2327ae60'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='white'>Contain</text></svg>" 
+                                     alt="Contain" 
+                                     class="ak-w-full ak-h-full ak-object-contain">
+                            </div>
+                            <p class="ak-text-xs ak-text-muted">Passt in Container, zeigt vollständiges Bild</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-code-block">
+&lt;!-- Responsives Bild --&gt;
+&lt;img src="image.jpg" class="ak-img-fluid ak-rounded" alt="Responsives Bild"&gt;
+
+&lt;!-- Vorschaubild --&gt;
+&lt;img src="thumb.jpg" class="ak-img-thumbnail" alt="Vorschaubild"&gt;
+
+&lt;!-- Object Fit --&gt;
+&lt;img src="avatar.jpg" class="ak-w-20 ak-h-20 ak-object-cover ak-rounded-full"&gt;
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tables Section -->
             <section id="tables" class="ak-section" data-testid="section-tables">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Tabellen</h2>
                 
@@ -712,29 +816,53 @@
             <!-- Utilities Section -->
             <section id="utilities" class="ak-section" data-testid="section-utilities">
                 <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Utility Klassen</h2>
-                <div class="demo-section">
-                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Abstände</h3>
-                    <div class="ak-flex ak-flex-wrap ak-gap-2">
-                        <div class="spacing-demo ak-p-1" data-testid="spacing-1">4px</div>
-                        <div class="spacing-demo ak-p-2" data-testid="spacing-2">8px</div>
-                        <div class="spacing-demo ak-p-3" data-testid="spacing-3">12px</div>
-                        <div class="spacing-demo ak-p-4" data-testid="spacing-4">16px</div>
-                        <div class="spacing-demo ak-p-6" data-testid="spacing-6">24px</div>
-                        <div class="spacing-demo ak-p-8" data-testid="spacing-8">32px</div>
-                    </div>
-                </div>
                 
-                <div class="demo-section">
-                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Flexbox</h3>
-                    <div class="ak-space-y-4">
-                        <div class="ak-flex-center ak-p-4 ak-bg-muted ak-rounded ak-h-20" data-testid="utility-flex-center">
-                            <span>.ak-flex-center - Zentriert horizontal und vertikal</span>
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Abstände</h3>
+                    <div class="ak-mb-6">
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-1">p-1</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-2">p-2</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-3">p-3</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-4">p-4</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-6">p-6</div>
+                        <div class="ak-bg-accent ak-text-white ak-inline-block ak-m-1 ak-p-8">p-8</div>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Flex</h3>
+                    <div class="ak-mb-6">
+                        <div class="ak-flex ak-gap-2 ak-mb-2">
+                            <div class="ak-bg-primary ak-p-2 ak-text-white">Element 1</div>
+                            <div class="ak-bg-primary ak-p-2 ak-text-white">Element 2</div>
+                            <div class="ak-bg-primary ak-p-2 ak-text-white">Element 3</div>
                         </div>
-                        <div class="ak-flex-between ak-p-4 ak-bg-primary ak-text-white ak-rounded" data-testid="utility-flex-between">
-                            <span>Links</span>
-                            <span>.ak-flex-between</span>
-                            <span>Rechts</span>
+                        
+                        <div class="ak-flex ak-justify-between ak-mb-2">
+                            <div class="ak-bg-accent ak-p-2 ak-text-white">Links</div>
+                            <div class="ak-bg-accent ak-p-2 ak-text-white">Mitte</div>
+                            <div class="ak-bg-accent ak-p-2 ak-text-white">Rechts</div>
                         </div>
+                        
+                        <div class="ak-flex ak-items-center ak-gap-2">
+                            <i data-lucide="user" class="ak-text-primary"></i>
+                            <span>Mit Icon ausgerichtet</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Grid</h3>
+                    <div class="ak-grid ak-grid-cols-1 ak-sm:ak-grid-cols-2 ak-md:ak-grid-cols-3 ak-gap-4 ak-mb-6">
+                        <div class="ak-bg-muted ak-p-4">Grid Element 1</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Element 2</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Element 3</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Element 4</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Element 5</div>
+                        <div class="ak-bg-muted ak-p-4">Grid Element 6</div>
+                    </div>
+                    
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Textausrichtung</h3>
+                    <div class="ak-mb-6">
+                        <p class="ak-text-left ak-mb-2">Links ausgerichteter Text</p>
+                        <p class="ak-text-center ak-mb-2">Zentrierter Text</p>
+                        <p class="ak-text-right">Rechts ausgerichteter Text</p>
                     </div>
                 </div>
             </section>
@@ -768,8 +896,8 @@
     </footer>
 
     <!-- Modal -->
-    <div id="modal-overlay" class="modal-overlay" data-testid="modal-overlay">
-        <div class="ak-modal">
+    <div id="modal-overlay" class="ak-modal" data-testid="modal-overlay">
+        <div class="ak-modal-content">
             <div class="ak-modal-header">
                 <h3 class="ak-modal-title">Beispiel Modal</h3>
                 <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm" data-testid="button-close-modal">
@@ -777,14 +905,10 @@
                 </button>
             </div>
             <div class="ak-modal-body">
-                <p class="ak-mb-4">Hier steht der Hauptinhalt des Modals. Sie können hier beliebige Inhalte platzieren.</p>
-                <div class="ak-form-group">
-                    <label class="ak-form-label" for="modal-input">Beispiel Input</label>
-                    <input type="text" id="modal-input" class="ak-input" placeholder="Eingabe..." data-testid="input-modal">
-                </div>
+                <p>Hier steht der Hauptinhalt des Modals. Sie können hier beliebige Inhalte platzieren.</p>
             </div>
             <div class="ak-modal-footer">
-                <button class="ak-btn ak-btn-ghost" data-testid="button-modal-cancel">
+                <button class="ak-btn" data-testid="button-modal-cancel">
                     Abbrechen
                 </button>
                 <button class="ak-btn ak-btn-primary" data-testid="button-modal-confirm">
@@ -795,9 +919,12 @@
     </div>
 
     <!-- Toast Container -->
-    <div id="toast" class="toast" data-testid="toast">
-        <i id="toast-icon" data-lucide="check-circle"></i>
-        <span id="toast-message">Toast Nachricht</span>
+    <div class="ak-toast" id="toast">
+        <i data-lucide="check-circle" class="ak-text-success"></i>
+        <div>
+            <h4 class="ak-text-sm ak-font-semibold">Erfolg</h4>
+            <p class="ak-text-xs">Ihre Aktion wurde erfolgreich abgeschlossen.</p>
+        </div>
         <button id="close-toast" class="ak-btn ak-btn-ghost ak-btn-sm">
             <i data-lucide="x"></i>
         </button>
@@ -902,20 +1029,19 @@
 
         // Modal functionality
         const modalOverlay = document.getElementById('modal-overlay');
-        const modal = modalOverlay.querySelector('.ak-modal');
         const openModalBtn = document.getElementById('open-modal');
         const closeModalBtn = document.getElementById('close-modal');
         const modalCancelBtn = document.querySelector('[data-testid="button-modal-cancel"]');
         const modalConfirmBtn = document.querySelector('[data-testid="button-modal-confirm"]');
 
         function openModal() {
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            modalOverlay.classList.add('ak-modal-open');
+            document.body.classList.add('ak-modal-open');
         }
 
         function closeModal() {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = '';
+            modalOverlay.classList.remove('ak-modal-open');
+            document.body.classList.remove('ak-modal-open');
         }
 
         if (openModalBtn) openModalBtn.addEventListener('click', openModal);
@@ -931,45 +1057,62 @@
                 closeModal();
             }
         });
+        
+        // Handle initial hash
+        if (window.location.hash) {
+            const sectionId = window.location.hash.substring(1);
+            showSection(sectionId);
+        }
 
         // Toast functionality
         const toast = document.getElementById('toast');
-        const toastIcon = document.getElementById('toast-icon');
-        const toastMessage = document.getElementById('toast-message');
         const closeToastBtn = document.getElementById('close-toast');
         const successToastBtn = document.getElementById('show-success-toast');
         const errorToastBtn = document.getElementById('show-error-toast');
 
         function showToast(message, type = 'success') {
-            toastMessage.textContent = message;
-            
-            if (type === 'success') {
-                toastIcon.setAttribute('name', 'check-circle');
-                toast.style.borderColor = 'var(--ak-color-accent)';
-            } else {
-                toastIcon.setAttribute('name', 'alert-circle');
-                toast.style.borderColor = 'var(--ak-color-destructive)';
+            // Update toast content
+            const toastContent = toast.querySelector('div');
+            if (toastContent) {
+                const title = toastContent.querySelector('h4');
+                const description = toastContent.querySelector('p');
+                if (title && description) {
+                    if (type === 'success') {
+                        title.textContent = 'Erfolg';
+                        description.textContent = message;
+                        toast.className = 'ak-toast ak-toast-success ak-toast-show';
+                    } else {
+                        title.textContent = 'Fehler';
+                        description.textContent = message;
+                        toast.className = 'ak-toast ak-toast-error ak-toast-show';
+                    }
+                }
             }
-
-            toast.classList.add('active');
+            
+            // Update icon
+            const icon = toast.querySelector('i[data-lucide]');
+            if (icon) {
+                icon.setAttribute('data-lucide', type === 'success' ? 'check-circle' : 'alert-circle');
+            }
+            
             lucide.createIcons();
 
             // Auto-hide after 3 seconds
             setTimeout(() => {
-                toast.classList.remove('active');
+                toast.classList.remove('ak-toast-show');
             }, 3000);
         }
 
         if (successToastBtn) successToastBtn.addEventListener('click', () => {
-            showToast('Erfolgreich! Die Aktion wurde ausgeführt.', 'success');
+            showToast('Ihre Aktion wurde erfolgreich abgeschlossen.', 'success');
         });
 
         if (errorToastBtn) errorToastBtn.addEventListener('click', () => {
-            showToast('Fehler! Etwas ist schief gelaufen.', 'error');
+            showToast('Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.', 'error');
         });
 
         if (closeToastBtn) closeToastBtn.addEventListener('click', () => {
-            toast.classList.remove('active');
+            toast.classList.remove('ak-toast-show');
         });
 
         // Form handling
@@ -986,7 +1129,6 @@
         if (resetBtn) {
             resetBtn.addEventListener('click', () => {
                 if (form) form.reset();
-                showToast('Formular zurückgesetzt.', 'success');
             });
         }
 

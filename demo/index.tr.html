@@ -525,6 +525,123 @@
             </div>
         </section>
 
+        <!-- Extended Components Section -->
+        <section id="extended-section" class="content-section" style="display: none;">
+            <div class="ak-container">
+                <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Gelişmiş Bileşenler</h1>
+                
+                <div class="ak-grid ak-grid-2 ak-gap-6 ak-mb-8">
+                    <!-- Avatars -->
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Avatarlar</h3>
+                        <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
+                            <div class="ak-avatar ak-avatar-sm">
+                                <span class="ak-avatar-fallback">KL</span>
+                            </div>
+                            <div class="ak-avatar">
+                                <span class="ak-avatar-fallback">NM</span>
+                            </div>
+                            <div class="ak-avatar ak-avatar-lg">
+                                <span class="ak-avatar-fallback">BY</span>
+                            </div>
+                        </div>
+                        <div class="ak-flex ak-items-center ak-gap-4">
+                             <div class="ak-avatar">
+                                <img src="https://i.pravatar.cc/150?u=1" alt="Kullanıcı" />
+                            </div>
+                            <div class="ak-avatar ak-avatar-lg">
+                                <img src="https://i.pravatar.cc/150?u=2" alt="Kullanıcı" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Breadcrumbs & Pagination -->
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Navigasyon</h3>
+                        
+                        <h4 class="ak-text-sm ak-font-medium ak-text-muted ak-mb-2">Ekmek Kırıntıları (Breadcrumbs)</h4>
+                        <ol class="ak-breadcrumb ak-mb-6">
+                            <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Başlangıç</a></li>
+                            <li class="ak-breadcrumb-separator"><i data-lucide="chevron-right"></i></li>
+                            <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Bileşenler</a></li>
+                            <li class="ak-breadcrumb-separator"><i data-lucide="chevron-right"></i></li>
+                            <li class="ak-breadcrumb-item ak-active">Gelişmiş</li>
+                        </ol>
+
+                        <h4 class="ak-text-sm ak-font-medium ak-text-muted ak-mb-2">Sayfalama (Pagination)</h4>
+                        <ul class="ak-pagination">
+                            <li class="ak-page-item ak-disabled"><a class="ak-page-link" href="#"><i data-lucide="chevron-left"></i></a></li>
+                            <li class="ak-page-item ak-active"><a class="ak-page-link" href="#">1</a></li>
+                            <li class="ak-page-item"><a class="ak-page-link" href="#">2</a></li>
+                            <li class="ak-page-item"><a class="ak-page-link" href="#">3</a></li>
+                            <li class="ak-page-item"><a class="ak-page-link" href="#"><i data-lucide="chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ak-grid ak-grid-2 ak-gap-6">
+                    <!-- Tooltips -->
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">İpuçları (Tooltips)</h3>
+                        <div class="ak-flex ak-gap-4 ak-mb-8">
+                            <div class="ak-tooltip-trigger ak-btn">
+                                Üst İpucu
+                                <div class="ak-tooltip-content">İpucu İçeriği</div>
+                            </div>
+                            <div class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
+                                Sağ İpucu
+                                <div class="ak-tooltip-content">Daha Fazla Bilgi</div>
+                            </div>
+                        </div>
+                        <div class="ak-flex ak-gap-4">
+                            <div class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary">
+                                Alt İpucu
+                                <div class="ak-tooltip-content">Alt Bilgi</div>
+                            </div>
+                            <div class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost">
+                                Sol İpucu
+                                <div class="ak-tooltip-content">Sol Detay</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion -->
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Akordiyon</h3>
+                        <div class="ak-accordion">
+                            <details class="ak-accordion-item" open>
+                                <summary class="ak-accordion-summary">
+                                    Bölüm 1: Giriş
+                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon"></i>
+                                </summary>
+                                <div class="ak-accordion-content">
+                                    Bu akordiyon bileşeninin ilk bölümüdür. Varsayılan olarak açık gelebilir.
+                                </div>
+                            </details>
+                            <details class="ak-accordion-item">
+                                <summary class="ak-accordion-summary">
+                                    Bölüm 2: Detaylar
+                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon"></i>
+                                </summary>
+                                <div class="ak-accordion-content">
+                                    Burada daha fazla detaylı bilgi yer alır. Kullanıcı tıkladığında açılır.
+                                </div>
+                            </details>
+                            <details class="ak-accordion-item">
+                                <summary class="ak-accordion-summary">
+                                    Bölüm 3: Sonuç
+                                    <i data-lucide="chevron-down" class="ak-accordion-trigger-icon"></i>
+                                </summary>
+                                <div class="ak-accordion-content">
+                                    Sonuç bölümü ve kapanış bilgileri.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Examples Section -->
         <section id="examples-section" class="content-section" style="display: none;">
             <div class="ak-container">

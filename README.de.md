@@ -49,10 +49,10 @@ Um die Distributionsdateien in `dist/` zu generieren:
 ### Grid-System
 
 ```html
-<div class="ak-row">
-  <div class="ak-col">Spalte 1</div>
-  <div class="ak-col">Spalte 2</div>
-  <div class="ak-col">Spalte 3</div>
+<div class="ak-grid ak-grid-3 ak-gap-4">
+  <div>Spalte 1</div>
+  <div>Spalte 2</div>
+  <div>Spalte 3</div>
 </div>
 ```
 
@@ -61,7 +61,19 @@ Um die Distributionsdateien in `dist/` zu generieren:
 ```html
 <button class="ak-btn">Standard Button</button>
 <button class="ak-btn ak-btn-primary">Primary Button</button>
-<button class="ak-btn ak-btn-danger">Danger Button</button>
+<button class="ak-btn ak-btn-destructive">Destructive Button</button>
+```
+
+### Loader / Animationen
+
+```html
+<!-- Basis Spinner -->
+<div class="ak-loader-spinner ak-loader-primary ak-loader-md"></div>
+
+<!-- Dots Loader -->
+<div class="ak-loader-dots ak-loader-primary ak-loader-md">
+  <span></span><span></span><span></span>
+</div>
 ```
 
 ## Mobile- & Touch-Best-Practices

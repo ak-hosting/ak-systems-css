@@ -49,10 +49,10 @@ Tek desteklenen giriş (geliştirme):
 ### Grid Sistemi
 
 ```html
-<div class="ak-row">
-  <div class="ak-col">Sütun 1</div>
-  <div class="ak-col">Sütun 2</div>
-  <div class="ak-col">Sütun 3</div>
+<div class="ak-grid ak-grid-3 ak-gap-4">
+  <div>Sütun 1</div>
+  <div>Sütun 2</div>
+  <div>Sütun 3</div>
 </div>
 ```
 
@@ -61,7 +61,19 @@ Tek desteklenen giriş (geliştirme):
 ```html
 <button class="ak-btn">Standart Buton</button>
 <button class="ak-btn ak-btn-primary">Birincil Buton</button>
-<button class="ak-btn ak-btn-danger">Tehlike Butonu</button>
+<button class="ak-btn ak-btn-destructive">Yıkıcı Buton</button>
+```
+
+### Yükleyiciler / Animasyonlar
+
+```html
+<!-- Temel Spinner -->
+<div class="ak-loader-spinner ak-loader-primary ak-loader-md"></div>
+
+<!-- Nokta Yükleyici -->
+<div class="ak-loader-dots ak-loader-primary ak-loader-md">
+  <span></span><span></span><span></span>
+</div>
 ```
 
 ## Mobil ve Dokunmatik En İyi Uygulamalar

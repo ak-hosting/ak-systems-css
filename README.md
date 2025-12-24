@@ -66,6 +66,18 @@ This will concatenate all source files into `dist/ak-design-system.css` and crea
 <button class="ak-btn ak-btn-destructive">Destructive Button</button>
 ```
 
+### Loaders / Spinners
+
+```html
+<!-- Basic Spinner -->
+<div class="ak-loader-spinner ak-loader-primary ak-loader-md"></div>
+
+<!-- Dots Loader -->
+<div class="ak-loader-dots ak-loader-primary ak-loader-md">
+  <span></span><span></span><span></span>
+</div>
+```
+
 ## Mobile & Touch Best Practices
 
 - Recommended viewport meta tag:

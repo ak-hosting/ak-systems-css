@@ -433,53 +433,31 @@
                             </label>
                         </div>
 
-                        <div class="ak-form-group" id="upload">
-                            <label class="ak-form-label">File Upload Variants</label>
-                            
-                            <!-- Variant 1: Standard Zone -->
-                            <div class="ak-mb-4">
-                                <label class="ak-form-label ak-text-sm ak-text-muted">Standard Zone</label>
-                                <div class="ak-upload">
-                                    <input type="file" class="ak-upload-input">
-                                    <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
-                                    <div class="ak-upload-content">
-                                        <p class="ak-upload-text">Drop files here or click to upload</p>
-                                        <p class="ak-upload-hint">SVG, PNG, JPG or GIF (max. 800x400px)</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Variant 2: Minimal -->
-                            <div class="ak-mb-4">
-                                <label class="ak-form-label ak-text-sm ak-text-muted">Minimal</label>
-                                <div class="ak-upload ak-upload-minimal">
-                                    <input type="file" class="ak-upload-input">
-                                    <i data-lucide="paperclip" class="ak-upload-icon"></i>
-                                    <div class="ak-upload-content">
-                                        <p class="ak-upload-text">Attach a file</p>
-                                        <p class="ak-upload-hint">Up to 10MB</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Variant 3: Card with Preview -->
-                            <div class="ak-mb-4">
-                                <label class="ak-form-label ak-text-sm ak-text-muted">Image Preview Card</label>
-                                <div class="ak-upload ak-upload-card">
-                                    <input type="file" class="ak-upload-input">
-                                    <div class="ak-upload-preview">
-                                        <i data-lucide="image" class="ak-text-muted ak-w-12 ak-h-12"></i>
-                                    </div>
-                                    <div class="ak-upload-card-content">
-                                        <p class="ak-upload-text">Upload Cover Image</p>
-                                        <p class="ak-upload-hint">1920x1080px recommended</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <button type="submit" class="ak-btn ak-btn-primary">Submit</button>
                     </form>
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section id="upload" class="ak-section" data-testid="section-upload">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Upload</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <p class="ak-text-lg ak-mb-6">Drag and drop file upload zones with various styles and states.</p>
+                    
+                    <div class="ak-upload ak-mb-6">
+                        <input type="file" class="ak-upload-input">
+                        <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
+                        <div class="ak-upload-content">
+                            <p class="ak-upload-text">Drop files here or click to upload</p>
+                            <p class="ak-upload-hint">SVG, PNG, JPG or GIF (max. 800x400px)</p>
+                        </div>
+                    </div>
+
+                    <a href="upload.html" class="ak-btn ak-btn-primary">
+                        <i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        View All Upload Variants
+                    </a>
                 </div>
             </section>
 

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Design System - Upload Komponenten</title>
+    <link rel="stylesheet" href="../dist/ak-design-system.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: var(--ak-color-bg);
+            color: var(--ak-color-text);
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 32px;
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-lg);
+            background-color: var(--ak-color-surface);
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        h2 { margin-top: 0; margin-bottom: 8px; }
+        .description { color: var(--ak-color-text-muted); margin-bottom: 24px; }
+    </style>
+</head>
+<body class="ak-theme-light">
+
+    <div class="ak-mb-8">
+        <a href="index.de.html" class="ak-btn ak-btn-ghost ak-mb-4">
+            <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+            Zurück zum Dashboard
+        </a>
+        <h1 class="ak-text-4xl ak-font-bold">Datei-Upload Komponenten</h1>
+        <p class="ak-text-lg ak-text-muted ak-mt-2">Vielseitige Drag-and-Drop-Bereiche, minimale Eingaben und kartenbasierte Uploads für jeden Anwendungsfall.</p>
+    </div>
+
+    <!-- STANDARD ZONES -->
+    <div class="demo-section">
+        <h2 class="ak-text-2xl ak-font-bold">Standard Drop-Zonen</h2>
+        <p class="description">Der Standardbereich für allgemeine Datei-Uploads.</p>
+        
+        <div class="demo-grid">
+            <!-- Default -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Standard</h3>
+                <div class="ak-upload">
+                    <input type="file" class="ak-upload-input">
+                    <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
+                    <div class="ak-upload-content">
+                        <p class="ak-upload-text">Dateien hier ablegen oder klicken</p>
+                        <p class="ak-upload-hint">SVG, PNG, JPG oder GIF (max. 800x400px)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active / Drag Over State (Simulated) -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Aktiv / Drag-Over Status</h3>
+                <div class="ak-upload ak-drag-over">
+                    <input type="file" class="ak-upload-input">
+                    <i data-lucide="upload-cloud" class="ak-upload-icon ak-w-12 ak-h-12 ak-text-primary"></i>
+                    <div class="ak-upload-content">
+                        <p class="ak-upload-text ak-text-primary">Jetzt loslassen!</p>
+                        <p class="ak-upload-hint">Zum Hochladen freigeben</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MINIMAL VARIANTS -->
+    <div class="demo-section">
+        <h2 class="ak-text-2xl ak-font-bold">Minimale Varianten</h2>
+        <p class="description">Kompakte Versionen für wenig Platz oder sekundäre Aktionen.</p>
+        
+        <div class="demo-grid">
+            <!-- Minimal Horizontal -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Horizontale Zeile</h3>
+                <div class="ak-upload ak-upload-minimal">
+                    <input type="file" class="ak-upload-input">
+                    <i data-lucide="paperclip" class="ak-upload-icon"></i>
+                    <div class="ak-upload-content">
+                        <p class="ak-upload-text">Datei anhängen</p>
+                        <p class="ak-upload-hint">Bis zu 10MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minimal Button-like -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Kompakt / Button-ähnlich</h3>
+                <div class="ak-upload ak-upload-minimal" style="justify-content: center; text-align: center;">
+                    <input type="file" class="ak-upload-input">
+                    <i data-lucide="plus" class="ak-upload-icon"></i>
+                    <span class="ak-font-medium">Anhang hinzufügen</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARD VARIANTS -->
+    <div class="demo-section">
+        <h2 class="ak-text-2xl ak-font-bold">Karte & Vorschau</h2>
+        <p class="description">Ideal für Bild-Uploads wie Avatare, Titelbilder oder Galerie-Elemente.</p>
+        
+        <div class="demo-grid">
+            <!-- Cover Image -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Titelbild</h3>
+                <div class="ak-upload ak-upload-card">
+                    <input type="file" class="ak-upload-input">
+                    <div class="ak-upload-preview">
+                        <i data-lucide="image" class="ak-text-muted ak-w-12 ak-h-12"></i>
+                    </div>
+                    <div class="ak-upload-card-content">
+                        <p class="ak-upload-text">Titelbild hochladen</p>
+                        <p class="ak-upload-hint">1920x1080px</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avatar -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Avatar Upload</h3>
+                <div class="ak-upload ak-upload-card" style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin: 0 auto;">
+                    <input type="file" class="ak-upload-input">
+                    <div class="ak-upload-preview" style="height: 100%; border: none;">
+                        <i data-lucide="user" class="ak-text-muted ak-w-12 ak-h-12"></i>
+                    </div>
+                </div>
+                <p class="ak-text-center ak-text-sm ak-mt-2 ak-text-muted">Avatar ändern</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPLOAD STATES -->
+    <div class="demo-section">
+        <h2 class="ak-text-2xl ak-font-bold">Upload Status</h2>
+        <p class="description">Feedback für Ladevorgänge, Erfolge und Fehler.</p>
+        
+        <div class="demo-grid">
+            <!-- Uploading -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Wird hochgeladen (Fortschritt)</h3>
+                <div class="ak-card ak-p-4">
+                    <div class="ak-flex ak-items-center ak-gap-3 ak-mb-3">
+                        <i data-lucide="file-text" class="ak-text-primary"></i>
+                        <div class="ak-flex-1">
+                            <p class="ak-text-sm ak-font-medium">dokument-final.pdf</p>
+                            <p class="ak-text-xs ak-text-muted">2.4MB / 4.8MB</p>
+                        </div>
+                        <span class="ak-text-sm ak-font-medium">50%</span>
+                    </div>
+                    <div class="ak-loader-bar ak-loader-primary ak-loader-sm">
+                        <div class="ak-loader-bar-value" style="width: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success -->
+            <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Erfolg</h3>
+                <div class="ak-card ak-p-4 ak-border-success">
+                    <div class="ak-flex ak-items-center ak-gap-3">
+                        <div class="ak-w-8 ak-h-8 ak-rounded-full ak-bg-success-subtle ak-flex ak-items-center ak-justify-center">
+                            <i data-lucide="check" class="ak-text-success ak-w-4 ak-h-4"></i>
+                        </div>
+                        <div class="ak-flex-1">
+                            <p class="ak-text-sm ak-font-medium ak-text-success">Upload Abgeschlossen</p>
+                            <p class="ak-text-xs ak-text-muted">bild-001.png</p>
+                        </div>
+                        <button class="ak-btn ak-btn-ghost ak-btn-sm ak-text-muted">
+                            <i data-lucide="x" class="ak-w-4 ak-h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Error -->
+             <div>
+                <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Fehler</h3>
+                <div class="ak-card ak-p-4 ak-border-destructive">
+                    <div class="ak-flex ak-items-center ak-gap-3">
+                        <div class="ak-w-8 ak-h-8 ak-rounded-full ak-bg-destructive-subtle ak-flex ak-items-center ak-justify-center">
+                            <i data-lucide="alert-circle" class="ak-text-destructive ak-w-4 ak-h-4"></i>
+                        </div>
+                        <div class="ak-flex-1">
+                            <p class="ak-text-sm ak-font-medium ak-text-destructive">Upload fehlgeschlagen</p>
+                            <p class="ak-text-xs ak-text-muted">Datei zu groß (>10MB)</p>
+                        </div>
+                        <button class="ak-btn ak-btn-ghost ak-btn-sm ak-text-muted">
+                            <i data-lucide="refresh-cw" class="ak-w-4 ak-h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

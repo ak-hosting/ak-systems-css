@@ -3,11 +3,18 @@
 This document defines the rules, classes, and structures for the **AK Design System**.
 AI Agents should use this context to generate compliant HTML/CSS without hallucinating non-existent classes.
 
+## 0. Quick References (Source of Truth)
+If you need to verify implementation details or download source files:
+- **Repository:** [github.com/ak-hosting/ak-systems-css](https://github.com/ak-hosting/ak-systems-css)
+- **CDN (CSS):** `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css`
+- **Icons (Lucide):** `https://unpkg.com/lucide@latest/dist/umd/lucide.js`
+
 ## 1. Core Principles
 - **Prefix:** All classes use the `ak-` prefix (e.g., `ak-btn`, `ak-card`).
 - **No External Frameworks:** Do not use Bootstrap, Tailwind, or Bulma classes.
 - **Icons:** Use `lucide` icons with `data-lucide="icon-name"`.
 - **Dark Mode:** Supported via `.ak-theme-dark` on `<body>`.
+- **Reset:** Uses a custom reset; do not rely on browser defaults.
 
 ## 2. CSS Variables (Theming)
 Use these variables for custom styles to maintain consistency.
@@ -27,6 +34,31 @@ Use these variables for custom styles to maintain consistency.
 - Radius: `--ak-radius-sm`, `--ak-radius-md`, `--ak-radius-lg`, `--ak-radius-full`
 
 ## 3. Component Reference
+
+### Layout Structure (Header/Sidebar/Main)
+```html
+<body class="ak-theme-dark">
+  <header class="ak-header">
+    <div class="ak-flex ak-flex-between ak-items-center">
+       <h1 class="ak-text-xl ak-font-bold">App Name</h1>
+       <button class="ak-btn ak-btn-ghost"><i data-lucide="sun"></i></button>
+    </div>
+  </header>
+
+  <aside class="ak-sidebar">
+    <ul class="ak-sidebar-nav">
+      <li><a href="#" class="ak-active"><i data-lucide="home"></i> Home</a></li>
+      <li><a href="#"><i data-lucide="settings"></i> Settings</a></li>
+    </ul>
+  </aside>
+
+  <main class="ak-main">
+    <div class="ak-container">
+      <!-- Page Content -->
+    </div>
+  </main>
+</body>
+```
 
 ### Buttons (`.ak-btn`)
 ```html

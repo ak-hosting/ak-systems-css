@@ -468,12 +468,47 @@
                         </div>
 
                         <div class="ak-form-group" id="upload">
-                            <label class="ak-form-label">Dosya Yükleme</label>
-                            <div class="ak-upload">
-                                <input type="file" class="ak-upload-input">
-                                <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
-                                <p class="ak-upload-text">Dosyaları buraya bırakın veya yüklemek için tıklayın</p>
-                                <p class="ak-upload-hint">SVG, PNG, JPG veya GIF (maks. 800x400px)</p>
+                            <label class="ak-form-label">Dosya Yükleme Seçenekleri</label>
+                            
+                            <!-- Variant 1: Standard Zone -->
+                            <div class="ak-mb-4">
+                                <label class="ak-form-label ak-text-sm ak-text-muted">Standart Alan</label>
+                                <div class="ak-upload">
+                                    <input type="file" class="ak-upload-input">
+                                    <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
+                                    <div class="ak-upload-content">
+                                        <p class="ak-upload-text">Dosyaları buraya bırakın veya yüklemek için tıklayın</p>
+                                        <p class="ak-upload-hint">SVG, PNG, JPG veya GIF (maks. 800x400px)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Variant 2: Minimal -->
+                            <div class="ak-mb-4">
+                                <label class="ak-form-label ak-text-sm ak-text-muted">Minimal</label>
+                                <div class="ak-upload ak-upload-minimal">
+                                    <input type="file" class="ak-upload-input">
+                                    <i data-lucide="paperclip" class="ak-upload-icon"></i>
+                                    <div class="ak-upload-content">
+                                        <p class="ak-upload-text">Dosya ekle</p>
+                                        <p class="ak-upload-hint">10MB'a kadar</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Variant 3: Card with Preview -->
+                            <div class="ak-mb-4">
+                                <label class="ak-form-label ak-text-sm ak-text-muted">Resim Önizleme Kartı</label>
+                                <div class="ak-upload ak-upload-card">
+                                    <input type="file" class="ak-upload-input">
+                                    <div class="ak-upload-preview">
+                                        <i data-lucide="image" class="ak-text-muted ak-w-12 ak-h-12"></i>
+                                    </div>
+                                    <div class="ak-upload-card-content">
+                                        <p class="ak-upload-text">Kapak Resmi Yükle</p>
+                                        <p class="ak-upload-hint">1920x1080px önerilir</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         

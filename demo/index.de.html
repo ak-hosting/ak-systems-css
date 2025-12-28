@@ -419,12 +419,47 @@
                         </div>
 
                         <div class="ak-form-group" id="upload">
-                            <label class="ak-form-label">Datei-Upload</label>
-                            <div class="ak-upload">
-                                <input type="file" class="ak-upload-input">
-                                <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
-                                <p class="ak-upload-text">Dateien hier ablegen oder zum Hochladen klicken</p>
-                                <p class="ak-upload-hint">SVG, PNG, JPG oder GIF (max. 800x400px)</p>
+                            <label class="ak-form-label">Datei-Upload Varianten</label>
+                            
+                            <!-- Variant 1: Standard Zone -->
+                            <div class="ak-mb-4">
+                                <label class="ak-form-label ak-text-sm ak-text-muted">Standard Bereich</label>
+                                <div class="ak-upload">
+                                    <input type="file" class="ak-upload-input">
+                                    <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
+                                    <div class="ak-upload-content">
+                                        <p class="ak-upload-text">Dateien hier ablegen oder zum Hochladen klicken</p>
+                                        <p class="ak-upload-hint">SVG, PNG, JPG oder GIF (max. 800x400px)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Variant 2: Minimal -->
+                            <div class="ak-mb-4">
+                                <label class="ak-form-label ak-text-sm ak-text-muted">Minimal</label>
+                                <div class="ak-upload ak-upload-minimal">
+                                    <input type="file" class="ak-upload-input">
+                                    <i data-lucide="paperclip" class="ak-upload-icon"></i>
+                                    <div class="ak-upload-content">
+                                        <p class="ak-upload-text">Datei anhängen</p>
+                                        <p class="ak-upload-hint">Bis zu 10MB</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Variant 3: Card with Preview -->
+                            <div class="ak-mb-4">
+                                <label class="ak-form-label ak-text-sm ak-text-muted">Bild-Vorschau Karte</label>
+                                <div class="ak-upload ak-upload-card">
+                                    <input type="file" class="ak-upload-input">
+                                    <div class="ak-upload-preview">
+                                        <i data-lucide="image" class="ak-text-muted ak-w-12 ak-h-12"></i>
+                                    </div>
+                                    <div class="ak-upload-card-content">
+                                        <p class="ak-upload-text">Titelbild hochladen</p>
+                                        <p class="ak-upload-hint">1920x1080px empfohlen</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         

@@ -6,6 +6,7 @@ AI Agents should use this context to generate compliant HTML/CSS without halluci
 ## 0. Quick References (Source of Truth)
 If you need to verify implementation details or download source files:
 - **Repository:** [github.com/ak-hosting/ak-systems-css](https://github.com/ak-hosting/ak-systems-css)
+- **Live Examples (HTML):** [demo/index.html](https://github.com/ak-hosting/ak-systems-css/blob/main/demo/index.html) (Best for copying patterns)
 - **CDN (CSS):** `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css`
 - **Icons (Lucide):** `https://unpkg.com/lucide@latest/dist/umd/lucide.js`
 

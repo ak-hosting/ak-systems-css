@@ -229,74 +229,7 @@
                     </div>
                 </div>
 
-                <!-- Verschiedene Komponenten -->
-                <div class="ak-card ak-p-6 ak-mt-6">
-                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Verschiedene Komponenten</h3>
-                    
-                    <div class="ak-mb-6">
-                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Badges</h4>
-                        <div class="ak-flex ak-gap-2 ak-flex-wrap">
-                            <span class="ak-badge ak-badge-default">Standard</span>
-                            <span class="ak-badge ak-badge-secondary">Sekundär</span>
-                            <span class="ak-badge ak-badge-outline">Outline</span>
-                            <span class="ak-badge ak-badge-destructive">Gefahr</span>
-                            <span class="ak-badge ak-badge-success">Erfolg</span>
-                        </div>
-                    </div>
 
-                    <div class="ak-mb-6">
-                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Fortschritt</h4>
-                        <div class="ak-progress ak-mb-2">
-                            <div class="ak-progress-bar" style="width: 75%"></div>
-                        </div>
-                        <div class="ak-progress ak-progress-sm ak-mb-2">
-                            <div class="ak-progress-bar" style="width: 50%"></div>
-                        </div>
-                    </div>
-
-                    <div class="ak-mb-6">
-                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Schalter</h4>
-                        <label class="ak-switch">
-                            <input type="checkbox" class="ak-switch-input" checked>
-                            <span class="ak-switch-track">
-                                <span class="ak-switch-thumb"></span>
-                            </span>
-                            <span class="ak-switch-label">Benachrichtigungen</span>
-                        </label>
-                    </div>
-
-                    <div class="ak-mb-6">
-                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Datei-Upload</h4>
-                        <div class="ak-upload">
-                            <input type="file" class="ak-upload-input">
-                            <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
-                            <p class="ak-upload-text">Dateien hier ablegen oder klicken zum Hochladen</p>
-                            <p class="ak-upload-hint">SVG, PNG, JPG oder GIF (max. 800x400px)</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Dropdown</h4>
-                        <div class="ak-dropdown">
-                            <button class="ak-btn ak-btn-secondary">
-                                Optionen <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i>
-                            </button>
-                            <div class="ak-dropdown-menu">
-                                <div class="ak-dropdown-header">Aktionen</div>
-                                <button class="ak-dropdown-item">
-                                    <i data-lucide="edit" class="ak-w-4 ak-h-4 ak-mr-2"></i> Bearbeiten
-                                </button>
-                                <button class="ak-dropdown-item">
-                                    <i data-lucide="copy" class="ak-w-4 ak-h-4 ak-mr-2"></i> Duplizieren
-                                </button>
-                                <div class="ak-dropdown-divider"></div>
-                                <button class="ak-dropdown-item ak-text-destructive">
-                                    <i data-lucide="trash" class="ak-w-4 ak-h-4 ak-mr-2"></i> Löschen
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
 
             <!-- Colors Section -->
@@ -478,6 +411,18 @@
                                 <label for="notifications" class="ak-switch-label">Enable notifications</label>
                             </div>
                         </div>
+
+                        <div class="ak-form-group">
+                            <label class="ak-form-label">Datei-Upload</label>
+                            <div class="ak-upload">
+                                <input type="file" class="ak-upload-input">
+                                <i data-lucide="cloud-upload" class="ak-upload-icon ak-w-12 ak-h-12"></i>
+                                <p class="ak-upload-text">Dateien hier ablegen oder zum Hochladen klicken</p>
+                                <p class="ak-upload-hint">SVG, PNG, JPG oder GIF (max. 800x400px)</p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="ak-btn ak-btn-primary">Absenden</button>
                     </form>
                 </div>
             </section>
@@ -858,6 +803,65 @@
                                     Inhalt für das zweite Element.
                                 </div>
                             </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verschiedene Komponenten -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Verschiedene Komponenten</h3>
+                    
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Badges</h4>
+                        <div class="ak-flex ak-gap-2 ak-flex-wrap">
+                            <span class="ak-badge ak-badge-default">Standard</span>
+                            <span class="ak-badge ak-badge-secondary">Sekundär</span>
+                            <span class="ak-badge ak-badge-outline">Outline</span>
+                            <span class="ak-badge ak-badge-destructive">Gefahr</span>
+                            <span class="ak-badge ak-badge-success">Erfolg</span>
+                        </div>
+                    </div>
+
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Fortschritt</h4>
+                        <div class="ak-progress ak-mb-2">
+                            <div class="ak-progress-bar" style="width: 75%"></div>
+                        </div>
+                        <div class="ak-progress ak-progress-sm ak-mb-2">
+                            <div class="ak-progress-bar" style="width: 50%"></div>
+                        </div>
+                    </div>
+
+                    <div class="ak-mb-6">
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Schalter</h4>
+                        <label class="ak-switch">
+                            <input type="checkbox" class="ak-switch-input" checked>
+                            <span class="ak-switch-track">
+                                <span class="ak-switch-thumb"></span>
+                            </span>
+                            <span class="ak-switch-label">Benachrichtigungen</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Dropdown</h4>
+                        <div class="ak-dropdown">
+                            <button class="ak-btn ak-btn-secondary">
+                                Optionen <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i>
+                            </button>
+                            <div class="ak-dropdown-menu">
+                                <div class="ak-dropdown-header">Aktionen</div>
+                                <button class="ak-dropdown-item">
+                                    <i data-lucide="edit" class="ak-w-4 ak-h-4 ak-mr-2"></i> Bearbeiten
+                                </button>
+                                <button class="ak-dropdown-item">
+                                    <i data-lucide="copy" class="ak-w-4 ak-h-4 ak-mr-2"></i> Duplizieren
+                                </button>
+                                <div class="ak-dropdown-divider"></div>
+                                <button class="ak-dropdown-item ak-text-destructive">
+                                    <i data-lucide="trash" class="ak-w-4 ak-h-4 ak-mr-2"></i> Löschen
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

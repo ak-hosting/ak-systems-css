@@ -1049,6 +1049,64 @@ blockquote {
 .ak-card-header h1, .ak-card-header h2, .ak-card-header h3, .ak-card-header h4, .ak-card-header h5, .ak-card-header h6 {
   margin-bottom: 0;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                 File Upload                                */
+/* -------------------------------------------------------------------------- */
+
+.ak-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ak-space-10);
+  border: 2px dashed var(--ak-color-border);
+  border-radius: var(--ak-radius-lg);
+  background-color: var(--ak-color-bg-subtle);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+}
+
+.ak-upload:hover,
+.ak-upload.ak-drag-over {
+  border-color: var(--ak-color-primary);
+  background-color: var(--ak-color-surface);
+}
+
+.ak-upload-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.ak-upload-icon {
+  color: var(--ak-color-text-muted);
+  margin-bottom: var(--ak-space-4);
+  transition: color 0.2s ease;
+}
+
+.ak-upload:hover .ak-upload-icon {
+  color: var(--ak-color-primary);
+}
+
+.ak-upload-text {
+  font-size: var(--ak-font-size-base);
+  font-weight: var(--ak-font-weight-medium);
+  color: var(--ak-color-text);
+  margin-bottom: var(--ak-space-2);
+}
+
+.ak-upload-hint {
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text-muted);
+}
 .ak-card-body {
   padding: var(--ak-space-6);
 }

@@ -5,6 +5,16 @@ All notable changes to the ak-systems CSS Framework will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **Header Variants**: Multiple pre-built header layouts including centered, minimal, transparent, search-enabled, and dropdown navigation variants
+- **Footer Variants**: Multiple pre-built footer layouts including multi-column, minimal, branded, newsletter, and social media variants
+- **Demo Pages**: Added comprehensive Header & Footer variants section to all demo pages (EN, DE, TR)
+
+### Changed
+- **Documentation**: Updated framework analysis and README files to reflect new header and footer variants
+
 ## [1.2.0] - 2025-12-24
 
 ### Added

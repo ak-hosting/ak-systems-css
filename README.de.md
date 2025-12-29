@@ -76,6 +76,30 @@ Um die Distributionsdateien in `dist/` zu generieren:
 </div>
 ```
 
+### Header & Footer Varianten
+
+```html
+<!-- Zentrierter Header -->
+<header class="ak-header ak-header-centered">
+  <div class="ak-header-content">
+    <nav class="ak-header-nav">...</nav>
+    <div class="ak-header-brand">Logo</div>
+    <div class="ak-header-actions">...</div>
+  </div>
+</header>
+
+<!-- Mehrspaltiger Footer -->
+<footer class="ak-footer ak-footer-multi-column">
+  <div class="ak-footer-content">
+    <div class="ak-footer-column">
+      <h5 class="ak-footer-column-title">Unternehmen</h5>
+      <a href="#">Über uns</a>
+      <a href="#">Kontakt</a>
+    </div>
+  </div>
+</footer>
+```
+
 ## Mobile- & Touch-Best-Practices
 
 - Empfohlener Viewport-Meta-Tag:

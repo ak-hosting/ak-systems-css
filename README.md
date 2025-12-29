@@ -78,6 +78,30 @@ This will concatenate all source files into `dist/ak-design-system.css` and crea
 </div>
 ```
 
+### Header & Footer Variants
+
+```html
+<!-- Centered Header -->
+<header class="ak-header ak-header-centered">
+  <div class="ak-header-content">
+    <nav class="ak-header-nav">...</nav>
+    <div class="ak-header-brand">Logo</div>
+    <div class="ak-header-actions">...</div>
+  </div>
+</header>
+
+<!-- Multi-Column Footer -->
+<footer class="ak-footer ak-footer-multi-column">
+  <div class="ak-footer-content">
+    <div class="ak-footer-column">
+      <h5 class="ak-footer-column-title">Company</h5>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+```
+
 ## Mobile & Touch Best Practices
 
 - Recommended viewport meta tag:

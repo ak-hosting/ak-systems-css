@@ -76,6 +76,30 @@ Tek desteklenen giriş (geliştirme):
 </div>
 ```
 
+### Header & Footer Varyantları
+
+```html
+<!-- Ortalanmış Header -->
+<header class="ak-header ak-header-centered">
+  <div class="ak-header-content">
+    <nav class="ak-header-nav">...</nav>
+    <div class="ak-header-brand">Logo</div>
+    <div class="ak-header-actions">...</div>
+  </div>
+</header>
+
+<!-- Çok Sütunlu Footer -->
+<footer class="ak-footer ak-footer-multi-column">
+  <div class="ak-footer-content">
+    <div class="ak-footer-column">
+      <h5 class="ak-footer-column-title">Şirket</h5>
+      <a href="#">Hakkımızda</a>
+      <a href="#">İletişim</a>
+    </div>
+  </div>
+</footer>
+```
+
 ## Mobil ve Dokunmatik En İyi Uygulamalar
 
 - Önerilen viewport meta etiketi:

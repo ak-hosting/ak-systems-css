@@ -9,14 +9,14 @@ This document provides a comprehensive overview of all components and utilities 
 ## 2. Component Coverage Status
 
 ### Coverage Summary
-- **Layout Components**: ✅ Complete (Header, Footer, Hero, Sidebar)
+- **Layout Components**: ✅ Complete (Header with 6 variants, Footer with 6 variants, Hero, Sidebar)
 - **Content Components**: ✅ Complete (Cards, Modals, Alerts, Badges, Tables)
 - **Form Components**: ✅ Complete (Inputs, Textarea, Select, Form Groups)
 - **Navigation Components**: ✅ Complete (Breadcrumbs, Tabs, Pagination)
 - **Interactive Components**: ✅ Complete (Dropdown, Tooltip, Popover, Accordion, Switch)
 - **Feedback Components**: ✅ Complete (Toast, Loaders)
 - **Image Utilities**: ✅ Complete
-- **Estimated Coverage**: ~90-93% of common UI patterns
+- **Estimated Coverage**: ~92-95% of common UI patterns
 
 ### Remaining Gaps for 95% Coverage
 - Date/Time pickers (may require JS - should remain separate)
@@ -29,28 +29,91 @@ This document provides a comprehensive overview of all components and utilities 
 ## 3. Current State & Implementations
 
 ### A. Footer (`.ak-footer`)
-*   **Status:** ✅ Existing
+*   **Status:** ✅ Existing + Variants
 *   **Location:** `css/ak-design-system/ak-layout.css`
 *   **Features:**
     *   Sticky footer support via `margin-top: auto`
     *   Standardized padding and top border
     *   Responsive behavior
+    *   **Variants:**
+        *   `.ak-footer-multi-column` - Multi-column layout with link groups
+        *   `.ak-footer-minimal` - Minimal design with reduced padding
+        *   `.ak-footer-branded` - Logo and navigation layout
+        *   `.ak-footer-newsletter` - Newsletter signup form integrated
+        *   `.ak-footer-social` - Social media icons prominently placed
 *   **Usage:**
     ```html
+    <!-- Standard Footer -->
     <footer class="ak-footer">
       <div class="ak-container">
         <!-- Content -->
       </div>
     </footer>
+    
+    <!-- Multi-Column Footer -->
+    <footer class="ak-footer ak-footer-multi-column">
+      <div class="ak-footer-content">
+        <div class="ak-footer-column">
+          <h5 class="ak-footer-column-title">Company</h5>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Newsletter Footer -->
+    <footer class="ak-footer ak-footer-newsletter">
+      <div class="ak-footer-content">
+        <div class="ak-footer-newsletter-form">
+          <input type="email" class="ak-footer-newsletter-input" placeholder="Email">
+          <button class="ak-btn ak-btn-primary">Subscribe</button>
+        </div>
+      </div>
+    </footer>
     ```
 
 ### B. Header (`.ak-header`)
-*   **Status:** ✅ Existing
+*   **Status:** ✅ Existing + Variants
 *   **Location:** `css/ak-design-system/ak-layout.css`
 *   **Features:**
     *   Sticky positioning (`position: sticky`)
     *   Flexbox layout for brand/nav/actions
     *   Mobile optimization
+    *   **Variants:**
+        *   `.ak-header-centered` - Logo centered, navigation on sides
+        *   `.ak-header-minimal` - Reduced padding, minimal design
+        *   `.ak-header-transparent` - Transparent background, switches on scroll
+        *   `.ak-header-search` - Integrated search bar
+        *   `.ak-header-dropdown` - Navigation with dropdown menus
+*   **Usage:**
+    ```html
+    <!-- Standard Header -->
+    <header class="ak-header">
+      <div class="ak-header-content">
+        <div class="ak-header-brand">Logo</div>
+        <nav class="ak-header-nav">...</nav>
+        <div class="ak-header-actions">...</div>
+      </div>
+    </header>
+    
+    <!-- Centered Header -->
+    <header class="ak-header ak-header-centered">
+      <div class="ak-header-content">
+        <nav class="ak-header-nav">...</nav>
+        <div class="ak-header-brand">Logo</div>
+        <div class="ak-header-actions">...</div>
+      </div>
+    </header>
+    
+    <!-- Header with Search -->
+    <header class="ak-header ak-header-search">
+      <div class="ak-header-content">
+        <div class="ak-header-brand">Logo</div>
+        <input type="search" class="ak-header-search-input" placeholder="Search...">
+        <div class="ak-header-actions">...</div>
+      </div>
+    </header>
+    ```
 
 ### C. Hero Section (`.ak-hero`)
 *   **Status:** ✨ Newly Implemented
@@ -443,11 +506,16 @@ This document provides a comprehensive overview of all components and utilities 
 
 ### Layout Structure
 When building new pages using `ak-design-system`:
-1.  **Always use** `.ak-header` and `.ak-footer` for the main layout shell.
+1.  **Always use** `.ak-header` (or variants like `.ak-header-centered`, `.ak-header-minimal`) and `.ak-footer` (or variants like `.ak-footer-multi-column`, `.ak-footer-newsletter`) for the main layout shell.
 2.  **Prefer** `.ak-hero` for the top section of landing pages instead of custom flex utilities.
 3.  **Use** `.ak-sidebar` for navigation drawers (mobile-friendly).
 4.  **Always use** `.ak-img-fluid` for content images to prevent overflow issues on mobile.
 5.  **Use** `.ak-object-cover` for avatars or card images that need to fill a specific dimension without distortion.
+6.  **Choose appropriate header/footer variants** based on use case:
+    *   Landing pages: `.ak-header-centered` or `.ak-header-transparent` with `.ak-footer-multi-column` or `.ak-footer-social`
+    *   Dashboards: `.ak-header-minimal` with `.ak-footer-minimal`
+    *   Content sites: `.ak-header-search` with `.ak-footer-branded`
+    *   Marketing sites: `.ak-footer-newsletter` for lead generation
 
 ### Component Selection
 - **Cards**: Use for content containers, product displays, feature highlights
@@ -505,10 +573,10 @@ When building new pages using `ak-design-system`:
 
 ## 5. Coverage Assessment
 
-### Current Coverage: ~90-93%
+### Current Coverage: ~92-95%
 
 **Implemented Components:**
-- ✅ Layout: Header, Footer, Hero, Sidebar
+- ✅ Layout: Header (6 variants), Footer (6 variants), Hero, Sidebar
 - ✅ Content: Cards, Modals, Alerts, Badges, Tables
 - ✅ Forms: Inputs, Textarea, Select, Form Groups, Switch
 - ✅ Navigation: Breadcrumbs, Tabs, Pagination

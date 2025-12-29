@@ -142,6 +142,12 @@
                 </a>
             </li>
             <li>
+                <a href="#header-footer" data-section="header-footer">
+                    <i data-lucide="layout-header"></i>
+                    <span>Header & Footer</span>
+                </a>
+            </li>
+            <li>
                 <a href="#utilities" data-section="utilities">
                     <i data-lucide="wrench"></i>
                     <span>Utilities</span>
@@ -881,6 +887,281 @@
                                     <i data-lucide="trash" class="ak-w-4 ak-h-4 ak-mr-2"></i> Löschen
                                 </button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Header & Footer Variants Section -->
+            <section id="header-footer" class="ak-section" data-testid="section-header-footer">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Header & Footer Varianten</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <p class="ak-text-lg ak-mb-6">Vorgefertigte Header- und Footer-Varianten für schnelles Prototyping.</p>
+                    
+                    <!-- Header Variants -->
+                    <h3 class="ak-text-2xl ak-font-semibold ak-mb-6">Header Varianten</h3>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standard Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <nav class="ak-header-nav">
+                                        <a href="#" class="ak-active">Startseite</a>
+                                        <a href="#">Über uns</a>
+                                        <a href="#">Kontakt</a>
+                                    </nav>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Anmelden</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Standard Header mit Logo links, Navigation in der Mitte, Aktionen rechts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">2. Zentrierter Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-centered" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <nav class="ak-header-nav">
+                                        <a href="#">Produkte</a>
+                                        <a href="#">Lösungen</a>
+                                    </nav>
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">Login</button>
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Loslegen</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Logo zentriert, Navigation links und rechts davon. Ideal für Landing Pages.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimaler Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-minimal" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">Dashboard</div>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                            <i data-lucide="bell" class="ak-w-4 ak-h-4"></i>
+                                        </button>
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                            <i data-lucide="user" class="ak-w-4 ak-h-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Reduziertes Padding, nur Logo und Aktionen. Perfekt für Dashboards.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">4. Transparenter Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, var(--ak-color-primary) 0%, var(--ak-color-accent) 100%); opacity: 0.1; z-index: 0;"></div>
+                            <header class="ak-header ak-header-transparent" style="position: relative; margin: -16px -16px 16px -16px; z-index: 1;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <nav class="ak-header-nav">
+                                        <a href="#" class="ak-active">Startseite</a>
+                                        <a href="#">Funktionen</a>
+                                        <a href="#">Preise</a>
+                                    </nav>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Loslegen</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted" style="position: relative; z-index: 1;">Transparenter Hintergrund, ideal für Hero-Sections. Wechselt zu solidem Hintergrund beim Scrollen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">5. Header mit Suche</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-search" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <input type="search" class="ak-header-search-input" placeholder="Suchen...">
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                            <i data-lucide="search" class="ak-w-4 ak-h-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Integrierte Suchleiste in der Navigation. Auf Mobile wird sie zu einem Icon-Button.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">6. Header mit Dropdown-Navigation</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-dropdown" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <nav class="ak-header-nav">
+                                        <div class="ak-header-nav-item ak-dropdown">
+                                            <a href="#">Produkte <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i></a>
+                                            <div class="ak-dropdown-menu">
+                                                <a href="#" class="ak-dropdown-item">Produkt 1</a>
+                                                <a href="#" class="ak-dropdown-item">Produkt 2</a>
+                                                <div class="ak-dropdown-divider"></div>
+                                                <a href="#" class="ak-dropdown-item">Alle Produkte</a>
+                                            </div>
+                                        </div>
+                                        <a href="#">Über uns</a>
+                                        <a href="#">Kontakt</a>
+                                    </nav>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Anmelden</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Navigation mit Dropdown-Menüs. Nutzt die bestehende Dropdown-Komponente.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer Variants -->
+                    <h3 class="ak-text-2xl ak-font-semibold ak-mb-6 ak-mt-12">Footer Varianten</h3>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standard Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-container">
+                                    <p class="ak-text-sm">&copy; 2025 ak-systems. Alle Rechte vorbehalten.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Einfaches Footer-Layout mit Copyright-Text.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">2. Mehrspaltiger Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-multi-column" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div class="ak-footer-column">
+                                        <h5 class="ak-footer-column-title">Unternehmen</h5>
+                                        <a href="#">Über uns</a>
+                                        <a href="#">Karriere</a>
+                                        <a href="#">Kontakt</a>
+                                        <a href="#">Blog</a>
+                                    </div>
+                                    <div class="ak-footer-column">
+                                        <h5 class="ak-footer-column-title">Produkte</h5>
+                                        <a href="#">Funktionen</a>
+                                        <a href="#">Preise</a>
+                                        <a href="#">Dokumentation</a>
+                                        <a href="#">Support</a>
+                                    </div>
+                                    <div class="ak-footer-column">
+                                        <h5 class="ak-footer-column-title">Rechtliches</h5>
+                                        <a href="#">Datenschutz</a>
+                                        <a href="#">AGB</a>
+                                        <a href="#">Cookies</a>
+                                    </div>
+                                </div>
+                                <div class="ak-container">
+                                    <p class="ak-text-sm ak-text-muted">&copy; 2025 ak-systems. Alle Rechte vorbehalten.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Mehrspaltiges Layout mit verschiedenen Link-Gruppen. Responsive stapelt sich auf Mobile.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimaler Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-minimal" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <p>&copy; 2025</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Sehr schlankes Design mit reduziertem Padding. Nur Copyright-Text.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">4. Footer mit Logo & Navigation</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-branded" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div class="ak-footer-brand">
+                                        <div class="ak-footer-brand-logo">AK Design System</div>
+                                        <ul class="ak-footer-brand-nav">
+                                            <li><a href="#">Startseite</a></li>
+                                            <li><a href="#">Über uns</a></li>
+                                            <li><a href="#">Produkte</a></li>
+                                            <li><a href="#">Kontakt</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ak-footer-brand-copyright">
+                                        &copy; 2025 ak-systems. Alle Rechte vorbehalten.
+                                    </div>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Logo oben, Navigation darunter, Copyright am Ende. Ideal für Corporate Sites.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">5. Footer mit Newsletter</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-newsletter" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div>
+                                        <h5 class="ak-footer-newsletter-title">Bleiben Sie auf dem Laufenden</h5>
+                                        <p class="ak-footer-newsletter-description">Erhalten Sie die neuesten Nachrichten und Updates direkt in Ihr Postfach.</p>
+                                    </div>
+                                    <div class="ak-footer-newsletter-form">
+                                        <div class="ak-footer-newsletter-input-group">
+                                            <input type="email" class="ak-footer-newsletter-input" placeholder="Ihre E-Mail-Adresse">
+                                            <button class="ak-btn ak-btn-primary">Abonnieren</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ak-container" style="margin-top: var(--ak-space-6); padding-top: var(--ak-space-4); border-top: 1px solid var(--ak-color-border);">
+                                    <p class="ak-text-sm ak-text-muted">&copy; 2025 ak-systems. Alle Rechte vorbehalten.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Newsletter-Signup-Formular integriert. Nutzt bestehende Form-Komponenten.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">6. Footer mit Social Media</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-social" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div class="ak-footer-brand-logo">AK Design System</div>
+                                    <p class="ak-footer-social-text">Folgen Sie uns in den sozialen Medien</p>
+                                    <div class="ak-footer-social-icons">
+                                        <a href="#" class="ak-footer-social-icon" aria-label="Twitter">
+                                            <i data-lucide="twitter" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                        <a href="#" class="ak-footer-social-icon" aria-label="GitHub">
+                                            <i data-lucide="github" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                        <a href="#" class="ak-footer-social-icon" aria-label="LinkedIn">
+                                            <i data-lucide="linkedin" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                        <a href="#" class="ak-footer-social-icon" aria-label="Facebook">
+                                            <i data-lucide="facebook" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                    </div>
+                                    <p class="ak-text-sm ak-text-muted" style="margin-top: var(--ak-space-4);">&copy; 2025 ak-systems. Alle Rechte vorbehalten.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Social Media Icons prominent platziert. Ideal für Community-Sites.</p>
                         </div>
                     </div>
                 </div>

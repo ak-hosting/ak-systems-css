@@ -142,6 +142,12 @@
                 </a>
             </li>
             <li>
+                <a href="#header-footer" data-section="header-footer">
+                    <i data-lucide="layout-header"></i>
+                    <span>Header & Footer</span>
+                </a>
+            </li>
+            <li>
                 <a href="#utilities" data-section="utilities">
                     <i data-lucide="wrench"></i>
                     <span>Yardımcı Sınıflar</span>
@@ -872,6 +878,281 @@
                                     İkinci akordeon öğesi için içerik.
                                 </div>
                             </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Header & Footer Variants Section -->
+            <section id="header-footer" class="ak-section" data-testid="section-header-footer">
+                <h2 class="ak-text-3xl ak-font-bold ak-mb-6">Header & Footer Varyantları</h2>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <p class="ak-text-lg ak-mb-6">Hızlı prototipleme için hazır Header ve Footer varyantları.</p>
+                    
+                    <!-- Header Variants -->
+                    <h3 class="ak-text-2xl ak-font-semibold ak-mb-6">Header Varyantları</h3>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standart Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <nav class="ak-header-nav">
+                                        <a href="#" class="ak-active">Ana Sayfa</a>
+                                        <a href="#">Hakkımızda</a>
+                                        <a href="#">İletişim</a>
+                                    </nav>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Giriş Yap</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Logo solda, navigasyon ortada, aksiyonlar sağda olan standart header.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">2. Ortalanmış Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-centered" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <nav class="ak-header-nav">
+                                        <a href="#">Ürünler</a>
+                                        <a href="#">Çözümler</a>
+                                    </nav>
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">Giriş</button>
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Başlayın</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Logo ortada, navigasyon sol ve sağında. Landing sayfaları için ideal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimal Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-minimal" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">Dashboard</div>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                            <i data-lucide="bell" class="ak-w-4 ak-h-4"></i>
+                                        </button>
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                            <i data-lucide="user" class="ak-w-4 ak-h-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Azaltılmış padding, sadece logo ve aksiyonlar. Dashboard'lar için mükemmel.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">4. Şeffaf Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, var(--ak-color-primary) 0%, var(--ak-color-accent) 100%); opacity: 0.1; z-index: 0;"></div>
+                            <header class="ak-header ak-header-transparent" style="position: relative; margin: -16px -16px 16px -16px; z-index: 1;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <nav class="ak-header-nav">
+                                        <a href="#" class="ak-active">Ana Sayfa</a>
+                                        <a href="#">Özellikler</a>
+                                        <a href="#">Fiyatlandırma</a>
+                                    </nav>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Başlayın</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted" style="position: relative; z-index: 1;">Şeffaf arka plan, hero bölümleri için ideal. Kaydırırken dolu arka plana geçer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">5. Arama ile Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-search" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <input type="search" class="ak-header-search-input" placeholder="Ara...">
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                            <i data-lucide="search" class="ak-w-4 ak-h-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Navigasyona entegre arama çubuğu. Mobilde bir ikon butonuna dönüşür.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">6. Dropdown Navigasyonlu Header</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <header class="ak-header ak-header-dropdown" style="position: relative; margin: -16px -16px 16px -16px;">
+                                <div class="ak-header-content">
+                                    <div class="ak-header-brand">AK Design System</div>
+                                    <nav class="ak-header-nav">
+                                        <div class="ak-header-nav-item ak-dropdown">
+                                            <a href="#">Ürünler <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i></a>
+                                            <div class="ak-dropdown-menu">
+                                                <a href="#" class="ak-dropdown-item">Ürün 1</a>
+                                                <a href="#" class="ak-dropdown-item">Ürün 2</a>
+                                                <div class="ak-dropdown-divider"></div>
+                                                <a href="#" class="ak-dropdown-item">Tüm Ürünler</a>
+                                            </div>
+                                        </div>
+                                        <a href="#">Hakkımızda</a>
+                                        <a href="#">İletişim</a>
+                                    </nav>
+                                    <div class="ak-header-actions">
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Giriş Yap</button>
+                                    </div>
+                                </div>
+                            </header>
+                            <p class="ak-text-sm ak-text-muted">Dropdown menülü navigasyon. Mevcut dropdown bileşenini kullanır.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer Variants -->
+                    <h3 class="ak-text-2xl ak-font-semibold ak-mb-6 ak-mt-12">Footer Varyantları</h3>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standart Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-container">
+                                    <p class="ak-text-sm">&copy; 2025 ak-systems. Tüm hakları saklıdır.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Telif hakkı metni ile basit footer düzeni.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">2. Çok Sütunlu Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-multi-column" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div class="ak-footer-column">
+                                        <h5 class="ak-footer-column-title">Şirket</h5>
+                                        <a href="#">Hakkımızda</a>
+                                        <a href="#">Kariyer</a>
+                                        <a href="#">İletişim</a>
+                                        <a href="#">Blog</a>
+                                    </div>
+                                    <div class="ak-footer-column">
+                                        <h5 class="ak-footer-column-title">Ürünler</h5>
+                                        <a href="#">Özellikler</a>
+                                        <a href="#">Fiyatlandırma</a>
+                                        <a href="#">Dokümantasyon</a>
+                                        <a href="#">Destek</a>
+                                    </div>
+                                    <div class="ak-footer-column">
+                                        <h5 class="ak-footer-column-title">Yasal</h5>
+                                        <a href="#">Gizlilik</a>
+                                        <a href="#">Şartlar</a>
+                                        <a href="#">Çerezler</a>
+                                    </div>
+                                </div>
+                                <div class="ak-container">
+                                    <p class="ak-text-sm ak-text-muted">&copy; 2025 ak-systems. Tüm hakları saklıdır.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Farklı link gruplarıyla çok sütunlu düzen. Mobilde dikey olarak yığılır.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimal Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-minimal" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <p>&copy; 2025</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Azaltılmış padding ile çok sade tasarım. Sadece telif hakkı metni.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">4. Logo & Navigasyonlu Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-branded" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div class="ak-footer-brand">
+                                        <div class="ak-footer-brand-logo">AK Design System</div>
+                                        <ul class="ak-footer-brand-nav">
+                                            <li><a href="#">Ana Sayfa</a></li>
+                                            <li><a href="#">Hakkımızda</a></li>
+                                            <li><a href="#">Ürünler</a></li>
+                                            <li><a href="#">İletişim</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ak-footer-brand-copyright">
+                                        &copy; 2025 ak-systems. Tüm hakları saklıdır.
+                                    </div>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Logo üstte, navigasyon altında, telif hakkı en altta. Kurumsal siteler için ideal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">5. Bülten ile Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-newsletter" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div>
+                                        <h5 class="ak-footer-newsletter-title">Güncel Kalın</h5>
+                                        <p class="ak-footer-newsletter-description">En son haberler ve güncellemeleri doğrudan gelen kutunuza alın.</p>
+                                    </div>
+                                    <div class="ak-footer-newsletter-form">
+                                        <div class="ak-footer-newsletter-input-group">
+                                            <input type="email" class="ak-footer-newsletter-input" placeholder="E-posta adresiniz">
+                                            <button class="ak-btn ak-btn-primary">Abone Ol</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ak-container" style="margin-top: var(--ak-space-6); padding-top: var(--ak-space-4); border-top: 1px solid var(--ak-color-border);">
+                                    <p class="ak-text-sm ak-text-muted">&copy; 2025 ak-systems. Tüm hakları saklıdır.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Entegre bülten kayıt formu. Mevcut form bileşenlerini kullanır.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-mb-8">
+                        <h4 class="ak-text-lg ak-font-semibold ak-mb-4">6. Sosyal Medya ile Footer</h4>
+                        <div class="ak-card ak-p-4 ak-mb-4" style="background: var(--ak-color-bg-subtle);">
+                            <footer class="ak-footer ak-footer-social" style="position: relative; margin: 16px -16px -16px -16px;">
+                                <div class="ak-footer-content">
+                                    <div class="ak-footer-brand-logo">AK Design System</div>
+                                    <p class="ak-footer-social-text">Sosyal medyada bizi takip edin</p>
+                                    <div class="ak-footer-social-icons">
+                                        <a href="#" class="ak-footer-social-icon" aria-label="Twitter">
+                                            <i data-lucide="twitter" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                        <a href="#" class="ak-footer-social-icon" aria-label="GitHub">
+                                            <i data-lucide="github" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                        <a href="#" class="ak-footer-social-icon" aria-label="LinkedIn">
+                                            <i data-lucide="linkedin" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                        <a href="#" class="ak-footer-social-icon" aria-label="Facebook">
+                                            <i data-lucide="facebook" class="ak-w-5 ak-h-5"></i>
+                                        </a>
+                                    </div>
+                                    <p class="ak-text-sm ak-text-muted" style="margin-top: var(--ak-space-4);">&copy; 2025 ak-systems. Tüm hakları saklıdır.</p>
+                                </div>
+                            </footer>
+                            <p class="ak-text-sm ak-text-muted ak-mt-4">Öne çıkan sosyal medya ikonları. Topluluk siteleri için ideal.</p>
                         </div>
                     </div>
                 </div>

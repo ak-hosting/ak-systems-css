@@ -7,13 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-12-30
+
 ### Added
-- **Header Variants**: Multiple pre-built header layouts including centered, minimal, transparent, search-enabled, and dropdown navigation variants
-- **Footer Variants**: Multiple pre-built footer layouts including multi-column, minimal, branded, newsletter, and social media variants
-- **Demo Pages**: Added comprehensive Header & Footer variants section to all demo pages (EN, DE, TR)
+- **Model Context Protocol (MCP)**: New `docs/ak-design-system.mcp.md` providing rules, mental models, and decision logic for AI agents working with the framework
+- **MCP Documentation**: Added MCP guidance sections to all README files (README.md, README.de.md, README.tr.md)
+- **Release Process**: Updated release checklist to include MCP review for major releases
 
 ### Changed
-- **Documentation**: Updated framework analysis and README files to reflect new header and footer variants
+- **Documentation**: Enhanced README files with clear documentation hierarchy (MCP, AGENT_CONTEXT.md, demo/index.html)
+- **Release Checklist**: Added step to review MCP for breaking changes in major releases
 
 ## [1.2.0] - 2025-12-24
 
@@ -70,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Loader/Spinner framework
 - Utility classes
 
+[1.3.0]: https://github.com/ak-hosting/ak-systems-css/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/ak-hosting/ak-systems-css/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/ak-hosting/ak-systems-css/compare/v1.0.3...v1.1.0
 [1.0.3]: https://github.com/ak-hosting/ak-systems-css/compare/v1.0.2...v1.0.3

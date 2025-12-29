@@ -356,7 +356,7 @@ Agenten müssen bei Unsicherheit klar kommunizieren und abbrechen, anstatt zu im
 
 **Version-Information:**
 - Framework-Version ist in `VERSION`-Datei dokumentiert
-- CDN-URLs enthalten Versions-Tags (z.B. `@v1.2.2`)
+- CDN-URLs enthalten Versions-Tags (z.B. `@v1.3.0`)
 - CHANGELOG.md dokumentiert Änderungen zwischen Versionen
 
 **Für externe Nutzung:**

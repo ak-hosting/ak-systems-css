@@ -18,7 +18,7 @@ Tek desteklenen giriş (geliştirme):
 <!-- Belirli bir sürümü kullanın (önerilen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.0/dist/ak-design-system.min.css"
 />
 
 <!-- Veya ana daldan en son sürümü kullanın (sadece geliştirme) -->
@@ -122,6 +122,17 @@ Tek desteklenen giriş (geliştirme):
 Tüm bileşenleri içeren bir demo sayfasını burada bulabilirsiniz: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
 
 Not: Demo sayfası, GitHub Pages etkinleştirildiğinde kullanılabilir. O zamana kadar yerel sunucu ile `demo/index.html` dosyasını açabilirsiniz.
+
+## AI / MCP Rehberi
+
+Bu proje, AI ajanları (Codex, Cursor, Claude ve diğer LLM'ler) için bir **Model Context Protocol (MCP)** içerir. MCP, AI ajanlarının tüm kodu analiz etmeden AK Design System ile doğru çalışması için kurallar, zihinsel modeller ve karar mantığı sağlar.
+
+**Dokümantasyon hiyerarşisi:**
+- **MCP** ([`docs/ak-design-system.mcp.md`](docs/ak-design-system.mcp.md)): Kurallar, zihinsel model ve karar çerçevesi
+- **AGENT_CONTEXT.md** ([`docs/AGENT_CONTEXT.md`](docs/AGENT_CONTEXT.md)): Sınıf listeleri ve kod örnekleri ile teknik referans
+- **demo/index.html**: HTML kalıpları için kaynak gerçeği
+
+MCP, AI ajanları tarafından harici kullanım için tasarlanmıştır ve ilkelere ve yapıya odaklanır, AGENT_CONTEXT.md ise spesifik sınıf adları ve uygulama detaylarını içerir.
 
 ## Önemli Notlar
 

@@ -18,7 +18,7 @@ Production/CDN-Einstieg:
 <!-- Spezifische Version nutzen (empfohlen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.0/dist/ak-design-system.min.css"
 />
 
 <!-- Oder neueste Version vom Main-Branch (nur für Entwicklung) -->
@@ -122,6 +122,17 @@ Um die Distributionsdateien in `dist/` zu generieren:
 Eine Demo-Seite mit allen Komponenten findest du hier: [ak-systems CSS Demo](https://ak-hosting.github.io/ak-systems-css/demo/)
 
 Hinweis: Die Demo-Seite ist verfügbar, sobald GitHub Pages für das Repository aktiviert ist. Bis dahin öffne die lokale Demo unter `demo/index.html` über einen lokalen Server.
+
+## KI- / MCP-Hinweise
+
+Dieses Projekt enthält ein **Model Context Protocol (MCP)** für KI-Agenten (Codex, Cursor, Claude und andere LLMs). Das MCP stellt Regeln, mentale Modelle und Entscheidungslogik bereit, damit KI-Agenten korrekt mit dem AK Design System arbeiten können, ohne den gesamten Code analysieren zu müssen.
+
+**Dokumentations-Hierarchie:**
+- **MCP** ([`docs/ak-design-system.mcp.md`](docs/ak-design-system.mcp.md)): Regeln, mentales Modell und Entscheidungsrahmen
+- **AGENT_CONTEXT.md** ([`docs/AGENT_CONTEXT.md`](docs/AGENT_CONTEXT.md)): Technische Referenz mit Klassenlisten und Code-Beispielen
+- **demo/index.html**: Source of Truth für HTML-Patterns
+
+Das MCP ist für die externe Nutzung durch KI-Agenten konzipiert und fokussiert sich auf Prinzipien und Struktur, während AGENT_CONTEXT.md spezifische Klassen-Namen und Implementierungsdetails enthält.
 
 ## Wichtige Hinweise
 

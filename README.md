@@ -18,7 +18,7 @@ Production/CDN entry:
 <!-- Use a specific version (recommended) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.0/dist/ak-design-system.min.css"
 />
 
 <!-- Or use the latest version from main branch (development only) -->
@@ -125,6 +125,17 @@ You can find a demo page with all components here: [ak-systems CSS Demo](https:/
 
 Note: The demo page is available once GitHub Pages is enabled for the repository. Until then, open the local demo at `demo/index.html` via a local server.
 
+## AI / MCP Guidance
+
+This project includes a **Model Context Protocol (MCP)** for AI agents (Codex, Cursor, Claude, and other LLMs). The MCP provides rules, mental models, and decision logic to help AI agents work correctly with the AK Design System without requiring full code analysis.
+
+**Documentation hierarchy:**
+- **MCP** ([`docs/ak-design-system.mcp.md`](docs/ak-design-system.mcp.md)): Rules, mental model, and decision framework
+- **AGENT_CONTEXT.md** ([`docs/AGENT_CONTEXT.md`](docs/AGENT_CONTEXT.md)): Technical reference with class lists and code examples
+- **demo/index.html**: Source of truth for HTML patterns
+
+The MCP is designed for external use by AI agents and focuses on principles and structure, while AGENT_CONTEXT.md contains specific class names and implementation details.
+
 ## Quick Smoke Test (local)
 
 1. Serve the repo locally (e.g., `python3 -m http.server` from the project root).
@@ -134,7 +145,7 @@ Note: The demo page is available once GitHub Pages is enabled for the repository
 
 ## Versioning and CDN Usage
 
-- Pin to release tags when available to avoid unintentional updates, e.g. `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.2.0/dist/ak-design-system.min.css`.
+- Pin to release tags when available to avoid unintentional updates, e.g. `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.0/dist/ak-design-system.min.css`.
 - See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 - Supported entries only: `css/ak-design-system/index.css` for development and `dist/ak-design-system.min.css` for production/CDN.
 

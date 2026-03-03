@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Design System - Tables</title>
+    <link rel="stylesheet" href="../dist/ak-design-system.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: var(--ak-color-bg);
+            color: var(--ak-color-text);
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 32px;
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-lg);
+            background-color: var(--ak-color-surface);
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+        h2 { margin-top: 0; margin-bottom: 8px; }
+        .description { color: var(--ak-color-text-muted); margin-bottom: 24px; }
+
+        /* Extended Table Styles (Demo Only) */
+        .ak-table-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: var(--ak-space-4);
+            border-radius: var(--ak-radius-lg);
+            border: 1px solid var(--ak-color-border);
+        }
+
+        .ak-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--ak-font-size-sm);
+            color: var(--ak-color-text);
+            background-color: var(--ak-color-surface);
+        }
+
+        .ak-table th,
+        .ak-table td {
+            padding: var(--ak-space-3) var(--ak-space-4);
+            text-align: left;
+            border-bottom: 1px solid var(--ak-color-border);
+        }
+
+        .ak-table th {
+            background-color: var(--ak-color-bg-subtle);
+            font-weight: var(--ak-font-weight-semibold);
+            color: var(--ak-color-text-muted);
+            text-transform: uppercase;
+            font-size: var(--ak-font-size-xs);
+            letter-spacing: 0.05em;
+        }
+
+        .ak-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Variants */
+        .ak-table-striped tbody tr:nth-child(even) {
+            background-color: var(--ak-color-bg-subtle);
+        }
+
+        .ak-table-hover tbody tr:hover {
+            background-color: var(--ak-color-muted);
+            transition: background-color 0.2s ease;
+        }
+
+        .ak-table-sm th,
+        .ak-table-sm td {
+            padding: var(--ak-space-2) var(--ak-space-3);
+            font-size: var(--ak-font-size-xs);
+        }
+
+        .ak-table-bordered th,
+        .ak-table-bordered td {
+            border: 1px solid var(--ak-color-border);
+        }
+        
+        .ak-table-caption {
+            caption-side: bottom;
+            padding: var(--ak-space-2) var(--ak-space-4);
+            font-size: var(--ak-font-size-sm);
+            color: var(--ak-color-text-muted);
+            text-align: left;
+            border-top: 1px solid var(--ak-color-border);
+            background-color: var(--ak-color-bg-subtle);
+        }
+    </style>
+</head>
+<body class="ak-theme-light">
+
+    <div class="ak-mb-8">
+        <a href="index.html" class="ak-btn ak-btn-ghost ak-mb-4">
+            <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+            Back to Dashboard
+        </a>
+        <h1 class="ak-text-4xl ak-font-bold">Tables</h1>
+        <p class="ak-text-lg ak-text-muted ak-mt-2">Display data in an organized, readable format with various styles and responsive layouts.</p>
+    </div>
+
+    <!-- BASIC TABLE -->
+    <div class="demo-section">
+        <h2 class="ak-text-2xl ak-font-bold">Basic Table</h2>
+        <p class="description">Standard table with border-bottom dividers.</p>
+        
+        <div class="ak-table-container">
+            <table class="ak-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alice Freeman</td>
+                        <td>alice@example.com</td>
+                        <td>Admin</td>
+                        <td><span class="ak-badge ak-badge-success">Active</span></td>
+                        <td>
+                            <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bob Smith</td>
+                        <td>bob@example.com</td>
+                        <td>Editor</td>
+                        <td><span class="ak-badge ak-badge-warning">Pending</span></td>
+                        <td>
+                            <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Charlie Brown</td>
+                        <td>charlie@example.com</td>
+                        <td>Viewer</td>
+                        <td><span class="ak-badge ak-badge-destructive">Inactive</span></td>
+                        <td>
+                            <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- STRIPED & HOVER -->
+    <div class="demo-section">
+        <h2 class="ak-text-2xl ak-font-bold">Striped & Hoverable</h2>
+        <p class="description">Add <code>.ak-table-striped</code> for zebra-striping and <code>.ak-table-hover</code> for hover effects.</p>
+        
+        <div class="ak-table-container">
+            <table class="ak-table ak-table-striped ak-table-hover">
+                <thead>
+                    <tr>
+                        <th>Invoice</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INV-001</td>
+                        <td>Jan 12, 2024</td>
+                        <td>$1,200.00</td>
+                        <td><span class="ak-badge ak-badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                        <td>INV-002</td>
+                        <td>Jan 15, 2024</td>
+                        <td>$850.00</td>
+                        <td><span class="ak-badge ak-badge-warning">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>INV-003</td>
+                        <td>Jan 20, 2024</td>
+                        <td>$2,300.00</td>
+                        <td><span class="ak-badge ak-badge-destructive">Overdue</span></td>
+                    </tr>
+                    <tr>
+                        <td>INV-004</td>
+                        <td>Feb 01, 2024</td>
+                        <td>$500.00</td>
+                        <td><span class="ak-badge ak-badge-success">Paid</span></td>
+                    </tr>
+                </tbody>
+                <caption class="ak-table-caption">Recent Invoices</caption>
+            </table>
+        </div>
+    </div>
+
+    <!-- COMPACT TABLE -->
+    <div class="demo-section">
+        <h2 class="ak-text-2xl ak-font-bold">Compact Table</h2>
+        <p class="description">Use <code>.ak-table-sm</code> for denser data display.</p>
+        
+        <div class="ak-table-container">
+            <table class="ak-table ak-table-sm ak-table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Project</th>
+                        <th>Client</th>
+                        <th>Budget</th>
+                        <th>Deadline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Website Redesign</td>
+                        <td>Acme Corp</td>
+                        <td>$5,000</td>
+                        <td>Mar 15</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mobile App</td>
+                        <td>Globex</td>
+                        <td>$12,000</td>
+                        <td>Apr 20</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>SEO Audit</td>
+                        <td>Soylent Corp</td>
+                        <td>$800</td>
+                        <td>Feb 28</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

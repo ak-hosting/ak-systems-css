@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - AK Design System</title>
+    <meta name="description" content="AK Design System form components and input elements.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
+        }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Back to Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Form Components</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="forms.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                     <a href="forms.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="forms.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Basic Inputs -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Input Fields</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Standard Inputs</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-4">
+                        <div>
+                            <label class="ak-form-label">Email Address</label>
+                            <input type="email" class="ak-input" placeholder="name@example.com">
+                            <p class="ak-form-help">We'll never share your email with anyone else.</p>
+                        </div>
+                        
+                        <div>
+                            <label class="ak-form-label">Password</label>
+                            <input type="password" class="ak-input" value="password123">
+                        </div>
+
+                        <div>
+                            <label class="ak-form-label">Disabled Input</label>
+                            <input type="text" class="ak-input" disabled value="This field is disabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Validation States</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-4">
+                        <div>
+                            <label class="ak-form-label">Error State</label>
+                            <input type="text" class="ak-input ak-error" value="Invalid input value">
+                            <div class="ak-form-error">
+                                <i data-lucide="alert-circle" class="ak-w-4 ak-h-4"></i>
+                                Please enter a valid value
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="ak-form-label">With Hint</label>
+                            <input type="text" class="ak-input" placeholder="Enter username">
+                            <p class="ak-form-hint">Must be at least 3 characters long.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Textarea & Select -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Textarea & Select</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Textarea</h3>
+                    <div>
+                        <label class="ak-form-label">Message</label>
+                        <textarea class="ak-textarea" placeholder="Type your message here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Select Menu</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-4">
+                        <div>
+                            <label class="ak-form-label">Choose a Country</label>
+                            <select class="ak-select">
+                                <option>United States</option>
+                                <option>Germany</option>
+                                <option>Turkey</option>
+                                <option>France</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="ak-form-label">Disabled Select</label>
+                            <select class="ak-select" disabled>
+                                <option>Locked Option</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkboxes, Radios & Switches -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Selection Controls</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-8">
+                <!-- Checkboxes -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Checkboxes</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-checkbox">
+                            <input type="checkbox" id="check1" checked>
+                            <label for="check1">Option 1 (Checked)</label>
+                        </div>
+                        <div class="ak-checkbox">
+                            <input type="checkbox" id="check2">
+                            <label for="check2">Option 2</label>
+                        </div>
+                        <div class="ak-checkbox">
+                            <input type="checkbox" id="check3" disabled>
+                            <label for="check3">Option 3 (Disabled)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radios -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Radio Buttons</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-radio">
+                            <input type="radio" name="radio-group" id="radio1" checked>
+                            <label for="radio1">Selection A</label>
+                        </div>
+                        <div class="ak-radio">
+                            <input type="radio" name="radio-group" id="radio2">
+                            <label for="radio2">Selection B</label>
+                        </div>
+                        <div class="ak-radio">
+                            <input type="radio" name="radio-group" id="radio3" disabled>
+                            <label for="radio3">Selection C (Disabled)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Switches -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Toggles</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-4">
+                        <div class="ak-flex ak-items-center ak-justify-between">
+                            <label class="ak-font-medium">Notifications</label>
+                            <label class="ak-switch">
+                                <input type="checkbox" checked>
+                                <span class="ak-switch-slider"></span>
+                            </label>
+                        </div>
+                        <div class="ak-flex ak-items-center ak-justify-between">
+                            <label class="ak-font-medium">Dark Mode</label>
+                            <label class="ak-switch">
+                                <input type="checkbox">
+                                <span class="ak-switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Groups -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Input Groups</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                    <div>
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Button Addons</h3>
+                        <div class="ak-input-group ak-mb-4">
+                            <input type="text" class="ak-input" placeholder="Search...">
+                            <button class="ak-btn ak-btn-primary">Search</button>
+                        </div>
+                        
+                        <div class="ak-input-group">
+                            <button class="ak-btn ak-btn-outline">Action</button>
+                            <input type="text" class="ak-input" placeholder="Input with leading button">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Multiple Inputs</h3>
+                        <div class="ak-input-group">
+                            <input type="text" class="ak-input" placeholder="First Name">
+                            <input type="text" class="ak-input" placeholder="Last Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

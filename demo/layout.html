@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout - AK Design System</title>
+    <meta name="description" content="Layout components and grid system of the AK Design System.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .demo-grid-box {
+            background-color: var(--ak-color-surface);
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-md);
+            padding: 1rem;
+            text-align: center;
+            color: var(--ak-color-text-muted);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 3rem;
+        }
+
+        .demo-grid-box-highlight {
+            background-color: var(--ak-color-primary);
+            color: var(--ak-color-primary-text);
+            border: none;
+        }
+        
+        .demo-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
+        }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        /* 
+           EXTENDED GRID SYSTEM (Demo Only) 
+           This demonstrates the 12-column grid system capabilities 
+           intended for larger projects.
+        */
+        .ak-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+        .ak-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+        
+        .ak-col-span-1 { grid-column: span 1 / span 1 !important; }
+        .ak-col-span-2 { grid-column: span 2 / span 2 !important; }
+        .ak-col-span-3 { grid-column: span 3 / span 3 !important; }
+        .ak-col-span-4 { grid-column: span 4 / span 4 !important; }
+        .ak-col-span-5 { grid-column: span 5 / span 5 !important; }
+        .ak-col-span-6 { grid-column: span 6 / span 6 !important; }
+        .ak-col-span-7 { grid-column: span 7 / span 7 !important; }
+        .ak-col-span-8 { grid-column: span 8 / span 8 !important; }
+        .ak-col-span-9 { grid-column: span 9 / span 9 !important; }
+        .ak-col-span-10 { grid-column: span 10 / span 10 !important; }
+        .ak-col-span-11 { grid-column: span 11 / span 11 !important; }
+        .ak-col-span-12 { grid-column: span 12 / span 12 !important; }
+
+        @media (min-width: 768px) {
+            .ak-md\:ak-col-span-3 { grid-column: span 3 / span 3 !important; }
+            .ak-md\:ak-col-span-4 { grid-column: span 4 / span 4 !important; }
+            .ak-md\:ak-col-span-6 { grid-column: span 6 / span 6 !important; }
+            .ak-md\:ak-col-span-8 { grid-column: span 8 / span 8 !important; }
+            .ak-md\:ak-col-span-9 { grid-column: span 9 / span 9 !important; }
+        }
+        
+        @media (min-width: 1024px) {
+            .ak-lg\:ak-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+            .ak-lg\:ak-col-span-3 { grid-column: span 3 / span 3 !important; }
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Back to Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Layout System</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="layout.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                     <a href="layout.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="layout.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Standard Grid -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-2">Standard Grid</h2>
+            <p class="ak-text-muted ak-mb-6">The core grid system supports up to 4 columns out of the box.</p>
+            
+            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Equal Width Columns</h3>
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-4 ak-mb-8">
+                <div class="demo-grid-box">1</div>
+                <div class="demo-grid-box">2</div>
+                <div class="demo-grid-box">3</div>
+            </div>
+
+            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Responsive Grid</h3>
+            <p class="ak-text-sm ak-text-muted ak-mb-4">1 column on mobile, 2 on tablet, 4 on desktop.</p>
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-4 ak-gap-4">
+                <div class="demo-grid-box">1</div>
+                <div class="demo-grid-box">2</div>
+                <div class="demo-grid-box">3</div>
+                <div class="demo-grid-box">4</div>
+            </div>
+        </div>
+
+        <!-- Extended 12-Column Grid -->
+        <div class="demo-section">
+            <div class="ak-flex ak-items-center ak-gap-3 ak-mb-2">
+                <h2 class="ak-text-2xl ak-font-bold">Extended Grid</h2>
+                <span class="ak-badge ak-badge-accent">Large Projects</span>
+            </div>
+            <p class="ak-text-muted ak-mb-6">A powerful 12-column grid system for complex layouts.</p>
+
+            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">12 Columns</h3>
+            <div class="ak-grid ak-grid-cols-12 ak-gap-2 ak-mb-8">
+                <div class="demo-grid-box">1</div>
+                <div class="demo-grid-box">2</div>
+                <div class="demo-grid-box">3</div>
+                <div class="demo-grid-box">4</div>
+                <div class="demo-grid-box">5</div>
+                <div class="demo-grid-box">6</div>
+                <div class="demo-grid-box">7</div>
+                <div class="demo-grid-box">8</div>
+                <div class="demo-grid-box">9</div>
+                <div class="demo-grid-box">10</div>
+                <div class="demo-grid-box">11</div>
+                <div class="demo-grid-box">12</div>
+            </div>
+
+            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Column Spanning</h3>
+            <div class="ak-grid ak-grid-cols-12 ak-gap-4 ak-mb-8">
+                <div class="demo-grid-box ak-col-span-8 demo-grid-box-highlight">Span 8</div>
+                <div class="demo-grid-box ak-col-span-4">Span 4</div>
+                
+                <div class="demo-grid-box ak-col-span-4">Span 4</div>
+                <div class="demo-grid-box ak-col-span-4">Span 4</div>
+                <div class="demo-grid-box ak-col-span-4">Span 4</div>
+                
+                <div class="demo-grid-box ak-col-span-6">Span 6</div>
+                <div class="demo-grid-box ak-col-span-6">Span 6</div>
+            </div>
+
+            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Responsive Spanning</h3>
+            <div class="ak-grid ak-grid-cols-12 ak-gap-4">
+                <!-- Stack on mobile, side-by-side on desktop -->
+                <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-8 demo-grid-box-highlight">
+                    Main Content (12 -> 8 cols)
+                </div>
+                <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-4">
+                    Sidebar (12 -> 4 cols)
+                </div>
+            </div>
+        </div>
+
+        <!-- Layout Patterns -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Common Layouts</h2>
+
+            <!-- Sidebar Layout -->
+            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Dashboard Layout</h3>
+            <div class="ak-card ak-overflow-hidden ak-mb-8" style="height: 300px;">
+                <div class="ak-flex ak-h-full">
+                    <div class="ak-bg-muted ak-p-4 ak-hidden ak-md:ak-block" style="width: 200px;">
+                        <div class="ak-text-sm ak-font-bold ak-mb-4">Sidebar</div>
+                        <div class="ak-flex ak-flex-col ak-gap-2">
+                            <div class="ak-h-4 ak-bg-surface ak-rounded ak-w-3/4"></div>
+                            <div class="ak-h-4 ak-bg-surface ak-rounded ak-w-full"></div>
+                            <div class="ak-h-4 ak-bg-surface ak-rounded ak-w-5/6"></div>
+                        </div>
+                    </div>
+                    <div class="ak-flex-1 ak-flex ak-flex-col">
+                        <div class="ak-p-4 ak-border-b ak-border-border">
+                            <div class="ak-text-sm ak-font-bold">Header</div>
+                        </div>
+                        <div class="ak-p-4 ak-overflow-auto ak-bg-surface">
+                            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-4">
+                                <div class="ak-h-24 ak-bg-muted ak-rounded"></div>
+                                <div class="ak-h-24 ak-bg-muted ak-rounded"></div>
+                                <div class="ak-h-24 ak-bg-muted ak-rounded"></div>
+                                <div class="ak-h-48 ak-bg-muted ak-rounded ak-col-span-1 ak-md:ak-col-span-2"></div>
+                                <div class="ak-h-48 ak-bg-muted ak-rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Holy Grail -->
+            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Blog / Article Layout</h3>
+            <div class="ak-card ak-p-4">
+                <div class="ak-grid ak-grid-cols-12 ak-gap-4">
+                    <div class="demo-grid-box ak-col-span-12">Header</div>
+                    <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-3">Left Sidebar</div>
+                    <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-6 demo-grid-box-highlight">Main Content</div>
+                    <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-3">Right Sidebar</div>
+                    <div class="demo-grid-box ak-col-span-12">Footer</div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

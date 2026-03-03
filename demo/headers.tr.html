@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Design System - Header & Footer Varyantları</title>
+    <link rel="stylesheet" href="../css/ak-design-system/ak-components.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Demo-specific styles */
+        body {
+            background-color: var(--ak-color-bg);
+            color: var(--ak-color-text);
+            padding: 2rem;
+        }
+        .demo-section {
+            background: var(--ak-color-white);
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .demo-preview-box {
+            background: var(--ak-color-bg-subtle);
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-md);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden; /* For transparent header demo */
+        }
+    </style>
+</head>
+<body>
+    <div class="ak-container">
+        <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-mb-4">
+            <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+            Panele Dön
+        </a>
+
+        <header class="ak-mb-8">
+            <h1 class="ak-text-4xl ak-font-bold ak-mb-2">Header & Footer Varyantları</h1>
+            <p class="ak-text-muted">Hızlı prototipleme için önceden hazırlanmış header ve footer varyantları.</p>
+        </header>
+
+        <!-- Header Variants -->
+        <section class="demo-section">
+            <h2 class="ak-text-2xl ak-font-semibold ak-mb-6">Header Varyantları</h2>
+
+            <!-- 1. Standard Header -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standart Header</h3>
+                <div class="demo-preview-box">
+                    <header class="ak-header" style="position: relative;">
+                        <div class="ak-header-content">
+                            <div class="ak-header-brand">AK Design System</div>
+                            <nav class="ak-header-nav">
+                                <a href="#" class="ak-active">Ana Sayfa</a>
+                                <a href="#">Hakkımızda</a>
+                                <a href="#">İletişim</a>
+                            </nav>
+                            <div class="ak-header-actions">
+                                <button class="ak-btn ak-btn-primary ak-btn-sm">Giriş Yap</button>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Logo solda, navigasyon ortada, aksiyonlar sağda olan standart header.</p>
+            </div>
+
+            <!-- 2. Centered Header -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">2. Ortalanmış Header</h3>
+                <div class="demo-preview-box">
+                    <header class="ak-header ak-header-centered" style="position: relative;">
+                        <div class="ak-header-content">
+                            <nav class="ak-header-nav">
+                                <a href="#">Ürünler</a>
+                                <a href="#">Çözümler</a>
+                            </nav>
+                            <div class="ak-header-brand">AK Design System</div>
+                            <div class="ak-header-actions">
+                                <button class="ak-btn ak-btn-ghost ak-btn-sm">Giriş</button>
+                                <button class="ak-btn ak-btn-primary ak-btn-sm">Başlayın</button>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Logo ortada, navigasyon sol ve sağında. Landing sayfaları için ideal.</p>
+            </div>
+
+            <!-- 3. Minimal Header -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimal Header</h3>
+                <div class="demo-preview-box">
+                    <header class="ak-header ak-header-minimal" style="position: relative;">
+                        <div class="ak-header-content">
+                            <div class="ak-header-brand">Dashboard</div>
+                            <div class="ak-header-actions">
+                                <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                    <i data-lucide="bell" class="ak-w-4 ak-h-4"></i>
+                                </button>
+                                <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                    <i data-lucide="user" class="ak-w-4 ak-h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Azaltılmış padding, sadece logo ve aksiyonlar. Dashboard'lar için mükemmel.</p>
+            </div>
+
+            <!-- 4. Transparent Header -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">4. Şeffaf Header</h3>
+                <div class="demo-preview-box" style="position: relative;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, var(--ak-color-primary) 0%, var(--ak-color-accent) 100%); opacity: 0.1; z-index: 0;"></div>
+                    <header class="ak-header ak-header-transparent" style="position: relative; z-index: 1;">
+                        <div class="ak-header-content">
+                            <div class="ak-header-brand">AK Design System</div>
+                            <nav class="ak-header-nav">
+                                <a href="#" class="ak-active">Ana Sayfa</a>
+                                <a href="#">Özellikler</a>
+                                <a href="#">Fiyatlandırma</a>
+                            </nav>
+                            <div class="ak-header-actions">
+                                <button class="ak-btn ak-btn-primary ak-btn-sm">Başlayın</button>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Şeffaf arka plan, hero bölümleri için ideal. Kaydırırken dolu arka plana geçer.</p>
+            </div>
+
+            <!-- 5. Header with Search -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">5. Arama ile Header</h3>
+                <div class="demo-preview-box">
+                    <header class="ak-header ak-header-search" style="position: relative;">
+                        <div class="ak-header-content">
+                            <div class="ak-header-brand">AK Design System</div>
+                            <input type="search" class="ak-header-search-input" placeholder="Ara...">
+                            <div class="ak-header-actions">
+                                <button class="ak-btn ak-btn-ghost ak-btn-sm">
+                                    <i data-lucide="search" class="ak-w-4 ak-h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Navigasyona entegre arama çubuğu. Mobilde bir ikon butonuna dönüşür.</p>
+            </div>
+
+            <!-- 6. Header with Dropdown Navigation -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">6. Dropdown Navigasyonlu Header</h3>
+                <div class="demo-preview-box">
+                    <header class="ak-header ak-header-dropdown" style="position: relative;">
+                        <div class="ak-header-content">
+                            <div class="ak-header-brand">AK Design System</div>
+                            <nav class="ak-header-nav">
+                                <div class="ak-header-nav-item ak-dropdown">
+                                    <a href="#">Ürünler <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i></a>
+                                    <div class="ak-dropdown-menu">
+                                        <a href="#" class="ak-dropdown-item">Ürün 1</a>
+                                        <a href="#" class="ak-dropdown-item">Ürün 2</a>
+                                        <div class="ak-dropdown-divider"></div>
+                                        <a href="#" class="ak-dropdown-item">Tüm Ürünler</a>
+                                    </div>
+                                </div>
+                                <a href="#">Hakkımızda</a>
+                                <a href="#">İletişim</a>
+                            </nav>
+                            <div class="ak-header-actions">
+                                <button class="ak-btn ak-btn-primary ak-btn-sm">Giriş Yap</button>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Dropdown menülü navigasyon. Mevcut dropdown bileşenini kullanır.</p>
+            </div>
+        </section>
+
+        <!-- Footer Variants -->
+        <section class="demo-section">
+            <h2 class="ak-text-2xl ak-font-semibold ak-mb-6">Footer Varyantları</h2>
+
+            <!-- 1. Standard Footer -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standart Footer</h3>
+                <div class="demo-preview-box">
+                    <footer class="ak-footer" style="position: relative;">
+                        <div class="ak-container">
+                            <p class="ak-text-sm">&copy; 2025 ak-systems. Tüm hakları saklıdır.</p>
+                        </div>
+                    </footer>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Telif hakkı metni içeren basit footer düzeni.</p>
+            </div>
+
+            <!-- 2. Multi-Column Footer -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">2. Çok Sütunlu Footer</h3>
+                <div class="demo-preview-box">
+                    <footer class="ak-footer ak-footer-multi-column" style="position: relative;">
+                        <div class="ak-footer-content">
+                            <div class="ak-footer-column">
+                                <h5 class="ak-footer-column-title">Şirket</h5>
+                                <a href="#">Hakkımızda</a>
+                                <a href="#">Kariyer</a>
+                                <a href="#">İletişim</a>
+                                <a href="#">Blog</a>
+                            </div>
+                            <div class="ak-footer-column">
+                                <h5 class="ak-footer-column-title">Ürünler</h5>
+                                <a href="#">Özellikler</a>
+                                <a href="#">Fiyatlandırma</a>
+                                <a href="#">Dokümantasyon</a>
+                                <a href="#">Destek</a>
+                            </div>
+                            <div class="ak-footer-column">
+                                <h5 class="ak-footer-column-title">Yasal</h5>
+                                <a href="#">Gizlilik</a>
+                                <a href="#">Şartlar</a>
+                                <a href="#">Çerezler</a>
+                            </div>
+                        </div>
+                        <div class="ak-container">
+                            <p class="ak-text-sm ak-text-muted">&copy; 2025 ak-systems. Tüm hakları saklıdır.</p>
+                        </div>
+                    </footer>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Çeşitli bağlantı grupları içeren çok sütunlu düzen. Mobilde alt alta sıralanır.</p>
+            </div>
+
+            <!-- 3. Minimal Footer -->
+            <div class="ak-mb-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimal Footer</h3>
+                <div class="demo-preview-box">
+                    <footer class="ak-footer ak-footer-minimal" style="position: relative;">
+                        <div class="ak-footer-content">
+                            <p>&copy; 2025 ak-systems</p>
+                            <div class="ak-footer-links">
+                                <a href="#">Gizlilik</a>
+                                <a href="#">Şartlar</a>
+                                <a href="#">İletişim</a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <p class="ak-text-sm ak-text-muted">Temel öğelere indirgenmiş. Telif hakkı ve bağlantılar tek satırda.</p>
+            </div>
+        </section>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

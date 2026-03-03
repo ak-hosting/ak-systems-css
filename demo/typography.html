@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography - AK Design System</title>
+    <meta name="description" content="AK Design System typography styles, headings, and text utilities.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
+        }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Back to Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Typography</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="typography.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                     <a href="typography.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="typography.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Headings -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Headings</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-space-y-4">
+                    <div>
+                        <h1 class="ak-text-4xl ak-font-bold">Heading 1</h1>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-4xl .ak-font-bold</p>
+                    </div>
+                    <div>
+                        <h2 class="ak-text-3xl ak-font-bold">Heading 2</h2>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-3xl .ak-font-bold</p>
+                    </div>
+                    <div>
+                        <h3 class="ak-text-2xl ak-font-bold">Heading 3</h3>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-2xl .ak-font-bold</p>
+                    </div>
+                    <div>
+                        <h4 class="ak-text-xl ak-font-semibold">Heading 4</h4>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-xl .ak-font-semibold</p>
+                    </div>
+                    <div>
+                        <h5 class="ak-text-lg ak-font-semibold">Heading 5</h5>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-lg .ak-font-semibold</p>
+                    </div>
+                    <div>
+                        <h6 class="ak-text-base ak-font-semibold">Heading 6</h6>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-base .ak-font-semibold</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body Text -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Body Text</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Paragraph Sizes</h3>
+                    <div class="ak-space-y-4">
+                        <div>
+                            <p class="ak-text-lg">Large paragraph text. Used for introductory text or lead paragraphs to grab attention.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-lg</code>
+                        </div>
+                        <div>
+                            <p class="ak-text-base">Base paragraph text. The default font size for the majority of the content on the page.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-base</code>
+                        </div>
+                        <div>
+                            <p class="ak-text-sm">Small paragraph text. Often used for secondary information, captions, or helper text.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-sm</code>
+                        </div>
+                        <div>
+                            <p class="ak-text-xs">Extra small text. Used for very fine print or copyright notices.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-xs</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Inline Elements</h3>
+                    <p class="ak-mb-4">
+                        You can use <span class="ak-font-bold">bold text</span>, <span class="ak-font-italic">italic text</span>, or <span class="ak-underline">underlined text</span>.
+                    </p>
+                    <p class="ak-mb-4">
+                        Links can be styled with <a href="#" class="ak-link">.ak-link</a> class.
+                    </p>
+                    <p class="ak-mb-4">
+                        Inline code snippets like <code class="ak-code">const x = 1;</code> are styled with <code class="ak-code">.ak-code</code>.
+                    </p>
+                    <p>
+                        Mark text for <mark class="ak-bg-warning ak-text-warning-content ak-px-1">highlighting</mark> important parts.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blockquote -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Blockquote</h2>
+            
+            <div class="ak-card ak-p-6">
+                <blockquote class="ak-blockquote">
+                    <p class="ak-text-lg ak-font-medium ak-mb-2">"Design is not just what it looks like and feels like. Design is how it works."</p>
+                    <footer class="ak-text-muted">— Steve Jobs</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Lists -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Lists</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Unordered List</h3>
+                    <ul class="ak-list-disc ak-pl-5 ak-space-y-1">
+                        <li>First item</li>
+                        <li>Second item</li>
+                        <li>Third item with sub-items
+                            <ul class="ak-list-circle ak-pl-5 ak-mt-1">
+                                <li>Sub-item one</li>
+                                <li>Sub-item two</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Ordered List</h3>
+                    <ol class="ak-list-decimal ak-pl-5 ak-space-y-1">
+                        <li>First step</li>
+                        <li>Second step</li>
+                        <li>Third step
+                            <ol class="ak-list-decimal ak-pl-5 ak-mt-1">
+                                <li>Sub-step A</li>
+                                <li>Sub-step B</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Utilities -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Text Utilities</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-6">
+                <!-- Alignment -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Alignment</h3>
+                    <div class="ak-space-y-2 ak-p-4 ak-bg-surface-muted ak-rounded">
+                        <p class="ak-text-left">Left aligned</p>
+                        <p class="ak-text-center">Center aligned</p>
+                        <p class="ak-text-right">Right aligned</p>
+                        <p class="ak-text-justify">Justified text spans the full width of the container.</p>
+                    </div>
+                </div>
+
+                <!-- Transform -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Transform</h3>
+                    <div class="ak-space-y-2">
+                        <p class="ak-uppercase">Uppercase text</p>
+                        <p class="ak-lowercase">LOWERCASE TEXT</p>
+                        <p class="ak-capitalize">capitalize text</p>
+                    </div>
+                </div>
+
+                <!-- Weight -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Weight</h3>
+                    <div class="ak-space-y-2">
+                        <p class="ak-font-light">Light weight</p>
+                        <p class="ak-font-normal">Normal weight</p>
+                        <p class="ak-font-medium">Medium weight</p>
+                        <p class="ak-font-semibold">Semibold weight</p>
+                        <p class="ak-font-bold">Bold weight</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colors -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Text Colors</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-grid ak-grid-cols-2 ak-md:ak-grid-cols-4 ak-gap-4">
+                    <p class="ak-text-primary">Primary Text</p>
+                    <p class="ak-text-secondary">Secondary Text</p>
+                    <p class="ak-text-accent">Accent Text</p>
+                    <p class="ak-text-muted">Muted Text</p>
+                    <p class="ak-text-success">Success Text</p>
+                    <p class="ak-text-warning">Warning Text</p>
+                    <p class="ak-text-destructive">Destructive Text</p>
+                    <p class="ak-text-info">Info Text</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

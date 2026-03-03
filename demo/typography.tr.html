@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipografi - AK Design System</title>
+    <meta name="description" content="AK Design System tipografi, başlıklar ve metin yardımcı sınıfları.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
+        }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        İndekse Dön
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Tipografi</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="typography.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                     <a href="typography.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="typography.tr.html" class="ak-btn ak-btn-sm ak-btn-primary">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Headings -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Başlıklar</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-space-y-4">
+                    <div>
+                        <h1 class="ak-text-4xl ak-font-bold">Başlık 1</h1>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-4xl .ak-font-bold</p>
+                    </div>
+                    <div>
+                        <h2 class="ak-text-3xl ak-font-bold">Başlık 2</h2>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-3xl .ak-font-bold</p>
+                    </div>
+                    <div>
+                        <h3 class="ak-text-2xl ak-font-bold">Başlık 3</h3>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-2xl .ak-font-bold</p>
+                    </div>
+                    <div>
+                        <h4 class="ak-text-xl ak-font-semibold">Başlık 4</h4>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-xl .ak-font-semibold</p>
+                    </div>
+                    <div>
+                        <h5 class="ak-text-lg ak-font-semibold">Başlık 5</h5>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-lg .ak-font-semibold</p>
+                    </div>
+                    <div>
+                        <h6 class="ak-text-base ak-font-semibold">Başlık 6</h6>
+                        <p class="ak-text-sm ak-text-muted">.ak-text-base .ak-font-semibold</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body Text -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Gövde Metni</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Paragraf Boyutları</h3>
+                    <div class="ak-space-y-4">
+                        <div>
+                            <p class="ak-text-lg">Büyük metin. Dikkat çekmek için giriş metinleri veya öncü paragraflar için kullanılır.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-lg</code>
+                        </div>
+                        <div>
+                            <p class="ak-text-base">Temel metin. Sayfadaki içeriğin çoğu için varsayılan yazı tipi boyutu.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-base</code>
+                        </div>
+                        <div>
+                            <p class="ak-text-sm">Küçük metin. Genellikle ikincil bilgiler, başlıklar veya yardımcı metinler için kullanılır.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-sm</code>
+                        </div>
+                        <div>
+                            <p class="ak-text-xs">Ekstra küçük metin. Çok küçük yazılar veya telif hakkı bildirimleri için kullanılır.</p>
+                            <code class="ak-text-xs ak-text-muted">.ak-text-xs</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Satır İçi Öğeler</h3>
+                    <p class="ak-mb-4">
+                        <span class="ak-font-bold">Kalın metin</span>, <span class="ak-font-italic">italik metin</span> veya <span class="ak-underline">altı çizili metin</span> kullanabilirsiniz.
+                    </p>
+                    <p class="ak-mb-4">
+                        Linkler <a href="#" class="ak-link">.ak-link</a> sınıfı ile stillendirilebilir.
+                    </p>
+                    <p class="ak-mb-4">
+                        <code class="ak-code">const x = 1;</code> gibi satır içi kod parçacıkları <code class="ak-code">.ak-code</code> ile stillendirilir.
+                    </p>
+                    <p>
+                        Önemli kısımları <mark class="ak-bg-warning ak-text-warning-content ak-px-1">vurgulamak</mark> için metni işaretleyin.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blockquote -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Alıntı Bloğu</h2>
+            
+            <div class="ak-card ak-p-6">
+                <blockquote class="ak-blockquote">
+                    <p class="ak-text-lg ak-font-medium ak-mb-2">"Tasarım sadece neye benzediği ve nasıl hissettirdiği değildir. Tasarım nasıl çalıştığıdır."</p>
+                    <footer class="ak-text-muted">— Steve Jobs</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Lists -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Listeler</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Sırasız Liste</h3>
+                    <ul class="ak-list-disc ak-pl-5 ak-space-y-1">
+                        <li>Birinci öğe</li>
+                        <li>İkinci öğe</li>
+                        <li>Alt öğeler içeren üçüncü öğe
+                            <ul class="ak-list-circle ak-pl-5 ak-mt-1">
+                                <li>Alt öğe bir</li>
+                                <li>Alt öğe iki</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Sıralı Liste</h3>
+                    <ol class="ak-list-decimal ak-pl-5 ak-space-y-1">
+                        <li>Birinci adım</li>
+                        <li>İkinci adım</li>
+                        <li>Üçüncü adım
+                            <ol class="ak-list-decimal ak-pl-5 ak-mt-1">
+                                <li>Alt adım A</li>
+                                <li>Alt adım B</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Utilities -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Metin Yardımcıları</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-6">
+                <!-- Alignment -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Hizalama</h3>
+                    <div class="ak-space-y-2 ak-p-4 ak-bg-surface-muted ak-rounded">
+                        <p class="ak-text-left">Sola hizalı</p>
+                        <p class="ak-text-center">Ortalanmış</p>
+                        <p class="ak-text-right">Sağa hizalı</p>
+                        <p class="ak-text-justify">İki yana yaslanmış metin tam genişliğe yayılır.</p>
+                    </div>
+                </div>
+
+                <!-- Transform -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Dönüştürme</h3>
+                    <div class="ak-space-y-2">
+                        <p class="ak-uppercase">BÜYÜK HARF</p>
+                        <p class="ak-lowercase">küçük harf</p>
+                        <p class="ak-capitalize">Baş harfi büyük</p>
+                    </div>
+                </div>
+
+                <!-- Weight -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Kalınlık</h3>
+                    <div class="ak-space-y-2">
+                        <p class="ak-font-light">İnce</p>
+                        <p class="ak-font-normal">Normal</p>
+                        <p class="ak-font-medium">Orta</p>
+                        <p class="ak-font-semibold">Yarı kalın</p>
+                        <p class="ak-font-bold">Kalın</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colors -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Metin Renkleri</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-grid ak-grid-cols-2 ak-md:ak-grid-cols-4 ak-gap-4">
+                    <p class="ak-text-primary">Birincil Metin</p>
+                    <p class="ak-text-secondary">İkincil Metin</p>
+                    <p class="ak-text-accent">Vurgu Metni</p>
+                    <p class="ak-text-muted">Sönük Metin</p>
+                    <p class="ak-text-success">Başarı Metni</p>
+                    <p class="ak-text-warning">Uyarı Metni</p>
+                    <p class="ak-text-destructive">Yıkıcı Metin</p>
+                    <p class="ak-text-info">Bilgi Metni</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

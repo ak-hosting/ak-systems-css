@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butonlar - AK Design System</title>
+    <meta name="description" content="AK Design System buton stilleri, boyutları ve durumları.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
+        }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Ana Sayfaya Dön
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Butonlar</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="buttons.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                     <a href="buttons.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="buttons.tr.html" class="ak-btn ak-btn-sm ak-btn-primary">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Button Variants -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Varyantlar</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Düz Renkler</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2">
+                        <button class="ak-btn">Varsayılan</button>
+                        <button class="ak-btn ak-btn-primary">Primary</button>
+                        <button class="ak-btn ak-btn-secondary">Secondary</button>
+                        <button class="ak-btn ak-btn-accent">Accent</button>
+                        <button class="ak-btn ak-btn-destructive">Destructive</button>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Stiller</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-2">
+                        <button class="ak-btn ak-btn-outline">Outline</button>
+                        <button class="ak-btn ak-btn-ghost">Ghost</button>
+                        <button class="ak-btn ak-btn-link">Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button Sizes -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Boyutlar</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-flex-wrap ak-items-center ak-gap-4">
+                    <button class="ak-btn ak-btn-sm ak-btn-primary">Küçük</button>
+                    <button class="ak-btn ak-btn-primary">Varsayılan</button>
+                    <button class="ak-btn ak-btn-lg ak-btn-primary">Büyük</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button States -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Durumlar</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-flex-wrap ak-gap-4">
+                    <button class="ak-btn ak-btn-primary" disabled>Devre Dışı</button>
+                    <button class="ak-btn ak-btn-primary ak-loading">
+                        <span class="ak-loading-spinner"></span>
+                        Yükleniyor
+                    </button>
+                    <button class="ak-btn ak-btn-outline ak-loading">
+                        <span class="ak-loading-spinner"></span>
+                        İşleniyor
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- With Icons -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">İkonlu</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-flex-wrap ak-gap-4">
+                    <button class="ak-btn ak-btn-primary">
+                        <i data-lucide="mail" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        E-posta Gönder
+                    </button>
+                    <button class="ak-btn ak-btn-outline">
+                        <i data-lucide="download" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        İndir
+                    </button>
+                    <button class="ak-btn ak-btn-destructive">
+                        <i data-lucide="trash-2" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Sil
+                    </button>
+                    <button class="ak-btn ak-btn-ghost">
+                        İleri
+                        <i data-lucide="arrow-right" class="ak-w-4 ak-h-4 ak-ml-2"></i>
+                    </button>
+                    
+                    <!-- Icon Only -->
+                    <button class="ak-btn ak-btn-secondary" aria-label="Ayarlar">
+                        <i data-lucide="settings" class="ak-w-4 ak-h-4"></i>
+                    </button>
+                    <button class="ak-btn ak-btn-ghost" aria-label="Daha fazla seçenek">
+                        <i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button Groups -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Buton Grupları</h2>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-btn-group">
+                    <button class="ak-btn ak-btn-outline">Sol</button>
+                    <button class="ak-btn ak-btn-outline">Orta</button>
+                    <button class="ak-btn ak-btn-outline">Sağ</button>
+                </div>
+                
+                <div class="ak-mt-4">
+                    <div class="ak-btn-group">
+                        <button class="ak-btn ak-btn-secondary">Yıl</button>
+                        <button class="ak-btn ak-btn-secondary">Ay</button>
+                        <button class="ak-btn ak-btn-secondary">Gün</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Width -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tam Genişlik</h2>
+            
+            <div class="ak-card ak-p-6" style="max-width: 400px;">
+                <button class="ak-btn ak-btn-primary ak-w-full ak-mb-2">Giriş Yap</button>
+                <button class="ak-btn ak-btn-outline ak-w-full">Hesap Oluştur</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-03-03
+
+### Added
+- **Localization**: Added full German (DE) and Turkish (TR) localization for all demo pages (Buttons, Modals, Typography, Loaders, Upload, Layout, Cards, Alerts, Tables, Forms)
+- **Navigation**: Consistent "View All Variants" / "Alle Varianten" / "Tüm Varyantlar" links across all index pages and languages
+
+### Changed
+- **Demo Pages**: Harmonized structure and navigation for all component demos across EN, DE, and TR
+- **Index Pages**: Updated index.html, index.de.html, and index.tr.html to include direct links to all localized component demos
+
 ## [1.3.0] - 2025-12-30
 
 ### Added

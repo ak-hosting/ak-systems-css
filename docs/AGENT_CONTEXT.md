@@ -170,6 +170,41 @@ Use these variables for custom styles to maintain consistency.
 </div>
 ```
 
+### Selection Controls (Advanced)
+Use these for richer selection experiences.
+
+#### Selection Cards (`.ak-selection-card`)
+Great for pricing plans or complex options.
+```html
+<div class="ak-selection-grid">
+  <label class="ak-selection-card">
+    <input type="radio" name="plan" checked>
+    <div class="ak-selection-card-content">
+      <div class="ak-flex ak-items-center ak-gap-2 ak-mb-1">
+        <i data-lucide="zap" class="ak-text-accent"></i>
+        <span class="ak-selection-card-title">Starter</span>
+      </div>
+      <span class="ak-selection-card-description">Description here.</span>
+    </div>
+  </label>
+</div>
+```
+
+#### Segmented Controls (`.ak-segmented-control`)
+Linear set of exclusive options.
+```html
+<div class="ak-segmented-control">
+  <label class="ak-segmented-item">
+    <input type="radio" name="view" checked>
+    <span class="ak-segmented-label">Daily</span>
+  </label>
+  <label class="ak-segmented-item">
+    <input type="radio" name="view">
+    <span class="ak-segmented-label">Weekly</span>
+  </label>
+</div>
+```
+
 ### Badges (`.ak-badge`)
 ```html
 <span class="ak-badge">Default</span>

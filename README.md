@@ -15,13 +15,15 @@ Use the canonical CSS entry (development):
 Production/CDN entry:
 
 ```html
-<!-- Use a specific version (recommended) -->
+<!-- Use a specific version (recommended for production) -->
+<!-- This version is immutable and will not change -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.1/dist/ak-design-system.min.css"
 />
 
-<!-- Or use the latest version from main branch (development only) -->
+<!-- Or use the latest version from main branch (always up-to-date) -->
+<!-- Warning: This may include breaking changes without notice -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css"
@@ -145,7 +147,8 @@ The MCP is designed for external use by AI agents and focuses on principles and 
 
 ## Versioning and CDN Usage
 
-- Pin to release tags when available to avoid unintentional updates, e.g. `https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.0/dist/ak-design-system.min.css`.
+- **Recommended:** Pin to release tags (e.g., `.../ak-systems-css@v1.3.1/...`) to avoid unintentional updates. This ensures your site looks exactly the same, even if we release major changes.
+- **Development:** Use `.../ak-systems-css@main/...` to always get the latest changes. Be aware that this might break your layout if we change class names.
 - See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 - Supported entries only: `css/ak-design-system/index.css` for development and `dist/ak-design-system.min.css` for production/CDN.
 

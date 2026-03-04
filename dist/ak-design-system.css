@@ -42,6 +42,28 @@
   --ak-color-ring: hsl(217, 91%, 50%);
 }
 
+.ak-theme-dark {
+  --ak-color-bg: hsl(222, 84%, 5%);
+  --ak-color-surface: hsl(217, 33%, 17%);
+  --ak-color-text: hsl(213, 31%, 91%);
+  --ak-color-text-muted: hsl(215, 20%, 65%);
+  --ak-color-primary: hsl(217, 91%, 60%);
+  --ak-color-primary-text: hsl(0, 0%, 100%);
+  --ak-color-secondary: hsl(217, 19%, 27%);
+  --ak-color-secondary-text: hsl(213, 31%, 91%);
+  --ak-color-accent: hsl(142, 76%, 36%);
+  --ak-color-accent-text: hsl(0, 0%, 100%);
+  --ak-color-muted: hsl(215, 27%, 33%);
+  --ak-color-muted-text: hsl(215, 20%, 65%);
+  --ak-color-destructive: hsl(0, 84%, 60%);
+  --ak-color-destructive-text: hsl(0, 0%, 100%);
+  --ak-color-success: hsl(142, 76%, 36%);
+  --ak-color-success-text: hsl(0, 0%, 100%);
+  --ak-color-border: hsl(215, 27%, 33%);
+  --ak-color-input-bg: hsl(217, 19%, 27%);
+  --ak-color-ring: hsl(217, 91%, 60%);
+}
+
 :root {
   --ak-font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
   --ak-font-family-serif: Georgia, serif;
@@ -1775,6 +1797,14 @@ blockquote {
   cursor: pointer;
   accent-color: var(--ak-color-primary);
 }
+
+.ak-radio-input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--ak-color-primary);
+}
 .ak-checkbox label,
 .ak-radio label {
   cursor: pointer;
@@ -1787,6 +1817,21 @@ blockquote {
   display: flex;
   flex-direction: column;
   gap: var(--ak-space-2);
+}
+
+.ak-checkbox-input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--ak-color-primary);
+}
+
+.ak-checkbox-label,
+.ak-radio-label {
+  cursor: pointer;
+  margin-bottom: 0;
+  user-select: none;
 }
 
 .ak-switch {

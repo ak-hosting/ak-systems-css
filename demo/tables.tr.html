@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AK Design System - Tablolar</title>
-    <link rel="stylesheet" href="../dist/ak-design-system.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css/dist/ak-design-system.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
             background-color: var(--ak-color-bg);
             color: var(--ak-color-text);
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+        }
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: var(--ak-color-bg);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         .demo-section {
-            margin-bottom: 40px;
-            padding: 32px;
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-lg);
-            background-color: var(--ak-color-surface);
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
         }
         .demo-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 24px;
-            margin-top: 24px;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
-        h2 { margin-top: 0; margin-bottom: 8px; }
-        .description { color: var(--ak-color-text-muted); margin-bottom: 24px; }
+        h2 { margin-top: 0; margin-bottom: 0.5rem; }
+        .description { color: var(--ak-color-text-muted); margin-bottom: 1.5rem; }
 
         /* Extended Table Styles (Demo Only) */
         .ak-table-container {
@@ -100,152 +109,169 @@
         }
     </style>
 </head>
-<body class="ak-theme-light">
+<body class="ak-theme-dark">
 
-    <div class="ak-mb-8">
-        <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-mb-4">
-            <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-            Panele Dön
-        </a>
-        <h1 class="ak-text-4xl ak-font-bold">Tablolar</h1>
-        <p class="ak-text-lg ak-text-muted ak-mt-2">Verileri çeşitli stiller ve duyarlı düzenlerle düzenli ve okunaklı bir şekilde görüntüleyin.</p>
-    </div>
-
-    <!-- BASIC TABLE -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Temel Tablo</h2>
-        <p class="description">Alt kenarlık ayırıcılı standart tablo.</p>
-        
-        <div class="ak-table-container">
-            <table class="ak-table">
-                <thead>
-                    <tr>
-                        <th>İsim</th>
-                        <th>E-posta</th>
-                        <th>Rol</th>
-                        <th>Durum</th>
-                        <th>İşlemler</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Alice Freeman</td>
-                        <td>alice@example.com</td>
-                        <td>Yönetici</td>
-                        <td><span class="ak-badge ak-badge-success">Aktif</span></td>
-                        <td>
-                            <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bob Smith</td>
-                        <td>bob@example.com</td>
-                        <td>Editör</td>
-                        <td><span class="ak-badge ak-badge-warning">Beklemede</span></td>
-                        <td>
-                            <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Charlie Brown</td>
-                        <td>charlie@example.com</td>
-                        <td>İzleyici</td>
-                        <td><span class="ak-badge ak-badge-destructive">Pasif</span></td>
-                        <td>
-                            <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        İndekse Dön
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Tablolar</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="tables.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                     <a href="tables.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="tables.tr.html" class="ak-btn ak-btn-sm ak-btn-primary">TR</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <!-- STRIPED & HOVER -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Şeritli & Vurgulu</h2>
-        <p class="description">Zebra şeritleri için <code>.ak-table-striped</code> ve vurgu efektleri için <code>.ak-table-hover</code> kullanın.</p>
-        
-        <div class="ak-table-container">
-            <table class="ak-table ak-table-striped ak-table-hover">
-                <thead>
-                    <tr>
-                        <th>Fatura</th>
-                        <th>Tarih</th>
-                        <th>Tutar</th>
-                        <th>Durum</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>INV-001</td>
-                        <td>12 Oca 2024</td>
-                        <td>$1,200.00</td>
-                        <td><span class="ak-badge ak-badge-success">Ödendi</span></td>
-                    </tr>
-                    <tr>
-                        <td>INV-002</td>
-                        <td>15 Oca 2024</td>
-                        <td>$850.00</td>
-                        <td><span class="ak-badge ak-badge-warning">Beklemede</span></td>
-                    </tr>
-                    <tr>
-                        <td>INV-003</td>
-                        <td>20 Oca 2024</td>
-                        <td>$2,300.00</td>
-                        <td><span class="ak-badge ak-badge-destructive">Gecikmiş</span></td>
-                    </tr>
-                    <tr>
-                        <td>INV-004</td>
-                        <td>01 Şub 2024</td>
-                        <td>$500.00</td>
-                        <td><span class="ak-badge ak-badge-success">Ödendi</span></td>
-                    </tr>
-                </tbody>
-                <caption class="ak-table-caption">Son Faturalar</caption>
-            </table>
+    <div class="ak-container">
+        <div class="ak-mb-12">
+            <h1 class="ak-text-4xl ak-font-bold ak-mb-4">Tablolar</h1>
+            <p class="ak-text-lg ak-text-muted">Verileri çeşitli stiller ve duyarlı düzenlerle düzenli ve okunaklı bir şekilde görüntüleyin.</p>
         </div>
-    </div>
 
-    <!-- COMPACT TABLE -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Kompakt Tablo</h2>
-        <p class="description">Daha yoğun veri gösterimi için <code>.ak-table-sm</code> kullanın.</p>
-        
-        <div class="ak-table-container">
-            <table class="ak-table ak-table-sm ak-table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Proje</th>
-                        <th>Müşteri</th>
-                        <th>Bütçe</th>
-                        <th>Bitiş Tarihi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Website Redesign</td>
-                        <td>Acme Corp</td>
-                        <td>$5,000</td>
-                        <td>15 Mar</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Mobile App</td>
-                        <td>Globex</td>
-                        <td>$12,000</td>
-                        <td>20 Nis</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>SEO Audit</td>
-                        <td>Soylent Corp</td>
-                        <td>$800</td>
-                        <td>28 Şub</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- BASIC TABLE -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Temel Tablo</h2>
+            <p class="description">Alt kenarlık ayırıcılı standart tablo.</p>
+            
+            <div class="ak-table-container">
+                <table class="ak-table">
+                    <thead>
+                        <tr>
+                            <th>İsim</th>
+                            <th>E-posta</th>
+                            <th>Rol</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alice Freeman</td>
+                            <td>alice@example.com</td>
+                            <td>Yönetici</td>
+                            <td><span class="ak-badge ak-badge-success">Aktif</span></td>
+                            <td>
+                                <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bob Smith</td>
+                            <td>bob@example.com</td>
+                            <td>Editör</td>
+                            <td><span class="ak-badge ak-badge-warning">Beklemede</span></td>
+                            <td>
+                                <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Charlie Brown</td>
+                            <td>charlie@example.com</td>
+                            <td>İzleyici</td>
+                            <td><span class="ak-badge ak-badge-destructive">Pasif</span></td>
+                            <td>
+                                <button class="ak-btn ak-btn-ghost ak-btn-sm"><i data-lucide="more-horizontal" class="ak-w-4 ak-h-4"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- STRIPED & HOVER -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Şeritli & Vurgulu</h2>
+            <p class="description">Zebra şeritleri için <code>.ak-table-striped</code> ve vurgu efektleri için <code>.ak-table-hover</code> kullanın.</p>
+            
+            <div class="ak-table-container">
+                <table class="ak-table ak-table-striped ak-table-hover">
+                    <thead>
+                        <tr>
+                            <th>Fatura</th>
+                            <th>Tarih</th>
+                            <th>Tutar</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-001</td>
+                            <td>12 Oca 2024</td>
+                            <td>$1,200.00</td>
+                            <td><span class="ak-badge ak-badge-success">Ödendi</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-002</td>
+                            <td>15 Oca 2024</td>
+                            <td>$850.00</td>
+                            <td><span class="ak-badge ak-badge-warning">Beklemede</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-003</td>
+                            <td>20 Oca 2024</td>
+                            <td>$2,300.00</td>
+                            <td><span class="ak-badge ak-badge-destructive">Gecikmiş</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-004</td>
+                            <td>01 Şub 2024</td>
+                            <td>$500.00</td>
+                            <td><span class="ak-badge ak-badge-success">Ödendi</span></td>
+                        </tr>
+                    </tbody>
+                    <caption class="ak-table-caption">Son Faturalar</caption>
+                </table>
+            </div>
+        </div>
+
+        <!-- COMPACT TABLE -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Kompakt Tablo</h2>
+            <p class="description">Daha yoğun veri gösterimi için <code>.ak-table-sm</code> kullanın.</p>
+            
+            <div class="ak-table-container">
+                <table class="ak-table ak-table-sm ak-table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Proje</th>
+                            <th>Müşteri</th>
+                            <th>Bütçe</th>
+                            <th>Bitiş Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Website Redesign</td>
+                            <td>Acme Corp</td>
+                            <td>$5,000</td>
+                            <td>15 Mar</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mobile App</td>
+                            <td>Globex</td>
+                            <td>$12,000</td>
+                            <td>20 Nis</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>SEO Audit</td>
+                            <td>Soylent Corp</td>
+                            <td>$800</td>
+                            <td>28 Şub</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

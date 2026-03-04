@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ak-theme-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AK Design System - Header & Footer Variants</title>
-    <link rel="stylesheet" href="../css/ak-design-system/ak-components.css">
+    <link rel="stylesheet" href="../dist/ak-design-system.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Demo-specific styles */
         body {
             background-color: var(--ak-color-bg);
             color: var(--ak-color-text);
-            padding: 2rem;
+            padding-top: 80px; /* Space for fixed header */
         }
+
+        .demo-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--ak-color-border);
+            z-index: 50;
+            padding: 1rem 0;
+        }
+
         .demo-section {
-            background: var(--ak-color-white);
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-lg);
-            padding: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
         }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
         .demo-preview-box {
             background: var(--ak-color-bg-subtle);
             border: 1px solid var(--ak-color-border);
@@ -28,23 +45,41 @@
             margin-bottom: 1rem;
             overflow: hidden; /* For transparent header demo */
         }
+
+        .description {
+            color: var(--ak-color-text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
-    <div class="ak-container">
-        <a href="index.html" class="ak-btn ak-btn-ghost ak-mb-4">
-            <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-            Back to Dashboard
-        </a>
 
-        <header class="ak-mb-8">
-            <h1 class="ak-text-4xl ak-font-bold ak-mb-2">Header & Footer Variants</h1>
-            <p class="ak-text-muted">Pre-built header and footer variants for rapid prototyping.</p>
-        </header>
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Back to Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold ak-ml-4" style="display: inline-block;">Header & Footer Variants</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                    <a href="headers.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                    <a href="headers.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                    <a href="headers.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <main class="ak-container ak-py-8">
+        
         <!-- Header Variants -->
-        <section class="demo-section">
-            <h2 class="ak-text-2xl ak-font-semibold ak-mb-6">Header Variants</h2>
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Header Variants</h2>
+            <p class="description">Pre-built header variants for rapid prototyping.</p>
 
             <!-- 1. Standard Header -->
             <div class="ak-mb-8">
@@ -178,11 +213,12 @@
                 </div>
                 <p class="ak-text-sm ak-text-muted">Navigation with dropdown menus. Uses the existing dropdown component.</p>
             </div>
-        </section>
+        </div>
 
         <!-- Footer Variants -->
-        <section class="demo-section">
-            <h2 class="ak-text-2xl ak-font-semibold ak-mb-6">Footer Variants</h2>
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Footer Variants</h2>
+            <p class="description">Pre-built footer variants.</p>
 
             <!-- 1. Standard Footer -->
             <div class="ak-mb-8">
@@ -249,8 +285,10 @@
                 </div>
                 <p class="ak-text-sm ak-text-muted">Reduced to the essentials. Copyright and links in one line.</p>
             </div>
-        </section>
-    </div>
+        </div>
+
+    </main>
+
     <script>
         lucide.createIcons();
     </script>

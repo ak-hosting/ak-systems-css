@@ -1,219 +1,253 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="ak-theme-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AK Design System - Erweiterte Komponenten</title>
-    <link rel="stylesheet" href="../dist/ak-design-system.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Erweiterte Komponenten wie Avatare, Breadcrumbs und Paginierung.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
     <style>
+        /* Demo-specific styles */
         body {
-            background-color: var(--ak-color-bg);
-            color: var(--ak-color-text);
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding-bottom: 4rem;
         }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .demo-section {
-            margin-bottom: 40px;
-            padding: 32px;
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-lg);
-            background-color: var(--ak-color-surface);
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
         }
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 24px;
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
         }
-        h2 { margin-top: 0; margin-bottom: 8px; }
-        .description { color: var(--ak-color-text-muted); margin-bottom: 24px; }
+        
+        .description { 
+            color: var(--ak-color-text-muted); 
+            margin-bottom: 1.5rem; 
+        }
     </style>
 </head>
-<body class="ak-theme-light">
-
-    <div class="ak-mb-8">
-        <a href="index.de.html" class="ak-btn ak-btn-ghost ak-mb-4">
-            <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-            Zurück zum Dashboard
-        </a>
-        <h1 class="ak-text-4xl ak-font-bold">Erweiterte Komponenten</h1>
-        <p class="ak-text-lg ak-text-muted ak-mt-2">Avatare, Navigationselemente, interaktive Komponenten und Hilfsprogramme.</p>
-    </div>
-
-    <!-- Avatars -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Avatare</h2>
-        <p class="description">Benutzerprofilbilder mit Statusanzeigen und Gruppierung.</p>
-        
-        <div class="ak-card ak-p-6">
-            <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Avatare</h3>
-            <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
-                <div class="ak-avatar ak-avatar-sm">
-                    <span class="ak-avatar-fallback">KL</span>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.de.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Zurück zum Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Erweiterte Komponenten</h1>
                 </div>
-                <div class="ak-avatar">
-                    <span class="ak-avatar-fallback">MD</span>
-                    <div class="ak-avatar-status ak-avatar-status-online"></div>
-                </div>
-                <div class="ak-avatar ak-avatar-lg">
-                    <span class="ak-avatar-fallback">GR</span>
-                    <div class="ak-avatar-status ak-avatar-status-busy"></div>
-                </div>
-            </div>
-            <div class="ak-avatar-group">
-                <div class="ak-avatar">
-                    <span class="ak-avatar-fallback">A</span>
-                </div>
-                <div class="ak-avatar">
-                    <span class="ak-avatar-fallback">B</span>
-                </div>
-                <div class="ak-avatar">
-                    <span class="ak-avatar-fallback">C</span>
-                </div>
-                <div class="ak-avatar ak-bg-subtle">
-                    <span class="ak-avatar-fallback">+3</span>
+                <div class="ak-flex ak-gap-2">
+                     <a href="extended.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                     <a href="extended.de.html" class="ak-btn ak-btn-sm ak-btn-primary">DE</a>
+                     <a href="extended.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- Breadcrumbs & Pagination -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Navigation</h2>
-        <p class="description">Brotkrümelnavigation und Seitennummerierung.</p>
+    <main class="ak-container">
         
-        <div class="ak-card ak-p-6">
-            <div class="ak-mb-6">
-                <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Brotkrümel (Breadcrumbs)</h4>
-                <nav aria-label="Breadcrumb">
-                    <ol class="ak-breadcrumb">
-                        <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Start</a></li>
-                        <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Bibliothek</a></li>
-                        <li class="ak-breadcrumb-item ak-active" aria-current="page">Daten</li>
-                    </ol>
-                </nav>
-            </div>
-
-            <div>
-                <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Seitennummerierung (Pagination)</h4>
-                <ul class="ak-pagination">
-                    <li class="ak-page-item ak-disabled">
-                        <a class="ak-page-link" href="#"><i data-lucide="chevron-left" class="ak-w-4 ak-h-4"></i></a>
-                    </li>
-                    <li class="ak-page-item ak-active"><a class="ak-page-link" href="#">1</a></li>
-                    <li class="ak-page-item"><a class="ak-page-link" href="#">2</a></li>
-                    <li class="ak-page-item"><a class="ak-page-link" href="#">3</a></li>
-                    <li class="ak-page-item">
-                        <a class="ak-page-link" href="#"><i data-lucide="chevron-right" class="ak-w-4 ak-h-4"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tooltips & Accordion -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Interaktiv</h2>
-        <p class="description">Komponenten, die auf Benutzerinteraktion reagieren.</p>
-        
-        <div class="ak-card ak-p-6">
-            <div class="ak-flex ak-gap-4 ak-mb-8">
-                <div class="ak-tooltip-trigger ak-btn">
-                    Oben Tooltip
-                    <div class="ak-tooltip-content">Tooltip Inhalt</div>
-                </div>
-                <div class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
-                    Rechts Tooltip
-                    <div class="ak-tooltip-content">Mehr Info</div>
-                </div>
-            </div>
-
-            <div class="ak-accordion">
-                <details class="ak-accordion-item" open>
-                    <summary class="ak-accordion-summary">
-                        Akkordeon Element 1
-                        <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
-                    </summary>
-                    <div class="ak-accordion-content">
-                        Inhalt für das erste Element. Es kann ein- und ausgeklappt werden.
+        <!-- Avatars -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Avatare</h2>
+            <p class="description">Benutzerprofilbilder mit Statusanzeigen und Gruppierung.</p>
+            
+            <div class="ak-card ak-p-6">
+                <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Avatare</h3>
+                <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
+                    <div class="ak-avatar ak-avatar-sm">
+                        <span class="ak-avatar-fallback">KL</span>
                     </div>
-                </details>
-                <details class="ak-accordion-item">
-                    <summary class="ak-accordion-summary">
-                        Akkordeon Element 2
-                        <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
-                    </summary>
-                    <div class="ak-accordion-content">
-                        Inhalt für das zweite Element.
+                    <div class="ak-avatar">
+                        <span class="ak-avatar-fallback">MD</span>
+                        <div class="ak-avatar-status ak-avatar-status-online"></div>
                     </div>
-                </details>
-            </div>
-        </div>
-    </div>
-
-    <!-- Misc Components -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Verschiedene Komponenten</h2>
-        <p class="description">Badges, Fortschrittsbalken, Schalter und Dropdowns.</p>
-        
-        <div class="ak-card ak-p-6">
-            <div class="ak-mb-6">
-                <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Badges</h4>
-                <div class="ak-flex ak-gap-2 ak-flex-wrap">
-                    <span class="ak-badge ak-badge-default">Standard</span>
-                    <span class="ak-badge ak-badge-secondary">Sekundär</span>
-                    <span class="ak-badge ak-badge-outline">Outline</span>
-                    <span class="ak-badge ak-badge-destructive">Gefahr</span>
-                    <span class="ak-badge ak-badge-success">Erfolg</span>
+                    <div class="ak-avatar ak-avatar-lg">
+                        <span class="ak-avatar-fallback">GR</span>
+                        <div class="ak-avatar-status ak-avatar-status-busy"></div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="ak-mb-6">
-                <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Fortschritt</h4>
-                <div class="ak-progress ak-mb-2">
-                    <div class="ak-progress-bar" style="width: 75%"></div>
-                </div>
-                <div class="ak-progress ak-progress-sm ak-mb-2">
-                    <div class="ak-progress-bar" style="width: 50%"></div>
-                </div>
-            </div>
-
-            <div class="ak-mb-6">
-                <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Schalter</h4>
-                <label class="ak-switch">
-                    <input type="checkbox" class="ak-switch-input" checked>
-                    <span class="ak-switch-track">
-                        <span class="ak-switch-thumb"></span>
-                    </span>
-                    <span class="ak-switch-label">Benachrichtigungen</span>
-                </label>
-            </div>
-
-            <div>
-                <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Dropdown</h4>
-                <div class="ak-dropdown">
-                    <button class="ak-btn ak-btn-secondary">
-                        Optionen <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i>
-                    </button>
-                    <div class="ak-dropdown-menu">
-                        <div class="ak-dropdown-header">Aktionen</div>
-                        <button class="ak-dropdown-item">
-                            <i data-lucide="edit" class="ak-w-4 ak-h-4 ak-mr-2"></i> Bearbeiten
-                        </button>
-                        <button class="ak-dropdown-item">
-                            <i data-lucide="copy" class="ak-w-4 ak-h-4 ak-mr-2"></i> Duplizieren
-                        </button>
-                        <div class="ak-dropdown-divider"></div>
-                        <button class="ak-dropdown-item ak-text-destructive">
-                            <i data-lucide="trash" class="ak-w-4 ak-h-4 ak-mr-2"></i> Löschen
-                        </button>
+                <div class="ak-avatar-group">
+                    <div class="ak-avatar">
+                        <span class="ak-avatar-fallback">A</span>
+                    </div>
+                    <div class="ak-avatar">
+                        <span class="ak-avatar-fallback">B</span>
+                    </div>
+                    <div class="ak-avatar">
+                        <span class="ak-avatar-fallback">C</span>
+                    </div>
+                    <div class="ak-avatar ak-bg-subtle">
+                        <span class="ak-avatar-fallback">+3</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Breadcrumbs & Pagination -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Navigation</h2>
+            <p class="description">Brotkrümelnavigation und Seitennummerierung.</p>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-mb-6">
+                    <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Brotkrümel (Breadcrumbs)</h4>
+                    <nav aria-label="Breadcrumb">
+                        <ol class="ak-breadcrumb">
+                            <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Start</a></li>
+                            <li class="ak-breadcrumb-item"><a href="#" class="ak-breadcrumb-link">Bibliothek</a></li>
+                            <li class="ak-breadcrumb-item ak-active" aria-current="page">Daten</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div>
+                    <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Seitennummerierung (Pagination)</h4>
+                    <ul class="ak-pagination">
+                        <li class="ak-page-item ak-disabled">
+                            <a class="ak-page-link" href="#"><i data-lucide="chevron-left" class="ak-w-4 ak-h-4"></i></a>
+                        </li>
+                        <li class="ak-page-item ak-active"><a class="ak-page-link" href="#">1</a></li>
+                        <li class="ak-page-item"><a class="ak-page-link" href="#">2</a></li>
+                        <li class="ak-page-item"><a class="ak-page-link" href="#">3</a></li>
+                        <li class="ak-page-item">
+                            <a class="ak-page-link" href="#"><i data-lucide="chevron-right" class="ak-w-4 ak-h-4"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tooltips & Accordion -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Interaktiv</h2>
+            <p class="description">Komponenten, die auf Benutzerinteraktion reagieren.</p>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-gap-4 ak-mb-8">
+                    <div class="ak-tooltip-trigger ak-btn">
+                        Oben Tooltip
+                        <div class="ak-tooltip-content">Tooltip Inhalt</div>
+                    </div>
+                    <div class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
+                        Rechts Tooltip
+                        <div class="ak-tooltip-content">Mehr Info</div>
+                    </div>
+                </div>
+
+                <div class="ak-accordion">
+                    <details class="ak-accordion-item" open>
+                        <summary class="ak-accordion-summary">
+                            Akkordeon Element 1
+                            <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
+                        </summary>
+                        <div class="ak-accordion-content">
+                            Inhalt für das erste Element. Es kann ein- und ausgeklappt werden.
+                        </div>
+                    </details>
+                    <details class="ak-accordion-item">
+                        <summary class="ak-accordion-summary">
+                            Akkordeon Element 2
+                            <i data-lucide="chevron-down" class="ak-accordion-trigger-icon ak-w-4 ak-h-4"></i>
+                        </summary>
+                        <div class="ak-accordion-content">
+                            Inhalt für das zweite Element.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <!-- Misc Components -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Verschiedene Komponenten</h2>
+            <p class="description">Badges, Fortschrittsbalken, Schalter und Dropdowns.</p>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-mb-6">
+                    <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Badges</h4>
+                    <div class="ak-flex ak-gap-2 ak-flex-wrap">
+                        <span class="ak-badge ak-badge-default">Standard</span>
+                        <span class="ak-badge ak-badge-secondary">Sekundär</span>
+                        <span class="ak-badge ak-badge-outline">Outline</span>
+                        <span class="ak-badge ak-badge-destructive">Gefahr</span>
+                        <span class="ak-badge ak-badge-success">Erfolg</span>
+                    </div>
+                </div>
+
+                <div class="ak-mb-6">
+                    <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Fortschritt</h4>
+                    <div class="ak-progress ak-mb-2">
+                        <div class="ak-progress-bar" style="width: 75%"></div>
+                    </div>
+                    <div class="ak-progress ak-progress-sm ak-mb-2">
+                        <div class="ak-progress-bar" style="width: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="ak-mb-6">
+                    <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Schalter</h4>
+                    <label class="ak-switch">
+                        <input type="checkbox" class="ak-switch-input" checked>
+                        <span class="ak-switch-track">
+                            <span class="ak-switch-thumb"></span>
+                        </span>
+                        <span class="ak-switch-label">Benachrichtigungen</span>
+                    </label>
+                </div>
+
+                <div>
+                    <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Dropdown</h4>
+                    <div class="ak-dropdown">
+                        <button class="ak-btn ak-btn-secondary">
+                            Optionen <i data-lucide="chevron-down" class="ak-w-4 ak-h-4"></i>
+                        </button>
+                        <div class="ak-dropdown-menu">
+                            <div class="ak-dropdown-header">Aktionen</div>
+                            <button class="ak-dropdown-item">
+                                <i data-lucide="edit" class="ak-w-4 ak-h-4 ak-mr-2"></i> Bearbeiten
+                            </button>
+                            <button class="ak-dropdown-item">
+                                <i data-lucide="copy" class="ak-w-4 ak-h-4 ak-mr-2"></i> Duplizieren
+                            </button>
+                            <div class="ak-dropdown-divider"></div>
+                            <button class="ak-dropdown-item ak-text-destructive">
+                                <i data-lucide="trash" class="ak-w-4 ak-h-4 ak-mr-2"></i> Löschen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
 
     <script>
         lucide.createIcons();

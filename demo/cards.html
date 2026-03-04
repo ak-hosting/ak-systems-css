@@ -3,173 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK Design System - Cards</title>
-    <link rel="stylesheet" href="../dist/ak-design-system.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Cards - AK Design System</title>
+    <meta name="description" content="Flexible and extensible content containers for displaying data, images, and actions.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
     <style>
+        /* Demo-specific styles */
         body {
-            background-color: var(--ak-color-bg);
-            color: var(--ak-color-text);
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding-bottom: 4rem;
         }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .demo-section {
-            margin-bottom: 40px;
-            padding: 32px;
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-lg);
-            background-color: var(--ak-color-surface);
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
         }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+        
         .demo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 24px;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
-        h2 { margin-top: 0; margin-bottom: 8px; }
-        .description { color: var(--ak-color-text-muted); margin-bottom: 24px; }
+        
+        .description { 
+            color: var(--ak-color-text-muted); 
+            margin-bottom: 1.5rem; 
+        }
     </style>
 </head>
-<body class="ak-theme-light">
-
-    <div class="ak-mb-8">
-        <a href="index.html" class="ak-btn ak-btn-ghost ak-mb-4">
-            <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-            Back to Dashboard
-        </a>
-        <h1 class="ak-text-4xl ak-font-bold">Cards</h1>
-        <p class="ak-text-lg ak-text-muted ak-mt-2">Flexible and extensible content containers for displaying data, images, and actions.</p>
-    </div>
-
-    <!-- BASIC CARDS -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Basic Cards</h2>
-        <p class="description">Standard cards with header, body, and footer sections.</p>
-        
-        <div class="demo-grid">
-            <!-- Simple Card -->
-            <div class="ak-card">
-                <div class="ak-card-body">
-                    <h3 class="ak-card-title">Simple Card</h3>
-                    <p class="ak-card-description">A simple card with just body content.</p>
-                    <p class="ak-mt-4">This is the main content area of the card. It allows for flexible content placement.</p>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Back to Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Cards</h1>
                 </div>
-            </div>
-
-            <!-- Full Structure Card -->
-            <div class="ak-card">
-                <div class="ak-card-header">
-                    <h3 class="ak-card-title">Card with Header</h3>
-                    <p class="ak-card-description">Optional description text.</p>
-                </div>
-                <div class="ak-card-body">
-                    <p>This card features a distinct header and footer section, ideal for structured content.</p>
-                </div>
-                <div class="ak-card-footer">
-                    <button class="ak-btn ak-btn-primary ak-btn-sm">Action</button>
-                    <button class="ak-btn ak-btn-ghost ak-btn-sm">Cancel</button>
+                <div class="ak-flex ak-gap-2">
+                     <a href="cards.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                     <a href="cards.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="cards.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- CARD VARIANTS -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Variants</h2>
-        <p class="description">Different styles for various contexts.</p>
-        
-        <div class="demo-grid">
-            <!-- Flat Card -->
-            <div class="ak-card ak-card-flat">
-                <div class="ak-card-header">
-                    <h3 class="ak-card-title">Flat Card</h3>
-                </div>
-                <div class="ak-card-body">
-                    <p>Use <code>.ak-card-flat</code> for a borderless, shadowless look, often used on colored backgrounds.</p>
-                </div>
-            </div>
-
-            <!-- Elevated Card -->
-            <div class="ak-card ak-card-elevated">
-                <div class="ak-card-header">
-                    <h3 class="ak-card-title">Elevated Card</h3>
-                </div>
-                <div class="ak-card-body">
-                    <p>Use <code>.ak-card-elevated</code> to give the card more depth with a stronger shadow.</p>
-                </div>
-            </div>
-
-            <!-- Compact Card -->
-            <div class="ak-card ak-card-compact">
-                <div class="ak-card-header">
-                    <h3 class="ak-card-title">Compact Card</h3>
-                </div>
-                <div class="ak-card-body">
-                    <p>Use <code>.ak-card-compact</code> for reduced padding, suitable for dense data displays.</p>
-                </div>
-                <div class="ak-card-footer">
-                    <button class="ak-btn ak-btn-sm">Action</button>
-                </div>
-            </div>
+    <main class="ak-container">
+        <div class="ak-mb-12">
+            <p class="ak-text-lg ak-text-muted">Flexible and extensible content containers for displaying data, images, and actions.</p>
         </div>
-    </div>
 
-    <!-- INTERACTIVE CARDS -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Interactive</h2>
-        <p class="description">Cards that respond to user interaction.</p>
-        
-        <div class="demo-grid">
-            <!-- Interactive Card -->
-            <div class="ak-card ak-card-interactive">
-                <div class="ak-card-body">
-                    <i data-lucide="mouse-pointer" class="ak-w-8 ak-h-8 ak-mb-4 ak-text-primary"></i>
-                    <h3 class="ak-card-title">Hover Me</h3>
-                    <p class="ak-mt-2">Use <code>.ak-card-interactive</code> to add hover effects and indicate clickability.</p>
-                </div>
-            </div>
+        <!-- BASIC CARDS -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Basic Cards</h2>
+            <p class="description">Standard cards with header, body, and footer sections.</p>
             
-             <!-- Interactive Card 2 -->
-             <div class="ak-card ak-card-interactive">
-                <div class="ak-card-body">
-                    <i data-lucide="external-link" class="ak-w-8 ak-h-8 ak-mb-4 ak-text-accent"></i>
-                    <h3 class="ak-card-title">Clickable Card</h3>
-                    <p class="ak-mt-2">Perfect for using cards as navigation links or actionable items.</p>
+            <div class="demo-grid">
+                <!-- Simple Card -->
+                <div class="ak-card">
+                    <div class="ak-card-body">
+                        <h3 class="ak-card-title">Simple Card</h3>
+                        <p class="ak-card-description">A simple card with just body content.</p>
+                        <p class="ak-mt-4">This is the main content area of the card. It allows for flexible content placement.</p>
+                    </div>
+                </div>
+
+                <!-- Full Structure Card -->
+                <div class="ak-card">
+                    <div class="ak-card-header">
+                        <h3 class="ak-card-title">Card with Header</h3>
+                        <p class="ak-card-description">Optional description text.</p>
+                    </div>
+                    <div class="ak-card-body">
+                        <p>This card features a distinct header and footer section, ideal for structured content.</p>
+                    </div>
+                    <div class="ak-card-footer">
+                        <button class="ak-btn ak-btn-primary ak-btn-sm">Action</button>
+                        <button class="ak-btn ak-btn-ghost ak-btn-sm">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- IMAGE CARDS -->
-    <div class="demo-section">
-        <h2 class="ak-text-2xl ak-font-bold">Images</h2>
-        <p class="description">Cards with integrated media.</p>
-        
-        <div class="demo-grid">
-            <!-- Image Top -->
-            <div class="ak-card">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%234a90e2'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'>Cover Image</text></svg>" alt="Cover" class="ak-card-img">
-                <div class="ak-card-header">
-                    <h3 class="ak-card-title">Image at Top</h3>
+        <!-- CARD VARIANTS -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Variants</h2>
+            <p class="description">Different styles for various contexts.</p>
+            
+            <div class="demo-grid">
+                <!-- Flat Card -->
+                <div class="ak-card ak-card-flat">
+                    <div class="ak-card-header">
+                        <h3 class="ak-card-title">Flat Card</h3>
+                    </div>
+                    <div class="ak-card-body">
+                        <p>Use <code>.ak-card-flat</code> for a borderless, shadowless look, often used on colored backgrounds.</p>
+                    </div>
                 </div>
-                <div class="ak-card-body">
-                    <p>Images placed as the first child of <code>.ak-card</code> automatically get rounded top corners.</p>
-                </div>
-            </div>
 
-            <!-- Image Middle -->
-            <div class="ak-card">
-                <div class="ak-card-header">
-                    <h3 class="ak-card-title">Image in Body</h3>
+                <!-- Elevated Card -->
+                <div class="ak-card ak-card-elevated">
+                    <div class="ak-card-header">
+                        <h3 class="ak-card-title">Elevated Card</h3>
+                    </div>
+                    <div class="ak-card-body">
+                        <p>Use <code>.ak-card-elevated</code> to give the card more depth with a stronger shadow.</p>
+                    </div>
                 </div>
-                <div class="ak-card-body">
-                    <p class="ak-mb-4">You can also place images inside the body content.</p>
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%23e74c3c'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'>Content Image</text></svg>" alt="Content" class="ak-img-fluid ak-rounded">
+
+                <!-- Compact Card -->
+                <div class="ak-card ak-card-compact">
+                    <div class="ak-card-header">
+                        <h3 class="ak-card-title">Compact Card</h3>
+                    </div>
+                    <div class="ak-card-body">
+                        <p>Use <code>.ak-card-compact</code> for reduced padding, suitable for dense data displays.</p>
+                    </div>
+                    <div class="ak-card-footer">
+                        <button class="ak-btn ak-btn-sm">Action</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- INTERACTIVE CARDS -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Interactive</h2>
+            <p class="description">Cards that respond to user interaction.</p>
+            
+            <div class="demo-grid">
+                <!-- Interactive Card -->
+                <div class="ak-card ak-card-interactive">
+                    <div class="ak-card-body">
+                        <i data-lucide="mouse-pointer" class="ak-w-8 ak-h-8 ak-mb-4 ak-text-primary"></i>
+                        <h3 class="ak-card-title">Hover Me</h3>
+                        <p class="ak-mt-2">Use <code>.ak-card-interactive</code> to add hover effects and indicate clickability.</p>
+                    </div>
+                </div>
+                
+                 <!-- Interactive Card 2 -->
+                 <div class="ak-card ak-card-interactive">
+                    <div class="ak-card-body">
+                        <i data-lucide="external-link" class="ak-w-8 ak-h-8 ak-mb-4 ak-text-accent"></i>
+                        <h3 class="ak-card-title">Clickable Card</h3>
+                        <p class="ak-mt-2">Perfect for using cards as navigation links or actionable items.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMAGE CARDS -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold">Images</h2>
+            <p class="description">Cards with integrated media.</p>
+            
+            <div class="demo-grid">
+                <!-- Image Top -->
+                <div class="ak-card">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%234a90e2'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'>Cover Image</text></svg>" alt="Cover" class="ak-card-img">
+                    <div class="ak-card-header">
+                        <h3 class="ak-card-title">Image at Top</h3>
+                    </div>
+                    <div class="ak-card-body">
+                        <p>Images placed as the first child of <code>.ak-card</code> automatically get rounded top corners.</p>
+                    </div>
+                </div>
+
+                <!-- Image Middle -->
+                <div class="ak-card">
+                    <div class="ak-card-header">
+                        <h3 class="ak-card-title">Image in Body</h3>
+                    </div>
+                    <div class="ak-card-body">
+                        <p class="ak-mb-4">You can also place images inside the body content.</p>
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%25' height='100%25' fill='%23e74c3c'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'>Content Image</text></svg>" alt="Content" class="ak-img-fluid ak-rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script>
         lucide.createIcons();

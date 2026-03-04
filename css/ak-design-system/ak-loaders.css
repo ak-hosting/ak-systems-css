@@ -114,7 +114,8 @@
 }
 
 /* Indeterminate State for Bar */
-.ak-loader-bar-indeterminate .ak-loader-bar-value {
+.ak-loader-bar-indeterminate .ak-loader-bar-value,
+.ak-loader-indeterminate .ak-loader-bar-value {
   width: 30%;
   position: absolute;
   top: 0;
@@ -228,6 +229,7 @@
    ----------------------- */
 .ak-loader-primary { color: var(--ak-color-primary); }
 .ak-loader-secondary { color: var(--ak-color-secondary); }
+.ak-loader-accent { color: var(--ak-color-accent); }
 .ak-loader-neutral { color: currentColor; }
 .ak-loader-white { color: #ffffff; }
 .ak-loader-muted { color: var(--ak-color-text-muted); }

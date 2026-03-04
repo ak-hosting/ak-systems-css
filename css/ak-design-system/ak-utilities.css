@@ -3027,6 +3027,74 @@
   color: var(--ak-color-primary-text) !important;
 }
 
+/* Missing Widths from Demo */
+.ak-w-20 { width: 80px !important; }
+.ak-w-32 { width: 128px !important; }
+.ak-w-1\/3 { width: 33.333333% !important; }
+.ak-w-2\/3 { width: 66.666667% !important; }
+.ak-w-3\/4 { width: 75% !important; }
+.ak-w-5 { width: 20px !important; }
+.ak-w-5\/6 { width: 83.333333% !important; }
+
+/* Missing Heights from Demo */
+.ak-h-5 { height: 20px !important; }
+.ak-h-24 { height: 96px !important; }
+.ak-h-32 { height: 128px !important; }
+.ak-h-48 { height: 192px !important; }
+
+/* Missing Grid Cols */
+.ak-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+.ak-col-span-1 { grid-column: span 1 / span 1 !important; }
+.ak-col-span-4 { grid-column: span 4 / span 4 !important; }
+.ak-col-span-6 { grid-column: span 6 / span 6 !important; }
+.ak-col-span-8 { grid-column: span 8 / span 8 !important; }
+.ak-col-span-12 { grid-column: span 12 / span 12 !important; }
+
+/* Missing Colors/Bg */
+.ak-bg-subtle { background-color: var(--ak-color-muted) !important; }
+.ak-bg-surface { background-color: var(--ak-color-surface) !important; }
+.ak-bg-surface-muted { background-color: var(--ak-color-bg) !important; } /* Approximation */
+.ak-bg-warning { background-color: #f59e0b !important; color: #000 !important; } /* Warning color hardcoded or var if exists */
+.ak-bg-success-subtle { background-color: rgba(34, 197, 94, 0.1) !important; color: var(--ak-color-success) !important; }
+.ak-bg-destructive-subtle { background-color: rgba(239, 68, 68, 0.1) !important; color: var(--ak-color-destructive) !important; }
+
+/* Missing Text Colors */
+.ak-text-info { color: #3b82f6 !important; }
+.ak-text-warning { color: #f59e0b !important; }
+.ak-text-warning-content { color: #78350f !important; }
+.ak-text-white { color: #ffffff !important; }
+
+/* Missing Borders */
+.ak-border { border-width: 1px !important; }
+.ak-border-b { border-bottom-width: 1px !important; }
+.ak-border-border { border-color: var(--ak-color-border) !important; }
+.ak-border-success { border-color: var(--ak-color-success) !important; }
+.ak-border-destructive { border-color: var(--ak-color-destructive) !important; }
+
+/* Missing Misc */
+.ak-rounded-md { border-radius: var(--ak-radius-md) !important; }
+.ak-font-italic { font-style: italic !important; }
+.ak-list-circle { list-style-type: circle !important; }
+
+/* Responsive Grid Extensions */
+@media (min-width: 768px) {
+  .ak-md\:ak-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .ak-md\:ak-col-span-2 { grid-column: span 2 / span 2 !important; }
+  .ak-md\:ak-col-span-3 { grid-column: span 3 / span 3 !important; }
+  .ak-md\:ak-col-span-4 { grid-column: span 4 / span 4 !important; }
+  .ak-md\:ak-col-span-6 { grid-column: span 6 / span 6 !important; }
+  .ak-md\:ak-col-span-8 { grid-column: span 8 / span 8 !important; }
+  .ak-md\:ak-flex-row { flex-direction: row !important; }
+  .ak-md\:ak-block { display: block !important; }
+}
+
+@media (min-width: 1024px) {
+  .ak-lg\:ak-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+}
+
+.ak-hover\:ak-text-primary:hover { color: var(--ak-color-primary) !important; }
+
+
 /* -------------------------------------------------------------------------- */
 /*                               Image Utilities                              */
 /* -------------------------------------------------------------------------- */

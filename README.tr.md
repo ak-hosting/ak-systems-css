@@ -15,18 +15,27 @@ Tek desteklenen giriş (geliştirme):
 Üretim/CDN girişi:
 
 ```html
-<!-- Belirli bir sürümü kullanın (önerilen) -->
+<!-- Belirli bir sürümü kullanın (üretim için önerilen) -->
+<!-- Bu sürüm değişmez ve kararlıdır -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.1/dist/ak-design-system.min.css"
 />
 
-<!-- Veya ana daldan en son sürümü kullanın (sadece geliştirme) -->
+<!-- Veya ana daldan en son sürümü kullanın (her zaman güncel) -->
+<!-- Uyarı: Haber verilmeksizin kırılmalara neden olabilir -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css"
 />
 ```
+
+## Sürümleme ve CDN Kullanımı
+
+- **Önerilen:** İstenmeyen güncellemeleri önlemek için sürüm etiketlerine sabitleyin (örn. `.../ak-systems-css@v1.3.1/...`). Bu, biz değişiklik yapsak bile sitenizin tam olarak aynı görünmesini sağlar.
+- **Geliştirme:** En son değişiklikleri her zaman almak için `.../ak-systems-css@main/...` kullanın. Sınıf adlarını değiştirirsek bunun düzeninizi bozabileceğini unutmayın.
+- Detaylı sürüm geçmişi için [CHANGELOG.md](CHANGELOG.md) dosyasına bakın.
+- Yalnızca desteklenen girişler: Geliştirme için `css/ak-design-system/index.css` ve üretim/CDN için `dist/ak-design-system.min.css`.
 
 ## Derleme (Build) Süreci
 

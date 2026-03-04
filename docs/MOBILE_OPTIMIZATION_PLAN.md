@@ -10,15 +10,16 @@ This plan focuses on deliberate UX improvements.
 
 ---
 
-## Current Status (v1.2.0)
+## Current Status (v1.3.1)
 - Responsive breakpoints fully implemented
 - Mobile layouts and components behave correctly
 - Touch-friendly buttons and icon buttons
 - Accessibility and reduced-motion support
 - No breaking mobile issues
 - Mobile UX refinements implemented (v1.2.0)
+- Responsive Grid fixes and improvements (v1.3.1)
 
-Mobile readiness: ~90–95%
+Mobile readiness: ~95%
 
 ---
 

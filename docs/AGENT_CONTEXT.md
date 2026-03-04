@@ -84,6 +84,16 @@ Use these variables for custom styles to maintain consistency.
       <!-- Page Content -->
     </div>
   </main>
+
+  <footer class="ak-footer">
+    <div class="ak-footer-content ak-flex ak-flex-between">
+      <p>&copy; 2026 AK Systems</p>
+      <ul class="ak-footer-links">
+        <li><a href="#" class="ak-text-muted">Privacy</a></li>
+        <li><a href="#" class="ak-text-muted">Terms</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 ```
 
@@ -131,8 +141,18 @@ Use these variables for custom styles to maintain consistency.
 
 <!-- Checkbox -->
 <label class="ak-checkbox">
-  <input type="checkbox">
-  <span>I agree</span>
+  <input type="checkbox" class="ak-checkbox-input">
+  <span class="ak-checkbox-label">I agree</span>
+</label>
+
+<!-- Radio -->
+<label class="ak-radio">
+  <input type="radio" name="options" class="ak-radio-input">
+  <span class="ak-radio-label">Option 1</span>
+</label>
+<label class="ak-radio">
+  <input type="radio" name="options" class="ak-radio-input">
+  <span class="ak-radio-label">Option 2</span>
 </label>
 
 <!-- Switch -->
@@ -158,6 +178,37 @@ Use these variables for custom styles to maintain consistency.
 <span class="ak-badge ak-badge-warning">Warning</span>
 <span class="ak-badge ak-badge-destructive">Error</span>
 <span class="ak-badge ak-badge-outline">Outline</span>
+```
+
+### Loaders (`.ak-loader-*`)
+```html
+<!-- Spinner -->
+<div class="ak-loader-spinner"></div>
+<div class="ak-loader-spinner ak-text-primary"></div>
+
+<!-- Dots -->
+<div class="ak-loader-dots">
+  <span></span><span></span><span></span>
+</div>
+
+<!-- Progress Bar -->
+<div class="ak-loader-bar ak-loader-indeterminate">
+  <div class="ak-loader-bar-value"></div>
+</div>
+```
+
+### Hero Section (`.ak-hero`)
+```html
+<section class="ak-hero">
+  <div class="ak-hero-content">
+    <h1 class="ak-hero-title">Welcome to AK Systems</h1>
+    <p class="ak-hero-subtitle">Powerful, modular, and CSS-only.</p>
+    <div class="ak-hero-actions">
+      <button class="ak-btn ak-btn-primary">Get Started</button>
+      <button class="ak-btn ak-btn-outline">Learn More</button>
+    </div>
+  </div>
+</section>
 ```
 
 ### Layout & Grid

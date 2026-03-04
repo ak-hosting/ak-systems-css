@@ -508,7 +508,7 @@ This document provides a comprehensive overview of all components and utilities 
 When building new pages using `ak-design-system`:
 1.  **Always use** `.ak-header` (or variants like `.ak-header-centered`, `.ak-header-minimal`) and `.ak-footer` (or variants like `.ak-footer-multi-column`, `.ak-footer-newsletter`) for the main layout shell.
 2.  **Prefer** `.ak-hero` for the top section of landing pages instead of custom flex utilities.
-3.  **Use** `.ak-sidebar` for navigation drawers (mobile-friendly).
+3.  **Use** `.ak-drawer-left` (within `.ak-modal`) for navigation drawers (mobile-friendly replacement for static sidebars).
 4.  **Always use** `.ak-img-fluid` for content images to prevent overflow issues on mobile.
 5.  **Use** `.ak-object-cover` for avatars or card images that need to fill a specific dimension without distortion.
 6.  **Choose appropriate header/footer variants** based on use case:

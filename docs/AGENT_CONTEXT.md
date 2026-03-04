@@ -41,17 +41,43 @@ Use these variables for custom styles to maintain consistency.
 <body class="ak-theme-dark">
   <header class="ak-header">
     <div class="ak-flex ak-flex-between ak-items-center">
-       <h1 class="ak-text-xl ak-font-bold">App Name</h1>
+       <div class="ak-flex ak-items-center ak-gap-4">
+         <button class="ak-btn ak-btn-ghost" onclick="openModal('nav-drawer')">
+           <i data-lucide="menu"></i>
+         </button>
+         <h1 class="ak-text-xl ak-font-bold">App Name</h1>
+       </div>
        <button class="ak-btn ak-btn-ghost"><i data-lucide="sun"></i></button>
     </div>
   </header>
 
-  <aside class="ak-sidebar">
-    <ul class="ak-sidebar-nav">
-      <li><a href="#" class="ak-active"><i data-lucide="home"></i> Home</a></li>
-      <li><a href="#"><i data-lucide="settings"></i> Settings</a></li>
-    </ul>
-  </aside>
+  <!-- Left Drawer (Sidebar) -->
+  <div id="nav-drawer" class="ak-modal ak-drawer-left">
+    <div class="ak-modal-content">
+      <div class="ak-modal-header">
+        <h2 class="ak-modal-title">Navigation</h2>
+        <button class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="ak-modal-body">
+        <ul class="ak-nav ak-flex-col ak-gap-2">
+          <li>
+            <a href="#" class="ak-active">
+              <i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i data-lucide="settings" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <main class="ak-main">
     <div class="ak-container">
@@ -162,6 +188,40 @@ Use these variables for custom styles to maintain consistency.
 - **Text Align:** `ak-text-left`, `ak-text-center`, `ak-text-right`.
 
 ## 5. JavaScript Interactions
-Since this is a CSS-only framework, interactivity (Modals, Dropdowns, Tabs) must be handled by custom JS that toggles:
-- `.active` class for Tabs/Modals.
-- `.open` class for Dropdowns.
+Since this is a CSS-only framework, interactivity must be handled by external JS.
+The `demo/index.html` includes a reference implementation for:
+
+- **Modals & Drawers:**
+  - Functions: `openModal(id)` and `closeModal(id)`
+  - Toggles `.ak-modal-open` class on the target element.
+  - Handles `Escape` key and click-outside to close.
+- **Dropdowns:** Toggles `.open` class.
+- **Tabs:** Toggles `.active` class.
+
+### Generic Modal Script Pattern
+```javascript
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) modal.classList.add('ak-modal-open');
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) modal.classList.remove('ak-modal-open');
+}
+
+// Close on Escape or Click Outside
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.ak-modal.ak-modal-open').forEach(modal => {
+            modal.classList.remove('ak-modal-open');
+        });
+    }
+});
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('ak-modal')) {
+        e.target.classList.remove('ak-modal-open');
+    }
+});
+```

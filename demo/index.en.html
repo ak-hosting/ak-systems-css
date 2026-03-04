@@ -13,6 +13,22 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
+        /* Minimal demo-specific styles - using Design System classes where possible */
+        .language-selector {
+            margin-left: var(--ak-space-4);
+        }
+        
+        .language-selector a {
+            margin-right: var(--ak-space-2);
+            text-decoration: none;
+            color: var(--ak-color-text-muted);
+        }
+        
+        .language-selector a.ak-active {
+            color: var(--ak-color-accent);
+            font-weight: var(--ak-font-weight-medium);
+        }
+
         /* Extra demo-specific styles */
         .demo-section {
             margin-bottom: var(--ak-space-8);
@@ -41,23 +57,17 @@
             margin: var(--ak-space-1);
         }
         
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: var(--ak-z-modal);
+        .code-block {
+            background: var(--ak-muted);
+            border: 1px solid var(--ak-border);
+            border-radius: var(--ak-radius-md);
+            padding: var(--ak-space-4);
+            font-family: var(--ak-font-mono);
+            font-size: var(--ak-font-size-sm);
+            overflow-x: auto;
+            white-space: pre;
         }
-        
-        .modal-overlay.active {
-            display: flex;
-        }
-        
+
         .toast {
             position: fixed;
             top: var(--ak-space-4);
@@ -76,17 +86,6 @@
         .toast.active {
             display: flex;
         }
-        
-        .code-block {
-            background: var(--ak-muted);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            font-family: var(--ak-font-mono);
-            font-size: var(--ak-font-size-sm);
-            overflow-x: auto;
-            white-space: pre;
-        }
     </style>
 </head>
 <body class="ak-theme-dark">
@@ -94,10 +93,15 @@
     <header class="ak-header">
         <div class="ak-flex ak-flex-between ak-items-center">
             <div class="ak-flex ak-items-center ak-gap-4">
-                <button id="open-sidebar" class="ak-btn ak-btn-ghost ak-md:ak-hidden" data-testid="button-open-sidebar">
+                <button id="open-sidebar" class="ak-btn ak-btn-ghost" onclick="openModal('nav-drawer')" data-testid="button-open-sidebar">
                     <i data-lucide="menu"></i>
                 </button>
                 <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
+                <div class="language-selector">
+                    <a href="index.en.html" class="ak-active">EN</a>
+                    <a href="index.de.html">DE</a>
+                    <a href="index.tr.html">TR</a>
+                </div>
             </div>
             <div class="ak-flex ak-items-center ak-gap-2">
                 <button id="theme-toggle" class="ak-btn ak-btn-ghost" data-testid="button-theme-toggle">
@@ -107,47 +111,51 @@
         </div>
     </header>
 
-    <!-- Sidebar -->
-    <aside id="sidebar" class="ak-sidebar" data-testid="sidebar">
-        <div class="ak-sidebar-header">
-            <h2 class="ak-text-lg ak-font-semibold">Navigation</h2>
-            <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-md:ak-hidden" data-testid="button-close-sidebar">
-                <i data-lucide="x"></i>
-            </button>
+    <!-- Sidebar / Drawer -->
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li>
+                        <a href="#overview" class="ak-active" data-section="overview">
+                            <i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tokens" data-section="tokens">
+                            <i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            <span>Design Tokens</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#components" data-section="components">
+                            <i data-lucide="layout" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            <span>Components</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#utilities" data-section="utilities">
+                            <i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            <span>Utility Classes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#examples" data-section="examples">
+                            <i data-lucide="code" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            <span>Code Examples</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <ul class="ak-sidebar-nav">
-            <li>
-                <a href="#overview" class="ak-active" data-section="overview">
-                    <i data-lucide="home"></i>
-                    Overview
-                </a>
-            </li>
-            <li>
-                <a href="#tokens" data-section="tokens">
-                    <i data-lucide="palette"></i>
-                    Design Tokens
-                </a>
-            </li>
-            <li>
-                <a href="#components" data-section="components">
-                    <i data-lucide="layout"></i>
-                    Components
-                </a>
-            </li>
-            <li>
-                <a href="#utilities" data-section="utilities">
-                    <i data-lucide="wrench"></i>
-                    Utility Classes
-                </a>
-            </li>
-            <li>
-                <a href="#examples" data-section="examples">
-                    <i data-lucide="code"></i>
-                    Code Examples
-                </a>
-            </li>
-        </ul>
-    </aside>
+    </div>
 
     <!-- Main Content -->
     <main class="ak-main">
@@ -583,11 +591,11 @@
     </footer>
 
     <!-- Modal -->
-    <div id="modal-overlay" class="modal-overlay" data-testid="modal-overlay">
-        <div class="ak-modal">
+    <div id="example-modal" class="ak-modal" data-testid="modal-overlay">
+        <div class="ak-modal-content">
             <div class="ak-modal-header">
                 <h3 class="ak-modal-title">Example Modal</h3>
-                <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm" data-testid="button-close-modal">
+                <button id="close-modal" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('example-modal')" data-testid="button-close-modal">
                     <i data-lucide="x"></i>
                 </button>
             </div>
@@ -599,10 +607,10 @@
                 </div>
             </div>
             <div class="ak-modal-footer">
-                <button class="ak-btn ak-btn-ghost" data-testid="button-modal-cancel">
+                <button id="cancel-modal" class="ak-btn ak-btn-ghost" onclick="closeModal('example-modal')" data-testid="button-modal-cancel">
                     Cancel
                 </button>
-                <button class="ak-btn ak-btn-primary" data-testid="button-modal-confirm">
+                <button id="confirm-modal" class="ak-btn ak-btn-primary" data-testid="button-modal-confirm">
                     Confirm
                 </button>
             </div>
@@ -638,17 +646,41 @@
             lucide.createIcons(); // Re-render icons
         });
 
-        // Sidebar Toggle
-        const sidebar = document.getElementById('sidebar');
-        const openSidebarBtn = document.getElementById('open-sidebar');
-        const closeSidebarBtn = document.getElementById('close-sidebar');
+        // Generic Modal Functions
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('ak-modal-open');
+                document.body.classList.add('ak-modal-open');
+            }
+        }
 
-        openSidebarBtn.addEventListener('click', () => {
-            sidebar.classList.add('active');
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
+        }
+
+        // Close modal when clicking outside or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('ak-modal')) {
+                e.target.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
         });
 
-        closeSidebarBtn.addEventListener('click', () => {
-            sidebar.classList.remove('active');
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
+                openModals.forEach(modal => {
+                    modal.classList.remove('ak-modal-open');
+                });
+                if (openModals.length > 0) {
+                    document.body.classList.remove('ak-modal-open');
+                }
+            }
         });
 
         // Navigation
@@ -680,7 +712,9 @@
             });
 
             // Close sidebar on mobile
-            sidebar.classList.remove('ak-sidebar-open');
+            if (window.innerWidth < 768) {
+                closeModal('nav-drawer');
+            }
         }
 
         // Add click handlers to navigation links
@@ -693,30 +727,21 @@
         });
 
         // Modal functionality
-        const modalOverlay = document.getElementById('modal-overlay');
-        const modal = modalOverlay.querySelector('.ak-modal');
         const openModalBtn = document.getElementById('open-modal');
-        const closeModalBtn = document.getElementById('close-modal');
+        const confirmModalBtn = document.getElementById('confirm-modal');
 
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.add('ak-modal-open');
-            document.body.classList.add('ak-modal-open');
-            modalOverlay.classList.add('active');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('ak-modal-open');
-            document.body.classList.remove('ak-modal-open');
-            modalOverlay.classList.remove('active');
-        });
-
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                modal.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-                modalOverlay.classList.remove('active');
-            }
-        });
+        if (openModalBtn) {
+            openModalBtn.addEventListener('click', () => {
+                openModal('example-modal');
+            });
+        }
+        
+        if (confirmModalBtn) {
+            confirmModalBtn.addEventListener('click', () => {
+                closeModal('example-modal');
+                showToast('Action confirmed!', 'success');
+            });
+        }
 
         // Toast functionality
         const toast = document.getElementById('toast');
@@ -774,16 +799,6 @@
 
         // Initialize Lucide icons
         lucide.createIcons();
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768 && 
-                !sidebar.contains(e.target) && 
-                !openSidebarBtn.contains(e.target) && 
-                sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
-            }
-        });
     </script>
 </body>
 </html>

@@ -81,6 +81,10 @@
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
                 <div class="demo-nav">
+                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                        <i data-lucide="menu"></i>
+                    </button>
+
                     <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
                         <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                         Ana Sayfaya Dön
@@ -301,34 +305,73 @@
         </div>
     </div>
 
+    <!-- Sidebar / Drawer -->
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Gezinme</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.tr.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Genel Bakış</span></a></li>
+                    <li><a href="typography.tr.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tipografi</span></a></li>
+                    <li><a href="index.tr.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Renkler</span></a></li>
+                    <li><a href="buttons.tr.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Butonlar</span></a></li>
+                    <li><a href="loaders.tr.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yükleyiciler</span></a></li>
+                    <li><a href="forms.tr.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formlar</span></a></li>
+                    <li><a href="upload.tr.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yükleme</span></a></li>
+                    <li><a href="cards.tr.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Kartlar</span></a></li>
+                    <li><a href="alerts.tr.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Uyarılar</span></a></li>
+                    <li><a href="modals.tr.html" class="ak-active" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modallar</span></a></li>
+                    <li><a href="tables.tr.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tablolar</span></a></li>
+                    <li><a href="extended.tr.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Genişletilmiş</span></a></li>
+                    <li><a href="layout.tr.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Düzen</span></a></li>
+                    <li><a href="headers.tr.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.tr.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yardımcı Sınıflar</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
 
+        // Generic Modal Functions
         function openModal(id) {
-            document.getElementById(id).classList.add('ak-modal-open');
-            document.body.classList.add('ak-modal-open');
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('ak-modal-open');
+                document.body.classList.add('ak-modal-open');
+            }
         }
 
         function closeModal(id) {
-            document.getElementById(id).classList.remove('ak-modal-open');
-            document.body.classList.remove('ak-modal-open');
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
         }
 
-        // Close modal when clicking outside
-        document.querySelectorAll('.ak-modal').forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal(modal.id);
-                }
-            });
+        // Close modal when clicking outside or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('ak-modal')) {
+                e.target.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
         });
-        
-        // Close on Escape key
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                const openModal = document.querySelector('.ak-modal.ak-modal-open');
-                if (openModal) {
-                    closeModal(openModal.id);
+                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
+                openModals.forEach(modal => {
+                    modal.classList.remove('ak-modal-open');
+                });
+                if (openModals.length > 0) {
+                    document.body.classList.remove('ak-modal-open');
                 }
             }
         });

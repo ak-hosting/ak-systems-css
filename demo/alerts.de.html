@@ -52,6 +52,10 @@
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
                 <div class="demo-nav">
+                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                        <i data-lucide="menu"></i>
+                    </button>
+
                     <a href="index.de.html" class="ak-btn ak-btn-ghost ak-btn-sm">
                         <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                         Zurück zur Übersicht
@@ -209,8 +213,78 @@
 
     </main>
 
+    
+    <!-- Sidebar / Drawer -->
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.de.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Übersicht</span></a></li>
+                    <li><a href="typography.de.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typografie</span></a></li>
+                    <li><a href="index.de.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Farben</span></a></li>
+                    <li><a href="buttons.de.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="loaders.de.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loader</span></a></li>
+                    <li><a href="forms.de.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formulare</span></a></li>
+                    <li><a href="upload.de.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.de.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
+                    <li><a href="alerts.de.html" class="ak-active" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
+                    <li><a href="modals.de.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modals</span></a></li>
+                    <li><a href="tables.de.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tabellen</span></a></li>
+                    <li><a href="extended.de.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Erweitert</span></a></li>
+                    <li><a href="layout.de.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="headers.de.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.de.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utility Classes</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
+
+        // Generic Modal Functions
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('ak-modal-open');
+                document.body.classList.add('ak-modal-open');
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
+        }
+
+        // Close modal when clicking outside or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('ak-modal')) {
+                e.target.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
+                openModals.forEach(modal => {
+                    modal.classList.remove('ak-modal-open');
+                });
+                if (openModals.length > 0) {
+                    document.body.classList.remove('ak-modal-open');
+                }
+            }
+        });
     </script>
+
 </body>
 </html>

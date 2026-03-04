@@ -52,6 +52,9 @@
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
                 <div class="demo-nav">
+                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                        <i data-lucide="menu"></i>
+                    </button>
                     <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
                         <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                         Back to Index
@@ -195,8 +198,77 @@
 
     </main>
 
+
+    <!-- Sidebar / Drawer -->
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.html"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Overview</span></a></li>
+                    <li><a href="typography.html"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typography</span></a></li>
+                    <li><a href="index.html#colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Colors</span></a></li>
+                    <li><a href="buttons.html" class="ak-active"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="loaders.html"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loaders</span></a></li>
+                    <li><a href="forms.html"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Forms</span></a></li>
+                    <li><a href="upload.html"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.html"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
+                    <li><a href="alerts.html"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
+                    <li><a href="modals.html"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modals</span></a></li>
+                    <li><a href="tables.html"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tables</span></a></li>
+                    <li><a href="extended.html"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Extended</span></a></li>
+                    <li><a href="layout.html"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="headers.html"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.html#utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utility Classes</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
+
+        // Generic Modal Functions
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('ak-modal-open');
+                document.body.classList.add('ak-modal-open');
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
+        }
+
+        // Close modal when clicking outside or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('ak-modal')) {
+                e.target.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
+                openModals.forEach(modal => {
+                    modal.classList.remove('ak-modal-open');
+                });
+                if (openModals.length > 0) {
+                    document.body.classList.remove('ak-modal-open');
+                }
+            }
+        });
     </script>
 </body>
 </html>

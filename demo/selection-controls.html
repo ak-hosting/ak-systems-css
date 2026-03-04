@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Controls - AK Design System</title>
+    <meta name="description" content="AK Design System selection controls: checkboxes, radios, switches, and modern selection cards.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--ak-color-border);
+        }
+
+        .demo-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Back to Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Selection Controls</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="selection-controls.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                     <a href="selection-controls.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="selection-controls.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Standard Checkbox & Radio -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Checkbox & Radio</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <!-- Checkboxes -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Checkboxes</h3>
+                    <div class="ak-checkbox-group">
+                        <div class="ak-checkbox">
+                            <input type="checkbox" id="check1" class="ak-checkbox-input" checked>
+                            <label for="check1" class="ak-checkbox-label">Checked Option</label>
+                        </div>
+                        <div class="ak-checkbox">
+                            <input type="checkbox" id="check2" class="ak-checkbox-input">
+                            <label for="check2" class="ak-checkbox-label">Unchecked Option</label>
+                        </div>
+                        <div class="ak-checkbox">
+                            <input type="checkbox" id="check3" class="ak-checkbox-input" disabled>
+                            <label for="check3" class="ak-checkbox-label">Disabled Option</label>
+                        </div>
+                        <div class="ak-checkbox">
+                            <input type="checkbox" id="check4" class="ak-checkbox-input" disabled checked>
+                            <label for="check4" class="ak-checkbox-label">Disabled Checked</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radios -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Radios</h3>
+                    <div class="ak-radio-group">
+                        <div class="ak-radio">
+                            <input type="radio" name="radio-demo" id="radio1" class="ak-radio-input" checked>
+                            <label for="radio1" class="ak-radio-label">Option 1</label>
+                        </div>
+                        <div class="ak-radio">
+                            <input type="radio" name="radio-demo" id="radio2" class="ak-radio-input">
+                            <label for="radio2" class="ak-radio-label">Option 2</label>
+                        </div>
+                        <div class="ak-radio">
+                            <input type="radio" name="radio-demo-disabled" id="radio3" class="ak-radio-input" disabled>
+                            <label for="radio3" class="ak-radio-label">Disabled Option</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Switches / Toggles -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Switches (Toggles)</h2>
+            <p class="ak-text-muted ak-mb-6">Switches allow users to toggle a single setting on or off.</p>
+
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-items-end ak-gap-8 ak-flex-wrap">
+                    <!-- Small -->
+                    <div class="ak-flex ak-flex-col ak-gap-2">
+                        <span class="ak-text-xs ak-text-muted">Small (.ak-switch-sm)</span>
+                        <label class="ak-switch ak-switch-sm">
+                            <input type="checkbox">
+                            <span class="ak-switch-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <!-- Default -->
+                    <div class="ak-flex ak-flex-col ak-gap-2">
+                        <span class="ak-text-xs ak-text-muted">Default</span>
+                        <label class="ak-switch">
+                            <input type="checkbox" checked>
+                            <span class="ak-switch-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Large -->
+                    <div class="ak-flex ak-flex-col ak-gap-2">
+                        <span class="ak-text-xs ak-text-muted">Large (.ak-switch-lg)</span>
+                        <label class="ak-switch ak-switch-lg">
+                            <input type="checkbox">
+                            <span class="ak-switch-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Disabled -->
+                    <div class="ak-flex ak-flex-col ak-gap-2">
+                        <span class="ak-text-xs ak-text-muted">Disabled</span>
+                        <label class="ak-switch">
+                            <input type="checkbox" disabled>
+                            <span class="ak-switch-slider" style="opacity: 0.5; cursor: not-allowed;"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selection Cards -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Selection Cards</h2>
+            <p class="ak-text-muted ak-mb-6">Rich selection controls with title, description, and icons. Great for plan selection or complex options.</p>
+            
+            <div class="ak-selection-grid">
+                <label class="ak-selection-card">
+                    <input type="radio" name="plan" checked>
+                    <div class="ak-selection-card-content">
+                        <div class="ak-flex ak-items-center ak-gap-2 ak-mb-1">
+                            <i data-lucide="zap" class="ak-w-4 ak-h-4 ak-text-accent"></i>
+                            <span class="ak-selection-card-title">Starter</span>
+                        </div>
+                        <span class="ak-selection-card-description">Perfect for hobby projects and personal use.</span>
+                        <div class="ak-mt-2 ak-font-bold">$0/mo</div>
+                    </div>
+                </label>
+
+                <label class="ak-selection-card">
+                    <input type="radio" name="plan">
+                    <div class="ak-selection-card-content">
+                        <div class="ak-flex ak-items-center ak-gap-2 ak-mb-1">
+                            <i data-lucide="briefcase" class="ak-w-4 ak-h-4 ak-text-primary"></i>
+                            <span class="ak-selection-card-title">Professional</span>
+                        </div>
+                        <span class="ak-selection-card-description">For growing teams and businesses.</span>
+                        <div class="ak-mt-2 ak-font-bold">$29/mo</div>
+                    </div>
+                </label>
+
+                <label class="ak-selection-card">
+                    <input type="radio" name="plan">
+                    <div class="ak-selection-card-content">
+                        <div class="ak-flex ak-items-center ak-gap-2 ak-mb-1">
+                            <i data-lucide="building" class="ak-w-4 ak-h-4 ak-text-success"></i>
+                            <span class="ak-selection-card-title">Enterprise</span>
+                        </div>
+                        <span class="ak-selection-card-description">Advanced features for large organizations.</span>
+                        <div class="ak-mt-2 ak-font-bold">Custom</div>
+                    </div>
+                </label>
+            </div>
+            
+            <div class="ak-mt-8">
+                <h3 class="ak-text-lg ak-font-semibold ak-mb-4">With Checkboxes (Multi-select)</h3>
+                <div class="ak-selection-grid">
+                    <label class="ak-selection-card">
+                        <input type="checkbox" checked>
+                        <div class="ak-selection-card-content">
+                            <span class="ak-selection-card-title">Email Notifications</span>
+                            <span class="ak-selection-card-description">Receive daily summaries and alerts via email.</span>
+                        </div>
+                    </label>
+                    <label class="ak-selection-card">
+                        <input type="checkbox">
+                        <div class="ak-selection-card-content">
+                            <span class="ak-selection-card-title">SMS Notifications</span>
+                            <span class="ak-selection-card-description">Get urgent alerts directly to your phone.</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segmented Controls -->
+        <div class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Segmented Controls</h2>
+            <p class="ak-text-muted ak-mb-6">Linear set of exclusive options, similar to radio buttons but with a more compact button-like appearance.</p>
+            
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-flex-col ak-gap-6">
+                    
+                    <!-- Basic -->
+                    <div>
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Basic Text</h4>
+                        <div class="ak-segmented-control">
+                            <label class="ak-segmented-item">
+                                <input type="radio" name="view1" checked>
+                                <span class="ak-segmented-label">Daily</span>
+                            </label>
+                            <label class="ak-segmented-item">
+                                <input type="radio" name="view1">
+                                <span class="ak-segmented-label">Weekly</span>
+                            </label>
+                            <label class="ak-segmented-item">
+                                <input type="radio" name="view1">
+                                <span class="ak-segmented-label">Monthly</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- With Icons -->
+                    <div>
+                        <h4 class="ak-text-sm ak-font-semibold ak-mb-2">With Icons</h4>
+                        <div class="ak-segmented-control">
+                            <label class="ak-segmented-item">
+                                <input type="radio" name="view2" checked>
+                                <span class="ak-segmented-label ak-flex ak-justify-center">
+                                    <i data-lucide="grid" class="ak-w-4 ak-h-4"></i>
+                                </span>
+                            </label>
+                            <label class="ak-segmented-item">
+                                <input type="radio" name="view2">
+                                <span class="ak-segmented-label ak-flex ak-justify-center">
+                                    <i data-lucide="list" class="ak-w-4 ak-h-4"></i>
+                                </span>
+                            </label>
+                            <label class="ak-segmented-item">
+                                <input type="radio" name="view2">
+                                <span class="ak-segmented-label ak-flex ak-justify-center">
+                                    <i data-lucide="map" class="ak-w-4 ak-h-4"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Sidebar / Drawer -->
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Overview</span></a></li>
+                    <li><a href="typography.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typography</span></a></li>
+                    <li><a href="index.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Colors</span></a></li>
+                    <li><a href="buttons.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="loaders.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loaders</span></a></li>
+                    <li><a href="forms.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Forms</span></a></li>
+                    <li><a href="selection-controls.html" class="ak-active" data-page="selection"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Selection Controls</span></a></li>
+                    <li><a href="upload.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
+                    <li><a href="alerts.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
+                    <li><a href="modals.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modals</span></a></li>
+                    <li><a href="tables.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tables</span></a></li>
+                    <li><a href="extended.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Extended</span></a></li>
+                    <li><a href="layout.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="headers.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utility Classes</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Generic Modal Functions
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('ak-modal-open');
+                document.body.classList.add('ak-modal-open');
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
+        }
+
+        // Close modal when clicking outside or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('ak-modal')) {
+                e.target.classList.remove('ak-modal-open');
+                document.body.classList.remove('ak-modal-open');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
+                openModals.forEach(modal => {
+                    modal.classList.remove('ak-modal-open');
+                });
+                if (openModals.length > 0) {
+                    document.body.classList.remove('ak-modal-open');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

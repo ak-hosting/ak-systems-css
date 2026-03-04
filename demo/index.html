@@ -102,6 +102,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="selection-controls.html">
+                            <i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            <span>Selection Controls</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#upload" data-section="upload">
                             <i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                             <span>Upload</span>
@@ -459,7 +465,37 @@
                             </label>
                         </div>
 
-                        <button type="submit" class="ak-btn ak-btn-primary">Submit</button>
+                        <!-- Modern Selection Variants -->
+                        <div class="ak-divider ak-my-8"></div>
+                        <div class="ak-flex ak-justify-between ak-items-center ak-mb-4">
+                            <h3 class="ak-text-xl ak-font-semibold">Modern Selection Controls</h3>
+                            <a href="selection-controls.html" class="ak-btn ak-btn-sm ak-btn-outline">
+                                View All Variants <i data-lucide="arrow-right" class="ak-w-4 ak-h-4 ak-ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Preview of Selection Cards (Simplified) -->
+                        <div class="ak-form-group">
+                            <label class="ak-form-label">Selection Cards Preview</label>
+                            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-4">
+                                <label class="ak-selection-card">
+                                    <input type="radio" name="plan_preview" checked>
+                                    <div class="ak-selection-card-content">
+                                        <span class="ak-selection-card-title">Basic Plan</span>
+                                        <span class="ak-selection-card-description">Essential features.</span>
+                                    </div>
+                                </label>
+                                <label class="ak-selection-card">
+                                    <input type="radio" name="plan_preview">
+                                    <div class="ak-selection-card-content">
+                                        <span class="ak-selection-card-title">Pro Plan</span>
+                                        <span class="ak-selection-card-description">Advanced tools.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="ak-btn ak-btn-primary ak-mt-4">Submit</button>
                     </form>
                 </div>
             </section>

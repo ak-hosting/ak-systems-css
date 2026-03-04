@@ -1908,6 +1908,140 @@ blockquote {
   border-bottom-right-radius: var(--ak-radius-md);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                              Modern Selection                              */
+/* -------------------------------------------------------------------------- */
+
+/* Selection Card */
+.ak-selection-card {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--ak-space-4);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--ak-color-surface);
+  position: relative;
+  width: 100%;
+}
+
+.ak-selection-card:hover {
+  border-color: var(--ak-color-text-muted);
+}
+
+.ak-selection-card:has(input:checked) {
+  border-color: var(--ak-color-primary);
+  background-color: var(--ak-color-bg-subtle);
+  box-shadow: 0 0 0 1px var(--ak-color-primary);
+}
+
+.ak-selection-card input {
+  margin-top: 4px; /* Align with title */
+}
+
+.ak-selection-card-content {
+  margin-left: var(--ak-space-3);
+  flex: 1;
+}
+
+.ak-selection-card-title {
+  display: block;
+  font-weight: var(--ak-font-weight-medium);
+  color: var(--ak-color-text);
+  margin-bottom: var(--ak-space-1);
+}
+
+.ak-selection-card-description {
+  display: block;
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text-muted);
+  line-height: 1.4;
+}
+
+/* Grid of selection cards */
+.ak-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--ak-space-4);
+}
+
+/* Segmented Control */
+.ak-segmented-control {
+  display: inline-flex;
+  background-color: var(--ak-color-bg-subtle);
+  padding: var(--ak-space-1);
+  border-radius: var(--ak-radius-md);
+  position: relative;
+  gap: var(--ak-space-1);
+}
+
+.ak-segmented-item {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.ak-segmented-item input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ak-segmented-label {
+  display: block;
+  padding: var(--ak-space-1) var(--ak-space-4);
+  font-size: var(--ak-font-size-sm);
+  font-weight: var(--ak-font-weight-medium);
+  color: var(--ak-color-text-muted);
+  border-radius: var(--ak-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.ak-segmented-item:hover .ak-segmented-label {
+  color: var(--ak-color-text);
+}
+
+.ak-segmented-item input:checked + .ak-segmented-label {
+  background-color: var(--ak-color-surface);
+  color: var(--ak-color-text);
+  box-shadow: var(--ak-shadow-sm);
+}
+
+.ak-segmented-item input:focus + .ak-segmented-label {
+  outline: 2px solid var(--ak-color-primary);
+}
+
+/* Switch Sizes */
+.ak-switch-sm {
+  width: 36px;
+  height: 20px;
+}
+.ak-switch-sm .ak-switch-slider:before {
+  height: 14px;
+  width: 14px;
+}
+.ak-switch-sm input:checked + .ak-switch-slider:before {
+  transform: translateX(16px);
+}
+
+.ak-switch-lg {
+  width: 52px;
+  height: 28px;
+}
+.ak-switch-lg .ak-switch-slider:before {
+  height: 22px;
+  width: 22px;
+}
+.ak-switch-lg input:checked + .ak-switch-slider:before {
+  transform: translateX(24px);
+}
+
+
 .ak-modal {
   position: fixed;
   inset: 0;

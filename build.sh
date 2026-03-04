@@ -16,6 +16,7 @@ fi
 CSS_DIR="css/ak-design-system"
 DIST_DIR="dist"
 OUTPUT_FILE="$DIST_DIR/ak-design-system.css"
+VERSION=$(cat VERSION)
 
 # Colors for output (if terminal supports it)
 if [ -t 1 ]; then
@@ -35,6 +36,9 @@ mkdir -p "$DIST_DIR"
 
 echo -e "${BLUE}Building CSS files...${NC}"
 
+# Add version header
+echo "/*! AK Design System v$VERSION | (c) AK Systems */" > "$OUTPUT_FILE"
+
 # Concatenate files in correct order
 cat "$CSS_DIR/ak-core.css" \
     "$CSS_DIR/ak-base.css" \
@@ -42,7 +46,7 @@ cat "$CSS_DIR/ak-core.css" \
     "$CSS_DIR/ak-components.css" \
     "$CSS_DIR/ak-loaders.css" \
     "$CSS_DIR/ak-utilities.css" \
-    "$CSS_DIR/ak-modifiers.css" > "$OUTPUT_FILE"
+    "$CSS_DIR/ak-modifiers.css" >> "$OUTPUT_FILE"
 
 # Get file size in human-readable format
 if command -v numfmt &> /dev/null; then

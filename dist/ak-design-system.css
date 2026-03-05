@@ -3379,6 +3379,73 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   color: var(--ak-color-text-muted);
 }
 
+
+/* Selection Cards */
+.ak-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--ak-space-4);
+}
+@media (min-width: 768px) {
+  .ak-selection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ak-selection-card {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  padding: var(--ak-space-4);
+  background-color: var(--ak-color-surface);
+  transition: all 0.2s ease;
+}
+
+.ak-selection-card:hover {
+  border-color: var(--ak-color-primary);
+  background-color: var(--ak-color-secondary);
+}
+
+.ak-selection-card input[type="radio"],
+.ak-selection-card input[type="checkbox"] {
+  margin-top: 0.25rem;
+  margin-right: var(--ak-space-3);
+}
+
+/* Use :has() for modern browsers */
+.ak-selection-card:has(input:checked) {
+  border-color: var(--ak-color-primary);
+  background-color: var(--ak-color-secondary);
+  box-shadow: 0 0 0 1px var(--ak-color-primary);
+}
+
+/* Fallback: also apply if .ak-checked is added by JS, though :has covers most */
+.ak-selection-card.ak-checked {
+  border-color: var(--ak-color-primary);
+  background-color: var(--ak-color-secondary);
+  box-shadow: 0 0 0 1px var(--ak-color-primary);
+}
+
+.ak-selection-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ak-selection-card-title {
+  font-weight: var(--ak-font-weight-semibold);
+  color: var(--ak-color-text);
+  margin-bottom: var(--ak-space-1);
+  display: block;
+}
+
+.ak-selection-card-description {
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text-muted);
+  display: block;
+}
 /* AK Loader Framework v1.1.0 */
 
 /* Keyframes */

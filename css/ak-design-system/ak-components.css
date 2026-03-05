@@ -1761,6 +1761,11 @@ body.ak-modal-open {
 }
 
 /* Sizes */
+.ak-avatar-xs {
+  width: var(--ak-space-6);
+  height: var(--ak-space-6);
+  font-size: 0.65rem;
+}
 .ak-avatar-sm {
   width: var(--ak-space-8);
   height: var(--ak-space-8);
@@ -1780,6 +1785,21 @@ body.ak-modal-open {
 .ak-avatar-xl {
   width: var(--ak-space-20);
   height: var(--ak-space-20);
+  font-size: var(--ak-font-size-xl);
+}
+
+.ak-avatar-2xl {
+  width: 96px;
+  height: 96px;
+  font-size: 2rem;
+}
+
+/* Shapes */
+.ak-avatar-square {
+  border-radius: var(--ak-radius-md);
+}
+.ak-avatar-rounded {
+  border-radius: var(--ak-radius-lg);
 }
 
 /* Status Indicator */
@@ -1791,25 +1811,48 @@ body.ak-modal-open {
   height: 25%;
   min-width: 8px;
   min-height: 8px;
+  max-width: 16px;
+  max-height: 16px;
   border-radius: 50%;
   border: 2px solid var(--ak-color-surface);
   background-color: var(--ak-color-muted);
+  z-index: 10;
 }
 .ak-avatar-status-online { background-color: var(--ak-color-success); }
 .ak-avatar-status-busy { background-color: var(--ak-color-destructive); }
 .ak-avatar-status-away { background-color: var(--ak-color-warning); }
+.ak-avatar-status-offline { background-color: var(--ak-color-muted); }
 
 /* Avatar Group */
 .ak-avatar-group {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .ak-avatar-group .ak-avatar {
   border: 2px solid var(--ak-color-surface);
-  margin-left: -8px;
+  margin-left: -12px;
+  transition: transform 0.2s ease, z-index 0.2s;
+  position: relative;
+}
+.ak-avatar-group .ak-avatar:hover {
+  transform: translateY(-4px);
+  z-index: 10;
 }
 .ak-avatar-group .ak-avatar:first-child {
   margin-left: 0;
+}
+
+/* Avatar Interactions */
+.ak-avatar-interactive {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, opacity 0.2s;
+}
+.ak-avatar-interactive:hover {
+  box-shadow: 0 0 0 4px var(--ak-color-bg-subtle);
+}
+.ak-avatar-interactive:active {
+  opacity: 0.8;
 }
 
 /* -------------------------------------------------------------------------- */

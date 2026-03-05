@@ -80,36 +80,106 @@
         <!-- Avatars -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Avatars</h2>
-            <p class="description">User profile images with status indicators and grouping.</p>
+            <p class="description">User profile images with status indicators, grouping, and shapes.</p>
             
-            <div class="ak-card ak-p-6">
-                <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Avatars</h3>
-                <div class="ak-flex ak-items-center ak-gap-4 ak-mb-4">
-                    <div class="ak-avatar ak-avatar-sm">
-                        <span class="ak-avatar-fallback">SM</span>
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <!-- Sizes & Shapes -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Sizes & Shapes</h3>
+                    <div class="ak-flex ak-items-end ak-gap-4 ak-mb-6 ak-flex-wrap">
+                        <div class="ak-avatar ak-avatar-xs">
+                            <span class="ak-avatar-fallback">XS</span>
+                        </div>
+                        <div class="ak-avatar ak-avatar-sm">
+                            <span class="ak-avatar-fallback">SM</span>
+                        </div>
+                        <div class="ak-avatar">
+                            <span class="ak-avatar-fallback">MD</span>
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg">
+                            <span class="ak-avatar-fallback">LG</span>
+                        </div>
+                        <div class="ak-avatar ak-avatar-xl">
+                            <span class="ak-avatar-fallback">XL</span>
+                        </div>
                     </div>
-                    <div class="ak-avatar">
-                        <span class="ak-avatar-fallback">MD</span>
-                        <div class="ak-avatar-status ak-avatar-status-online"></div>
-                    </div>
-                    <div class="ak-avatar ak-avatar-lg">
-                        <span class="ak-avatar-fallback">LG</span>
-                        <div class="ak-avatar-status ak-avatar-status-busy"></div>
+                    <div class="ak-flex ak-items-center ak-gap-4">
+                        <div class="ak-avatar ak-avatar-lg">
+                            <span class="ak-avatar-fallback">C</span>
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg ak-avatar-rounded">
+                            <span class="ak-avatar-fallback">R</span>
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg ak-avatar-square">
+                            <span class="ak-avatar-fallback">S</span>
+                        </div>
                     </div>
                 </div>
-                <div class="ak-avatar-group">
-                    <div class="ak-avatar">
-                        <span class="ak-avatar-fallback">A</span>
+
+                <!-- Status & Types -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Status & Types</h3>
+                    <div class="ak-flex ak-items-center ak-gap-6 ak-mb-6">
+                        <div class="ak-avatar ak-avatar-lg">
+                            <span class="ak-avatar-fallback">ON</span>
+                            <div class="ak-avatar-status ak-avatar-status-online"></div>
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg">
+                            <span class="ak-avatar-fallback">BS</span>
+                            <div class="ak-avatar-status ak-avatar-status-busy"></div>
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg">
+                            <span class="ak-avatar-fallback">AW</span>
+                            <div class="ak-avatar-status ak-avatar-status-away"></div>
+                        </div>
                     </div>
-                    <div class="ak-avatar">
-                        <span class="ak-avatar-fallback">B</span>
+                    <h4 class="ak-text-sm ak-font-semibold ak-mb-2">Content Types</h4>
+                    <div class="ak-flex ak-items-center ak-gap-4">
+                        <div class="ak-avatar ak-avatar-lg">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User">
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg">
+                            <span class="ak-avatar-fallback">AK</span>
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg ak-bg-subtle">
+                            <span class="ak-avatar-fallback"><i data-lucide="user"></i></span>
+                        </div>
                     </div>
-                    <div class="ak-avatar">
-                        <span class="ak-avatar-fallback">C</span>
+                </div>
+
+                <!-- Grouping -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Avatar Groups</h3>
+                    <div class="ak-avatar-group ak-mb-6">
+                        <div class="ak-avatar ak-avatar-lg">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User 1">
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="User 2">
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop" alt="User 3">
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg ak-bg-subtle">
+                            <span class="ak-avatar-fallback">+5</span>
+                        </div>
                     </div>
-                    <div class="ak-avatar ak-bg-subtle">
-                        <span class="ak-avatar-fallback">+3</span>
+                    <p class="ak-text-sm ak-text-muted">Hover to expand stack.</p>
+                </div>
+
+                <!-- Interactive -->
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Interactive</h3>
+                    <div class="ak-flex ak-gap-4">
+                        <div class="ak-avatar ak-avatar-lg ak-avatar-interactive" role="button" tabindex="0">
+                            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop" alt="User">
+                            <div class="ak-avatar-status ak-avatar-status-online"></div>
+                        </div>
+                        <div class="ak-avatar ak-avatar-lg ak-avatar-interactive ak-avatar-rounded" role="button" tabindex="0">
+                            <span class="ak-avatar-fallback">JD</span>
+                        </div>
                     </div>
+                    <p class="ak-text-sm ak-text-muted ak-mt-4">Focusable and clickable with hover states.</p>
                 </div>
             </div>
         </div>

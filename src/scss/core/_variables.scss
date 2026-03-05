@@ -1,0 +1,27 @@
+// Core variables mapped to CSS variables
+$space-base: 4px;
+$space-map: (
+  0: 0,
+  1: $space-base,
+  2: $space-base * 2,
+  3: $space-base * 3,
+  4: $space-base * 4,
+  5: $space-base * 5,
+  6: $space-base * 6,
+  8: $space-base * 8,
+  10: $space-base * 10,
+  12: $space-base * 12,
+  16: $space-base * 16,
+  20: $space-base * 20,
+  24: $space-base * 24,
+  32: $space-base * 32
+);
+
+// Breakpoints
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px
+);

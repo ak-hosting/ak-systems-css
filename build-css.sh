@@ -13,6 +13,11 @@ echo "🏗️  Building AK Design System v$VERSION..."
 # Ensure dist directory exists
 mkdir -p "$DIST_DIR"
 
+# 0. Compile SCSS (Utilities)
+echo "🔨 Compiling SCSS..."
+npx sass src/scss/ak-utilities.scss "$SRC_DIR/ak-utilities.css" --no-source-map
+echo "✅ SCSS compiled"
+
 # 1. Bundle CSS files (Concatenation instead of @import)
 # Order is critical: core -> base -> layout -> components -> loaders -> utilities
 echo "📦 Bundling CSS files..."

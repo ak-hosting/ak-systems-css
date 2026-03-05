@@ -1,0 +1,52 @@
+@use "../core/variables" as *;
+
+// Sizing Utilities
+$sizes-fraction: (
+  full: 100%,
+  screen: 100vh,
+  min: min-content,
+  max: max-content,
+  fit: fit-content,
+  auto: auto,
+  half: 50%
+);
+
+// Map spacing scale to width/height as well
+@mixin generate-sizing($prefix: "") {
+  // Width
+  @each $key, $val in $sizes-fraction {
+    .#{$prefix}ak-w-#{$key} { width: #{$val}; }
+  }
+  
+  @each $key, $val in $space-map {
+    .#{$prefix}ak-w-#{$key} { width: var(--ak-space-#{$key}, #{$val}); }
+  }
+
+  // Height
+  @each $key, $val in $sizes-fraction {
+    // Screen height specific
+    @if $key == screen {
+      .#{$prefix}ak-h-screen { height: 100vh; }
+    } @else {
+      .#{$prefix}ak-h-#{$key} { height: #{$val}; }
+    }
+  }
+  
+  @each $key, $val in $space-map {
+    .#{$prefix}ak-h-#{$key} { height: var(--ak-space-#{$key}, #{$val}); }
+  }
+  
+  // Max Width/Height
+  .#{$prefix}ak-max-w-full { max-width: 100%; }
+  .#{$prefix}ak-max-h-full { max-height: 100%; }
+}
+
+// Generate Base
+@include generate-sizing();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-sizing("ak-#{$bp}\\:");
+  }
+}

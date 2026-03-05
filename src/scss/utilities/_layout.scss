@@ -1,0 +1,51 @@
+@use "../core/variables" as *;
+
+// Display Utilities
+$displays: (
+  block,
+  inline-block,
+  inline,
+  flex,
+  inline-flex,
+  grid,
+  inline-grid,
+  none,
+  contents
+);
+
+@mixin generate-display($prefix: "") {
+  @each $val in $displays {
+    .#{$prefix}ak-#{$val} {
+      display: #{$val};
+    }
+  }
+}
+
+// Position Utilities
+$positions: (
+  static,
+  fixed,
+  absolute,
+  relative,
+  sticky
+);
+
+@mixin generate-position($prefix: "") {
+  @each $val in $positions {
+    .#{$prefix}ak-#{$val} {
+      position: #{$val};
+    }
+  }
+}
+
+// Generate Base
+@include generate-display();
+@include generate-position();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-display("ak-#{$bp}\\:");
+    @include generate-position("ak-#{$bp}\\:");
+  }
+}

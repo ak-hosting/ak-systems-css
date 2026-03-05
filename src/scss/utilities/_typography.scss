@@ -1,0 +1,77 @@
+@use "../core/variables" as *;
+
+// Text Utilities
+$alignments: left, center, right, justify;
+
+$transforms: uppercase, lowercase, capitalize;
+
+$weights: (
+  thin: 100,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  "black": 900
+);
+
+$sizes: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  lg: 1.125rem,
+  xl: 1.25rem,
+  2xl: 1.5rem,
+  3xl: 1.875rem,
+  4xl: 2.25rem,
+  5xl: 3rem,
+  6xl: 3.75rem
+);
+
+@mixin generate-typography($prefix: "") {
+  // Align
+  @each $val in $alignments {
+    .#{$prefix}ak-text-#{$val} {
+      text-align: #{$val};
+    }
+  }
+
+  // Transform
+  @each $val in $transforms {
+    .#{$prefix}ak-#{$val} {
+      text-transform: #{$val};
+    }
+  }
+
+  // Weight
+  @each $key, $val in $weights {
+    .#{$prefix}ak-font-#{$key} {
+      font-weight: #{$val};
+    }
+  }
+
+  // Size
+  @each $key, $val in $sizes {
+    .#{$prefix}ak-text-#{$key} {
+      font-size: var(--ak-font-size-#{$key}, #{$val});
+    }
+  }
+  
+  // Truncate
+  .#{$prefix}ak-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+// Generate Base
+@include generate-typography();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-typography("ak-#{$bp}\\:");
+  }
+}

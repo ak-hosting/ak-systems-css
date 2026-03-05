@@ -1,0 +1,81 @@
+@use "../core/variables" as *;
+
+// Flex Utilities
+$flex-dirs: (
+  row: row,
+  row-reverse: row-reverse,
+  col: column,
+  col-reverse: column-reverse
+);
+
+$flex-wraps: (
+  wrap: wrap,
+  wrap-reverse: wrap-reverse,
+  nowrap: nowrap
+);
+
+$justify-content: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly
+);
+
+$align-items: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch
+);
+
+@mixin generate-flex($prefix: "") {
+  // Direction
+  @each $key, $val in $flex-dirs {
+    .#{$prefix}ak-flex-#{$key} {
+      flex-direction: #{$val};
+    }
+  }
+
+  // Wrap
+  @each $key, $val in $flex-wraps {
+    .#{$prefix}ak-flex-#{$key} {
+      flex-wrap: #{$val};
+    }
+  }
+
+  // Justify
+  @each $key, $val in $justify-content {
+    .#{$prefix}ak-justify-#{$key} {
+      justify-content: #{$val};
+    }
+  }
+
+  // Align
+  @each $key, $val in $align-items {
+    .#{$prefix}ak-items-#{$key} {
+      align-items: #{$val};
+    }
+  }
+
+  // Flex Grow/Shrink
+  .#{$prefix}ak-flex-1 { flex: 1 1 0%; }
+  .#{$prefix}ak-flex-auto { flex: 1 1 auto; }
+  .#{$prefix}ak-flex-none { flex: none; }
+  .#{$prefix}ak-grow { flex-grow: 1; }
+  .#{$prefix}ak-grow-0 { flex-grow: 0; }
+  .#{$prefix}ak-shrink { flex-shrink: 1; }
+  .#{$prefix}ak-shrink-0 { flex-shrink: 0; }
+}
+
+// Generate Base
+@include generate-flex();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-flex("ak-#{$bp}\\:");
+  }
+}

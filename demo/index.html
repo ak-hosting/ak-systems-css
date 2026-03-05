@@ -1421,9 +1421,11 @@
         
         sidebarLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
                 const sectionId = link.getAttribute('data-section');
+                
+                if (!sectionId) return;
+                
+                e.preventDefault();
                 
                 // Update active link
                 sidebarLinks.forEach(l => l.classList.remove('ak-active'));

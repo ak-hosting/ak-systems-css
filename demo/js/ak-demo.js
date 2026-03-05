@@ -18,13 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Inject Footer if missing (Centralized Footer Logic)
-    const existingFooter = document.querySelector('footer');
-    // We only inject if there is NO footer at all, to avoid duplication on pages that might have custom ones.
-    // However, most demo pages (except sections.html) don't have a footer.
-    // Let's check if we are on a page that should have a standard footer.
-    // We'll append it to the end of .ak-container or body.
+    // We want to ignore footers inside blockquotes or other components (like the Steve Jobs quote in typography.html)
+    const existingFooters = document.querySelectorAll('footer');
+    let hasPageFooter = false;
     
-    if (!existingFooter) {
+    existingFooters.forEach(footer => {
+        // If the footer is NOT inside a blockquote, and appears to be a structural footer
+        if (!footer.closest('blockquote') && !footer.closest('.ak-card') && !footer.closest('.ak-modal')) {
+            hasPageFooter = true;
+        }
+    });
+    
+    if (!hasPageFooter) {
         injectFooter(displayYear, companyName);
     }
 });

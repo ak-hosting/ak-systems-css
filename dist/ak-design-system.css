@@ -1659,6 +1659,98 @@ blockquote {
   margin-bottom: 2px; /* compensate for movement */
 }
 
+/* 9. Animation Utilities */
+.ak-btn-hover-lift {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ak-btn-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ak-shadow-lg);
+}
+
+.ak-btn-hover-scale {
+  transition: transform 0.2s ease;
+}
+.ak-btn-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.ak-btn-hover-slide-right i,
+.ak-btn-hover-slide-right svg {
+  transition: transform 0.2s ease;
+}
+.ak-btn-hover-slide-right:hover i,
+.ak-btn-hover-slide-right:hover svg {
+  transform: translateX(4px);
+}
+
+/* 10. Social Buttons */
+.ak-btn-social {
+  color: #fff;
+  border: none;
+}
+.ak-btn-social:hover {
+  filter: brightness(1.1);
+  color: #fff;
+}
+.ak-btn-github { background-color: #24292e; }
+.ak-btn-google { background-color: #db4437; }
+.ak-btn-twitter { background-color: #1da1f2; }
+.ak-btn-linkedin { background-color: #0077b5; }
+.ak-btn-facebook { background-color: #1877f2; }
+.ak-btn-discord { background-color: #5865f2; }
+
+/* 11. Vertical Button Group */
+.ak-btn-group-vertical {
+  display: inline-flex;
+  flex-direction: column;
+}
+.ak-btn-group-vertical .ak-btn {
+  border-radius: 0;
+  width: 100%;
+  justify-content: center;
+}
+.ak-btn-group-vertical .ak-btn:first-child {
+  border-top-left-radius: var(--ak-radius-md);
+  border-top-right-radius: var(--ak-radius-md);
+}
+.ak-btn-group-vertical .ak-btn:last-child {
+  border-bottom-left-radius: var(--ak-radius-md);
+  border-bottom-right-radius: var(--ak-radius-md);
+}
+.ak-btn-group-vertical .ak-btn:not(:last-child) {
+  border-bottom: 1px solid var(--ak-color-border);
+  border-right: none;
+}
+
+/* 12. Floating Action Button (FAB) */
+.ak-btn-fab {
+  position: fixed;
+  bottom: var(--ak-space-6);
+  right: var(--ak-space-6);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--ak-color-primary);
+  color: var(--ak-color-primary-text);
+  box-shadow: var(--ak-shadow-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+.ak-btn-fab:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.ak-btn-fab-mini {
+  width: 40px;
+  height: 40px;
+}
+
 @keyframes ak-spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);

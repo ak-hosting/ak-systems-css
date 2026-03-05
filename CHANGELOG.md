@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-03-05
+
+### Added
+- **Selection Controls**: Native support for `ak-selection-grid`, `ak-selection-card`, `ak-segmented-control`, and toggle switches in core framework
+- **Navigation**: Added consistent `ak-modal` based navigation drawer to `selection-controls.html` matching other components
+- **Demo Pages**: New dedicated Selection Controls page with localized variants (DE/TR)
+
+### Fixed
+- **Sidebar**: Fixed sidebar links on index pages to correctly anchor to internal sections
+- **Consistency**: Resolved CSS framework conflict by including selection control classes in stable release
+
 ## [1.3.1] - 2026-03-03
 
 ### Added

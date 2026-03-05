@@ -37,7 +37,7 @@ Wenn Sie die absolut neuesten Änderungen vom `main`-Branch benötigen (nicht f�
 
 ## Versionierung und CDN-Nutzung
 
-- **Empfohlen:** Auf Release-Tags pinnen (z. B. `.../ak-systems-css@v1.3.1/...`), um unbeabsichtigte Updates zu vermeiden. Dies stellt sicher, dass Ihre Seite exakt gleich aussieht, auch wenn wir Änderungen vornehmen.
+- **Empfohlen:** Auf Release-Tags pinnen (z. B. `.../ak-systems-css@v1.3.2/...`), um unbeabsichtigte Updates zu vermeiden. Dies stellt sicher, dass Ihre Seite exakt gleich aussieht, auch wenn wir Änderungen vornehmen.
 - **Entwicklung:** Nutzen Sie `.../ak-systems-css@main/...`, um immer die neuesten Änderungen zu erhalten. Beachten Sie, dass dies Ihr Layout brechen kann, wenn wir Klassennamen ändern.
 - Siehe [CHANGELOG.md](CHANGELOG.md) für detaillierte Versionshistorie.
 - Unterstützte Einstiegspunkte: `css/ak-design-system/index.css` für Entwicklung und `dist/ak-design-system.min.css` für Produktion/CDN.

@@ -37,7 +37,7 @@ Tek desteklenen giriş (geliştirme):
 
 ## Sürümleme ve CDN Kullanımı
 
-- **Önerilen:** İstenmeyen güncellemeleri önlemek için sürüm etiketlerine sabitleyin (örn. `.../ak-systems-css@v1.3.1/...`). Bu, biz değişiklik yapsak bile sitenizin tam olarak aynı görünmesini sağlar.
+- **Önerilen:** İstenmeyen güncellemeleri önlemek için sürüm etiketlerine sabitleyin (örn. `.../ak-systems-css@v1.3.2/...`). Bu, biz değişiklik yapsak bile sitenizin tam olarak aynı görünmesini sağlar.
 - **Geliştirme:** En son değişiklikleri her zaman almak için `.../ak-systems-css@main/...` kullanın. Sınıf adlarını değiştirirsek bunun düzeninizi bozabileceğini unutmayın.
 - Detaylı sürüm geçmişi için [CHANGELOG.md](CHANGELOG.md) dosyasına bakın.
 - Yalnızca desteklenen girişler: Geliştirme için `css/ak-design-system/index.css` ve üretim/CDN için `dist/ak-design-system.min.css`.

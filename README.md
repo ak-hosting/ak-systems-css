@@ -19,7 +19,7 @@ Production/CDN entry:
 <!-- This version is immutable and will not change -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.2/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"
 />
 ```
 
@@ -37,13 +37,35 @@ If you need the absolute latest changes from the `main` branch (not recommended 
 
 ## Build Process
 
+The project now uses a robust build pipeline with SCSS compilation and minification.
+
 To generate the distribution files in `dist/`, run the build script:
 
 ```bash
-./build.sh
+./build-css.sh
 ```
 
-This will concatenate all source files into `dist/ak-design-system.css` and create a placeholder minified file.
+This will:
+1. Compile SCSS utilities (in `src/scss`) to `css/ak-design-system/ak-utilities.css`
+2. Bundle all CSS files into `dist/ak-design-system.css`
+3. Minify the bundle to `dist/ak-design-system.min.css`
+4. Generate a Gzip version for size analysis
+
+## Architecture (v2.0+)
+
+Version 2.0 introduces a modern SCSS-based architecture for utilities, removing `!important` and enabling easy overrides.
+
+- **Core**: Variables & Reset (`ak-core.css`, `ak-base.css`)
+- **Layout**: Grid, Containers (`ak-layout.css`)
+- **Components**: Buttons, Cards, etc. (`ak-components.css`)
+- **Utilities**: Generated from SCSS modules (`ak-utilities.css`)
+  - Spacing (`m-4`, `p-2`)
+  - Layout (`block`, `absolute`)
+  - Flexbox (`flex`, `justify-center`)
+  - Typography (`text-center`, `font-bold`)
+  - Sizing (`w-full`, `h-screen`)
+
+All utilities now support responsive prefixes (e.g. `ak-md:flex`) and use CSS variables internally.
 
 ## Usage
 

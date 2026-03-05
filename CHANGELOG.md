@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-03-05
+
+### Added
+- **SCSS Architecture**: Complete rewrite of the utility system using modern SCSS modules (`@use`) and loops.
+- **Responsive Utilities**: All utilities (Spacing, Layout, Flex, Typography, Sizing) now support responsive prefixes (e.g. `ak-md:flex`, `ak-lg:w-full`).
+- **CSS Variables**: Utilities now use CSS variables internally (e.g. `var(--ak-space-4)`), allowing for runtime theming.
+- **Migration Guide**: Comprehensive guide (`docs/MIGRATION_V2.md`) for upgrading from v1 to v2.
+
+### Changed
+- **Breaking Change**: Removed `!important` from all utility classes. Utilities now respect standard CSS specificity and can be overridden by custom styles.
+- **Build System**: Updated `build-css.sh` to compile SCSS before bundling.
+
 ## [1.4.0] - 2026-03-05
 
 ### Added

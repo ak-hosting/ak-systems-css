@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="selection-controls.html">
+                        <a href="#selection-controls" data-section="selection-controls">
                             <i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                             <span>Selection Controls</span>
                         </a>
@@ -465,38 +465,75 @@
                             </label>
                         </div>
 
-                        <!-- Modern Selection Variants -->
-                        <div class="ak-divider ak-my-8"></div>
-                        <div class="ak-flex ak-justify-between ak-items-center ak-mb-4">
-                            <h3 class="ak-text-xl ak-font-semibold">Modern Selection Controls</h3>
-                            <a href="selection-controls.html" class="ak-btn ak-btn-sm ak-btn-outline">
-                                View All Variants <i data-lucide="arrow-right" class="ak-w-4 ak-h-4 ak-ml-2"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Preview of Selection Cards (Simplified) -->
-                        <div class="ak-form-group">
-                            <label class="ak-form-label">Selection Cards Preview</label>
-                            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-4">
+                        <button type="submit" class="ak-btn ak-btn-primary ak-mt-4">Submit</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Selection Controls Section -->
+            <section id="selection-controls" class="ak-section" data-testid="section-selection-controls">
+                <div class="ak-flex ak-justify-between ak-items-center ak-mb-6">
+                    <h2 class="ak-text-3xl ak-font-bold">Selection Controls</h2>
+                    <a href="selection-controls.html" class="ak-btn ak-btn-outline ak-btn-sm">
+                        View All Variants <i data-lucide="arrow-right" class="ak-w-4 ak-h-4 ak-ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <p class="ak-text-lg ak-mb-6">Modern selection controls including cards, segmented controls, and enhanced toggles.</p>
+                    
+                    <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6">
+                        <!-- Selection Cards Preview -->
+                        <div>
+                            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Selection Cards</h3>
+                            <div class="ak-grid ak-grid-cols-1 ak-gap-4">
                                 <label class="ak-selection-card">
-                                    <input type="radio" name="plan_preview" checked>
+                                    <input type="radio" name="plan_preview_index" checked>
                                     <div class="ak-selection-card-content">
                                         <span class="ak-selection-card-title">Basic Plan</span>
-                                        <span class="ak-selection-card-description">Essential features.</span>
+                                        <span class="ak-selection-card-description">Essential features for starters.</span>
                                     </div>
                                 </label>
                                 <label class="ak-selection-card">
-                                    <input type="radio" name="plan_preview">
+                                    <input type="radio" name="plan_preview_index">
                                     <div class="ak-selection-card-content">
                                         <span class="ak-selection-card-title">Pro Plan</span>
-                                        <span class="ak-selection-card-description">Advanced tools.</span>
+                                        <span class="ak-selection-card-description">Advanced tools for professionals.</span>
                                     </div>
                                 </label>
                             </div>
                         </div>
 
-                        <button type="submit" class="ak-btn ak-btn-primary ak-mt-4">Submit</button>
-                    </form>
+                        <!-- Segmented Controls Preview -->
+                        <div>
+                            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Segmented Controls</h3>
+                            <div class="ak-segmented-control ak-mb-6">
+                                <label class="ak-segmented-item">
+                                    <input type="radio" name="view_preview_index" checked>
+                                    <span class="ak-segmented-label">Daily</span>
+                                </label>
+                                <label class="ak-segmented-item">
+                                    <input type="radio" name="view_preview_index">
+                                    <span class="ak-segmented-label">Weekly</span>
+                                </label>
+                                <label class="ak-segmented-item">
+                                    <input type="radio" name="view_preview_index">
+                                    <span class="ak-segmented-label">Monthly</span>
+                                </label>
+                            </div>
+
+                            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Toggles</h3>
+                            <div class="ak-flex ak-gap-4">
+                                <label class="ak-switch">
+                                    <input type="checkbox" class="ak-switch-input" checked>
+                                    <span class="ak-switch-track">
+                                        <span class="ak-switch-thumb"></span>
+                                    </span>
+                                    <span class="ak-switch-label">Notifications</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

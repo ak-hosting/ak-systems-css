@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="selection-controls.tr.html" data-section="selection">
+                        <a href="#selection-controls" data-section="selection-controls">
                             <i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                             <span>Seçim Kontrolleri</span>
                         </a>
@@ -500,6 +500,73 @@
 
                         <button type="submit" class="ak-btn ak-btn-primary">Gönder</button>
                     </form>
+                </div>
+            </section>
+
+            <!-- Selection Controls Section -->
+            <section id="selection-controls" class="ak-section" data-testid="section-selection-controls">
+                <div class="ak-flex ak-justify-between ak-items-center ak-mb-6">
+                    <h2 class="ak-text-3xl ak-font-bold">Seçim Kontrolleri</h2>
+                    <a href="selection-controls.tr.html" class="ak-btn ak-btn-outline ak-btn-sm">
+                        Tüm Varyantlar <i data-lucide="arrow-right" class="ak-w-4 ak-h-4 ak-ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <p class="ak-text-lg ak-mb-6">Kartlar, bölümlendirilmiş kontroller ve gelişmiş anahtarlar içeren modern seçim kontrolleri.</p>
+                    
+                    <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6">
+                        <!-- Selection Cards Preview -->
+                        <div>
+                            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Seçim Kartları</h3>
+                            <div class="ak-grid ak-grid-cols-1 ak-gap-4">
+                                <label class="ak-selection-card">
+                                    <input type="radio" name="plan_preview_index" checked>
+                                    <div class="ak-selection-card-content">
+                                        <span class="ak-selection-card-title">Temel Plan</span>
+                                        <span class="ak-selection-card-description">Başlangıç için temel özellikler.</span>
+                                    </div>
+                                </label>
+                                <label class="ak-selection-card">
+                                    <input type="radio" name="plan_preview_index">
+                                    <div class="ak-selection-card-content">
+                                        <span class="ak-selection-card-title">Pro Plan</span>
+                                        <span class="ak-selection-card-description">Profesyoneller için gelişmiş araçlar.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Segmented Controls Preview -->
+                        <div>
+                            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Bölümlendirilmiş Kontroller</h3>
+                            <div class="ak-segmented-control ak-mb-6">
+                                <label class="ak-segmented-item">
+                                    <input type="radio" name="view_preview_index" checked>
+                                    <span class="ak-segmented-label">Günlük</span>
+                                </label>
+                                <label class="ak-segmented-item">
+                                    <input type="radio" name="view_preview_index">
+                                    <span class="ak-segmented-label">Haftalık</span>
+                                </label>
+                                <label class="ak-segmented-item">
+                                    <input type="radio" name="view_preview_index">
+                                    <span class="ak-segmented-label">Aylık</span>
+                                </label>
+                            </div>
+
+                            <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Anahtarlar</h3>
+                            <div class="ak-flex ak-gap-4">
+                                <label class="ak-switch">
+                                    <input type="checkbox" class="ak-switch-input" checked>
+                                    <span class="ak-switch-track">
+                                        <span class="ak-switch-thumb"></span>
+                                    </span>
+                                    <span class="ak-switch-label">Bildirimler</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

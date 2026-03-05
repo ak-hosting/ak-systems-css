@@ -109,6 +109,19 @@ Use these variables for custom styles to maintain consistency.
 <!-- Sizes -->
 <button class="ak-btn ak-btn-sm">Small</button>
 <button class="ak-btn ak-btn-lg">Large</button>
+<button class="ak-btn ak-btn-xl">Extra Large</button>
+<button class="ak-btn ak-btn-xs">Extra Small</button>
+
+<!-- Shapes & Effects (Modern Variants) -->
+<button class="ak-btn ak-btn-rounded">Rounded</button>
+<button class="ak-btn ak-btn-pill">Pill</button>
+<button class="ak-btn ak-btn-square"><i data-lucide="x"></i></button>
+<button class="ak-btn ak-btn-circle"><i data-lucide="user"></i></button>
+<button class="ak-btn ak-btn-soft-primary">Soft Primary</button>
+<button class="ak-btn ak-btn-glass">Glass</button>
+<button class="ak-btn ak-btn-gradient">Gradient</button>
+<button class="ak-btn ak-btn-glow">Glow Effect</button>
+
 <!-- Loading -->
 <button class="ak-btn ak-loading"><span class="ak-loading-spinner"></span></button>
 ```
@@ -126,6 +139,15 @@ Use these variables for custom styles to maintain consistency.
     <button class="ak-btn">Action</button>
   </div>
 </div>
+
+<!-- Modern Card Variants -->
+<div class="ak-card ak-card-hover-lift">Hover Lift</div>
+<div class="ak-card ak-card-hover-glow">Hover Glow</div>
+<div class="ak-card ak-card-glass">Glass Card</div>
+<div class="ak-card ak-card-gradient">Gradient Card</div>
+<div class="ak-card ak-card-stats">Stats Card</div>
+<div class="ak-card ak-card-horizontal">Horizontal Layout</div>
+<div class="ak-card ak-card-overlay">Image Overlay</div>
 ```
 
 ### Forms (`.ak-form-group`)
@@ -135,6 +157,13 @@ Use these variables for custom styles to maintain consistency.
   <input type="email" class="ak-input" placeholder="hello@example.com">
   <p class="ak-form-hint">We'll never share your email.</p>
 </div>
+
+<!-- Modern Input Variants -->
+<input type="text" class="ak-input ak-input-filled" placeholder="Filled">
+<input type="text" class="ak-input ak-input-material" placeholder="Material (Underline)">
+<input type="text" class="ak-input ak-input-glass" placeholder="Glass">
+<input type="text" class="ak-input ak-input-pill" placeholder="Pill Shape">
+<input type="text" class="ak-input ak-input-flush" placeholder="Flush (No Border)">
 
 <!-- Select -->
 <select class="ak-select"><option>Option 1</option></select>
@@ -213,6 +242,28 @@ Linear set of exclusive options.
 <span class="ak-badge ak-badge-warning">Warning</span>
 <span class="ak-badge ak-badge-destructive">Error</span>
 <span class="ak-badge ak-badge-outline">Outline</span>
+
+<!-- Modern Badge Variants -->
+<span class="ak-badge ak-badge-soft-primary">Soft</span>
+<span class="ak-badge ak-badge-dot">Dot</span>
+<span class="ak-badge ak-badge-square">Square</span>
+<span class="ak-badge ak-badge-pill">Pill</span>
+```
+
+### Avatars (`.ak-avatar`)
+```html
+<div class="ak-avatar">
+  <img src="user.jpg" alt="User">
+</div>
+<div class="ak-avatar ak-avatar-sm">SM</div>
+<div class="ak-avatar ak-avatar-lg">LG</div>
+<div class="ak-avatar ak-avatar-xl">XL</div>
+
+<!-- Modern Avatar Variants -->
+<div class="ak-avatar ak-avatar-soft-primary">Soft</div>
+<div class="ak-avatar ak-avatar-bordered">Bordered</div>
+<div class="ak-avatar ak-avatar-squircle">Squircle</div>
+<div class="ak-avatar ak-avatar-hexagon">Hexagon</div>
 ```
 
 ### Loaders (`.ak-loader-*`)

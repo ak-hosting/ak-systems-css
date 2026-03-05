@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-03-05
+
+### Added
+- **Build System**: New `build-css.sh` script to bundle and minify CSS files, replacing runtime `@import` for better performance.
+- **Performance**: Significant reduction in CSS file size and HTTP requests.
+
+### Changed
+- **Architecture**: Refactored Button component to use a single base class `.ak-btn` with variants, reducing redundancy by ~100 lines.
+- **Cleanup**: Removed duplicate definitions for Badges and Selection Cards in `ak-components.css`.
+- **Optimization**: Removed empty `ak-modifiers.css` from the build bundle.
+
 ## [1.3.2] - 2026-03-05
 
 ### Added

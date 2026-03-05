@@ -76,6 +76,9 @@ Um die Distributionsdateien in `dist/` zu generieren:
 <button class="ak-btn">Standard Button</button>
 <button class="ak-btn ak-btn-primary">Primary Button</button>
 <button class="ak-btn ak-btn-destructive">Destructive Button</button>
+
+<!-- Moderne Varianten (Soft, Glass, Gradient, Formen) - siehe AGENT_CONTEXT.md für vollständige Liste -->
+<button class="ak-btn ak-btn-soft-primary ak-btn-rounded">Modern Rund</button>
 ```
 
 ### Loader / Animationen

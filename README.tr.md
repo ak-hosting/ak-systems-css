@@ -76,6 +76,9 @@ Tek desteklenen giriş (geliştirme):
 <button class="ak-btn">Standart Buton</button>
 <button class="ak-btn ak-btn-primary">Birincil Buton</button>
 <button class="ak-btn ak-btn-destructive">Yıkıcı Buton</button>
+
+<!-- Modern Varyantlar (Soft, Glass, Gradient, Şekiller) - tam liste için AGENT_CONTEXT.md dosyasına bakın -->
+<button class="ak-btn ak-btn-soft-primary ak-btn-rounded">Modern Yuvarlak</button>
 ```
 
 ### Yükleyiciler / Animasyonlar

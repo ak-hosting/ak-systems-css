@@ -71,6 +71,9 @@ This will concatenate all source files into `dist/ak-design-system.css` and crea
 <button class="ak-btn">Standard Button</button>
 <button class="ak-btn ak-btn-primary">Primary Button</button>
 <button class="ak-btn ak-btn-destructive">Destructive Button</button>
+
+<!-- Modern Variants (Soft, Glass, Gradient, Shapes) - see AGENT_CONTEXT.md for full list -->
+<button class="ak-btn ak-btn-soft-primary ak-btn-rounded">Modern Round</button>
 ```
 
 ### Loaders / Spinners

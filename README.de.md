@@ -19,7 +19,7 @@ Production/CDN-Einstieg:
 <!-- Diese Version ist unveränderlich und stabil -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.1/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.2/dist/ak-design-system.min.css"
 />
 ```
 

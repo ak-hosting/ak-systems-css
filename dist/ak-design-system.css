@@ -2957,6 +2957,11 @@ body.ak-modal-open {
 }
 
 /* Sizes */
+.ak-avatar-xs {
+  width: var(--ak-space-6);
+  height: var(--ak-space-6);
+  font-size: 0.65rem;
+}
 .ak-avatar-sm {
   width: var(--ak-space-8);
   height: var(--ak-space-8);
@@ -2976,6 +2981,21 @@ body.ak-modal-open {
 .ak-avatar-xl {
   width: var(--ak-space-20);
   height: var(--ak-space-20);
+  font-size: var(--ak-font-size-xl);
+}
+
+.ak-avatar-2xl {
+  width: 96px;
+  height: 96px;
+  font-size: 2rem;
+}
+
+/* Shapes */
+.ak-avatar-square {
+  border-radius: var(--ak-radius-md);
+}
+.ak-avatar-rounded {
+  border-radius: var(--ak-radius-lg);
 }
 
 /* Status Indicator */
@@ -2987,25 +3007,78 @@ body.ak-modal-open {
   height: 25%;
   min-width: 8px;
   min-height: 8px;
+  max-width: 16px;
+  max-height: 16px;
   border-radius: 50%;
   border: 2px solid var(--ak-color-surface);
   background-color: var(--ak-color-muted);
+  z-index: 10;
 }
 .ak-avatar-status-online { background-color: var(--ak-color-success); }
 .ak-avatar-status-busy { background-color: var(--ak-color-destructive); }
 .ak-avatar-status-away { background-color: var(--ak-color-warning); }
+.ak-avatar-status-offline { background-color: var(--ak-color-muted); }
 
 /* Avatar Group */
 .ak-avatar-group {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .ak-avatar-group .ak-avatar {
   border: 2px solid var(--ak-color-surface);
-  margin-left: -8px;
+  margin-left: -12px;
+  transition: transform 0.2s ease, z-index 0.2s;
+  position: relative;
+}
+.ak-avatar-group .ak-avatar:hover {
+  transform: translateY(-4px);
+  z-index: 10;
 }
 .ak-avatar-group .ak-avatar:first-child {
   margin-left: 0;
+}
+
+/* Avatar Interactions */
+.ak-avatar-interactive {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, opacity 0.2s;
+}
+.ak-avatar-interactive:hover {
+  box-shadow: 0 0 0 4px var(--ak-color-bg-subtle);
+}
+.ak-avatar-interactive:active {
+  opacity: 0.8;
+}
+
+/* --- New Avatar Variants (v1.3.2+) --- */
+
+/* Soft Avatar (for text fallbacks) */
+.ak-avatar-soft-primary {
+  background-color: color-mix(in srgb, var(--ak-color-primary) 15%, transparent);
+  color: var(--ak-color-primary);
+}
+.ak-avatar-soft-secondary {
+  background-color: color-mix(in srgb, var(--ak-color-secondary) 15%, transparent);
+  color: var(--ak-color-secondary);
+}
+.ak-avatar-soft-accent {
+  background-color: color-mix(in srgb, var(--ak-color-accent) 15%, transparent);
+  color: var(--ak-color-accent);
+}
+
+/* Bordered Avatar */
+.ak-avatar-bordered {
+  box-shadow: 0 0 0 2px var(--ak-color-surface), 0 0 0 4px var(--ak-color-border);
+}
+
+/* New Shapes */
+.ak-avatar-squircle {
+  border-radius: 20%;
+}
+.ak-avatar-hexagon {
+  border-radius: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -3521,6 +3594,62 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   background-color: var(--ak-color-accent);
   color: var(--ak-color-accent-text);
   border-color: transparent;
+}
+
+/* --- New Badge Variants (v1.3.2+) --- */
+
+/* Soft Badges */
+.ak-badge-soft-primary {
+  background-color: color-mix(in srgb, var(--ak-color-primary) 15%, transparent);
+  color: var(--ak-color-primary);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-secondary {
+  background-color: color-mix(in srgb, var(--ak-color-secondary) 15%, transparent);
+  color: var(--ak-color-secondary);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-success {
+  background-color: color-mix(in srgb, var(--ak-color-success) 15%, transparent);
+  color: var(--ak-color-success);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-warning {
+  background-color: color-mix(in srgb, var(--ak-color-warning) 15%, transparent);
+  color: var(--ak-color-warning-text);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-destructive {
+  background-color: color-mix(in srgb, var(--ak-color-destructive) 15%, transparent);
+  color: var(--ak-color-destructive);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-accent {
+  background-color: color-mix(in srgb, var(--ak-color-accent) 15%, transparent);
+  color: var(--ak-color-accent);
+  border: 1px solid transparent;
+}
+
+/* Badge Shapes */
+.ak-badge-square {
+  border-radius: var(--ak-radius-sm);
+}
+.ak-badge-rounded {
+  border-radius: var(--ak-radius-md);
+}
+
+/* Dot Badge */
+.ak-badge-dot {
+  padding-left: 8px;
+}
+.ak-badge-dot::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background-color: currentColor;
 }
 
 /* -------------------------------------------------------------------------- */

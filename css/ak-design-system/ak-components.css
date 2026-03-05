@@ -1855,6 +1855,36 @@ body.ak-modal-open {
   opacity: 0.8;
 }
 
+/* --- New Avatar Variants (v1.3.2+) --- */
+
+/* Soft Avatar (for text fallbacks) */
+.ak-avatar-soft-primary {
+  background-color: color-mix(in srgb, var(--ak-color-primary) 15%, transparent);
+  color: var(--ak-color-primary);
+}
+.ak-avatar-soft-secondary {
+  background-color: color-mix(in srgb, var(--ak-color-secondary) 15%, transparent);
+  color: var(--ak-color-secondary);
+}
+.ak-avatar-soft-accent {
+  background-color: color-mix(in srgb, var(--ak-color-accent) 15%, transparent);
+  color: var(--ak-color-accent);
+}
+
+/* Bordered Avatar */
+.ak-avatar-bordered {
+  box-shadow: 0 0 0 2px var(--ak-color-surface), 0 0 0 4px var(--ak-color-border);
+}
+
+/* New Shapes */
+.ak-avatar-squircle {
+  border-radius: 20%;
+}
+.ak-avatar-hexagon {
+  border-radius: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                 Breadcrumbs                                */
 /* -------------------------------------------------------------------------- */
@@ -2368,6 +2398,62 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   background-color: var(--ak-color-accent);
   color: var(--ak-color-accent-text);
   border-color: transparent;
+}
+
+/* --- New Badge Variants (v1.3.2+) --- */
+
+/* Soft Badges */
+.ak-badge-soft-primary {
+  background-color: color-mix(in srgb, var(--ak-color-primary) 15%, transparent);
+  color: var(--ak-color-primary);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-secondary {
+  background-color: color-mix(in srgb, var(--ak-color-secondary) 15%, transparent);
+  color: var(--ak-color-secondary);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-success {
+  background-color: color-mix(in srgb, var(--ak-color-success) 15%, transparent);
+  color: var(--ak-color-success);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-warning {
+  background-color: color-mix(in srgb, var(--ak-color-warning) 15%, transparent);
+  color: var(--ak-color-warning-text);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-destructive {
+  background-color: color-mix(in srgb, var(--ak-color-destructive) 15%, transparent);
+  color: var(--ak-color-destructive);
+  border: 1px solid transparent;
+}
+.ak-badge-soft-accent {
+  background-color: color-mix(in srgb, var(--ak-color-accent) 15%, transparent);
+  color: var(--ak-color-accent);
+  border: 1px solid transparent;
+}
+
+/* Badge Shapes */
+.ak-badge-square {
+  border-radius: var(--ak-radius-sm);
+}
+.ak-badge-rounded {
+  border-radius: var(--ak-radius-md);
+}
+
+/* Dot Badge */
+.ak-badge-dot {
+  padding-left: 8px;
+}
+.ak-badge-dot::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background-color: currentColor;
 }
 
 /* -------------------------------------------------------------------------- */

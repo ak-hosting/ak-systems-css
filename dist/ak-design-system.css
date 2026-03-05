@@ -1568,8 +1568,26 @@ blockquote {
 }
 
 /* 5. Shape Variants */
-.ak-btn-rounded {
+.ak-btn-rounded,
+.ak-btn-pill {
   border-radius: 9999px;
+}
+.ak-btn-square {
+  border-radius: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ak-btn-square.ak-btn-sm {
+  width: 32px;
+  height: 32px;
+}
+.ak-btn-square.ak-btn-lg {
+  width: 48px;
+  height: 48px;
 }
 .ak-btn-circle {
   border-radius: 50%;
@@ -1601,6 +1619,44 @@ blockquote {
   transform: translateY(-2px);
   border-color: var(--ak-color-primary);
   color: var(--ak-color-primary);
+}
+
+/* 7. New Sizes */
+.ak-btn-xs {
+  padding: var(--ak-space-1) var(--ak-space-2);
+  font-size: 0.75rem;
+  height: 24px;
+}
+.ak-btn-xl {
+  padding: var(--ak-space-5) var(--ak-space-10);
+  font-size: var(--ak-font-size-xl);
+  font-weight: 600;
+}
+
+/* 8. Special Effects */
+.ak-btn-glow {
+  box-shadow: 0 0 10px var(--ak-color-primary);
+  border: 1px solid var(--ak-color-primary);
+  color: var(--ak-color-primary);
+  background: transparent;
+}
+.ak-btn-glow:hover {
+  box-shadow: 0 0 20px var(--ak-color-primary), 0 0 5px var(--ak-color-primary) inset;
+  background-color: color-mix(in srgb, var(--ak-color-primary) 10%, transparent);
+}
+
+.ak-btn-3d {
+  background-color: var(--ak-color-primary);
+  color: var(--ak-color-primary-text);
+  border: none;
+  border-bottom: 4px solid color-mix(in srgb, var(--ak-color-primary) 70%, black);
+  transition: all 0.1s;
+  margin-bottom: 4px; /* compensate for border */
+}
+.ak-btn-3d:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+  margin-bottom: 2px; /* compensate for movement */
 }
 
 @keyframes ak-spin {

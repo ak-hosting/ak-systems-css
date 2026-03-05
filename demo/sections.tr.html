@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayfa Bölümleri - AK Design System</title>
+    <meta name="description" content="AK Tasarım Sistemi bileşenlerini kullanan önceden oluşturulmuş sayfa bölümleri ve düzenler.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.2/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 6rem;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                        <i data-lucide="menu"></i>
+                    </button>
+
+                    <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        İndekse Dön
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Sayfa Bölümleri</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="sections.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                     <a href="sections.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                     <a href="sections.tr.html" class="ak-btn ak-btn-sm ak-btn-primary">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Hero Sections -->
+        <section id="hero" class="demo-section">
+            <div class="ak-flex ak-justify-between ak-items-center ak-mb-6">
+                <h2 class="ak-text-2xl ak-font-bold">Hero Bölümleri</h2>
+                <span class="ak-badge ak-badge-primary">Pazarlama</span>
+            </div>
+            
+            <!-- Hero Variant 1: Centered -->
+            <div class="ak-card ak-overflow-hidden ak-mb-8">
+                <div class="ak-text-center ak-py-16 ak-px-6 ak-bg-surface-subtle">
+                    <span class="ak-badge ak-badge-soft-primary ak-mb-6">Yeni Özellik Yayını</span>
+                    <h1 class="ak-text-4xl ak-md:ak-text-5xl ak-font-bold ak-mb-6">Bir sonraki fikrinizi daha hızlı oluşturun.</h1>
+                    <p class="ak-text-xl ak-text-muted ak-max-w-2xl ak-mx-auto ak-mb-8">
+                        Uygulamalarınıza kopyalayabileceğiniz güzel tasarlanmış bileşenler. Erişilebilir. Özelleştirilebilir. Açık Kaynak.
+                    </p>
+                    <div class="ak-flex ak-justify-center ak-gap-4">
+                        <button class="ak-btn ak-btn-primary ak-btn-lg">Başlayın</button>
+                        <button class="ak-btn ak-btn-outline ak-btn-lg">Dokümantasyon</button>
+                    </div>
+                    <div class="ak-mt-12 ak-text-sm ak-text-muted">
+                        Kredi kartı gerekmez · 14 günlük ücretsiz deneme · İstediğiniz zaman iptal edin
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Variant 2: Split with Image -->
+            <div class="ak-card ak-overflow-hidden">
+                <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-items-center">
+                    <div class="ak-p-12">
+                        <h2 class="ak-text-3xl ak-font-bold ak-mb-4">Çevrimiçi işinizi zenginleştirecek <span class="ak-text-primary">veriler</span></h2>
+                        <p class="ak-text-lg ak-text-muted ak-mb-8">
+                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+                        </p>
+                        <div class="ak-flex ak-gap-4">
+                            <button class="ak-btn ak-btn-primary">Şimdi başla</button>
+                            <button class="ak-btn ak-btn-ghost">Daha fazla oku <i data-lucide="arrow-right" class="ak-ml-2 ak-w-4 ak-h-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="ak-h-full">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" 
+                             alt="Dashboard" 
+                             class="ak-w-full ak-h-full ak-object-cover" 
+                             style="min-height: 400px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Sections -->
+        <section id="pricing" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Fiyatlandırma Tabloları</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-8">
+                <!-- Basic Plan -->
+                <div class="ak-card ak-p-8 ak-flex ak-flex-col">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Serbest</h3>
+                    <p class="ak-text-muted ak-text-sm ak-mb-6">En iyi işinizi sunmak için gerekenler.</p>
+                    <div class="ak-text-4xl ak-font-bold ak-mb-6">24₺<span class="ak-text-base ak-text-muted ak-font-normal">/ay</span></div>
+                    
+                    <ul class="ak-space-y-4 ak-mb-8 ak-flex-1">
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 5 ürün</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 1.000 aboneye kadar</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Temel analizler</li>
+                        <li class="ak-flex ak-items-center ak-text-muted"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-mr-3"></i> 48 saat destek yanıt süresi</li>
+                    </ul>
+                    
+                    <button class="ak-btn ak-btn-outline ak-w-full">Planı satın al</button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="ak-card ak-p-8 ak-flex ak-flex-col ak-border-primary ak-relative ak-shadow-lg">
+                    <span class="ak-badge ak-badge-primary ak-absolute ak-top-0 ak-right-0 ak-m-4">En Popüler</span>
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Girişim</h3>
+                    <p class="ak-text-muted ak-text-sm ak-mb-6">Hızla büyüyen işinizle ölçeklenen bir plan.</p>
+                    <div class="ak-text-4xl ak-font-bold ak-mb-6">48₺<span class="ak-text-base ak-text-muted ak-font-normal">/ay</span></div>
+                    
+                    <ul class="ak-space-y-4 ak-mb-8 ak-flex-1">
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 25 ürün</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 10.000 aboneye kadar</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Gelişmiş analizler</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 24 saat destek yanıt süresi</li>
+                    </ul>
+                    
+                    <button class="ak-btn ak-btn-primary ak-w-full">Planı satın al</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="ak-card ak-p-8 ak-flex ak-flex-col">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Kurumsal</h3>
+                    <p class="ak-text-muted ak-text-sm ak-mb-6">Şirketiniz için özel destek ve altyapı.</p>
+                    <div class="ak-text-4xl ak-font-bold ak-mb-6">Özel</div>
+                    
+                    <ul class="ak-space-y-4 ak-mb-8 ak-flex-1">
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Sınırsız ürün</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Sınırsız abone</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Gelişmiş analizler</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 1 saat özel destek yanıt süresi</li>
+                    </ul>
+                    
+                    <button class="ak-btn ak-btn-outline ak-w-full">Satışla iletişime geç</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Grid -->
+        <section id="features" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Özellik Izgarası</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-8">
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="zap" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Şimşek Hızında</h3>
+                    <p class="ak-text-muted">Hız ve performans için optimize edildi, uygulamanızın kullanıcılar için anında yüklenmesini sağlar.</p>
+                </div>
+                
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="shield" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Varsayılan Olarak Güvenli</h3>
+                    <p class="ak-text-muted">Verilerinizi güvende tutmak ve düzenlemelere uymak için en iyi güvenlik uygulamalarıyla oluşturuldu.</p>
+                </div>
+                
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="smartphone" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Önce Mobil</h3>
+                    <p class="ak-text-muted">Cep telefonlarından masaüstü bilgisayarlara kadar her ekran boyutuna mükemmel uyum sağlayan duyarlı tasarım.</p>
+                </div>
+
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="globe" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Küresel Ölçek</h3>
+                    <p class="ak-text-muted">Küresel CDN ağımızla dünya çapında dağıtım yaparak her yerde düşük gecikme süresi sağlayın.</p>
+                </div>
+
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="users" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Takım İşbirliği</h3>
+                    <p class="ak-text-muted">Takımların verimli çalışması ve projeleri sorunsuz yönetmesi için yerleşik araçlar.</p>
+                </div>
+
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="bar-chart" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Gelişmiş Analitik</h3>
+                    <p class="ak-text-muted">Kapsamlı analiz panelimizle performansınız hakkında derinlemesine bilgi edinin.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Sıkça Sorulan Sorular</h2>
+            
+            <div class="ak-max-w-3xl ak-mx-auto">
+                <div class="ak-flex ak-flex-col ak-gap-4">
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Aboneliğimi istediğim zaman iptal edebilir miyim?</h3>
+                        <p class="ak-text-muted">Evet, aboneliğinizi istediğiniz zaman iptal edebilirsiniz. Uzun vadeli sözleşmelerimiz yoktur.</p>
+                    </div>
+                    
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Hangi ödeme yöntemlerini kabul ediyorsunuz?</h3>
+                        <p class="ak-text-muted">Tüm büyük kredi kartlarını (Visa, Mastercard, Amex) ve PayPal'ı kabul ediyoruz.</p>
+                    </div>
+                    
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Ücretsiz deneme sunuyor musunuz?</h3>
+                        <p class="ak-text-muted">Evet, tüm ücretli planlarımız için 14 günlük ücretsiz deneme süresi sunuyoruz.</p>
+                    </div>
+                    
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Destek ekibiyle nasıl iletişime geçebilirim?</h3>
+                        <p class="ak-text-muted">Destek ekibimize support@example.com adresinden veya canlı sohbet widget'ı üzerinden ulaşabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Müşteri Yorumları</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6">
+                <div class="ak-card ak-p-6">
+                    <div class="ak-flex ak-items-center ak-mb-4">
+                        <div class="ak-avatar ak-mr-4">
+                            <span class="ak-avatar-fallback">JD</span>
+                        </div>
+                        <div>
+                            <div class="ak-font-bold">John Doe</div>
+                            <div class="ak-text-xs ak-text-muted">CEO, TechCorp</div>
+                        </div>
+                    </div>
+                    <p class="ak-text-muted">"Bu ürün çalışma şeklimizi tamamen değiştirdi. Verimlilik artışı inanılmaz."</p>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <div class="ak-flex ak-items-center ak-mb-4">
+                        <div class="ak-avatar ak-mr-4">
+                            <span class="ak-avatar-fallback">AS</span>
+                        </div>
+                        <div>
+                            <div class="ak-font-bold">Alice Smith</div>
+                            <div class="ak-text-xs ak-text-muted">Tasarımcı, Creative</div>
+                        </div>
+                    </div>
+                    <p class="ak-text-muted">"Tasarım sistemi güzel ve kullanımı kolay. Bize haftalarca geliştirme süresi kazandırdı."</p>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <div class="ak-flex ak-items-center ak-mb-4">
+                        <div class="ak-avatar ak-mr-4">
+                            <span class="ak-avatar-fallback">RJ</span>
+                        </div>
+                        <div>
+                            <div class="ak-font-bold">Robert Johnson</div>
+                            <div class="ak-text-xs ak-text-muted">Geliştirici, DevCo</div>
+                        </div>
+                    </div>
+                    <p class="ak-text-muted">"Gördüğüm en iyi dokümantasyon. Her şey açık, özlü ve uygulanması kolay."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Alt Bilgi Düzeni</h2>
+            
+            <footer class="ak-bg-surface-subtle ak-pt-12 ak-pb-8 ak-rounded-lg">
+                <div class="ak-container">
+                    <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-4 ak-gap-8 ak-mb-8">
+                        <div class="ak-col-span-1 ak-md:ak-col-span-1">
+                            <div class="ak-flex ak-items-center ak-mb-4">
+                                <div class="ak-w-8 ak-h-8 ak-bg-primary ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-bold ak-mr-2">AK</div>
+                                <span class="ak-font-bold ak-text-lg">AK Systems</span>
+                            </div>
+                            <p class="ak-text-muted ak-text-sm">
+                                Zarif hiyerarşiler oluşturarak dünyayı daha iyi bir yer haline getirmek.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-font-bold ak-mb-4">Çözümler</h4>
+                            <ul class="ak-space-y-2 ak-text-sm ak-text-muted">
+                                <li><a href="#" class="ak-link-hover">Pazarlama</a></li>
+                                <li><a href="#" class="ak-link-hover">Analitik</a></li>
+                                <li><a href="#" class="ak-link-hover">E-Ticaret</a></li>
+                                <li><a href="#" class="ak-link-hover">İçgörüler</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-font-bold ak-mb-4">Destek</h4>
+                            <ul class="ak-space-y-2 ak-text-sm ak-text-muted">
+                                <li><a href="#" class="ak-link-hover">Fiyatlandırma</a></li>
+                                <li><a href="#" class="ak-link-hover">Dokümantasyon</a></li>
+                                <li><a href="#" class="ak-link-hover">Kılavuzlar</a></li>
+                                <li><a href="#" class="ak-link-hover">API Durumu</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-font-bold ak-mb-4">Şirket</h4>
+                            <ul class="ak-space-y-2 ak-text-sm ak-text-muted">
+                                <li><a href="#" class="ak-link-hover">Hakkında</a></li>
+                                <li><a href="#" class="ak-link-hover">Blog</a></li>
+                                <li><a href="#" class="ak-link-hover">Kariyer</a></li>
+                                <li><a href="#" class="ak-link-hover">Basın</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-border-t ak-border-border ak-pt-8 ak-flex ak-flex-col ak-md:ak-flex-row ak-justify-between ak-items-center">
+                        <p class="ak-text-sm ak-text-muted">© 2024 AK Systems, Inc. Tüm hakları saklıdır.</p>
+                        <div class="ak-flex ak-gap-4 ak-mt-4 ak-md:ak-mt-0">
+                            <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="github" class="ak-w-5 ak-h-5"></i></a>
+                            <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="twitter" class="ak-w-5 ak-h-5"></i></a>
+                            <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="linkedin" class="ak-w-5 ak-h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Sidebar / Drawer -->
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.tr.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Genel Bakış</span></a></li>
+                    <li><a href="typography.tr.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tipografi</span></a></li>
+                    <li><a href="index.tr.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Renkler</span></a></li>
+                    <li><a href="buttons.tr.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Butonlar</span></a></li>
+                    <li><a href="loaders.tr.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yükleyiciler</span></a></li>
+                    <li><a href="forms.tr.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formlar</span></a></li>
+                    <li><a href="selection-controls.tr.html" data-page="selection"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Seçim Kontrolleri</span></a></li>
+                    <li><a href="upload.tr.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yükleme</span></a></li>
+                    <li><a href="cards.tr.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Kartlar</span></a></li>
+                    <li><a href="alerts.tr.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Uyarılar</span></a></li>
+                    <li><a href="modals.tr.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modallar</span></a></li>
+                    <li><a href="tables.tr.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tablolar</span></a></li>
+                    <li><a href="extended.tr.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Genişletilmiş</span></a></li>
+                    <li><a href="layout.tr.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Düzen</span></a></li>
+                    <li><a href="sections.tr.html" class="ak-active" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Sayfa Bölümleri</span></a></li>
+                    <li><a href="headers.tr.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Üst ve Alt Bilgi</span></a></li>
+                    <li><a href="index.tr.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yardımcı Sınıflar</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        // Modal logic
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('ak-open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('ak-open');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('ak-modal')) {
+                event.target.classList.remove('ak-open');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body>
+</html>

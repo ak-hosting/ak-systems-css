@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seitenabschnitte - AK Design System</title>
+    <meta name="description" content="Vorgefertigte Seitenabschnitte und Layouts mit AK Design System Komponenten.">
+    
+    <!-- AK Design System CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.2/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            padding-bottom: 4rem;
+        }
+        
+        .demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--ak-color-surface);
+            border-bottom: 1px solid var(--ak-color-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 6rem;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="demo-header">
+        <div class="ak-container">
+            <div class="ak-flex ak-justify-between ak-items-center">
+                <div class="demo-nav">
+                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                        <i data-lucide="menu"></i>
+                    </button>
+
+                    <a href="index.de.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Zurück zum Index
+                    </a>
+                    <h1 class="ak-text-xl ak-font-bold">Seitenabschnitte</h1>
+                </div>
+                <div class="ak-flex ak-gap-2">
+                     <a href="sections.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                     <a href="sections.de.html" class="ak-btn ak-btn-sm ak-btn-primary">DE</a>
+                     <a href="sections.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        
+        <!-- Hero Sections -->
+        <section id="hero" class="demo-section">
+            <div class="ak-flex ak-justify-between ak-items-center ak-mb-6">
+                <h2 class="ak-text-2xl ak-font-bold">Hero Bereiche</h2>
+                <span class="ak-badge ak-badge-primary">Marketing</span>
+            </div>
+            
+            <!-- Hero Variant 1: Centered -->
+            <div class="ak-card ak-overflow-hidden ak-mb-8">
+                <div class="ak-text-center ak-py-16 ak-px-6 ak-bg-surface-subtle">
+                    <span class="ak-badge ak-badge-soft-primary ak-mb-6">Neues Feature Release</span>
+                    <h1 class="ak-text-4xl ak-md:ak-text-5xl ak-font-bold ak-mb-6">Baue deine nächste Idee noch schneller.</h1>
+                    <p class="ak-text-xl ak-text-muted ak-max-w-2xl ak-mx-auto ak-mb-8">
+                        Wunderschön gestaltete Komponenten, die du in deine Apps kopieren kannst. Barrierefrei. Anpassbar. Open Source.
+                    </p>
+                    <div class="ak-flex ak-justify-center ak-gap-4">
+                        <button class="ak-btn ak-btn-primary ak-btn-lg">Loslegen</button>
+                        <button class="ak-btn ak-btn-outline ak-btn-lg">Dokumentation</button>
+                    </div>
+                    <div class="ak-mt-12 ak-text-sm ak-text-muted">
+                        Keine Kreditkarte erforderlich · 14 Tage kostenlos testen · Jederzeit kündbar
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Variant 2: Split with Image -->
+            <div class="ak-card ak-overflow-hidden">
+                <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-items-center">
+                    <div class="ak-p-12">
+                        <h2 class="ak-text-3xl ak-font-bold ak-mb-4">Daten zur Anreicherung deines <span class="ak-text-primary">Online-Geschäfts</span></h2>
+                        <p class="ak-text-lg ak-text-muted ak-mb-8">
+                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+                        </p>
+                        <div class="ak-flex ak-gap-4">
+                            <button class="ak-btn ak-btn-primary">Jetzt starten</button>
+                            <button class="ak-btn ak-btn-ghost">Mehr erfahren <i data-lucide="arrow-right" class="ak-ml-2 ak-w-4 ak-h-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="ak-h-full">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" 
+                             alt="Dashboard" 
+                             class="ak-w-full ak-h-full ak-object-cover" 
+                             style="min-height: 400px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Sections -->
+        <section id="pricing" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Preistabellen</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-8">
+                <!-- Basic Plan -->
+                <div class="ak-card ak-p-8 ak-flex ak-flex-col">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Freelancer</h3>
+                    <p class="ak-text-muted ak-text-sm ak-mb-6">Die Grundlagen für deine beste Arbeit.</p>
+                    <div class="ak-text-4xl ak-font-bold ak-mb-6">24€<span class="ak-text-base ak-text-muted ak-font-normal">/Monat</span></div>
+                    
+                    <ul class="ak-space-y-4 ak-mb-8 ak-flex-1">
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 5 Produkte</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Bis zu 1.000 Abonnenten</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Basis-Analysen</li>
+                        <li class="ak-flex ak-items-center ak-text-muted"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-mr-3"></i> 48h Support-Reaktionszeit</li>
+                    </ul>
+                    
+                    <button class="ak-btn ak-btn-outline ak-w-full">Plan kaufen</button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="ak-card ak-p-8 ak-flex ak-flex-col ak-border-primary ak-relative ak-shadow-lg">
+                    <span class="ak-badge ak-badge-primary ak-absolute ak-top-0 ak-right-0 ak-m-4">Beliebt</span>
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Startup</h3>
+                    <p class="ak-text-muted ak-text-sm ak-mb-6">Ein Plan, der mit deinem wachsenden Geschäft skaliert.</p>
+                    <div class="ak-text-4xl ak-font-bold ak-mb-6">48€<span class="ak-text-base ak-text-muted ak-font-normal">/Monat</span></div>
+                    
+                    <ul class="ak-space-y-4 ak-mb-8 ak-flex-1">
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 25 Produkte</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Bis zu 10.000 Abonnenten</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Erweiterte Analysen</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 24h Support-Reaktionszeit</li>
+                    </ul>
+                    
+                    <button class="ak-btn ak-btn-primary ak-w-full">Plan kaufen</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="ak-card ak-p-8 ak-flex ak-flex-col">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Enterprise</h3>
+                    <p class="ak-text-muted ak-text-sm ak-mb-6">Dedizierter Support und Infrastruktur für dein Unternehmen.</p>
+                    <div class="ak-text-4xl ak-font-bold ak-mb-6">Individuell</div>
+                    
+                    <ul class="ak-space-y-4 ak-mb-8 ak-flex-1">
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Unbegrenzte Produkte</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Unbegrenzte Abonnenten</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> Erweiterte Analysen</li>
+                        <li class="ak-flex ak-items-center"><i data-lucide="check" class="ak-w-5 ak-h-5 ak-text-primary ak-mr-3"></i> 1h dedizierte Support-Reaktionszeit</li>
+                    </ul>
+                    
+                    <button class="ak-btn ak-btn-outline ak-w-full">Vertrieb kontaktieren</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Grid -->
+        <section id="features" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Funktionsübersicht</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-8">
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="zap" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Blitzschnell</h3>
+                    <p class="ak-text-muted">Optimiert für Geschwindigkeit und Leistung, damit deine Anwendung sofort lädt.</p>
+                </div>
+                
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="shield" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Sicher ab Werk</h3>
+                    <p class="ak-text-muted">Entwickelt nach den besten Sicherheitspraktiken, um deine Daten sicher zu halten.</p>
+                </div>
+                
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="smartphone" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Mobile First</h3>
+                    <p class="ak-text-muted">Responsives Design, das sich perfekt an jede Bildschirmgröße anpasst.</p>
+                </div>
+
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="globe" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Globale Skalierung</h3>
+                    <p class="ak-text-muted">Weltweit verfügbar mit unserem globalen CDN-Netzwerk für niedrige Latenzzeiten.</p>
+                </div>
+
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="users" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Team-Zusammenarbeit</h3>
+                    <p class="ak-text-muted">Integrierte Tools für effiziente Zusammenarbeit und Projektmanagement.</p>
+                </div>
+
+                <div class="ak-flex ak-flex-col">
+                    <div class="ak-w-12 ak-h-12 ak-rounded-lg ak-bg-primary-subtle ak-flex ak-items-center ak-justify-center ak-mb-4 ak-text-primary">
+                        <i data-lucide="bar-chart" class="ak-w-6 ak-h-6"></i>
+                    </div>
+                    <h3 class="ak-text-lg ak-font-bold ak-mb-2">Erweiterte Analysen</h3>
+                    <p class="ak-text-muted">Erhalte tiefe Einblicke in deine Leistung mit unserem umfassenden Analyse-Dashboard.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Häufig gestellte Fragen</h2>
+            
+            <div class="ak-max-w-3xl ak-mx-auto">
+                <div class="ak-flex ak-flex-col ak-gap-4">
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Kann ich jederzeit kündigen?</h3>
+                        <p class="ak-text-muted">Ja, du kannst dein Abonnement jederzeit kündigen. Wir haben keine langfristigen Verträge.</p>
+                    </div>
+                    
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Welche Zahlungsmethoden werden akzeptiert?</h3>
+                        <p class="ak-text-muted">Wir akzeptieren alle gängigen Kreditkarten (Visa, Mastercard, Amex) und PayPal.</p>
+                    </div>
+                    
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Gibt es eine kostenlose Testversion?</h3>
+                        <p class="ak-text-muted">Ja, wir bieten eine 14-tägige kostenlose Testphase für alle kostenpflichtigen Pläne an.</p>
+                    </div>
+                    
+                    <div class="ak-card ak-p-6">
+                        <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Wie kontaktiere ich den Support?</h3>
+                        <p class="ak-text-muted">Du erreichst unser Support-Team per E-Mail unter support@example.com oder über den Live-Chat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Kundenstimmen</h2>
+            
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6">
+                <div class="ak-card ak-p-6">
+                    <div class="ak-flex ak-items-center ak-mb-4">
+                        <div class="ak-avatar ak-mr-4">
+                            <span class="ak-avatar-fallback">JD</span>
+                        </div>
+                        <div>
+                            <div class="ak-font-bold">John Doe</div>
+                            <div class="ak-text-xs ak-text-muted">CEO bei TechCorp</div>
+                        </div>
+                    </div>
+                    <p class="ak-text-muted">"Dieses Produkt hat unsere Arbeitsweise komplett verändert. Die Effizienzsteigerung ist unglaublich."</p>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <div class="ak-flex ak-items-center ak-mb-4">
+                        <div class="ak-avatar ak-mr-4">
+                            <span class="ak-avatar-fallback">AS</span>
+                        </div>
+                        <div>
+                            <div class="ak-font-bold">Alice Smith</div>
+                            <div class="ak-text-xs ak-text-muted">Designer bei Creative</div>
+                        </div>
+                    </div>
+                    <p class="ak-text-muted">"Das Design System ist wunderschön und einfach zu nutzen. Es hat uns Wochen an Entwicklungszeit gespart."</p>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <div class="ak-flex ak-items-center ak-mb-4">
+                        <div class="ak-avatar ak-mr-4">
+                            <span class="ak-avatar-fallback">RJ</span>
+                        </div>
+                        <div>
+                            <div class="ak-font-bold">Robert Johnson</div>
+                            <div class="ak-text-xs ak-text-muted">Entwickler bei DevCo</div>
+                        </div>
+                    </div>
+                    <p class="ak-text-muted">"Die beste Dokumentation, die ich je gesehen habe. Alles ist klar, prägnant und einfach zu implementieren."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer" class="demo-section">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Footer Layout</h2>
+            
+            <footer class="ak-bg-surface-subtle ak-pt-12 ak-pb-8 ak-rounded-lg">
+                <div class="ak-container">
+                    <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-4 ak-gap-8 ak-mb-8">
+                        <div class="ak-col-span-1 ak-md:ak-col-span-1">
+                            <div class="ak-flex ak-items-center ak-mb-4">
+                                <div class="ak-w-8 ak-h-8 ak-bg-primary ak-rounded ak-flex ak-items-center ak-justify-center ak-text-white ak-font-bold ak-mr-2">AK</div>
+                                <span class="ak-font-bold ak-text-lg">AK Systems</span>
+                            </div>
+                            <p class="ak-text-muted ak-text-sm">
+                                Die Welt verbessern durch das Konstruieren eleganter Hierarchien.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-font-bold ak-mb-4">Lösungen</h4>
+                            <ul class="ak-space-y-2 ak-text-sm ak-text-muted">
+                                <li><a href="#" class="ak-link-hover">Marketing</a></li>
+                                <li><a href="#" class="ak-link-hover">Analysen</a></li>
+                                <li><a href="#" class="ak-link-hover">E-Commerce</a></li>
+                                <li><a href="#" class="ak-link-hover">Einblicke</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-font-bold ak-mb-4">Support</h4>
+                            <ul class="ak-space-y-2 ak-text-sm ak-text-muted">
+                                <li><a href="#" class="ak-link-hover">Preise</a></li>
+                                <li><a href="#" class="ak-link-hover">Dokumentation</a></li>
+                                <li><a href="#" class="ak-link-hover">Anleitungen</a></li>
+                                <li><a href="#" class="ak-link-hover">API Status</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="ak-font-bold ak-mb-4">Firma</h4>
+                            <ul class="ak-space-y-2 ak-text-sm ak-text-muted">
+                                <li><a href="#" class="ak-link-hover">Über uns</a></li>
+                                <li><a href="#" class="ak-link-hover">Blog</a></li>
+                                <li><a href="#" class="ak-link-hover">Jobs</a></li>
+                                <li><a href="#" class="ak-link-hover">Presse</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="ak-border-t ak-border-border ak-pt-8 ak-flex ak-flex-col ak-md:ak-flex-row ak-justify-between ak-items-center">
+                        <p class="ak-text-sm ak-text-muted">© 2024 AK Systems, Inc. Alle Rechte vorbehalten.</p>
+                        <div class="ak-flex ak-gap-4 ak-mt-4 ak-md:ak-mt-0">
+                            <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="github" class="ak-w-5 ak-h-5"></i></a>
+                            <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="twitter" class="ak-w-5 ak-h-5"></i></a>
+                            <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="linkedin" class="ak-w-5 ak-h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Sidebar / Drawer -->
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.de.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Übersicht</span></a></li>
+                    <li><a href="typography.de.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typografie</span></a></li>
+                    <li><a href="index.de.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Farben</span></a></li>
+                    <li><a href="buttons.de.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="loaders.de.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Ladeanimationen</span></a></li>
+                    <li><a href="forms.de.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formulare</span></a></li>
+                    <li><a href="selection-controls.de.html" data-page="selection"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Auswahl</span></a></li>
+                    <li><a href="upload.de.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.de.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Karten</span></a></li>
+                    <li><a href="alerts.de.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Warnungen</span></a></li>
+                    <li><a href="modals.de.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modale</span></a></li>
+                    <li><a href="tables.de.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tabellen</span></a></li>
+                    <li><a href="extended.de.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Erweitert</span></a></li>
+                    <li><a href="layout.de.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="sections.de.html" class="ak-active" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Seitenbereiche</span></a></li>
+                    <li><a href="headers.de.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Kopf & Fußzeile</span></a></li>
+                    <li><a href="index.de.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Hilfsklassen</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        // Modal logic
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('ak-open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('ak-open');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('ak-modal')) {
+                event.target.classList.remove('ak-open');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -21,8 +21,13 @@ Tek desteklenen giriş (geliştirme):
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.1/dist/ak-design-system.min.css"
 />
+```
 
-<!-- Veya ana daldan en son sürümü kullanın (her zaman güncel) -->
+### Bleeding Edge (Kararsız)
+
+`main` dalındaki en son değişikliklere ihtiyacınız varsa (üretim için önerilmez):
+
+```html
 <!-- Uyarı: Haber verilmeksizin kırılmalara neden olabilir -->
 <link
   rel="stylesheet"

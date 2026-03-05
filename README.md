@@ -21,8 +21,13 @@ Production/CDN entry:
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.1/dist/ak-design-system.min.css"
 />
+```
 
-<!-- Or use the latest version from main branch (always up-to-date) -->
+### Bleeding Edge (Unstable)
+
+If you need the absolute latest changes from the `main` branch (not recommended for production):
+
+```html
 <!-- Warning: This may include breaking changes without notice -->
 <link
   rel="stylesheet"

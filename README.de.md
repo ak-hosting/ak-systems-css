@@ -21,8 +21,13 @@ Production/CDN-Einstieg:
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.1/dist/ak-design-system.min.css"
 />
+```
 
-<!-- Oder neueste Version vom Main-Branch (immer aktuell) -->
+### Bleeding Edge (Instabil)
+
+Wenn Sie die absolut neuesten Änderungen vom `main`-Branch benötigen (nicht für Produktion empfohlen):
+
+```html
 <!-- Warnung: Kann Breaking Changes enthalten -->
 <link
   rel="stylesheet"

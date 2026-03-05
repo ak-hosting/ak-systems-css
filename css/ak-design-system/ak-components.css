@@ -255,6 +255,158 @@
   border-right: 1px solid var(--ak-color-border);
 }
 
+/* --- New Button Variants (v1.3.2+) --- */
+
+/* 1. Status Colors */
+.ak-btn-success {
+  padding: var(--ak-space-3) var(--ak-space-6);
+  border-radius: var(--ak-radius-md);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: var(--ak-font-size-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ak-space-2);
+  background-color: var(--ak-color-success);
+  color: #fff; /* Assuming white text for success */
+}
+.ak-btn-success:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: var(--ak-shadow-md);
+}
+
+.ak-btn-warning {
+  padding: var(--ak-space-3) var(--ak-space-6);
+  border-radius: var(--ak-radius-md);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: var(--ak-font-size-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ak-space-2);
+  background-color: var(--ak-color-warning);
+  color: #000; /* Assuming black text for warning/yellow */
+}
+.ak-btn-warning:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: var(--ak-shadow-md);
+}
+
+/* 2. Soft / Tinted Buttons */
+.ak-btn-soft-primary {
+  background-color: color-mix(in srgb, var(--ak-color-primary) 15%, transparent);
+  color: var(--ak-color-primary);
+  border: none;
+}
+.ak-btn-soft-primary:hover {
+  background-color: color-mix(in srgb, var(--ak-color-primary) 25%, transparent);
+}
+
+.ak-btn-soft-secondary {
+  background-color: color-mix(in srgb, var(--ak-color-secondary) 15%, transparent);
+  color: var(--ak-color-secondary);
+  border: none;
+}
+.ak-btn-soft-secondary:hover {
+  background-color: color-mix(in srgb, var(--ak-color-secondary) 25%, transparent);
+}
+
+.ak-btn-soft-accent {
+  background-color: color-mix(in srgb, var(--ak-color-accent) 15%, transparent);
+  color: var(--ak-color-accent);
+  border: none;
+}
+.ak-btn-soft-accent:hover {
+  background-color: color-mix(in srgb, var(--ak-color-accent) 25%, transparent);
+}
+
+.ak-btn-soft-destructive {
+  background-color: color-mix(in srgb, var(--ak-color-destructive) 15%, transparent);
+  color: var(--ak-color-destructive);
+  border: none;
+}
+.ak-btn-soft-destructive:hover {
+  background-color: color-mix(in srgb, var(--ak-color-destructive) 25%, transparent);
+}
+
+.ak-btn-soft-success {
+  background-color: color-mix(in srgb, var(--ak-color-success) 15%, transparent);
+  color: var(--ak-color-success);
+  border: none;
+}
+.ak-btn-soft-success:hover {
+  background-color: color-mix(in srgb, var(--ak-color-success) 25%, transparent);
+}
+
+/* 3. Gradient Buttons */
+.ak-btn-gradient-primary {
+  background: linear-gradient(135deg, var(--ak-color-primary), var(--ak-color-accent));
+  color: var(--ak-color-primary-text);
+  border: none;
+}
+.ak-btn-gradient-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: var(--ak-shadow-md);
+}
+
+/* 4. Glass / Frosted Button */
+.ak-btn-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ak-color-text);
+}
+.ak-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 5. Shape Variants */
+.ak-btn-rounded {
+  border-radius: 9999px;
+}
+.ak-btn-circle {
+  border-radius: 50%;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ak-btn-circle.ak-btn-sm {
+  width: 32px;
+  height: 32px;
+}
+.ak-btn-circle.ak-btn-lg {
+  width: 48px;
+  height: 48px;
+}
+
+/* 6. Elevated (Material-like) */
+.ak-btn-elevated {
+  background-color: var(--ak-color-surface);
+  color: var(--ak-color-text);
+  border: 1px solid var(--ak-color-border);
+  box-shadow: var(--ak-shadow-md);
+}
+.ak-btn-elevated:hover {
+  box-shadow: var(--ak-shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--ak-color-primary);
+  color: var(--ak-color-primary);
+}
+
 @keyframes ak-spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);

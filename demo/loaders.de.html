@@ -14,24 +14,23 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body class="ak-theme-dark">
-    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
-        <div class="ak-container">
-            <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="ak-flex ak-items-center ak-gap-4">
-                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
-                        <i data-lucide="menu"></i>
-                    </button>
-
-                    <a href="index.de.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
                         <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                        Zurück zum Index
+                        Back to Index
                     </a>
-                    <h1 class="ak-text-xl ak-font-bold">Ladeindikatoren</h1>
-                </div>
+                <h1 class="ak-text-xl ak-font-bold">Ladeindikatoren</h1>
+            </div>
+            <div class="ak-header-actions">
                 <div class="ak-flex ak-gap-2">
-                     <a href="loaders.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
-                     <a href="loaders.de.html" class="ak-btn ak-btn-sm ak-btn-primary">DE</a>
-                     <a href="loaders.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                    <a href="loaders.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                    <a href="loaders.de.html" class="ak-btn ak-btn-sm ak-btn-primary">DE</a>
+                    <a href="loaders.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
                 </div>
             </div>
         </div>
@@ -218,7 +217,14 @@
 
     
     <!-- Sidebar / Drawer -->
-    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+    
+    <footer class="ak-footer">
+        <div class="ak-container">
+            <p class="ak-text-sm">&copy; 2025 ak-systems. All rights reserved.</p>
+        </div>
+    </footer>
+
+<div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
         <div class="ak-modal-content">
             <div class="ak-modal-header">
                 <h2 class="ak-modal-title">Navigation</h2>

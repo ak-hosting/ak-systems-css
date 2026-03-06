@@ -16,28 +16,32 @@
 <body class="ak-theme-dark">
     <!-- Header -->
     <header class="ak-header">
-        <div class="ak-flex ak-flex-between ak-items-center">
+        <div class="ak-header-content">
             <div class="ak-flex ak-items-center ak-gap-4">
-                <button id="open-sidebar" class="ak-btn ak-btn-ghost" onclick="openModal('nav-drawer')" data-testid="button-open-sidebar">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                     <i data-lucide="menu"></i>
                 </button>
-                <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
-                <div class="ak-flex ak-gap-2 ak-ml-4">
+                <h1 class="ak-text-xl ak-font-bold">AK Design System</h1>
+            </div>
+            <div class="ak-header-actions">
+                <div class="ak-flex ak-gap-2">
                     <a href="index.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
                     <a href="index.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
                     <a href="index.tr.html" class="ak-btn ak-btn-sm ak-btn-primary">TR</a>
                 </div>
             </div>
-            <div class="ak-flex ak-items-center ak-gap-2">
-                <button id="theme-toggle" class="ak-btn ak-btn-ghost" data-testid="button-theme-toggle">
-                    <i data-lucide="sun" id="theme-icon"></i>
-                </button>
-            </div>
         </div>
     </header>
 
     <!-- Sidebar / Drawer -->
-    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+    
+    <footer class="ak-footer">
+        <div class="ak-container">
+            <p class="ak-text-sm">&copy; 2025 ak-systems. All rights reserved.</p>
+        </div>
+    </footer>
+
+<div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
         <div class="ak-modal-content">
             <div class="ak-modal-header">
                 <h2 class="ak-modal-title">Gezinme</h2>

@@ -1369,10 +1369,7 @@
     </footer>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-        
-        // Theme Toggle
+        // Initialize Lucide icons// Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
@@ -1396,9 +1393,7 @@
                 themeIcon.setAttribute('data-lucide', 'sun');
             } else {
                 themeIcon.setAttribute('data-lucide', 'moon');
-            }
-            lucide.createIcons();
-        }
+            }}
 
         // Generic Modal/Drawer functions
         function openModal(id) {
@@ -1423,21 +1418,7 @@
                 e.target.classList.remove('ak-modal-open');
                 document.body.classList.remove('ak-modal-open');
             }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
-                openModals.forEach(modal => {
-                    modal.classList.remove('ak-modal-open');
-                });
-                if (openModals.length > 0) {
-                    document.body.classList.remove('ak-modal-open');
-                }
-            }
-        });
-        
-        // Sidebar navigation
+        });// Sidebar navigation
         const openSidebar = document.getElementById('open-sidebar');
         // const closeSidebar = document.getElementById('close-sidebar'); // Handled by onclick in HTML
         

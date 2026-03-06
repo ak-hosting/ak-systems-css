@@ -1350,10 +1350,7 @@
     </footer>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Theme Toggle
+        // Initialize Lucide icons// Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
@@ -1377,48 +1374,7 @@
                 themeIcon.setAttribute('data-lucide', 'sun');
             } else {
                 themeIcon.setAttribute('data-lucide', 'moon');
-            }
-            lucide.createIcons();
-        }
-
-        // Generic Modal Functions
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.add('ak-modal-open');
-                document.body.classList.add('ak-modal-open');
-            }
-        }
-
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-            }
-        }
-
-        // Close modal when clicking outside or pressing Escape
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('ak-modal')) {
-                e.target.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
-                openModals.forEach(modal => {
-                    modal.classList.remove('ak-modal-open');
-                });
-                if (openModals.length > 0) {
-                    document.body.classList.remove('ak-modal-open');
-                }
-            }
-        });
-        
-        // Section navigation
+            }}// Section navigation
         const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
         const sections = document.querySelectorAll('.ak-section');
         

@@ -280,46 +280,7 @@
         </div>
     </div>
 
-    <script>
-        lucide.createIcons();
-
-        // Generic Modal Functions
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.add('ak-modal-open');
-                document.body.classList.add('ak-modal-open');
-            }
-        }
-
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-            }
-        }
-
-        // Close modal when clicking outside or pressing Escape
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('ak-modal')) {
-                e.target.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
-                openModals.forEach(modal => {
-                    modal.classList.remove('ak-modal-open');
-                });
-                if (openModals.length > 0) {
-                    document.body.classList.remove('ak-modal-open');
-                }
-            }
-        });
-    </script>
+    
 
     <script src="js/ak-demo.js"></script>
 </body>

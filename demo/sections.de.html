@@ -379,33 +379,6 @@
     </div>
 
     <script src="js/ak-demo.js"></script>
-    <script>
-        lucide.createIcons();
-        
-        // Modal logic
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.add('ak-open');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.remove('ak-open');
-                document.body.style.overflow = '';
-            }
-        }
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('ak-modal')) {
-                event.target.classList.remove('ak-open');
-                document.body.style.overflow = '';
-            }
-        }
-    </script>
+    
 </body>
 </html>

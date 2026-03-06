@@ -580,48 +580,8 @@
             } else {
                 body.className = 'ak-theme-light';
                 themeIcon.setAttribute('data-lucide', 'moon');
-            }
-            lucide.createIcons(); // Re-render icons
-        });
-
-        // Generic Modal Functions
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.add('ak-modal-open');
-                document.body.classList.add('ak-modal-open');
-            }
-        }
-
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-            }
-        }
-
-        // Close modal when clicking outside or pressing Escape
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('ak-modal')) {
-                e.target.classList.remove('ak-modal-open');
-                document.body.classList.remove('ak-modal-open');
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                const openModals = document.querySelectorAll('.ak-modal.ak-modal-open');
-                openModals.forEach(modal => {
-                    modal.classList.remove('ak-modal-open');
-                });
-                if (openModals.length > 0) {
-                    document.body.classList.remove('ak-modal-open');
-                }
-            }
-        });
-
-        // Navigation
+            }// Re-render icons
+        });// Navigation
         const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
         const footerLinks = document.querySelectorAll('.ak-footer-nav-item');
         const sections = document.querySelectorAll('.content-section');
@@ -700,10 +660,7 @@
                 toast.style.borderColor = 'var(--ak-destructive)';
             }
 
-            toast.classList.remove('ak-hidden');
-            lucide.createIcons();
-
-            // Auto-hide after 3 seconds
+            toast.classList.remove('ak-hidden');// Auto-hide after 3 seconds
             setTimeout(() => {
                 toast.classList.add('ak-hidden');
             }, 3000);
@@ -735,9 +692,7 @@
             showToast('Form reset.', 'success');
         });
 
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+        // Initialize Lucide icons</script>
     <script src="js/ak-demo.js"></script>
 </body>
 </html>

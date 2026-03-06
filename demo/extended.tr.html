@@ -12,51 +12,12 @@
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        /* Demo-specific styles */
-        body {
-            padding-bottom: 4rem;
-        }
-        
-        .demo-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--ak-color-surface);
-            border-bottom: 1px solid var(--ak-color-border);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .demo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-
-        .demo-section:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-        
-        .description { 
-            color: var(--ak-color-text-muted); 
-            margin-bottom: 1.5rem; 
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
-    <header class="demo-header">
+    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -79,9 +40,9 @@
     <main class="ak-container">
         
         <!-- Avatars -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Avatarlar</h2>
-            <p class="demo-description">Durum göstergeleri ve gruplandırma özellikli kullanıcı profil resimleri.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Durum göstergeleri ve gruplandırma özellikli kullanıcı profil resimleri.</p>
             
             <div class="ak-card ak-p-6">
                 <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Avatarlar</h3>
@@ -132,9 +93,9 @@
         </div>
 
         <!-- Breadcrumbs & Pagination -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Gezinti</h2>
-            <p class="demo-description">Kırıntı gezintisi (breadcrumbs) ve sayfalandırma.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Kırıntı gezintisi (breadcrumbs) ve sayfalandırma.</p>
             
             <div class="ak-card ak-p-6">
                 <div class="ak-mb-6">
@@ -166,9 +127,9 @@
         </div>
 
         <!-- Tooltips & Accordion -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Etkileşimli</h2>
-            <p class="demo-description">Kullanıcı etkileşimine yanıt veren bileşenler.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Kullanıcı etkileşimine yanıt veren bileşenler.</p>
             
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-gap-4 ak-mb-8">
@@ -206,9 +167,9 @@
         </div>
 
         <!-- Misc Components -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Çeşitli Bileşenler</h2>
-            <p class="demo-description">Rozetler, ilerleme çubukları, anahtarlar ve açılır menüler.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Rozetler, ilerleme çubukları, anahtarlar ve açılır menüler.</p>
             
             <div class="ak-card ak-p-6">
                 <div class="ak-mb-6">

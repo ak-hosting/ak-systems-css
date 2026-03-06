@@ -12,69 +12,6 @@
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        /* Minimal demo-specific styles - using Design System classes where possible */
-        .language-selector {
-            margin-left: var(--ak-space-4);
-        }
-        
-        .language-selector a {
-            margin-right: var(--ak-space-2);
-            text-decoration: none;
-            color: var(--ak-color-text-muted);
-        }
-        
-        .language-selector a.ak-active {
-            color: var(--ak-color-accent);
-            font-weight: var(--ak-font-weight-medium);
-        }
-
-        .code-block {
-            background: var(--ak-color-muted);
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            font-family: monospace;
-            font-size: 0.875rem;
-            overflow-x: auto;
-            white-space: pre;
-        }
-
-        .color-demo {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--ak-radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 0.75rem;
-        }
-
-        .spacing-demo {
-            background: var(--ak-color-accent);
-            color: white;
-            display: inline-block;
-            margin: var(--ak-space-1);
-        }
-
-        .toast {
-            position: fixed;
-            top: var(--ak-space-4);
-            right: var(--ak-space-4);
-            background: var(--ak-color-surface);
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            z-index: 100;
-            display: none;
-            align-items: center;
-            gap: var(--ak-space-2);
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
     <!-- Header -->
@@ -85,10 +22,10 @@
                     <i data-lucide="menu"></i>
                 </button>
                 <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
-                <div class="demo-language-selector">
-                    <a href="index.html">EN</a>
-                    <a href="index.de.html" class="ak-active">DE</a>
-                    <a href="index.tr.html">TR</a>
+                <div class="ak-flex ak-gap-2 ak-ml-4">
+                    <a href="index.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                    <a href="index.de.html" class="ak-btn ak-btn-sm ak-btn-primary">DE</a>
+                    <a href="index.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
                 </div>
             </div>
             <div class="ak-flex ak-items-center ak-gap-2">
@@ -598,7 +535,7 @@
                         Alle Varianten <i data-lucide="arrow-right" class="ak-w-4 ak-h-4 ak-ml-2"></i>
                     </a>
                 </div>
-                <div class="ak-grid ak-grid-2 ak-gap-6 demo-section">
+                <div class="ak-grid ak-grid-2 ak-gap-6 ak-mb-12">
                     <div class="ak-card">
                         <div class="ak-card-header">
                             <h3 class="ak-card-title">Card Titel</h3>
@@ -1538,7 +1475,7 @@
         // Toast
         const showToast = document.getElementById('show-toast');
         const closeToast = document.getElementById('close-toast');
-        const toast = document.getElementById('toast');
+        const ak-toast = document.getElementById('toast');
         
         showToast.addEventListener('click', () => {
             toast.classList.add('ak-toast-show');

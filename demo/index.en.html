@@ -11,82 +11,6 @@
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        /* Minimal demo-specific styles - using Design System classes where possible */
-        .language-selector {
-            margin-left: var(--ak-space-4);
-        }
-        
-        .language-selector a {
-            margin-right: var(--ak-space-2);
-            text-decoration: none;
-            color: var(--ak-color-text-muted);
-        }
-        
-        .language-selector a.ak-active {
-            color: var(--ak-color-accent);
-            font-weight: var(--ak-font-weight-medium);
-        }
-
-        /* Extra demo-specific styles */
-        .demo-section {
-            margin-bottom: var(--ak-space-8);
-            padding: var(--ak-space-6);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-lg);
-            background: var(--ak-card);
-        }
-        
-        .color-demo {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--ak-radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: var(--ak-font-weight-medium);
-            font-size: var(--ak-font-size-sm);
-        }
-        
-        .spacing-demo {
-            background: var(--ak-accent);
-            color: white;
-            display: inline-block;
-            margin: var(--ak-space-1);
-        }
-        
-        .code-block {
-            background: var(--ak-muted);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            font-family: var(--ak-font-mono);
-            font-size: var(--ak-font-size-sm);
-            overflow-x: auto;
-            white-space: pre;
-        }
-
-        .toast {
-            position: fixed;
-            top: var(--ak-space-4);
-            right: var(--ak-space-4);
-            background: var(--ak-card);
-            border: 1px solid var(--ak-border);
-            border-radius: var(--ak-radius-md);
-            padding: var(--ak-space-4);
-            box-shadow: var(--ak-shadow-lg);
-            z-index: var(--ak-z-toast);
-            display: none;
-            align-items: center;
-            gap: var(--ak-space-2);
-        }
-        
-        .toast.active {
-            display: flex;
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
     <!-- Header -->
@@ -97,10 +21,10 @@
                     <i data-lucide="menu"></i>
                 </button>
                 <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
-                <div class="demo-language-selector">
-                    <a href="index.en.html" class="ak-active">EN</a>
-                    <a href="index.de.html">DE</a>
-                    <a href="index.tr.html">TR</a>
+                <div class="ak-flex ak-gap-2 ak-ml-4">
+                    <a href="index.en.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                    <a href="index.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                    <a href="index.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
                 </div>
             </div>
             <div class="ak-flex ak-items-center ak-gap-2">
@@ -166,7 +90,7 @@
     <!-- Main Content -->
     <main class="ak-main">
         <!-- Overview Section -->
-        <section id="overview-section" class="demo-section">
+        <section id="overview-section" class="ak-mb-12">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-6">AK Design System</h1>
                 <p class="ak-text-xl ak-text-muted ak-mb-8">
@@ -220,12 +144,12 @@
         </section>
 
         <!-- Design Tokens Section -->
-        <section id="tokens-section" class="demo-section" style="display: none;">
+        <section id="tokens-section" class="ak-mb-12" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Design Tokens</h1>
 
                 <!-- Colors -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Colors</h2>
                     <div class="ak-grid ak-grid-4 ak-gap-4">
                         <div class="ak-text-center">
@@ -256,7 +180,7 @@
                 </div>
 
                 <!-- Typography -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Typography</h2>
                     <div class="ak-space-y-4">
                         <div data-testid="typography-heading-1">
@@ -275,7 +199,7 @@
                 </div>
 
                 <!-- Spacing -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Spacing</h2>
                     <div class="ak-flex ak-flex-wrap ak-gap-2">
                         <div class="demo-spacing-box ak-w-4 ak-h-4"></div>
@@ -287,12 +211,12 @@
         </section>
 
         <!-- Components Section -->
-        <section id="components-section" class="demo-section" style="display: none;">
+        <section id="components-section" class="ak-mb-12" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Components</h1>
 
                 <!-- Buttons -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Buttons</h2>
                     <div class="ak-flex ak-flex-wrap ak-gap-4 ak-mb-4">
                         <button class="ak-btn ak-btn-primary" data-testid="button-primary">Primary</button>
@@ -310,7 +234,7 @@
                 </div>
 
                 <!-- Cards -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Cards</h2>
                     <div class="ak-grid ak-grid-2 ak-gap-6">
                         <div class="ak-card" data-testid="card-basic">
@@ -348,7 +272,7 @@
                 </div>
 
                 <!-- Forms -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Forms</h2>
                     <form class="ak-form ak-space-y-4" data-testid="form-example">
                         <div class="ak-form-field">
@@ -413,7 +337,7 @@
                 </div>
 
                 <!-- Modal Button -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Modal</h2>
                     <button id="open-modal" class="ak-btn ak-btn-primary" data-testid="button-open-modal">
                         <i data-lucide="external-link"></i>
@@ -422,7 +346,7 @@
                 </div>
 
                 <!-- Toast Button -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Toast Notifications</h2>
                     <div class="ak-flex ak-gap-4">
                         <button id="show-success-toast" class="ak-btn ak-btn-primary" data-testid="button-success-toast">
@@ -437,12 +361,12 @@
         </section>
 
         <!-- Utilities Section -->
-        <section id="utilities-section" class="demo-section" style="display: none;">
+        <section id="utilities-section" class="ak-mb-12" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Utility Classes</h1>
 
                 <!-- Spacing Utilities -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Spacing</h2>
                     <div class="ak-space-y-4">
                         <div class="ak-p-4 ak-bg-muted ak-rounded" data-testid="utility-padding-4">
@@ -458,7 +382,7 @@
                 </div>
 
                 <!-- Text Utilities -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Text</h2>
                     <div class="ak-space-y-4">
                         <p class="ak-text-center ak-p-4 ak-bg-muted ak-rounded" data-testid="utility-text-center">
@@ -474,7 +398,7 @@
                 </div>
 
                 <!-- Flex Utilities -->
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Flexbox</h2>
                     <div class="ak-space-y-4">
                         <div class="ak-flex-center ak-p-4 ak-bg-muted ak-rounded ak-h-20" data-testid="utility-flex-center">
@@ -491,11 +415,11 @@
         </section>
 
         <!-- Examples Section -->
-        <section id="examples-section" class="demo-section" style="display: none;">
+        <section id="examples-section" class="ak-mb-12" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Code Examples</h1>
 
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Include CSS</h2>
                     <div class="demo-code-block">
 &lt;!-- In your HTML head --&gt;
@@ -506,7 +430,7 @@
                     </div>
                 </div>
 
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Button Examples</h2>
                     <div class="demo-code-block">
 &lt;!-- Primary button --&gt;
@@ -527,7 +451,7 @@
                     </div>
                 </div>
 
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Card Examples</h2>
                     <div class="demo-code-block">
 &lt;div class="ak-card"&gt;
@@ -545,7 +469,7 @@
                     </div>
                 </div>
 
-                <div class="demo-section">
+                <div class="ak-mb-12">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Grid System</h2>
                     <div class="demo-code-block">
 &lt;!-- Responsive grid --&gt;
@@ -747,7 +671,7 @@
         }
 
         // Toast functionality
-        const toast = document.getElementById('toast');
+        const ak-toast = document.getElementById('toast');
         const toastIcon = document.getElementById('toast-icon');
         const toastMessage = document.getElementById('toast-message');
         const closeToastBtn = document.getElementById('close-toast');

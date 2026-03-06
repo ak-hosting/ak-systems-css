@@ -12,46 +12,12 @@
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        /* Demo-specific styles */
-        body {
-            padding-bottom: 4rem;
-        }
-        
-        .demo-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--ak-color-surface);
-            border-bottom: 1px solid var(--ak-color-border);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .demo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-
-        .demo-section:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
-    <header class="demo-header">
+    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -74,7 +40,7 @@
     <main class="ak-container">
         
         <!-- Spinners -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Spinnerlar</h2>
             
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
@@ -118,7 +84,7 @@
         </div>
 
         <!-- Dots -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Noktalar</h2>
             
             <div class="ak-card ak-p-6">
@@ -140,7 +106,7 @@
         </div>
 
         <!-- Progress Bars -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">İlerleme Çubukları</h2>
             
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
@@ -188,7 +154,7 @@
         </div>
 
         <!-- Advanced Loaders -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Gelişmiş Yükleyiciler</h2>
             
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-6">
@@ -228,7 +194,7 @@
         </div>
 
         <!-- Skeleton Loading -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">İskelet Yükleme</h2>
             
             <div class="ak-card ak-p-6">

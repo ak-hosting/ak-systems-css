@@ -6,46 +6,13 @@
     <title>AK Design System - Upload Components</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            background-color: var(--ak-color-bg);
-            color: var(--ak-color-text);
-        }
-        .demo-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: var(--ak-color-bg);
-            border-bottom: 1px solid var(--ak-color-border);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-        .demo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        h2 { margin-top: 0; margin-bottom: 0.5rem; }
-        
-    </style>
 </head>
 <body class="ak-theme-dark">
 
-    <header class="demo-header">
+    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -72,11 +39,11 @@
         </div>
 
         <!-- STANDARD ZONES -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Standard Drop Zones</h2>
-            <p class="demo-description">The default drag-and-drop area for general file uploads.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">The default drag-and-drop area for general file uploads.</p>
             
-            <div class="demo-grid">
+            <div class="ak-grid ak-grid-cols-1 md:ak-grid-cols-2 lg:ak-grid-cols-3 ak-gap-6">
                 <!-- Default -->
                 <div>
                     <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Default</h3>
@@ -106,11 +73,11 @@
         </div>
 
         <!-- MINIMAL VARIANTS -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Minimal Variants</h2>
-            <p class="demo-description">Compact versions for tight spaces or secondary actions.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Compact versions for tight spaces or secondary actions.</p>
             
-            <div class="demo-grid">
+            <div class="ak-grid ak-grid-cols-1 md:ak-grid-cols-2 lg:ak-grid-cols-3 ak-gap-6">
                 <!-- Minimal Horizontal -->
                 <div>
                     <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Horizontal Row</h3>
@@ -137,11 +104,11 @@
         </div>
 
         <!-- CARD VARIANTS -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Card & Preview</h2>
-            <p class="demo-description">Ideal for image uploads like avatars, cover photos, or gallery items.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Ideal for image uploads like avatars, cover photos, or gallery items.</p>
             
-            <div class="demo-grid">
+            <div class="ak-grid ak-grid-cols-1 md:ak-grid-cols-2 lg:ak-grid-cols-3 ak-gap-6">
                 <!-- Cover Image -->
                 <div>
                     <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Cover Image</h3>
@@ -172,11 +139,11 @@
         </div>
 
         <!-- UPLOAD STATES -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Upload States</h2>
-            <p class="demo-description">Feedback for uploading, success, and error states.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Feedback for uploading, success, and error states.</p>
             
-            <div class="demo-grid">
+            <div class="ak-grid ak-grid-cols-1 md:ak-grid-cols-2 lg:ak-grid-cols-3 ak-gap-6">
                 <!-- Uploading -->
                 <div>
                     <h3 class="ak-text-sm ak-font-semibold ak-mb-2 ak-text-muted">Uploading (Progress)</h3>

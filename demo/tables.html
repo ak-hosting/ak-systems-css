@@ -6,115 +6,13 @@
     <title>AK Design System - Tables</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            background-color: var(--ak-color-bg);
-            color: var(--ak-color-text);
-        }
-        .demo-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: var(--ak-color-bg);
-            border-bottom: 1px solid var(--ak-color-border);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-        .demo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-        .demo-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        h2 { margin-top: 0; margin-bottom: 0.5rem; }
-        
-
-        /* Extended Table Styles (Demo Only) */
-        .ak-table-container {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin-bottom: var(--ak-space-4);
-            border-radius: var(--ak-radius-lg);
-            border: 1px solid var(--ak-color-border);
-        }
-
-        .ak-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: var(--ak-font-size-sm);
-            color: var(--ak-color-text);
-            background-color: var(--ak-color-surface);
-        }
-
-        .ak-table th,
-        .ak-table td {
-            padding: var(--ak-space-3) var(--ak-space-4);
-            text-align: left;
-            border-bottom: 1px solid var(--ak-color-border);
-        }
-
-        .ak-table th {
-            background-color: var(--ak-color-bg-subtle);
-            font-weight: var(--ak-font-weight-semibold);
-            color: var(--ak-color-text-muted);
-            text-transform: uppercase;
-            font-size: var(--ak-font-size-xs);
-            letter-spacing: 0.05em;
-        }
-
-        .ak-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Variants */
-        .ak-table-striped tbody tr:nth-child(even) {
-            background-color: var(--ak-color-bg-subtle);
-        }
-
-        .ak-table-hover tbody tr:hover {
-            background-color: var(--ak-color-muted);
-            transition: background-color 0.2s ease;
-        }
-
-        .ak-table-sm th,
-        .ak-table-sm td {
-            padding: var(--ak-space-2) var(--ak-space-3);
-            font-size: var(--ak-font-size-xs);
-        }
-
-        .ak-table-bordered th,
-        .ak-table-bordered td {
-            border: 1px solid var(--ak-color-border);
-        }
-        
-        .ak-table-caption {
-            caption-side: bottom;
-            padding: var(--ak-space-2) var(--ak-space-4);
-            font-size: var(--ak-font-size-sm);
-            color: var(--ak-color-text-muted);
-            text-align: left;
-            border-top: 1px solid var(--ak-color-border);
-            background-color: var(--ak-color-bg-subtle);
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
 
-    <header class="demo-header">
+    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -141,9 +39,9 @@
         </div>
 
         <!-- BASIC TABLE -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Basic Table</h2>
-            <p class="demo-description">Standard table with border-bottom dividers.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Standard table with border-bottom dividers.</p>
             
             <div class="ak-table-container">
                 <table class="ak-table">
@@ -190,9 +88,9 @@
         </div>
 
         <!-- STRIPED & HOVER -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Striped & Hoverable</h2>
-            <p class="demo-description">Add <code>.ak-table-striped</code> for zebra-striping and <code>.ak-table-hover</code> for hover effects.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Add <code>.ak-table-striped</code> for zebra-striping and <code>.ak-table-hover</code> for hover effects.</p>
             
             <div class="ak-table-container">
                 <table class="ak-table ak-table-striped ak-table-hover">
@@ -236,9 +134,9 @@
         </div>
 
         <!-- COMPACT TABLE -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold">Compact Table</h2>
-            <p class="demo-description">Use <code>.ak-table-sm</code> for denser data display.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Use <code>.ak-table-sm</code> for denser data display.</p>
             
             <div class="ak-table-container">
                 <table class="ak-table ak-table-sm ak-table-hover">

@@ -78,6 +78,12 @@ def process_file(file_path, filename):
     # 3. Extract Theme Toggle
     theme_toggle_match = re.search(r'<button[^>]*id="theme-toggle"[^>]*>.*?</button>', content, re.DOTALL)
     theme_toggle = theme_toggle_match.group(0) if theme_toggle_match else ""
+    
+    if is_index and not theme_toggle:
+        theme_toggle = """
+                    <button id="theme-toggle" class="ak-btn ak-btn-ghost" data-testid="button-theme-toggle">
+                        <i data-lucide="sun" id="theme-icon"></i>
+                    </button>"""
 
     # 4. Replace Header
     # Match existing header block (greedy or non-greedy? We need to be careful not to eat too much)

@@ -1,14 +1,29 @@
 /* Demo specific styles */
 
+body {
+  background-color: var(--ak-color-bg);
+  color: var(--ak-color-text);
+  min-height: 100vh;
+}
+
+body.demo-with-fixed-header {
+  padding-top: 80px;
+}
+
 .demo-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--ak-color-surface);
+  background-color: rgba(20, 20, 20, 0.8); /* Fallback / Dark mode tint */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--ak-color-border);
   padding: 1rem 0;
   margin-bottom: 2rem;
 }
+
+/* Light mode support via media query or class if needed, 
+   but for now keeping consistent with existing dark theme default */
 
 .demo-nav {
   display: flex;
@@ -109,7 +124,7 @@
 }
 
 .demo-preview-box {
-  background: var(--ak-color-secondary);
+  background: var(--ak-color-bg-subtle); /* Updated to match headers.html preference */
   border: 1px solid var(--ak-color-border);
   border-radius: var(--ak-radius-md);
   padding: 1rem;

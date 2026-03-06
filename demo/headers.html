@@ -6,59 +6,13 @@
     <title>AK Design System - Header & Footer Variants</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            background-color: var(--ak-color-bg);
-            color: var(--ak-color-text);
-            padding-top: 80px; /* Space for fixed header */
-        }
-
-        .demo-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(20, 20, 20, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--ak-color-border);
-            z-index: 50;
-            padding: 1rem 0;
-        }
-
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-
-        .demo-section:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-
-        .demo-preview-box {
-            background: var(--ak-color-bg-subtle);
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-md);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            overflow: hidden; /* For transparent header demo */
-        }
-
-        .description {
-            color: var(--ak-color-text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-    </style>
 </head>
-<body>
+<body class="ak-bg-background ak-text-text ak-pt-20 ak-min-h-screen">
 
-    <header class="demo-header">
+    <header class="ak-fixed ak-top-0 ak-left-0 ak-right-0 ak-z-50 ak-bg-surface-80 ak-backdrop-blur-md ak-border-b ak-border-border ak-py-4">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -81,14 +35,14 @@
     <main class="ak-container ak-py-8">
         
         <!-- Header Variants -->
-        <div class="demo-section">
+        <div class="ak-mb-16 ak-pt-8 ak-border-t ak-border-dashed ak-border-border ak-scroll-mt-24" style="border-top: none; padding-top: 0;">
             <h2 class="ak-text-2xl ak-font-bold">Header Variants</h2>
-            <p class="demo-description">Pre-built header variants for rapid prototyping.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Pre-built header variants for rapid prototyping.</p>
 
             <!-- 1. Standard Header -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standard Header</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <header class="ak-header" style="position: relative;">
                         <div class="ak-header-content">
                             <div class="ak-header-brand">AK Design System</div>
@@ -109,7 +63,7 @@
             <!-- 2. Centered Header -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">2. Centered Header</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <header class="ak-header ak-header-centered" style="position: relative;">
                         <div class="ak-header-content">
                             <nav class="ak-header-nav">
@@ -130,7 +84,7 @@
             <!-- 3. Minimal Header -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimal Header</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <header class="ak-header ak-header-minimal" style="position: relative;">
                         <div class="ak-header-content">
                             <div class="ak-header-brand">Dashboard</div>
@@ -151,7 +105,7 @@
             <!-- 4. Transparent Header -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">4. Transparent Header</h3>
-                <div class="demo-preview-box" style="position: relative;">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden" style="position: relative;">
                     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, var(--ak-color-primary) 0%, var(--ak-color-accent) 100%); opacity: 0.1; z-index: 0;"></div>
                     <header class="ak-header ak-header-transparent" style="position: relative; z-index: 1;">
                         <div class="ak-header-content">
@@ -173,7 +127,7 @@
             <!-- 5. Header with Search -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">5. Header with Search</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <header class="ak-header ak-header-search" style="position: relative;">
                         <div class="ak-header-content">
                             <div class="ak-header-brand">AK Design System</div>
@@ -192,7 +146,7 @@
             <!-- 6. Header with Dropdown Navigation -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">6. Header with Dropdown Navigation</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <header class="ak-header ak-header-dropdown" style="position: relative;">
                         <div class="ak-header-content">
                             <div class="ak-header-brand">AK Design System</div>
@@ -220,14 +174,14 @@
         </div>
 
         <!-- Footer Variants -->
-        <div class="demo-section">
+        <div class="ak-mb-16 ak-pt-8 ak-border-t ak-border-dashed ak-border-border ak-scroll-mt-24">
             <h2 class="ak-text-2xl ak-font-bold">Footer Variants</h2>
-            <p class="demo-description">Pre-built footer variants.</p>
+            <p class="ak-text-lg ak-text-muted ak-mb-8 ak-leading-normal">Pre-built footer variants.</p>
 
             <!-- 1. Standard Footer -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">1. Standard Footer</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <footer class="ak-footer" style="position: relative;">
                         <div class="ak-container">
                             <p class="ak-text-sm">&copy; 2025 ak-systems. All rights reserved.</p>
@@ -240,7 +194,7 @@
             <!-- 2. Multi-Column Footer -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">2. Multi-Column Footer</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <footer class="ak-footer ak-footer-multi-column" style="position: relative;">
                         <div class="ak-footer-content">
                             <div class="ak-footer-column">
@@ -275,7 +229,7 @@
             <!-- 3. Minimal Footer -->
             <div class="ak-mb-8">
                 <h3 class="ak-text-lg ak-font-semibold ak-mb-4">3. Minimal Footer</h3>
-                <div class="demo-preview-box">
+                <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded-md ak-p-4 ak-mb-4 ak-overflow-hidden">
                     <footer class="ak-footer ak-footer-minimal" style="position: relative;">
                         <div class="ak-footer-content">
                             <p>&copy; 2025 ak-systems</p>

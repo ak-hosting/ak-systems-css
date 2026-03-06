@@ -47,7 +47,26 @@ $shadows: (
   .#{$prefix}ak-duration-300 { transition-duration: 300ms; }
   .#{$prefix}ak-duration-500 { transition-duration: 500ms; }
   
-  // Opacity could be added here
+  // Opacity
+  .#{$prefix}ak-opacity-0 { opacity: 0; }
+  .#{$prefix}ak-opacity-25 { opacity: 0.25; }
+  .#{$prefix}ak-opacity-50 { opacity: 0.5; }
+  .#{$prefix}ak-opacity-75 { opacity: 0.75; }
+  .#{$prefix}ak-opacity-80 { opacity: 0.8; }
+  .#{$prefix}ak-opacity-90 { opacity: 0.9; }
+  .#{$prefix}ak-opacity-100 { opacity: 1; }
+
+  // Backdrop Filter
+  .#{$prefix}ak-backdrop-blur-none { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .#{$prefix}ak-backdrop-blur-sm { backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+  .#{$prefix}ak-backdrop-blur { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .#{$prefix}ak-backdrop-blur-md { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .#{$prefix}ak-backdrop-blur-lg { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+  .#{$prefix}ak-backdrop-blur-xl { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+  
+  // Background Opacity Mixes (Modern CSS)
+  .#{$prefix}ak-bg-surface-80 { background-color: color-mix(in srgb, var(--ak-color-surface), transparent 20%); }
+  .#{$prefix}ak-bg-surface-90 { background-color: color-mix(in srgb, var(--ak-color-surface), transparent 10%); }
 }
 
 // Generate Base

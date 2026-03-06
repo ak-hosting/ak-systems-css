@@ -12,6 +12,8 @@ $colors: (
   "success": var(--ak-color-success),
   "warning": var(--ak-color-warning),
   "info": var(--ak-color-primary), // Map info to primary for now
+  "background": var(--ak-color-bg),
+  "surface": var(--ak-color-surface),
   "white": #ffffff,
   "black": #000000,
   "transparent": transparent
@@ -26,6 +28,7 @@ $text-colors: (
   "success": var(--ak-color-success),
   "warning": var(--ak-color-warning),
   "info": var(--ak-color-primary),
+  "text": var(--ak-color-text),
   "white": #ffffff,
   "black": #000000
 );

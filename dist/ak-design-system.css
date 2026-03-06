@@ -16834,6 +16834,72 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   transition-duration: 500ms;
 }
 
+.ak-opacity-0 {
+  opacity: 0;
+}
+
+.ak-opacity-25 {
+  opacity: 0.25;
+}
+
+.ak-opacity-50 {
+  opacity: 0.5;
+}
+
+.ak-opacity-75 {
+  opacity: 0.75;
+}
+
+.ak-opacity-80 {
+  opacity: 0.8;
+}
+
+.ak-opacity-90 {
+  opacity: 0.9;
+}
+
+.ak-opacity-100 {
+  opacity: 1;
+}
+
+.ak-backdrop-blur-none {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.ak-backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.ak-backdrop-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.ak-backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ak-backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.ak-backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.ak-bg-surface-80 {
+  background-color: color-mix(in srgb, var(--ak-color-surface), transparent 20%);
+}
+
+.ak-bg-surface-90 {
+  background-color: color-mix(in srgb, var(--ak-color-surface), transparent 10%);
+}
+
 @media (min-width: 640px) {
   .ak-sm\:ak-shadow-none {
     box-shadow: var(--ak-shadow-none);
@@ -16885,6 +16951,57 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   }
   .ak-sm\:ak-duration-500 {
     transition-duration: 500ms;
+  }
+  .ak-sm\:ak-opacity-0 {
+    opacity: 0;
+  }
+  .ak-sm\:ak-opacity-25 {
+    opacity: 0.25;
+  }
+  .ak-sm\:ak-opacity-50 {
+    opacity: 0.5;
+  }
+  .ak-sm\:ak-opacity-75 {
+    opacity: 0.75;
+  }
+  .ak-sm\:ak-opacity-80 {
+    opacity: 0.8;
+  }
+  .ak-sm\:ak-opacity-90 {
+    opacity: 0.9;
+  }
+  .ak-sm\:ak-opacity-100 {
+    opacity: 1;
+  }
+  .ak-sm\:ak-backdrop-blur-none {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ak-sm\:ak-backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .ak-sm\:ak-backdrop-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .ak-sm\:ak-backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .ak-sm\:ak-backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .ak-sm\:ak-backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .ak-sm\:ak-bg-surface-80 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 20%);
+  }
+  .ak-sm\:ak-bg-surface-90 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 10%);
   }
 }
 @media (min-width: 768px) {
@@ -16939,6 +17056,57 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-md\:ak-duration-500 {
     transition-duration: 500ms;
   }
+  .ak-md\:ak-opacity-0 {
+    opacity: 0;
+  }
+  .ak-md\:ak-opacity-25 {
+    opacity: 0.25;
+  }
+  .ak-md\:ak-opacity-50 {
+    opacity: 0.5;
+  }
+  .ak-md\:ak-opacity-75 {
+    opacity: 0.75;
+  }
+  .ak-md\:ak-opacity-80 {
+    opacity: 0.8;
+  }
+  .ak-md\:ak-opacity-90 {
+    opacity: 0.9;
+  }
+  .ak-md\:ak-opacity-100 {
+    opacity: 1;
+  }
+  .ak-md\:ak-backdrop-blur-none {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ak-md\:ak-backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .ak-md\:ak-backdrop-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .ak-md\:ak-backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .ak-md\:ak-backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .ak-md\:ak-backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .ak-md\:ak-bg-surface-80 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 20%);
+  }
+  .ak-md\:ak-bg-surface-90 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 10%);
+  }
 }
 @media (min-width: 1024px) {
   .ak-lg\:ak-shadow-none {
@@ -16991,6 +17159,57 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   }
   .ak-lg\:ak-duration-500 {
     transition-duration: 500ms;
+  }
+  .ak-lg\:ak-opacity-0 {
+    opacity: 0;
+  }
+  .ak-lg\:ak-opacity-25 {
+    opacity: 0.25;
+  }
+  .ak-lg\:ak-opacity-50 {
+    opacity: 0.5;
+  }
+  .ak-lg\:ak-opacity-75 {
+    opacity: 0.75;
+  }
+  .ak-lg\:ak-opacity-80 {
+    opacity: 0.8;
+  }
+  .ak-lg\:ak-opacity-90 {
+    opacity: 0.9;
+  }
+  .ak-lg\:ak-opacity-100 {
+    opacity: 1;
+  }
+  .ak-lg\:ak-backdrop-blur-none {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ak-lg\:ak-backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .ak-lg\:ak-backdrop-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .ak-lg\:ak-backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .ak-lg\:ak-backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .ak-lg\:ak-backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .ak-lg\:ak-bg-surface-80 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 20%);
+  }
+  .ak-lg\:ak-bg-surface-90 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 10%);
   }
 }
 @media (min-width: 1280px) {
@@ -17045,6 +17264,57 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-xl\:ak-duration-500 {
     transition-duration: 500ms;
   }
+  .ak-xl\:ak-opacity-0 {
+    opacity: 0;
+  }
+  .ak-xl\:ak-opacity-25 {
+    opacity: 0.25;
+  }
+  .ak-xl\:ak-opacity-50 {
+    opacity: 0.5;
+  }
+  .ak-xl\:ak-opacity-75 {
+    opacity: 0.75;
+  }
+  .ak-xl\:ak-opacity-80 {
+    opacity: 0.8;
+  }
+  .ak-xl\:ak-opacity-90 {
+    opacity: 0.9;
+  }
+  .ak-xl\:ak-opacity-100 {
+    opacity: 1;
+  }
+  .ak-xl\:ak-backdrop-blur-none {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ak-xl\:ak-backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .ak-xl\:ak-backdrop-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .ak-xl\:ak-backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .ak-xl\:ak-backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .ak-xl\:ak-backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .ak-xl\:ak-bg-surface-80 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 20%);
+  }
+  .ak-xl\:ak-bg-surface-90 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 10%);
+  }
 }
 @media (min-width: 1536px) {
   .ak-2xl\:ak-shadow-none {
@@ -17098,6 +17368,57 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-2xl\:ak-duration-500 {
     transition-duration: 500ms;
   }
+  .ak-2xl\:ak-opacity-0 {
+    opacity: 0;
+  }
+  .ak-2xl\:ak-opacity-25 {
+    opacity: 0.25;
+  }
+  .ak-2xl\:ak-opacity-50 {
+    opacity: 0.5;
+  }
+  .ak-2xl\:ak-opacity-75 {
+    opacity: 0.75;
+  }
+  .ak-2xl\:ak-opacity-80 {
+    opacity: 0.8;
+  }
+  .ak-2xl\:ak-opacity-90 {
+    opacity: 0.9;
+  }
+  .ak-2xl\:ak-opacity-100 {
+    opacity: 1;
+  }
+  .ak-2xl\:ak-backdrop-blur-none {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ak-2xl\:ak-backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .ak-2xl\:ak-backdrop-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .ak-2xl\:ak-backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .ak-2xl\:ak-backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .ak-2xl\:ak-backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .ak-2xl\:ak-bg-surface-80 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 20%);
+  }
+  .ak-2xl\:ak-bg-surface-90 {
+    background-color: color-mix(in srgb, var(--ak-color-surface), transparent 10%);
+  }
 }
 .ak-text-primary {
   color: var(--ak-color-primary);
@@ -17129,6 +17450,10 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 
 .ak-text-info {
   color: var(--ak-color-primary);
+}
+
+.ak-text-text {
+  color: var(--ak-color-text);
 }
 
 .ak-text-white {
@@ -17169,6 +17494,14 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 
 .ak-bg-info {
   background-color: var(--ak-color-primary);
+}
+
+.ak-bg-background {
+  background-color: var(--ak-color-bg);
+}
+
+.ak-bg-surface {
+  background-color: var(--ak-color-surface);
 }
 
 .ak-bg-white {
@@ -17265,6 +17598,14 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   border-color: var(--ak-color-primary);
 }
 
+.ak-border-background {
+  border-color: var(--ak-color-bg);
+}
+
+.ak-border-surface {
+  border-color: var(--ak-color-surface);
+}
+
 .ak-border-white {
   border-color: #ffffff;
 }
@@ -17315,6 +17656,9 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-sm\:ak-text-info {
     color: var(--ak-color-primary);
   }
+  .ak-sm\:ak-text-text {
+    color: var(--ak-color-text);
+  }
   .ak-sm\:ak-text-white {
     color: #ffffff;
   }
@@ -17344,6 +17688,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   }
   .ak-sm\:ak-bg-info {
     background-color: var(--ak-color-primary);
+  }
+  .ak-sm\:ak-bg-background {
+    background-color: var(--ak-color-bg);
+  }
+  .ak-sm\:ak-bg-surface {
+    background-color: var(--ak-color-surface);
   }
   .ak-sm\:ak-bg-white {
     background-color: #ffffff;
@@ -17417,6 +17767,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-sm\:ak-border-info {
     border-color: var(--ak-color-primary);
   }
+  .ak-sm\:ak-border-background {
+    border-color: var(--ak-color-bg);
+  }
+  .ak-sm\:ak-border-surface {
+    border-color: var(--ak-color-surface);
+  }
   .ak-sm\:ak-border-white {
     border-color: #ffffff;
   }
@@ -17462,6 +17818,9 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-md\:ak-text-info {
     color: var(--ak-color-primary);
   }
+  .ak-md\:ak-text-text {
+    color: var(--ak-color-text);
+  }
   .ak-md\:ak-text-white {
     color: #ffffff;
   }
@@ -17491,6 +17850,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   }
   .ak-md\:ak-bg-info {
     background-color: var(--ak-color-primary);
+  }
+  .ak-md\:ak-bg-background {
+    background-color: var(--ak-color-bg);
+  }
+  .ak-md\:ak-bg-surface {
+    background-color: var(--ak-color-surface);
   }
   .ak-md\:ak-bg-white {
     background-color: #ffffff;
@@ -17564,6 +17929,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-md\:ak-border-info {
     border-color: var(--ak-color-primary);
   }
+  .ak-md\:ak-border-background {
+    border-color: var(--ak-color-bg);
+  }
+  .ak-md\:ak-border-surface {
+    border-color: var(--ak-color-surface);
+  }
   .ak-md\:ak-border-white {
     border-color: #ffffff;
   }
@@ -17609,6 +17980,9 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-lg\:ak-text-info {
     color: var(--ak-color-primary);
   }
+  .ak-lg\:ak-text-text {
+    color: var(--ak-color-text);
+  }
   .ak-lg\:ak-text-white {
     color: #ffffff;
   }
@@ -17638,6 +18012,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   }
   .ak-lg\:ak-bg-info {
     background-color: var(--ak-color-primary);
+  }
+  .ak-lg\:ak-bg-background {
+    background-color: var(--ak-color-bg);
+  }
+  .ak-lg\:ak-bg-surface {
+    background-color: var(--ak-color-surface);
   }
   .ak-lg\:ak-bg-white {
     background-color: #ffffff;
@@ -17711,6 +18091,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-lg\:ak-border-info {
     border-color: var(--ak-color-primary);
   }
+  .ak-lg\:ak-border-background {
+    border-color: var(--ak-color-bg);
+  }
+  .ak-lg\:ak-border-surface {
+    border-color: var(--ak-color-surface);
+  }
   .ak-lg\:ak-border-white {
     border-color: #ffffff;
   }
@@ -17756,6 +18142,9 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-xl\:ak-text-info {
     color: var(--ak-color-primary);
   }
+  .ak-xl\:ak-text-text {
+    color: var(--ak-color-text);
+  }
   .ak-xl\:ak-text-white {
     color: #ffffff;
   }
@@ -17785,6 +18174,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   }
   .ak-xl\:ak-bg-info {
     background-color: var(--ak-color-primary);
+  }
+  .ak-xl\:ak-bg-background {
+    background-color: var(--ak-color-bg);
+  }
+  .ak-xl\:ak-bg-surface {
+    background-color: var(--ak-color-surface);
   }
   .ak-xl\:ak-bg-white {
     background-color: #ffffff;
@@ -17858,6 +18253,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-xl\:ak-border-info {
     border-color: var(--ak-color-primary);
   }
+  .ak-xl\:ak-border-background {
+    border-color: var(--ak-color-bg);
+  }
+  .ak-xl\:ak-border-surface {
+    border-color: var(--ak-color-surface);
+  }
   .ak-xl\:ak-border-white {
     border-color: #ffffff;
   }
@@ -17903,6 +18304,9 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-2xl\:ak-text-info {
     color: var(--ak-color-primary);
   }
+  .ak-2xl\:ak-text-text {
+    color: var(--ak-color-text);
+  }
   .ak-2xl\:ak-text-white {
     color: #ffffff;
   }
@@ -17932,6 +18336,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   }
   .ak-2xl\:ak-bg-info {
     background-color: var(--ak-color-primary);
+  }
+  .ak-2xl\:ak-bg-background {
+    background-color: var(--ak-color-bg);
+  }
+  .ak-2xl\:ak-bg-surface {
+    background-color: var(--ak-color-surface);
   }
   .ak-2xl\:ak-bg-white {
     background-color: #ffffff;
@@ -18005,6 +18415,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   .ak-2xl\:ak-border-info {
     border-color: var(--ak-color-primary);
   }
+  .ak-2xl\:ak-border-background {
+    border-color: var(--ak-color-bg);
+  }
+  .ak-2xl\:ak-border-surface {
+    border-color: var(--ak-color-surface);
+  }
   .ak-2xl\:ak-border-white {
     border-color: #ffffff;
   }
@@ -18057,6 +18473,14 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   background-color: var(--ak-color-primary);
 }
 
+.ak-hover\:ak-bg-background:hover {
+  background-color: var(--ak-color-bg);
+}
+
+.ak-hover\:ak-bg-surface:hover {
+  background-color: var(--ak-color-surface);
+}
+
 .ak-hover\:ak-bg-white:hover {
   background-color: #ffffff;
 }
@@ -18103,6 +18527,10 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 
 .ak-hover\:ak-text-info:hover {
   color: var(--ak-color-primary);
+}
+
+.ak-hover\:ak-text-text:hover {
+  color: var(--ak-color-text);
 }
 
 .ak-hover\:ak-text-white:hover {

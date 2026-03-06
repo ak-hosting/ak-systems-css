@@ -19,7 +19,7 @@
             padding-bottom: 4rem;
         }
         
-        .demo-header {
+        .ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8 {
             position: sticky;
             top: 0;
             z-index: 50;
@@ -29,19 +29,19 @@
             margin-bottom: 2rem;
         }
 
-        .demo-nav {
+        .ak-flex ak-items-center ak-gap-4 {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
         
-        .demo-section {
+        .ak-mb-12 {
             margin-bottom: 4rem;
             padding-top: 2rem;
             border-top: 1px dashed var(--ak-color-border);
         }
 
-        .demo-section:first-of-type {
+        .ak-mb-12:first-of-type {
             border-top: none;
             padding-top: 0;
         }
@@ -77,10 +77,10 @@
     </style>
 </head>
 <body class="ak-theme-dark">
-    <header class="demo-header">
+    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -103,7 +103,7 @@
     <main class="ak-container">
         
         <!-- Basic Usage -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Basic Usage</h2>
             <div class="ak-card ak-p-6">
                 <p class="ak-mb-4">Modals are overlay windows that require user interaction. They are hidden by default and triggered by actions.</p>
@@ -112,7 +112,7 @@
         </div>
 
         <!-- Sizes -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Sizes</h2>
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-flex-wrap ak-gap-4">
@@ -126,7 +126,7 @@
         </div>
 
         <!-- Drawers -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Drawers</h2>
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-flex-wrap ak-gap-4">
@@ -141,7 +141,7 @@
         </div>
 
         <!-- Form Modal -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Interactive Examples</h2>
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-flex-wrap ak-gap-4">

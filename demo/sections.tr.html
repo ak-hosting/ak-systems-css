@@ -19,7 +19,7 @@
             padding-bottom: 4rem;
         }
         
-        .demo-header {
+        .ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8 {
             position: sticky;
             top: 0;
             z-index: 50;
@@ -29,23 +29,23 @@
             margin-bottom: 2rem;
         }
 
-        .demo-nav {
+        .ak-flex ak-items-center ak-gap-4 {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
         
-        .demo-section {
+        .ak-mb-12 {
             margin-bottom: 6rem;
             scroll-margin-top: 6rem;
         }
 
-        .ak-company-name {
+        .ak-font-bold ak-text-primary {
             font-weight: bold;
             color: var(--ak-color-primary);
         }
 
-        .ak-copyright-year {
+        .ak-text-sm ak-text-muted {
             font-size: 0.875rem;
             color: var(--ak-color-text-muted);
         }
@@ -63,10 +63,10 @@
     </style>
 </head>
 <body class="ak-theme-dark">
-    <header class="demo-header">
+    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -89,7 +89,7 @@
     <main class="ak-container">
         
         <!-- Hero Sections -->
-        <section id="hero" class="demo-section">
+        <section id="hero" class="ak-mb-12">
             <div class="ak-flex ak-justify-between ak-items-center ak-mb-6">
                 <h2 class="ak-text-2xl ak-font-bold">Hero Bölümleri</h2>
                 <span class="ak-badge ak-badge-primary">Pazarlama</span>
@@ -137,7 +137,7 @@
         </section>
 
         <!-- Pricing Sections -->
-        <section id="pricing" class="demo-section">
+        <section id="pricing" class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Fiyatlandırma Tabloları</h2>
             
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-8">
@@ -193,7 +193,7 @@
         </section>
 
         <!-- Feature Grid -->
-        <section id="features" class="demo-section">
+        <section id="features" class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Özellik Izgarası</h2>
             
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-8">
@@ -248,7 +248,7 @@
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="demo-section">
+        <section id="faq" class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Sıkça Sorulan Sorular</h2>
             
             <div class="ak-max-w-3xl ak-mx-auto">
@@ -277,7 +277,7 @@
         </section>
 
         <!-- Testimonials -->
-        <section id="testimonials" class="demo-section">
+        <section id="testimonials" class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Müşteri Yorumları</h2>
             
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-3 ak-gap-6">
@@ -323,7 +323,7 @@
         </section>
 
         <!-- Footer -->
-        <section id="footer" class="demo-section">
+        <section id="footer" class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Alt Bilgi Düzeni</h2>
             
             <footer class="ak-bg-surface-subtle ak-pt-12 ak-pb-8 ak-rounded-lg">

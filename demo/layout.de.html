@@ -8,23 +8,17 @@
     
     <!-- AK Design System CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
-    <link rel="stylesheet" href="demo.css">
+    
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        body {
-            padding-bottom: 4rem;
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
-    <header class="demo-header">
+    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
         <div class="ak-container">
             <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="demo-nav">
+                <div class="ak-flex ak-items-center ak-gap-4">
                     <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
                         <i data-lucide="menu"></i>
                     </button>
@@ -47,29 +41,29 @@
     <main class="ak-container">
         
         <!-- Standard Grid -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-2">Standard-Raster</h2>
             <p class="ak-text-muted ak-mb-6">Das Basis-Rastersystem unterstützt standardmäßig bis zu 4 Spalten.</p>
             
             <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Spalten gleicher Breite</h3>
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-3 ak-gap-4 ak-mb-8">
-                <div class="demo-grid-box">1</div>
-                <div class="demo-grid-box">2</div>
-                <div class="demo-grid-box">3</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">1</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">2</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">3</div>
             </div>
 
             <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Responsive Raster</h3>
             <p class="ak-text-sm ak-text-muted ak-mb-4">1 Spalte auf Mobilgeräten, 2 auf Tablets, 4 auf Desktops.</p>
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-lg:ak-grid-cols-4 ak-gap-4">
-                <div class="demo-grid-box">1</div>
-                <div class="demo-grid-box">2</div>
-                <div class="demo-grid-box">3</div>
-                <div class="demo-grid-box">4</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">1</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">2</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">3</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">4</div>
             </div>
         </div>
 
         <!-- Extended 12-Column Grid -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <div class="ak-flex ak-items-center ak-gap-3 ak-mb-2">
                 <h2 class="ak-text-2xl ak-font-bold">Erweitertes Raster</h2>
                 <span class="ak-badge ak-badge-accent">Große Projekte</span>
@@ -78,47 +72,47 @@
 
             <h3 class="ak-text-lg ak-font-semibold ak-mb-4">12 Spalten</h3>
             <div class="ak-grid ak-grid-cols-12 ak-gap-2 ak-mb-8">
-                <div class="demo-grid-box">1</div>
-                <div class="demo-grid-box">2</div>
-                <div class="demo-grid-box">3</div>
-                <div class="demo-grid-box">4</div>
-                <div class="demo-grid-box">5</div>
-                <div class="demo-grid-box">6</div>
-                <div class="demo-grid-box">7</div>
-                <div class="demo-grid-box">8</div>
-                <div class="demo-grid-box">9</div>
-                <div class="demo-grid-box">10</div>
-                <div class="demo-grid-box">11</div>
-                <div class="demo-grid-box">12</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">1</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">2</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">3</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">4</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">5</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">6</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">7</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">8</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">9</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">10</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">11</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center">12</div>
             </div>
 
             <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Spalten-Spanning</h3>
             <div class="ak-grid ak-grid-cols-12 ak-gap-4 ak-mb-8">
-                <div class="demo-grid-box ak-col-span-8 demo-grid-box-highlight">Span 8</div>
-                <div class="demo-grid-box ak-col-span-4">Span 4</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-8 ak-bg-primary-subtle ak-text-primary">Span 8</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-4">Span 4</div>
                 
-                <div class="demo-grid-box ak-col-span-4">Span 4</div>
-                <div class="demo-grid-box ak-col-span-4">Span 4</div>
-                <div class="demo-grid-box ak-col-span-4">Span 4</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-4">Span 4</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-4">Span 4</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-4">Span 4</div>
                 
-                <div class="demo-grid-box ak-col-span-6">Span 6</div>
-                <div class="demo-grid-box ak-col-span-6">Span 6</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-6">Span 6</div>
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-6">Span 6</div>
             </div>
 
             <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Responsive Spanning</h3>
             <div class="ak-grid ak-grid-cols-12 ak-gap-4">
                 <!-- Stack on mobile, side-by-side on desktop -->
-                <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-8 demo-grid-box-highlight">
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-12 ak-md:ak-col-span-8 ak-bg-primary-subtle ak-text-primary">
                     Hauptinhalt (12 -> 8 Spalten)
                 </div>
-                <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-4">
+                <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-12 ak-md:ak-col-span-4">
                     Seitenleiste (12 -> 4 Spalten)
                 </div>
             </div>
         </div>
 
         <!-- Layout Patterns -->
-        <div class="demo-section">
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Gängige Layouts</h2>
 
             <!-- Sidebar Layout -->
@@ -154,11 +148,11 @@
             <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Blog / Artikel-Layout</h3>
             <div class="ak-card ak-p-4">
                 <div class="ak-grid ak-grid-cols-12 ak-gap-4">
-                    <div class="demo-grid-box ak-col-span-12">Kopfzeile</div>
-                    <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-3">Linke Seitenleiste</div>
-                    <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-6 demo-grid-box-highlight">Hauptinhalt</div>
-                    <div class="demo-grid-box ak-col-span-12 ak-md:ak-col-span-3">Rechte Seitenleiste</div>
-                    <div class="demo-grid-box ak-col-span-12">Fußzeile</div>
+                    <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-12">Kopfzeile</div>
+                    <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-12 ak-md:ak-col-span-3">Linke Seitenleiste</div>
+                    <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-12 ak-md:ak-col-span-6 ak-bg-primary-subtle ak-text-primary">Hauptinhalt</div>
+                    <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-12 ak-md:ak-col-span-3">Rechte Seitenleiste</div>
+                    <div class="ak-bg-surface-variant ak-p-4 ak-rounded ak-border ak-border-border ak-text-center ak-col-span-12">Fußzeile</div>
                 </div>
             </div>
         </div>

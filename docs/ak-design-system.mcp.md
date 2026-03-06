@@ -22,8 +22,7 @@ Dieses MCP dient als externer Kontext für AI-Agenten (Codex, Cursor, Claude, an
 
 6. **Framework-Grenzen respektieren**: MCP macht unmissverständlich klar, was das Framework ist (CSS-only) und was nicht (kein JavaScript, keine Modifikationen)
 
-7. **Legacy-Kontext**: MCP erklärt Legacy-Dateien und deren Vermeidung, ohne detaillierte Mappings (dafür ak-legacy-map.md)
-
+7. **Legacy-Kontext**: MCP erklärt Legacy-Dateien und deren Vermeidung
 8. **Modul-Hierarchie ohne Details**: MCP erklärt die Struktur und Rollen der Module, aber keine spezifischen Klassen (dafür AGENT_CONTEXT.md)
 
 9. **Versionierung integriert**: MCP berücksichtigt Versionierung und CDN-Nutzung für externe Nutzung
@@ -52,7 +51,6 @@ Dieses MCP dient als externer Kontext für AI-Agenten (Codex, Cursor, Claude, an
 
 - **AGENT_CONTEXT.md**: Technische Referenz mit Klassenlisten und Code-Beispielen
 - **demo/index.html**: Source of Truth für korrekte HTML-Patterns
-- **ak-legacy-map.md**: Mapping zwischen Legacy-Dateien und aktueller Struktur
 - **Dieses MCP**: Mentales Modell, Regeln, Entscheidungslogik (keine Klassenlisten, kein Code)
 
 ---

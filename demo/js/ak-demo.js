@@ -4,6 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Initialize Lucide Icons (CDN)
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
     // 1. Update Copyright Year and Company Name (if elements exist)
     const year = new Date().getFullYear();
     const displayYear = year >= 2026 ? year : 2026;

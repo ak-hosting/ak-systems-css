@@ -1,0 +1,62 @@
+@use "../core/variables" as *;
+
+// Miscellaneous Utilities
+
+@mixin generate-misc($prefix: "") {
+  // Overflow
+  .#{$prefix}ak-overflow-auto { overflow: auto; }
+  .#{$prefix}ak-overflow-hidden { overflow: hidden; }
+  .#{$prefix}ak-overflow-visible { overflow: visible; }
+  .#{$prefix}ak-overflow-scroll { overflow: scroll; }
+  .#{$prefix}ak-overflow-x-auto { overflow-x: auto; }
+  .#{$prefix}ak-overflow-y-auto { overflow-y: auto; }
+
+  // Object Fit
+  .#{$prefix}ak-object-contain { object-fit: contain; }
+  .#{$prefix}ak-object-cover { object-fit: cover; }
+  .#{$prefix}ak-object-fill { object-fit: fill; }
+  .#{$prefix}ak-object-none { object-fit: none; }
+  .#{$prefix}ak-object-scale-down { object-fit: scale-down; }
+
+  // Position specific (top/right/bottom/left) - extending layout
+  .#{$prefix}ak-top-0 { top: 0; }
+  .#{$prefix}ak-right-0 { right: 0; }
+  .#{$prefix}ak-bottom-0 { bottom: 0; }
+  .#{$prefix}ak-left-0 { left: 0; }
+  
+  .#{$prefix}ak-inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+  
+  // Z-Index
+  .#{$prefix}ak-z-0 { z-index: 0; }
+  .#{$prefix}ak-z-10 { z-index: 10; }
+  .#{$prefix}ak-z-20 { z-index: 20; }
+  .#{$prefix}ak-z-30 { z-index: 30; }
+  .#{$prefix}ak-z-40 { z-index: 40; }
+  .#{$prefix}ak-z-50 { z-index: 50; }
+  .#{$prefix}ak-z-auto { z-index: auto; }
+  
+  // Cursor
+  .#{$prefix}ak-cursor-pointer { cursor: pointer; }
+  .#{$prefix}ak-cursor-not-allowed { cursor: not-allowed; }
+
+  // Images
+  .#{$prefix}ak-img-fluid { max-width: 100%; height: auto; }
+  .#{$prefix}ak-img-thumbnail {
+    padding: 0.25rem;
+    background-color: var(--ak-color-surface, #fff);
+    border: 1px solid var(--ak-color-border, #dee2e6);
+    border-radius: var(--ak-radius-sm, 0.25rem);
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Generate Base
+@include generate-misc();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-misc("ak-#{$bp}\\:");
+  }
+}

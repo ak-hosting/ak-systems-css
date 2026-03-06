@@ -7,7 +7,7 @@
     <meta name="description" content="Umfassende Demo des AK Design Systems mit modernen UI-Komponenten, Theming und responsivem Design.">
     
     <!-- AK Design System CSS -->
-    <link rel="stylesheet" href="../dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
@@ -29,6 +29,51 @@
             color: var(--ak-color-accent);
             font-weight: var(--ak-font-weight-medium);
         }
+
+        .code-block {
+            background: var(--ak-color-muted);
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-md);
+            padding: var(--ak-space-4);
+            font-family: monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .color-demo {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--ak-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.75rem;
+        }
+
+        .spacing-demo {
+            background: var(--ak-color-accent);
+            color: white;
+            display: inline-block;
+            margin: var(--ak-space-1);
+        }
+
+        .toast {
+            position: fixed;
+            top: var(--ak-space-4);
+            right: var(--ak-space-4);
+            background: var(--ak-color-surface);
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-md);
+            padding: var(--ak-space-4);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            gap: var(--ak-space-2);
+        }
     </style>
 </head>
 <body class="ak-theme-dark">
@@ -40,7 +85,7 @@
                     <i data-lucide="menu"></i>
                 </button>
                 <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
-                <div class="language-selector">
+                <div class="demo-language-selector">
                     <a href="index.html">EN</a>
                     <a href="index.de.html" class="ak-active">DE</a>
                     <a href="index.tr.html">TR</a>
@@ -221,7 +266,7 @@
                 <div class="ak-mt-8">
                     <h3 class="ak-text-xl ak-font-semibold ak-mb-4">Erste Schritte</h3>
                     <div class="ak-code-block">
-&lt;link rel="stylesheet" href="../dist/ak-design-system.min.css"&gt;</div>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"&gt;</div>
                 </div>
             </section>
 

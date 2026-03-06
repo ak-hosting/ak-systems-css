@@ -1,0 +1,79 @@
+@use "../core/variables" as *;
+
+.ak-nav {
+  display: flex;
+  gap: var(--ak-space-4);
+  align-items: center;
+}
+
+.ak-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--ak-space-2) var(--ak-space-4);
+  color: var(--ak-color-text-muted);
+  font-size: var(--ak-font-size-sm);
+  font-weight: var(--ak-font-weight-medium);
+  border-radius: var(--ak-radius-md);
+  transition: colors 0.2s;
+  text-decoration: none;
+  
+  &:hover {
+    color: var(--ak-color-text);
+    background-color: var(--ak-color-secondary); // subtle
+  }
+  
+  &.active {
+    color: var(--ak-color-primary);
+    background-color: var(--ak-color-secondary); // or maybe primary-light?
+  }
+}
+
+// Tabs
+.ak-tabs {
+  display: inline-flex;
+  height: var(--ak-space-10); // 40px
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ak-radius-md);
+  background-color: var(--ak-color-muted); // bg-muted
+  padding: var(--ak-space-1);
+  color: var(--ak-color-text-muted);
+}
+
+.ak-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: var(--ak-radius-sm);
+  padding: var(--ak-space-1) var(--ak-space-3);
+  font-size: var(--ak-font-size-sm);
+  font-weight: var(--ak-font-weight-medium);
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  &.active {
+    background-color: var(--ak-color-bg); // bg-background
+    color: var(--ak-color-text);
+    box-shadow: var(--ak-shadow-sm);
+  }
+}
+
+.ak-footer-nav-item {
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: var(--ak-color-primary);
+  }
+}

@@ -68,6 +68,10 @@ $align-items: (
   .#{$prefix}ak-grow-0 { flex-grow: 0; }
   .#{$prefix}ak-shrink { flex-shrink: 1; }
   .#{$prefix}ak-shrink-0 { flex-shrink: 0; }
+
+  // Flex Shorthands
+  .#{$prefix}ak-flex-between { display: flex; justify-content: space-between; }
+  .#{$prefix}ak-flex-center { display: flex; justify-content: center; align-items: center; }
 }
 
 // Generate Base

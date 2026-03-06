@@ -1,0 +1,66 @@
+@use "../core/variables" as *;
+
+.ak-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--ak-radius-md);
+  border: 1px solid var(--ak-color-border);
+}
+
+.ak-table {
+  width: 100%;
+  caption-side: bottom;
+  border-collapse: collapse;
+  font-size: var(--ak-font-size-sm);
+  
+  thead {
+    background-color: var(--ak-color-bg); // or secondary
+    
+    tr {
+      border-bottom: 1px solid var(--ak-color-border);
+    }
+    
+    th {
+      height: var(--ak-space-10);
+      padding: 0 var(--ak-space-4);
+      text-align: left;
+      vertical-align: middle;
+      font-weight: var(--ak-font-weight-medium);
+      color: var(--ak-color-text-muted);
+    }
+  }
+  
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--ak-color-border);
+      transition: background-color 0.2s;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:hover {
+        background-color: var(--ak-color-muted); // subtle hover
+      }
+    }
+    
+    td {
+      padding: var(--ak-space-4);
+      vertical-align: middle;
+      color: var(--ak-color-text);
+    }
+  }
+  
+  caption {
+    margin-top: var(--ak-space-4);
+    font-size: var(--ak-font-size-sm);
+    color: var(--ak-color-text-muted);
+  }
+}
+
+.ak-table-caption {
+  margin-top: var(--ak-space-4);
+  font-size: var(--ak-font-size-sm);
+  color: var(--ak-color-text-muted);
+  text-align: left;
+}

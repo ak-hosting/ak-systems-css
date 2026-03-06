@@ -1,0 +1,118 @@
+/* Demo specific styles */
+
+.demo-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ak-color-surface);
+  border-bottom: 1px solid var(--ak-color-border);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.demo-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.demo-section {
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--ak-color-border);
+  scroll-margin-top: 6rem;
+}
+
+.demo-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.demo-grid-box {
+  background-color: var(--ak-color-surface);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  padding: 1rem;
+  text-align: center;
+  color: var(--ak-color-text-muted);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+.demo-grid-box-highlight {
+  background-color: var(--ak-color-primary);
+  color: var(--ak-color-primary-text);
+  border: none;
+}
+
+.demo-code-block {
+  background: var(--ak-color-muted);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  padding: var(--ak-space-4);
+  font-family: monospace;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.demo-color-box {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--ak-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.demo-spacing-box {
+  background: var(--ak-color-accent);
+  color: white;
+  display: inline-block;
+  margin: var(--ak-space-1);
+}
+
+.demo-language-selector {
+  margin-left: var(--ak-space-4);
+}
+
+.demo-language-selector a {
+  margin-right: var(--ak-space-2);
+  text-decoration: none;
+  color: var(--ak-color-text-muted);
+}
+
+.demo-language-selector a.ak-active {
+  color: var(--ak-color-accent);
+  font-weight: var(--ak-font-weight-medium);
+}
+
+/* Description text */
+.demo-description {
+  font-size: 1.125rem;
+  color: var(--ak-color-text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.demo-preview-box {
+  background: var(--ak-color-secondary);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden; /* For transparent header demo */
+}

@@ -1,0 +1,42 @@
+@use "../core/variables" as *;
+
+.ak-card {
+  background-color: var(--ak-color-surface);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-lg);
+  box-shadow: var(--ak-shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ak-card-header {
+  padding: var(--ak-space-6);
+  border-bottom: 1px solid var(--ak-color-border);
+  
+  h3 {
+    margin: 0;
+    font-size: var(--ak-font-size-lg);
+    font-weight: var(--ak-font-weight-semibold);
+    color: var(--ak-color-text);
+  }
+  
+  p {
+    margin: var(--ak-space-1) 0 0;
+    font-size: var(--ak-font-size-sm);
+    color: var(--ak-color-text-muted);
+  }
+}
+
+.ak-card-body {
+  padding: var(--ak-space-6);
+  flex: 1;
+}
+
+.ak-card-footer {
+  padding: var(--ak-space-6);
+  background-color: var(--ak-color-bg); // Slightly different bg?
+  border-top: 1px solid var(--ak-color-border);
+  display: flex;
+  align-items: center;
+}

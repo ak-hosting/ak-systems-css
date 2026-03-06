@@ -7,57 +7,12 @@
     <meta name="description" content="Flexible und erweiterbare Inhaltscontainer zur Darstellung von Daten, Bildern und Aktionen.">
     
     <!-- AK Design System CSS -->
-    <link rel="stylesheet" href="../dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="demo.css">
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        /* Demo-spezifische Stile */
-        body {
-            padding-bottom: 4rem;
-        }
-        
-        .demo-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--ak-color-surface);
-            border-bottom: 1px solid var(--ak-color-border);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .demo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-
-        .demo-section:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-        
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .description { 
-            color: var(--ak-color-text-muted); 
-            margin-bottom: 1.5rem; 
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
     <header class="demo-header">
@@ -91,7 +46,7 @@
         <!-- BASIS-KARTEN -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Basis-Karten</h2>
-            <p class="description">Standard-Karten mit Kopf-, Haupt- und Fußbereich.</p>
+            <p class="demo-description">Standard-Karten mit Kopf-, Haupt- und Fußbereich.</p>
             
             <div class="demo-grid">
                 <!-- Einfache Karte -->
@@ -123,7 +78,7 @@
         <!-- KARTEN-VARIANTEN -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Varianten</h2>
-            <p class="description">Verschiedene Stile für unterschiedliche Kontexte.</p>
+            <p class="demo-description">Verschiedene Stile für unterschiedliche Kontexte.</p>
             
             <div class="demo-grid">
                 <!-- Flache Karte -->
@@ -164,7 +119,7 @@
         <!-- MODERNE VARIANTEN -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Moderne Varianten</h2>
-            <p class="description">Zeitgemäße Stile inklusive Glassmorphismus, Verläufen und erweiterten Hover-Effekten.</p>
+            <p class="demo-description">Zeitgemäße Stile inklusive Glassmorphismus, Verläufen und erweiterten Hover-Effekten.</p>
             
             <div class="demo-grid">
                 <!-- Glass Card -->
@@ -244,7 +199,7 @@
         <!-- INTERAKTIVE KARTEN -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Interaktiv</h2>
-            <p class="description">Karten, die auf Benutzerinteraktion reagieren.</p>
+            <p class="demo-description">Karten, die auf Benutzerinteraktion reagieren.</p>
             
             <div class="demo-grid">
                 <!-- Interaktive Karte -->
@@ -270,7 +225,7 @@
         <!-- BILDER-KARTEN -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Bilder</h2>
-            <p class="description">Karten mit integrierten Medien.</p>
+            <p class="demo-description">Karten mit integrierten Medien.</p>
             
             <div class="demo-grid">
                 <!-- Bild oben -->

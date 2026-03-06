@@ -7,57 +7,12 @@
     <meta name="description" content="Veri, görsel ve eylemleri görüntülemek için esnek ve genişletilebilir içerik kapsayıcıları.">
     
     <!-- AK Design System CSS -->
-    <link rel="stylesheet" href="../dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="demo.css">
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        /* Demo-specific styles */
-        body {
-            padding-bottom: 4rem;
-        }
-        
-        .demo-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--ak-color-surface);
-            border-bottom: 1px solid var(--ak-color-border);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .demo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-
-        .demo-section:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-        
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .description { 
-            color: var(--ak-color-text-muted); 
-            margin-bottom: 1.5rem; 
-        }
-    </style>
 </head>
 <body class="ak-theme-dark">
     <header class="demo-header">
@@ -91,7 +46,7 @@
         <!-- BASIC CARDS -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Temel Kartlar</h2>
-            <p class="description">Başlık, gövde ve altbilgi bölümleri olan standart kartlar.</p>
+            <p class="demo-description">Başlık, gövde ve altbilgi bölümleri olan standart kartlar.</p>
             
             <div class="demo-grid">
                 <!-- Simple Card -->
@@ -123,7 +78,7 @@
         <!-- CARD VARIANTS -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Varyantlar</h2>
-            <p class="description">Çeşitli bağlamlar için farklı stiller.</p>
+            <p class="demo-description">Çeşitli bağlamlar için farklı stiller.</p>
             
             <div class="demo-grid">
                 <!-- Flat Card -->
@@ -164,7 +119,7 @@
         <!-- MODERN VARYANTLAR -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Modern Varyantlar</h2>
-            <p class="description">Cam morfizmi, gradyanlar ve gelişmiş vurgu efektleri dahil çağdaş stiller.</p>
+            <p class="demo-description">Cam morfizmi, gradyanlar ve gelişmiş vurgu efektleri dahil çağdaş stiller.</p>
             
             <div class="demo-grid">
                 <!-- Glass Card -->
@@ -244,7 +199,7 @@
         <!-- INTERACTIVE CARDS -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Etkileşimli</h2>
-            <p class="description">Kullanıcı etkileşimine yanıt veren kartlar.</p>
+            <p class="demo-description">Kullanıcı etkileşimine yanıt veren kartlar.</p>
             
             <div class="demo-grid">
                 <!-- Interactive Card -->
@@ -270,7 +225,7 @@
         <!-- IMAGE CARDS -->
         <div class="demo-section">
             <h2 class="ak-text-2xl ak-font-bold">Görseller</h2>
-            <p class="description">Entegre medyaya sahip kartlar.</p>
+            <p class="demo-description">Entegre medyaya sahip kartlar.</p>
             
             <div class="demo-grid">
                 <!-- Image Top -->

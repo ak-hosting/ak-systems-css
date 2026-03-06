@@ -7,7 +7,7 @@
     <meta name="description" content="AK Tasarım Sistemi bileşenlerini kullanan önceden oluşturulmuş sayfa bölümleri ve düzenler.">
     
     <!-- AK Design System CSS -->
-    <link rel="stylesheet" href="../dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
@@ -38,6 +38,27 @@
         .demo-section {
             margin-bottom: 6rem;
             scroll-margin-top: 6rem;
+        }
+
+        .ak-company-name {
+            font-weight: bold;
+            color: var(--ak-color-primary);
+        }
+
+        .ak-copyright-year {
+            font-size: 0.875rem;
+            color: var(--ak-color-text-muted);
+        }
+
+        .ak-footer-nav-item {
+            font-size: 0.875rem;
+            color: var(--ak-color-text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .ak-footer-nav-item:hover {
+            color: var(--ak-color-primary);
         }
     </style>
 </head>
@@ -350,7 +371,7 @@
                     </div>
                     
                     <div class="ak-border-t ak-border-border ak-pt-8 ak-flex ak-flex-col ak-md:ak-flex-row ak-justify-between ak-items-center">
-                        <p class="ak-text-sm ak-text-muted">© <span class="ak-copyright-year"></span>2026</span> <span class="ak-company-name">ak systems</span>, Inc. Tüm hakları saklıdır.</p>
+                        <p class="ak-text-sm ak-text-muted">© <span class="ak-text-sm ak-text-muted"></span>2026</span> <span class="ak-font-bold ak-text-primary">ak systems</span>, Inc. Tüm hakları saklıdır.</p>
                         <div class="ak-flex ak-gap-4 ak-mt-4 ak-md:ak-mt-0">
                             <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="github" class="ak-w-5 ak-h-5"></i></a>
                             <a href="#" class="ak-text-muted ak-hover:ak-text-primary"><i data-lucide="twitter" class="ak-w-5 ak-h-5"></i></a>

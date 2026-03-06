@@ -16,6 +16,7 @@ mkdir -p "$DIST_DIR"
 # 0. Compile SCSS (Utilities)
 echo "🔨 Compiling SCSS..."
 npx sass src/scss/ak-utilities.scss "$SRC_DIR/ak-utilities.css" --no-source-map
+npx sass src/scss/ak-components-extended.scss "$SRC_DIR/ak-components-extended.css" --no-source-map
 echo "✅ SCSS compiled"
 
 # 1. Bundle CSS files (Concatenation instead of @import)
@@ -25,6 +26,7 @@ cat "$SRC_DIR/ak-core.css" \
     "$SRC_DIR/ak-base.css" \
     "$SRC_DIR/ak-layout.css" \
     "$SRC_DIR/ak-components.css" \
+    "$SRC_DIR/ak-components-extended.css" \
     "$SRC_DIR/ak-loaders.css" \
     "$SRC_DIR/ak-utilities.css" > "$OUTPUT_CSS"
 

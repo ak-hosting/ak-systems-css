@@ -1,0 +1,47 @@
+@use "../core/variables" as *;
+
+// Grid Utilities
+@mixin generate-grid($prefix: "") {
+  // Grid Template Columns
+  .#{$prefix}ak-grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .#{$prefix}ak-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .#{$prefix}ak-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .#{$prefix}ak-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .#{$prefix}ak-grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .#{$prefix}ak-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .#{$prefix}ak-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .#{$prefix}ak-grid-none { grid-template-columns: none; }
+
+  // Grid Column Start/End (Spans)
+  .#{$prefix}ak-col-auto { grid-column: auto; }
+  .#{$prefix}ak-col-span-1 { grid-column: span 1 / span 1; }
+  .#{$prefix}ak-col-span-2 { grid-column: span 2 / span 2; }
+  .#{$prefix}ak-col-span-3 { grid-column: span 3 / span 3; }
+  .#{$prefix}ak-col-span-4 { grid-column: span 4 / span 4; }
+  .#{$prefix}ak-col-span-5 { grid-column: span 5 / span 5; }
+  .#{$prefix}ak-col-span-6 { grid-column: span 6 / span 6; }
+  .#{$prefix}ak-col-span-7 { grid-column: span 7 / span 7; }
+  .#{$prefix}ak-col-span-8 { grid-column: span 8 / span 8; }
+  .#{$prefix}ak-col-span-9 { grid-column: span 9 / span 9; }
+  .#{$prefix}ak-col-span-10 { grid-column: span 10 / span 10; }
+  .#{$prefix}ak-col-span-11 { grid-column: span 11 / span 11; }
+  .#{$prefix}ak-col-span-12 { grid-column: span 12 / span 12; }
+  .#{$prefix}ak-col-span-full { grid-column: 1 / -1; }
+
+  // Gap
+  @each $key, $val in $space-map {
+    .#{$prefix}ak-gap-#{$key} { gap: var(--ak-space-#{$key}, #{$val}); }
+    .#{$prefix}ak-gap-x-#{$key} { column-gap: var(--ak-space-#{$key}, #{$val}); }
+    .#{$prefix}ak-gap-y-#{$key} { row-gap: var(--ak-space-#{$key}, #{$val}); }
+  }
+}
+
+// Generate Base
+@include generate-grid();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-grid("ak-#{$bp}\\:");
+  }
+}

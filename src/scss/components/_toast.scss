@@ -1,0 +1,20 @@
+@use "../core/variables" as *;
+
+.ak-toast {
+  position: fixed;
+  top: var(--ak-space-4);
+  right: var(--ak-space-4);
+  background: var(--ak-color-surface);
+  border: 1px solid var(--ak-color-border);
+  border-radius: var(--ak-radius-md);
+  padding: var(--ak-space-4);
+  box-shadow: var(--ak-shadow-lg);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--ak-space-2);
+  
+  &.ak-hidden {
+    display: none;
+  }
+}

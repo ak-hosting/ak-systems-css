@@ -1,0 +1,61 @@
+@use "../core/variables" as *;
+
+// Effect Utilities (Shadows, Opacity)
+
+$shadows: (
+  none: var(--ak-shadow-none),
+  sm: var(--ak-shadow-sm),
+  base: var(--ak-shadow-base), // Maps to .ak-shadow
+  md: var(--ak-shadow-md),
+  lg: var(--ak-shadow-lg),
+  xl: var(--ak-shadow-xl),
+  2xl: var(--ak-shadow-2xl),
+  inner: var(--ak-shadow-inner)
+);
+
+@mixin generate-effects($prefix: "") {
+  // Box Shadow
+  @each $key, $val in $shadows {
+    @if $key == base {
+      .#{$prefix}ak-shadow { box-shadow: #{$val}; }
+    } @else {
+      .#{$prefix}ak-shadow-#{$key} { box-shadow: #{$val}; }
+    }
+  }
+  
+  // Transitions
+  .#{$prefix}ak-transition {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .#{$prefix}ak-transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .#{$prefix}ak-transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .#{$prefix}ak-duration-150 { transition-duration: 150ms; }
+  .#{$prefix}ak-duration-200 { transition-duration: 200ms; }
+  .#{$prefix}ak-duration-300 { transition-duration: 300ms; }
+  .#{$prefix}ak-duration-500 { transition-duration: 500ms; }
+  
+  // Opacity could be added here
+}
+
+// Generate Base
+@include generate-effects();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-effects("ak-#{$bp}\\:");
+  }
+}

@@ -1,0 +1,54 @@
+@use "../core/variables" as *;
+
+.ak-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ak-radius-full);
+  border: 1px solid transparent;
+  padding: 0.125rem 0.625rem; // py-0.5 px-2.5
+  font-size: var(--ak-font-size-xs);
+  font-weight: var(--ak-font-weight-semibold);
+  transition: colors 0.2s ease;
+  white-space: nowrap;
+  
+  // Default (Primary)
+  background-color: var(--ak-color-primary);
+  color: var(--ak-color-primary-text);
+  border-color: transparent;
+}
+
+.ak-badge-secondary {
+  background-color: var(--ak-color-secondary);
+  color: var(--ak-color-secondary-text);
+}
+
+.ak-badge-outline {
+  background-color: transparent;
+  border-color: var(--ak-color-border);
+  color: var(--ak-color-text);
+}
+
+.ak-badge-destructive {
+  background-color: var(--ak-color-destructive);
+  color: var(--ak-color-destructive-text);
+}
+
+.ak-badge-primary {
+  background-color: var(--ak-color-primary);
+  color: #ffffff;
+}
+
+.ak-badge-success {
+  background-color: var(--ak-color-success);
+  color: #ffffff;
+}
+
+.ak-badge-warning {
+  background-color: var(--ak-color-warning);
+  color: #000000;
+}
+
+.ak-badge-danger {
+  background-color: var(--ak-color-destructive);
+  color: #ffffff;
+}

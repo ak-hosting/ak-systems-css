@@ -7,97 +7,16 @@
     <meta name="description" content="Layout-Komponenten und Rastersystem des AK Design Systems.">
     
     <!-- AK Design System CSS -->
-    <link rel="stylesheet" href="../dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="demo.css">
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
-        /* Demo-specific styles */
         body {
             padding-bottom: 4rem;
-        }
-        
-        .demo-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--ak-color-surface);
-            border-bottom: 1px solid var(--ak-color-border);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .demo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .demo-grid-box {
-            background-color: var(--ak-color-surface);
-            border: 1px solid var(--ak-color-border);
-            border-radius: var(--ak-radius-md);
-            padding: 1rem;
-            text-align: center;
-            color: var(--ak-color-text-muted);
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 3rem;
-        }
-
-        .demo-grid-box-highlight {
-            background-color: var(--ak-color-primary);
-            color: var(--ak-color-primary-text);
-            border: none;
-        }
-        
-        .demo-section {
-            margin-bottom: 4rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--ak-color-border);
-        }
-
-        .demo-section:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-
-        /* 
-           EXTENDED GRID SYSTEM (Demo Only) 
-           This demonstrates the 12-column grid system capabilities 
-           intended for larger projects.
-        */
-        .ak-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
-        .ak-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
-        
-        .ak-col-span-1 { grid-column: span 1 / span 1 !important; }
-        .ak-col-span-2 { grid-column: span 2 / span 2 !important; }
-        .ak-col-span-3 { grid-column: span 3 / span 3 !important; }
-        .ak-col-span-4 { grid-column: span 4 / span 4 !important; }
-        .ak-col-span-5 { grid-column: span 5 / span 5 !important; }
-        .ak-col-span-6 { grid-column: span 6 / span 6 !important; }
-        .ak-col-span-7 { grid-column: span 7 / span 7 !important; }
-        .ak-col-span-8 { grid-column: span 8 / span 8 !important; }
-        .ak-col-span-9 { grid-column: span 9 / span 9 !important; }
-        .ak-col-span-10 { grid-column: span 10 / span 10 !important; }
-        .ak-col-span-11 { grid-column: span 11 / span 11 !important; }
-        .ak-col-span-12 { grid-column: span 12 / span 12 !important; }
-
-        @media (min-width: 768px) {
-            .ak-md\:ak-col-span-3 { grid-column: span 3 / span 3 !important; }
-            .ak-md\:ak-col-span-4 { grid-column: span 4 / span 4 !important; }
-            .ak-md\:ak-col-span-6 { grid-column: span 6 / span 6 !important; }
-            .ak-md\:ak-col-span-8 { grid-column: span 8 / span 8 !important; }
-            .ak-md\:ak-col-span-9 { grid-column: span 9 / span 9 !important; }
-        }
-        
-        @media (min-width: 1024px) {
-            .ak-lg\:ak-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
-            .ak-lg\:ak-col-span-3 { grid-column: span 3 / span 3 !important; }
         }
     </style>
 </head>

@@ -19,6 +19,9 @@ $displays: (
       display: #{$val};
     }
   }
+  
+  // Aliases
+  .#{$prefix}ak-hidden { display: none; }
 }
 
 // Position Utilities

@@ -1,0 +1,54 @@
+@use "../core/variables" as *;
+
+// Border Radius Utilities
+$radii: (
+  none: var(--ak-radius-none),
+  sm: var(--ak-radius-sm),
+  base: var(--ak-radius-base), // This maps to .ak-rounded
+  md: var(--ak-radius-md),
+  lg: var(--ak-radius-lg),
+  xl: var(--ak-radius-xl),
+  2xl: var(--ak-radius-2xl),
+  3xl: var(--ak-radius-3xl),
+  full: var(--ak-radius-full)
+);
+
+@mixin generate-borders($prefix: "") {
+  @each $key, $val in $radii {
+    @if $key == base {
+      .#{$prefix}ak-rounded { border-radius: #{$val}; }
+    } @else {
+      .#{$prefix}ak-rounded-#{$key} { border-radius: #{$val}; }
+    }
+  }
+  
+  // Specific corners can be added if needed, but for now just full radius
+  
+  // Border Widths
+  .#{$prefix}ak-border { border-width: 1px; border-style: solid; }
+  .#{$prefix}ak-border-0 { border-width: 0; }
+  .#{$prefix}ak-border-2 { border-width: 2px; border-style: solid; }
+  .#{$prefix}ak-border-4 { border-width: 4px; border-style: solid; }
+  
+  .#{$prefix}ak-border-t { border-top-width: 1px; border-top-style: solid; }
+  .#{$prefix}ak-border-r { border-right-width: 1px; border-right-style: solid; }
+  .#{$prefix}ak-border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+  .#{$prefix}ak-border-l { border-left-width: 1px; border-left-style: solid; }
+  
+  // Border Styles
+  .#{$prefix}ak-border-solid { border-style: solid; }
+  .#{$prefix}ak-border-dashed { border-style: dashed; }
+  .#{$prefix}ak-border-dotted { border-style: dotted; }
+  .#{$prefix}ak-border-double { border-style: double; }
+  .#{$prefix}ak-border-none { border-style: none; }
+}
+
+// Generate Base
+@include generate-borders();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-borders("ak-#{$bp}\\:");
+  }
+}

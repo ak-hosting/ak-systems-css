@@ -1,0 +1,107 @@
+@use "../core/variables" as *;
+
+// Color Utilities
+// Note: We use CSS variables defined in :root
+
+$colors: (
+  "primary": var(--ak-color-primary),
+  "secondary": var(--ak-color-secondary),
+  "accent": var(--ak-color-accent),
+  "muted": var(--ak-color-muted),
+  "destructive": var(--ak-color-destructive),
+  "success": var(--ak-color-success),
+  "warning": var(--ak-color-warning),
+  "info": var(--ak-color-primary), // Map info to primary for now
+  "white": #ffffff,
+  "black": #000000,
+  "transparent": transparent
+);
+
+$text-colors: (
+  "primary": var(--ak-color-primary),
+  "secondary": var(--ak-color-secondary), // This might be too dark/light depending on theme, maybe use -text variants?
+  "accent": var(--ak-color-accent),
+  "muted": var(--ak-color-text-muted), // Use text-muted for text
+  "destructive": var(--ak-color-destructive),
+  "success": var(--ak-color-success),
+  "warning": var(--ak-color-warning),
+  "info": var(--ak-color-primary),
+  "white": #ffffff,
+  "black": #000000
+);
+
+@mixin generate-colors($prefix: "") {
+  // Text Colors
+  @each $key, $val in $text-colors {
+    .#{$prefix}ak-text-#{$key} { color: #{$val}; }
+  }
+  
+  // Background Colors
+  @each $key, $val in $colors {
+    .#{$prefix}ak-bg-#{$key} { background-color: #{$val}; }
+  }
+  
+  // Aliases for colors
+  .#{$prefix}ak-bg-danger { background-color: var(--ak-color-destructive); color: white; }
+  .#{$prefix}ak-bg-card { background-color: var(--ak-color-surface, #fff); }
+
+  // Special backgrounds
+  .#{$prefix}ak-bg-subtle { background-color: var(--ak-color-secondary); }
+  
+  // Surface Colors
+  .#{$prefix}ak-bg-surface { background-color: var(--ak-color-surface); }
+  .#{$prefix}ak-bg-surface-muted { background-color: var(--ak-color-muted); } // Approx
+  .#{$prefix}ak-bg-surface-subtle { background-color: var(--ak-color-secondary); } // Approx
+
+  // Subtle Variants
+  .#{$prefix}ak-bg-primary-subtle { background-color: var(--ak-color-secondary); color: var(--ak-color-primary); }
+  .#{$prefix}ak-bg-success-subtle { background-color: var(--ak-color-secondary); color: var(--ak-color-success); } // Need lighter shade really
+  .#{$prefix}ak-bg-warning-subtle { background-color: var(--ak-color-secondary); color: var(--ak-color-warning); }
+  .#{$prefix}ak-bg-destructive-subtle { background-color: var(--ak-color-secondary); color: var(--ak-color-destructive); }
+
+  // Gradients
+  .#{$prefix}ak-bg-gradient-primary { 
+    background: linear-gradient(135deg, var(--ak-color-primary), var(--ak-color-accent)); 
+    color: white;
+  }
+
+  // Border Colors
+  @each $key, $val in $colors {
+    .#{$prefix}ak-border-#{$key} { border-color: #{$val}; }
+  }
+  .#{$prefix}ak-border-border { border-color: var(--ak-color-border); } // Semantic
+
+  // Specific Text Colors
+  .#{$prefix}ak-text-warning-content { color: var(--ak-color-warning); }
+  
+  // Link Hover
+  .#{$prefix}ak-link-hover:hover { 
+    text-decoration: underline; 
+    color: var(--ak-color-primary);
+  }
+}
+
+// Generate Base
+@include generate-colors();
+
+// Generate Responsive
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include generate-colors("ak-#{$bp}\\:");
+  }
+}
+
+// Hover states (non-responsive usually, but can be)
+@mixin generate-hover-colors() {
+  @each $key, $val in $colors {
+     .ak-hover\:ak-bg-#{$key}:hover { background-color: #{$val}; }
+  }
+  .ak-hover\:ak-bg-subtle:hover { background-color: var(--ak-color-secondary); }
+  
+  // Text Hover
+  @each $key, $val in $text-colors {
+     .ak-hover\:ak-text-#{$key}:hover { color: #{$val}; }
+  }
+}
+
+@include generate-hover-colors();

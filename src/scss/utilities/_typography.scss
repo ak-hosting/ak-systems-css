@@ -64,6 +64,28 @@ $sizes: (
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  
+  // Text Decoration
+  .#{$prefix}ak-underline {
+    text-decoration: underline;
+  }
+  .#{$prefix}ak-no-underline {
+    text-decoration: none;
+  }
+  
+  // Font Style
+  .#{$prefix}ak-font-italic {
+    font-style: italic;
+  }
+  .#{$prefix}ak-not-italic {
+    font-style: normal;
+  }
+  
+  // List Styles
+  .#{$prefix}ak-list-disc { list-style-type: disc; }
+  .#{$prefix}ak-list-circle { list-style-type: circle; }
+  .#{$prefix}ak-list-decimal { list-style-type: decimal; }
+  .#{$prefix}ak-list-none { list-style-type: none; }
 }
 
 // Generate Base

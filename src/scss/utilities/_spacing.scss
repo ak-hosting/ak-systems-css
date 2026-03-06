@@ -40,6 +40,29 @@ $directions: (
       }
     }
   }
+  
+  // Auto Margins
+  .#{$prefix}ak-m-auto { margin: auto; }
+  .#{$prefix}ak-mx-auto { margin-left: auto; margin-right: auto; }
+  .#{$prefix}ak-my-auto { margin-top: auto; margin-bottom: auto; }
+  .#{$prefix}ak-ml-auto { margin-left: auto; }
+  .#{$prefix}ak-mr-auto { margin-right: auto; }
+  .#{$prefix}ak-mt-auto { margin-top: auto; }
+  .#{$prefix}ak-mb-auto { margin-bottom: auto; }
+  
+  // Space Between (Stack)
+  @each $size-key, $size-value in $space-map {
+    .#{$prefix}ak-space-y-#{$size-key} > :not([hidden]) ~ :not([hidden]) {
+      --ak-space-y-reverse: 0;
+      margin-top: calc(var(--ak-space-#{$size-key}, #{$size-value}) * calc(1 - var(--ak-space-y-reverse)));
+      margin-bottom: calc(var(--ak-space-#{$size-key}, #{$size-value}) * var(--ak-space-y-reverse));
+    }
+    .#{$prefix}ak-space-x-#{$size-key} > :not([hidden]) ~ :not([hidden]) {
+      --ak-space-x-reverse: 0;
+      margin-right: calc(var(--ak-space-#{$size-key}, #{$size-value}) * var(--ak-space-x-reverse));
+      margin-left: calc(var(--ak-space-#{$size-key}, #{$size-value}) * calc(1 - var(--ak-space-x-reverse)));
+    }
+  }
 }
 
 // Generate Base Utilities

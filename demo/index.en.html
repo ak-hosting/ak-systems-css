@@ -7,7 +7,7 @@
     <meta name="description" content="Comprehensive demo of the AK Design System with modern UI components, theming, and responsive design.">
     
     <!-- AK Design System CSS -->
-    <link rel="stylesheet" href="../dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -97,7 +97,7 @@
                     <i data-lucide="menu"></i>
                 </button>
                 <h1 class="ak-text-2xl ak-font-bold">AK Design System</h1>
-                <div class="language-selector">
+                <div class="demo-language-selector">
                     <a href="index.en.html" class="ak-active">EN</a>
                     <a href="index.de.html">DE</a>
                     <a href="index.tr.html">TR</a>
@@ -166,7 +166,7 @@
     <!-- Main Content -->
     <main class="ak-main">
         <!-- Overview Section -->
-        <section id="overview-section" class="content-section">
+        <section id="overview-section" class="demo-section">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-6">AK Design System</h1>
                 <p class="ak-text-xl ak-text-muted ak-mb-8">
@@ -220,7 +220,7 @@
         </section>
 
         <!-- Design Tokens Section -->
-        <section id="tokens-section" class="content-section" style="display: none;">
+        <section id="tokens-section" class="demo-section" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Design Tokens</h1>
 
@@ -229,25 +229,25 @@
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Colors</h2>
                     <div class="ak-grid ak-grid-4 ak-gap-4">
                         <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-primary);" data-testid="color-primary">
+                            <div class="demo-color-box" style="background: var(--ak-primary);" data-testid="color-primary">
                                 Primary
                             </div>
                             <p class="ak-text-sm ak-mt-2">hsl(217, 91%, 60%)</p>
                         </div>
                         <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-secondary);" data-testid="color-secondary">
+                            <div class="demo-color-box" style="background: var(--ak-secondary);" data-testid="color-secondary">
                                 Secondary
                             </div>
                             <p class="ak-text-sm ak-mt-2">hsl(217, 19%, 27%)</p>
                         </div>
                         <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-accent);" data-testid="color-accent">
+                            <div class="demo-color-box" style="background: var(--ak-accent);" data-testid="color-accent">
                                 Accent
                             </div>
                             <p class="ak-text-sm ak-mt-2">hsl(142, 76%, 36%)</p>
                         </div>
                         <div class="ak-text-center">
-                            <div class="color-demo" style="background: var(--ak-destructive);" data-testid="color-destructive">
+                            <div class="demo-color-box" style="background: var(--ak-destructive);" data-testid="color-destructive">
                                 Destructive
                             </div>
                             <p class="ak-text-sm ak-mt-2">hsl(0, 84%, 60%)</p>
@@ -278,19 +278,16 @@
                 <div class="demo-section">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Spacing</h2>
                     <div class="ak-flex ak-flex-wrap ak-gap-2">
-                        <div class="spacing-demo ak-p-1" data-testid="spacing-1">4px</div>
-                        <div class="spacing-demo ak-p-2" data-testid="spacing-2">8px</div>
-                        <div class="spacing-demo ak-p-3" data-testid="spacing-3">12px</div>
-                        <div class="spacing-demo ak-p-4" data-testid="spacing-4">16px</div>
-                        <div class="spacing-demo ak-p-6" data-testid="spacing-6">24px</div>
-                        <div class="spacing-demo ak-p-8" data-testid="spacing-8">32px</div>
+                        <div class="demo-spacing-box ak-w-4 ak-h-4"></div>
+                        <div class="demo-spacing-box ak-w-8 ak-h-8"></div>
+                        <div class="demo-spacing-box ak-w-16 ak-h-16"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Components Section -->
-        <section id="components-section" class="content-section" style="display: none;">
+        <section id="components-section" class="demo-section" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Components</h1>
 
@@ -440,7 +437,7 @@
         </section>
 
         <!-- Utilities Section -->
-        <section id="utilities-section" class="content-section" style="display: none;">
+        <section id="utilities-section" class="demo-section" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Utility Classes</h1>
 
@@ -494,15 +491,15 @@
         </section>
 
         <!-- Examples Section -->
-        <section id="examples-section" class="content-section" style="display: none;">
+        <section id="examples-section" class="demo-section" style="display: none;">
             <div class="ak-container">
                 <h1 class="ak-text-4xl ak-font-bold ak-mb-8">Code Examples</h1>
 
                 <div class="demo-section">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Include CSS</h2>
-                    <div class="code-block">
+                    <div class="demo-code-block">
 &lt;!-- In your HTML head --&gt;
-&lt;link rel="stylesheet" href="../dist/ak-design-system.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"&gt;
 
 &lt;!-- Theme class on body --&gt;
 &lt;body class="ak-theme-dark"&gt; &lt;!-- or ak-theme-light --&gt;
@@ -511,7 +508,7 @@
 
                 <div class="demo-section">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Button Examples</h2>
-                    <div class="code-block">
+                    <div class="demo-code-block">
 &lt;!-- Primary button --&gt;
 &lt;button class="ak-btn ak-btn-primary"&gt;
   Primary action
@@ -532,7 +529,7 @@
 
                 <div class="demo-section">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Card Examples</h2>
-                    <div class="code-block">
+                    <div class="demo-code-block">
 &lt;div class="ak-card"&gt;
   &lt;div class="ak-card-header"&gt;
     &lt;h3 class="ak-card-title"&gt;Card Title&lt;/h3&gt;
@@ -550,7 +547,7 @@
 
                 <div class="demo-section">
                     <h2 class="ak-text-2xl ak-font-semibold ak-mb-4">Grid System</h2>
-                    <div class="code-block">
+                    <div class="demo-code-block">
 &lt;!-- Responsive grid --&gt;
 &lt;div class="ak-grid ak-grid-4 ak-gap-6"&gt;
   &lt;div class="ak-card"&gt;Item 1&lt;/div&gt;
@@ -624,7 +621,7 @@
     </div>
 
     <!-- Toast Container -->
-    <div id="toast" class="toast" data-testid="toast">
+    <div id="toast" class="ak-toast ak-hidden" data-testid="toast">
         <i id="toast-icon" data-lucide="check-circle"></i>
         <span id="toast-message">Toast message</span>
         <button id="close-toast" class="ak-btn ak-btn-ghost ak-btn-sm">
@@ -768,12 +765,12 @@
                 toast.style.borderColor = 'var(--ak-destructive)';
             }
 
-            toast.classList.add('active');
+            toast.classList.remove('ak-hidden');
             lucide.createIcons();
 
             // Auto-hide after 3 seconds
             setTimeout(() => {
-                toast.classList.remove('active');
+                toast.classList.add('ak-hidden');
             }, 3000);
         }
 
@@ -786,7 +783,7 @@
         });
 
         closeToastBtn.addEventListener('click', () => {
-            toast.classList.remove('active');
+            toast.classList.add('ak-hidden');
         });
 
         // Form handling

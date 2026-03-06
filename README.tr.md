@@ -6,21 +6,24 @@ ak-systems tarafından hızlı prototipler için geliştirilmiş hafif bir CSS f
 
 ## Kurulum
 
-Tek desteklenen giriş (geliştirme):
+### Üretim (CDN) - Önerilen
 
-```html
-<link rel="stylesheet" href="css/ak-design-system/index.css">
-```
-
-Üretim/CDN girişi:
+Framework'ü kullanmanın en güvenilir yolu olan jsDelivr CDN'ini kullanın.
 
 ```html
 <!-- Belirli bir sürümü kullanın (üretim için önerilen) -->
-<!-- Bu sürüm değişmez ve kararlıdır -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.2/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"
 />
+```
+
+### Geliştirme (Yerel)
+
+Sadece framework'ün kendisine katkıda bulunuyorsanız kullanın.
+
+```html
+<link rel="stylesheet" href="css/ak-design-system/index.css">
 ```
 
 ### Bleeding Edge (Kararsız)

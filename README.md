@@ -6,21 +6,24 @@ A lightweight CSS framework by ak-systems for rapid prototyping.
 
 ## Installation
 
-Use the canonical CSS entry (development):
+### Production (CDN) - Recommended
 
-```html
-<link rel="stylesheet" href="css/ak-design-system/index.css">
-```
-
-Production/CDN entry:
+Use the jsDelivr CDN to include the minified CSS. This is the most reliable way to use the framework.
 
 ```html
 <!-- Use a specific version (recommended for production) -->
-<!-- This version is immutable and will not change -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"
 />
+```
+
+### Development (Local)
+
+Only use this if you are contributing to the framework itself.
+
+```html
+<link rel="stylesheet" href="css/ak-design-system/index.css">
 ```
 
 ### Bleeding Edge (Unstable)

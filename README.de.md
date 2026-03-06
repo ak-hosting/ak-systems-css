@@ -6,21 +6,24 @@ Ein leichtgewichtiges CSS-Framework von ak-systems für schnelle Prototypen.
 
 ## Installation
 
-Einziger unterstützter Einstieg (Entwicklung):
+### Produktion (CDN) - Empfohlen
 
-```html
-<link rel="stylesheet" href="css/ak-design-system/index.css">
-```
-
-Production/CDN-Einstieg:
+Nutzen Sie das jsDelivr CDN, um das CSS einzubinden. Dies ist der zuverlässigste Weg.
 
 ```html
 <!-- Spezifische Version nutzen (empfohlen für Produktion) -->
-<!-- Diese Version ist unveränderlich und stabil -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v1.3.2/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"
 />
+```
+
+### Entwicklung (Lokal)
+
+Nur nutzen, wenn Sie am Framework selbst arbeiten.
+
+```html
+<link rel="stylesheet" href="css/ak-design-system/index.css">
 ```
 
 ### Bleeding Edge (Instabil)

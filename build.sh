@@ -48,6 +48,10 @@ cat "$CSS_DIR/ak-core.css" \
     "$CSS_DIR/ak-utilities.css" \
     "$CSS_DIR/ak-modifiers.css" >> "$OUTPUT_FILE"
 
+if [ -f "$CSS_DIR/ak-backgrounds.css" ]; then
+    cat "$CSS_DIR/ak-backgrounds.css" >> "$OUTPUT_FILE"
+fi
+
 # Get file size in human-readable format
 if command -v numfmt &> /dev/null; then
     SIZE=$(numfmt --to=iec-i --suffix=B $(stat -f%z "$OUTPUT_FILE" 2>/dev/null || stat -c%s "$OUTPUT_FILE" 2>/dev/null))
@@ -117,7 +121,7 @@ if [ -f "$OUTPUT_FILE" ] && [ -f "$MIN_OUTPUT_FILE" ]; then
 fi
 
 # Count source files
-SOURCE_FILES=7
+SOURCE_FILES=8
 
 echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"

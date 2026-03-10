@@ -73,8 +73,6 @@ def verify_all_demos(demo_dir, minified_files):
 if __name__ == "__main__":
     DEMO_DIR = "demo"
     MINIFIED_FILES = ["dist/ak-design-system.min.css"]
-    if os.path.exists("dist/ak-backgrounds.min.css"):
-        MINIFIED_FILES.append("dist/ak-backgrounds.min.css")
     
     if not os.path.exists(DEMO_DIR):
         print(f"Error: Demo directory {DEMO_DIR} not found.")

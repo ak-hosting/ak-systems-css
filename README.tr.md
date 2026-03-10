@@ -14,7 +14,7 @@ Framework'ü kullanmanın en güvenilir yolu olan jsDelivr CDN'ini kullanın.
 <!-- Belirli bir sürümü kullanın (üretim için önerilen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.1/dist/ak-design-system.min.css"
 />
 ```
 
@@ -23,7 +23,7 @@ Framework'ü kullanmanın en güvenilir yolu olan jsDelivr CDN'ini kullanın.
 Sadece framework'ün kendisine katkıda bulunuyorsanız kullanın.
 
 ```html
-<link rel="stylesheet" href="css/ak-design-system/index.css">
+<link rel="stylesheet" href="dist/ak-design-system.css">
 ```
 
 ### Bleeding Edge (Kararsız)
@@ -43,11 +43,17 @@ Sadece framework'ün kendisine katkıda bulunuyorsanız kullanın.
 - **Önerilen:** İstenmeyen güncellemeleri önlemek için sürüm etiketlerine sabitleyin (örn. `.../ak-systems-css@v1.3.2/...`). Bu, biz değişiklik yapsak bile sitenizin tam olarak aynı görünmesini sağlar.
 - **Geliştirme:** En son değişiklikleri her zaman almak için `.../ak-systems-css@main/...` kullanın. Sınıf adlarını değiştirirsek bunun düzeninizi bozabileceğini unutmayın.
 - Detaylı sürüm geçmişi için [CHANGELOG.md](CHANGELOG.md) dosyasına bakın.
-- Yalnızca desteklenen girişler: Geliştirme için `css/ak-design-system/index.css` ve üretim/CDN için `dist/ak-design-system.min.css`.
+- Yalnızca desteklenen girişler: Geliştirme için `dist/ak-design-system.css` ve üretim/CDN için `dist/ak-design-system.min.css`.
 
 ## Derleme (Build) Süreci
 
 `dist/` klasöründeki dosyaları oluşturmak için:
+
+```bash
+./build-css.sh
+```
+
+`css/ak-design-system/` içindeki CSS dosyaları güncelse ve sadece bundle + minify yapmak istiyorsanız:
 
 ```bash
 ./build.sh

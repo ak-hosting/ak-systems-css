@@ -14,7 +14,7 @@ Use the jsDelivr CDN to include the minified CSS. This is the most reliable way 
 <!-- Use a specific version (recommended for production) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.1/dist/ak-design-system.min.css"
 />
 ```
 
@@ -23,7 +23,7 @@ Use the jsDelivr CDN to include the minified CSS. This is the most reliable way 
 Only use this if you are contributing to the framework itself.
 
 ```html
-<link rel="stylesheet" href="css/ak-design-system/index.css">
+<link rel="stylesheet" href="dist/ak-design-system.css">
 ```
 
 ### Bleeding Edge (Unstable)
@@ -49,10 +49,15 @@ To generate the distribution files in `dist/`, run the build script:
 ```
 
 This will:
-1. Compile SCSS utilities (in `src/scss`) to `css/ak-design-system/ak-utilities.css`
+1. Compile SCSS modules (in `src/scss`) to `css/ak-design-system/*.css`
 2. Bundle all CSS files into `dist/ak-design-system.css`
 3. Minify the bundle to `dist/ak-design-system.min.css`
-4. Generate a Gzip version for size analysis
+
+If you already have up-to-date CSS files in `css/ak-design-system/` and only want to bundle + minify:
+
+```bash
+./build.sh
+```
 
 ## Architecture (v2.0+)
 
@@ -60,7 +65,8 @@ Version 2.0 introduces a modern SCSS-based architecture for utilities, removing 
 
 - **Core**: Variables & Reset (`ak-core.css`, `ak-base.css`)
 - **Layout**: Grid, Containers (`ak-layout.css`)
-- **Components**: Buttons, Cards, etc. (`ak-components.css`)
+- **Components**: Buttons, Cards, etc. (`ak-components.css`, `ak-components-extended.css`)
+- **Backgrounds**: Patterns and decorative backgrounds (`ak-backgrounds.css`)
 - **Utilities**: Generated from SCSS modules (`ak-utilities.css`)
   - Spacing (`m-4`, `p-2`)
   - Layout (`block`, `absolute`)
@@ -175,15 +181,14 @@ The MCP is designed for external use by AI agents and focuses on principles and 
 
 1. Serve the repo locally (e.g., `python3 -m http.server` from the project root).
 2. Open `demo/index.html` (or a localized variant) in the browser.
-3. Temporarily include any optional module links you want to test (see above).
-4. Verify background, border, shadow, position, size, layout, and accessibility helpers render as expected alongside existing components.
+3. Verify background, border, shadow, position, size, layout, and accessibility helpers render as expected alongside existing components.
 
 ## Versioning and CDN Usage
 
 - **Recommended:** Pin to release tags (e.g., `.../ak-systems-css@v1.3.1/...`) to avoid unintentional updates. This ensures your site looks exactly the same, even if we release major changes.
 - **Development:** Use `.../ak-systems-css@main/...` to always get the latest changes. Be aware that this might break your layout if we change class names.
 - See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
-- Supported entries only: `css/ak-design-system/index.css` for development and `dist/ak-design-system.min.css` for production/CDN.
+- Supported entries only: `dist/ak-design-system.css` for development and `dist/ak-design-system.min.css` for production/CDN.
 
 ## Important Notes
 

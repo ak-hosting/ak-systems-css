@@ -14,7 +14,7 @@ Nutzen Sie das jsDelivr CDN, um das CSS einzubinden. Dies ist der zuverlässigst
 <!-- Spezifische Version nutzen (empfohlen für Produktion) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.1/dist/ak-design-system.min.css"
 />
 ```
 
@@ -23,7 +23,7 @@ Nutzen Sie das jsDelivr CDN, um das CSS einzubinden. Dies ist der zuverlässigst
 Nur nutzen, wenn Sie am Framework selbst arbeiten.
 
 ```html
-<link rel="stylesheet" href="css/ak-design-system/index.css">
+<link rel="stylesheet" href="dist/ak-design-system.css">
 ```
 
 ### Bleeding Edge (Instabil)
@@ -43,11 +43,17 @@ Wenn Sie die absolut neuesten Änderungen vom `main`-Branch benötigen (nicht f�
 - **Empfohlen:** Auf Release-Tags pinnen (z. B. `.../ak-systems-css@v1.3.2/...`), um unbeabsichtigte Updates zu vermeiden. Dies stellt sicher, dass Ihre Seite exakt gleich aussieht, auch wenn wir Änderungen vornehmen.
 - **Entwicklung:** Nutzen Sie `.../ak-systems-css@main/...`, um immer die neuesten Änderungen zu erhalten. Beachten Sie, dass dies Ihr Layout brechen kann, wenn wir Klassennamen ändern.
 - Siehe [CHANGELOG.md](CHANGELOG.md) für detaillierte Versionshistorie.
-- Unterstützte Einstiegspunkte: `css/ak-design-system/index.css` für Entwicklung und `dist/ak-design-system.min.css` für Produktion/CDN.
+- Unterstützte Einstiegspunkte: `dist/ak-design-system.css` für Entwicklung und `dist/ak-design-system.min.css` für Produktion/CDN.
 
 ## Build Prozess
 
 Um die Distributionsdateien in `dist/` zu generieren:
+
+```bash
+./build-css.sh
+```
+
+Wenn die CSS-Dateien in `css/ak-design-system/` bereits aktuell sind und Sie nur bundlen + minifizieren möchten:
 
 ```bash
 ./build.sh

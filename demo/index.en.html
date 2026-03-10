@@ -24,19 +24,17 @@
             </div>
             <div class="ak-header-actions">
                 <div class="ak-flex ak-gap-2">
-                    <a href="index.en.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                    <a href="index.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
                     <a href="index.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
                     <a href="index.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
-                    
-                    <button id="theme-toggle" class="ak-btn ak-btn-ghost" data-testid="button-theme-toggle">
-                        <i data-lucide="sun" id="theme-icon"></i>
-                    </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Sidebar / Drawer --><div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+    <!-- Sidebar / Drawer -->
+    
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
         <div class="ak-modal-content">
             <div class="ak-modal-header">
                 <h2 class="ak-modal-title">Navigation</h2>
@@ -46,46 +44,30 @@
             </div>
             <div class="ak-modal-body">
                 <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
-                    <li>
-                        <a href="#overview" class="ak-active" data-section="overview">
-                            <i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                            <span>Overview</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#tokens" data-section="tokens">
-                            <i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                            <span>Design Tokens</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#components" data-section="components">
-                            <i data-lucide="layout" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                            <span>Components</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="selection-controls.html" data-section="selection">
-                            <i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                            <span>Selection Controls</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#utilities" data-section="utilities">
-                            <i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                            <span>Utility Classes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#examples" data-section="examples">
-                            <i data-lucide="code" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                            <span>Code Examples</span>
-                        </a>
-                    </li>
+                    <li><a href="index.html" class="ak-active" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Overview</span></a></li>
+                    <li><a href="typography.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typography</span></a></li>
+                    <li><a href="sections.html" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Sections</span></a></li>
+                    <li><a href="index.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Colors</span></a></li>
+                    <li><a href="backgrounds.html" data-page="backgrounds"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Backgrounds</span></a></li>
+                    <li><a href="buttons.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="loaders.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loaders</span></a></li>
+                    <li><a href="forms.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Forms</span></a></li>
+                    <li><a href="selection-controls.html" data-page="selection-controls"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Selection Controls</span></a></li>
+                    <li><a href="upload.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
+                    <li><a href="alerts.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
+                    <li><a href="modals.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modals</span></a></li>
+                    <li><a href="tables.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tables</span></a></li>
+                    <li><a href="extended.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Extended</span></a></li>
+                    <li><a href="layout.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="headers.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utility Classes</span></a></li>
                 </ul>
             </div>
         </div>
     </div>
+
+
 
     <!-- Main Content -->
     <main class="ak-main">
@@ -492,30 +474,9 @@
     </main>
 
     <!-- Footer Navigation (Mobile) -->
-    <footer class="ak-footer-nav ak-md:ak-hidden">
-        <a href="#overview" class="ak-footer-nav-item" data-section="overview" data-testid="footer-nav-home">
-            <i data-lucide="home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#components" class="ak-footer-nav-item" data-section="components" data-testid="footer-nav-components">
-            <i data-lucide="layout"></i>
-            <span>Components</span>
-        </a>
-        <a href="#tokens" class="ak-footer-nav-item" data-section="tokens" data-testid="footer-nav-tokens">
-            <i data-lucide="palette"></i>
-            <span>Tokens</span>
-        </a>
-        <a href="#utilities" class="ak-footer-nav-item" data-section="utilities" data-testid="footer-nav-utilities">
-            <i data-lucide="wrench"></i>
-            <span>Utils</span>
-        </a>
-    </footer>
+    
 
-    <footer class="ak-footer">
-        <div class="ak-container">
-            <p class="ak-text-sm" style="font-weight: var(--ak-font-weight-light);">&copy; 2025 ak-systems. Published under the <a href="../LICENSE">ak-systems CSS Framework License</a>.</p>
-        </div>
-    </footer>
+    
 
     <!-- Modal -->
     <div id="example-modal" class="ak-modal" data-testid="modal-overlay">

@@ -9,20 +9,19 @@
 </head>
 <body class="ak-bg-background ak-text-text ak-pt-20">
 
-    <header class="ak-w-full ak-bg-surface ak-border-b ak-border-border ak-py-4 ak-mb-8">
-        <div class="ak-container">
-            <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="ak-flex ak-items-center ak-gap-4">
-                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
-                        <i data-lucide="menu"></i>
-                    </button>
-
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
                     <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
                         <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
-                        Panele Dön
+                        Back to Index
                     </a>
-                    <h1 class="ak-text-xl ak-font-bold ak-ml-4" >Header & Footer Varyantları</h1>
-                </div>
+                <h1 class="ak-text-xl ak-font-bold">Header & Footer Varyantları</h1>
+            </div>
+            <div class="ak-header-actions">
                 <div class="ak-flex ak-gap-2">
                     <a href="headers.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
                     <a href="headers.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
@@ -249,6 +248,8 @@
 
     
     <!-- Sidebar / Drawer -->
+    
+    
     <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
         <div class="ak-modal-content">
             <div class="ak-modal-header">
@@ -261,12 +262,13 @@
                 <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
                     <li><a href="index.tr.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Genel Bakış</span></a></li>
                     <li><a href="typography.tr.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tipografi</span></a></li>
+                    <li><a href="sections.tr.html" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Bölümler</span></a></li>
                     <li><a href="index.tr.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Renkler</span></a></li>
-                    <li><a href="backgrounds.tr.html"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Arka Planlar</span></a></li>
+                    <li><a href="backgrounds.tr.html" data-page="backgrounds"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Arka Planlar</span></a></li>
                     <li><a href="buttons.tr.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Butonlar</span></a></li>
                     <li><a href="loaders.tr.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yükleyiciler</span></a></li>
                     <li><a href="forms.tr.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formlar</span></a></li>
-                    <li><a href="selection-controls.html" data-page="selection"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Seçim Kontrolleri</span></a></li>
+                    <li><a href="selection-controls.tr.html" data-page="selection-controls"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Seçim Kontrolleri</span></a></li>
                     <li><a href="upload.tr.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yükleme</span></a></li>
                     <li><a href="cards.tr.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Kartlar</span></a></li>
                     <li><a href="alerts.tr.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Uyarılar</span></a></li>
@@ -280,6 +282,8 @@
             </div>
         </div>
     </div>
+
+
 
     
 

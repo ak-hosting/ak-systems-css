@@ -9,20 +9,19 @@
 </head>
 <body class="ak-bg-background ak-text-text ak-pt-20">
 
-    <header class="ak-fixed ak-top-0 ak-left-0 ak-right-0 ak-z-50 ak-bg-surface-80 ak-backdrop-blur-md ak-border-b ak-border-border ak-py-4">
-        <div class="ak-container">
-            <div class="ak-flex ak-justify-between ak-items-center">
-                <div class="ak-flex ak-items-center ak-gap-4">
-                    <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
-                        <i data-lucide="menu"></i>
-                    </button>
-
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
                     <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
                         <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                         Back to Index
                     </a>
-                    <h1 class="ak-text-xl ak-font-bold ak-ml-4" style="display: inline-block;">Header & Footer Variants</h1>
-                </div>
+                <h1 class="ak-text-xl ak-font-bold">Header & Footer Variants</h1>
+            </div>
+            <div class="ak-header-actions">
                 <div class="ak-flex ak-gap-2">
                     <a href="headers.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
                     <a href="headers.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
@@ -249,6 +248,8 @@
 
     
     <!-- Sidebar / Drawer -->
+    
+    
     <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
         <div class="ak-modal-content">
             <div class="ak-modal-header">
@@ -261,12 +262,13 @@
                 <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
                     <li><a href="index.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Overview</span></a></li>
                     <li><a href="typography.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typography</span></a></li>
+                    <li><a href="sections.html" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Sections</span></a></li>
                     <li><a href="index.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Colors</span></a></li>
-                    <li><a href="backgrounds.html"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Backgrounds</span></a></li>
+                    <li><a href="backgrounds.html" data-page="backgrounds"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Backgrounds</span></a></li>
                     <li><a href="buttons.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
                     <li><a href="loaders.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loaders</span></a></li>
                     <li><a href="forms.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Forms</span></a></li>
-                    <li><a href="selection-controls.html" data-page="selection"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Selection Controls</span></a></li>
+                    <li><a href="selection-controls.html" data-page="selection-controls"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Selection Controls</span></a></li>
                     <li><a href="upload.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
                     <li><a href="cards.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
                     <li><a href="alerts.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
@@ -280,6 +282,8 @@
             </div>
         </div>
     </div>
+
+
 
     
 

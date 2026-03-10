@@ -1,34 +1,59 @@
 import os
 import re
 
-DEMO_DIR = '/Users/ak/dev-cloud/ak-systems-css/demo'
-REFERENCE_FOOTER = """
-    <footer class="ak-footer">
-        <div class="ak-container">
-            <p class="ak-text-sm">&copy; 2025 ak-systems. All rights reserved.</p>
-        </div>
-    </footer>
-"""
+DEMO_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", "demo"))
 
-def get_header_template(title, lang_links, theme_toggle="", is_index=False):
-    # Standardize Language Links
-    # If lang_links is empty or malformed, we might need to regenerate them based on filename
-    # But for now, let's assume we can extract them or use a default set if missing.
-    
+
+def filename_to_lang(filename: str) -> str:
+    if filename.endswith(".de.html"):
+        return "de"
+    if filename.endswith(".tr.html"):
+        return "tr"
+    if filename.endswith(".en.html"):
+        return "en"
+    return "en"
+
+
+def filename_to_base(filename: str) -> str:
+    if filename.endswith(".de.html") or filename.endswith(".tr.html") or filename.endswith(".en.html"):
+        return filename[:-8]
+    if filename.endswith(".html"):
+        return filename[:-5]
+    return filename
+
+
+def is_index_file(filename: str) -> bool:
+    return filename_to_base(filename) == "index"
+
+
+def get_lang_switcher(base: str, lang: str) -> str:
+    base_for_links = "index" if base == "index" else base
+
+    def btn(href: str, label: str, active: bool) -> str:
+        cls = "ak-btn ak-btn-sm ak-btn-primary" if active else "ak-btn ak-btn-sm ak-btn-ghost"
+        return f'<a href="{href}" class="{cls}">{label}</a>'
+
+    return "\n                    ".join(
+        [
+            btn(f"{base_for_links}.html", "EN", lang == "en"),
+            btn(f"{base_for_links}.de.html", "DE", lang == "de"),
+            btn(f"{base_for_links}.tr.html", "TR", lang == "tr"),
+        ]
+    )
+
+
+def get_header_template(title: str, base: str, lang: str, index_lang_href: str) -> str:
     back_link = ""
-    if not is_index:
-        back_link = """
-                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+    if base != "index":
+        back_link = f"""
+                    <a href="{index_lang_href}" class="ak-btn ak-btn-ghost ak-btn-sm">
                         <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                         Back to Index
                     </a>"""
-    
-    # Ensure title is wrapped correctly
+
     title_html = f'<h1 class="ak-text-xl ak-font-bold">{title}</h1>'
-    
-    # If lang_links are passed as list/string, insert them.
-    # Default to generic if not found (though we should try to preserve existing hrefs)
-    
+    lang_links = get_lang_switcher(base, lang)
+
     return f"""<header class="ak-header">
         <div class="ak-header-content">
             <div class="ak-flex ak-items-center ak-gap-4">
@@ -40,149 +65,268 @@ def get_header_template(title, lang_links, theme_toggle="", is_index=False):
             <div class="ak-header-actions">
                 <div class="ak-flex ak-gap-2">
                     {lang_links}
-                    {theme_toggle}
                 </div>
             </div>
         </div>
     </header>"""
 
-def process_file(file_path, filename):
-    with open(file_path, 'r') as f:
-        content = f.read()
-    
-    is_index = 'index' in filename
-    
-    # 1. Extract Title
-    title_match = re.search(r'<h1[^>]*>(.*?)</h1>', content)
-    title = title_match.group(1) if title_match else "AK Design System"
-    
-    # 2. Extract Language Links
-    # Extract links that look like language switchers (EN/DE/TR)
-    lang_links_list = re.findall(r'<a href="[^"]+"[^>]*class="[^"]*ak-btn[^"]*"[^>]*>\s*(?:EN|DE|TR)\s*</a>', content)
-    
-    if lang_links_list:
-        lang_links = "\n                    ".join(lang_links_list)
-    else:
-        # Fallback if no lang links found (e.g. maybe different structure)
-        # Try to guess based on filename
-        base_name = filename.split('.')[0]
-        lang_links = f"""<a href="{base_name}.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
-                    <a href="{base_name}.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
-                    <a href="{base_name}.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>"""
-        # Adjust active state based on lang
-        if '.de.' in filename:
-            lang_links = lang_links.replace('ak-btn-primary">EN', 'ak-btn-ghost">EN').replace('ak-btn-ghost">DE', 'ak-btn-primary">DE')
-        elif '.tr.' in filename:
-            lang_links = lang_links.replace('ak-btn-primary">EN', 'ak-btn-ghost">EN').replace('ak-btn-ghost">TR', 'ak-btn-primary">TR')
 
-    # 3. Extract Theme Toggle
-    theme_toggle_match = re.search(r'<button[^>]*id="theme-toggle"[^>]*>.*?</button>', content, re.DOTALL)
-    theme_toggle = theme_toggle_match.group(0) if theme_toggle_match else ""
-    
-    if is_index and not theme_toggle:
-        theme_toggle = """
-                    <button id="theme-toggle" class="ak-btn ak-btn-ghost" data-testid="button-theme-toggle">
-                        <i data-lucide="sun" id="theme-icon"></i>
-                    </button>"""
+def get_drawer_title(lang: str) -> str:
+    if lang == "tr":
+        return "Gezinme"
+    return "Navigation"
 
-    # 4. Replace Header
-    # Match existing header block (greedy or non-greedy? We need to be careful not to eat too much)
-    # Most headers seem to start with <header and end with </header>
-    # We will replace the entire FIRST header block found.
-    
-    new_header = get_header_template(title, lang_links, theme_toggle, is_index)
-    
-    # Regex to find the header.
-    # Note: index.html has a comment <!-- Header --> before it.
-    
-    header_pattern = re.compile(r'<header.*?>.*?</header>', re.DOTALL)
-    
-    if header_pattern.search(content):
-        content = header_pattern.sub(new_header, content, count=1)
-    else:
-        # If no header found, insert after <body ...>
-        body_match = re.search(r'<body[^>]*>', content)
-        if body_match:
-            content = content[:body_match.end()] + '\n' + new_header + content[body_match.end():]
-    
-    # 4. Replace/Add Footer
-    # Find existing footer (the page footer, not example footers inside code blocks or containers)
-    # This is tricky because there might be multiple footers in examples.
-    # We should look for the footer at the very end of the body, before scripts.
-    
-    # Strategy: Check if the LAST footer is likely the page footer.
-    # Or check if there is a footer that is a direct child of body (hard to tell with regex).
-    # But in our demo files, the page footer should be near the end.
-    
-    # If we find a footer that looks like the page footer (class="ak-footer" and possibly containing copyright), replace it.
-    # If not, append it.
-    
-    # Let's try to find a footer that is NOT inside a `div class="ak-bg-surface-subtle..."` (which are examples).
-    # But regex is weak for this.
-    
-    # Alternative: Look for the specific footer structure we want to replace OR append if missing.
-    # If we assume the page footer is the last element before scripts/modals?
-    
-    # Let's just append the footer before the `nav-drawer` or `scripts` if it doesn't exist.
-    # If it exists (e.g. in index.html), we might want to replace it.
-    
-    # In index.html, the footer is `<footer class="ak-footer">\n    </footer>`.
-    # We can match that specific pattern.
-    
-    footer_pattern = re.compile(r'<footer class="ak-footer">\s*(<div class="ak-container">.*?</div>)?\s*</footer>', re.DOTALL)
-    
-    # Find all footers
-    footers = list(footer_pattern.finditer(content))
-    
-    replaced_footer = False
-    if footers:
-        # Check if the last footer is the main one.
-        # In index.html, there are many footers. The last one is the empty one.
-        last_footer = footers[-1]
-        # We can try to replace the last footer if it looks like a page footer.
-        # But for safety, let's only replace if it's explicitly the one we identified or if it's missing.
-        
-        # Actually, let's just insert our footer before the nav-drawer (if present) or scripts.
-        # And REMOVE any "page footer" that we identify as the old one (if it exists).
-        pass
-        
-    # Simplified approach:
-    # 1. Remove any existing "Page Footer" (we define this as a footer at the root level, usually near end).
-    #    In index.html it's `<footer class="ak-footer"></footer>` at the end.
-    #    In buttons.html it's missing.
-    
-    # Let's remove the specific footer pattern found in index.html
-    content = re.sub(r'<footer class="ak-footer">\s*</footer>', '', content) # Remove empty footer
-    content = re.sub(r'<footer class="ak-footer">\s*<div class="ak-container">\s*<p class="ak-text-sm">&copy;.*?</p>\s*</div>\s*</footer>', '', content, flags=re.DOTALL) # Remove existing correct footer to re-add it
-    
-    # Now append the new footer
-    # Insert before <div id="nav-drawer" ...> OR <script> OR </body>
-    
-    insertion_point = -1
-    
-    nav_drawer_match = re.search(r'<div id="nav-drawer"', content)
-    if nav_drawer_match:
-        insertion_point = nav_drawer_match.start()
-    else:
-        script_match = re.search(r'<script', content)
-        if script_match:
-            insertion_point = script_match.start()
+
+def get_nav_labels(lang: str) -> dict:
+    if lang == "de":
+        return {
+            "index": "Übersicht",
+            "typography": "Typografie",
+            "sections": "Sektionen",
+            "colors": "Farben",
+            "backgrounds": "Hintergründe",
+            "buttons": "Buttons",
+            "loaders": "Loaders",
+            "forms": "Formulare",
+            "selection-controls": "Auswahl",
+            "upload": "Upload",
+            "cards": "Cards",
+            "alerts": "Alerts",
+            "modals": "Modals",
+            "tables": "Tabellen",
+            "extended": "Erweitert",
+            "layout": "Layout",
+            "headers": "Header & Footer",
+            "utilities": "Utilities",
+        }
+    if lang == "tr":
+        return {
+            "index": "Genel Bakış",
+            "typography": "Tipografi",
+            "sections": "Bölümler",
+            "colors": "Renkler",
+            "backgrounds": "Arka Planlar",
+            "buttons": "Butonlar",
+            "loaders": "Yükleyiciler",
+            "forms": "Formlar",
+            "selection-controls": "Seçim Kontrolleri",
+            "upload": "Yükleme",
+            "cards": "Kartlar",
+            "alerts": "Uyarılar",
+            "modals": "Modallar",
+            "tables": "Tablolar",
+            "extended": "Genişletilmiş",
+            "layout": "Düzen",
+            "headers": "Header & Footer",
+            "utilities": "Utility Classes",
+        }
+    return {
+        "index": "Overview",
+        "typography": "Typography",
+        "sections": "Sections",
+        "colors": "Colors",
+        "backgrounds": "Backgrounds",
+        "buttons": "Buttons",
+        "loaders": "Loaders",
+        "forms": "Forms",
+        "selection-controls": "Selection Controls",
+        "upload": "Upload",
+        "cards": "Cards",
+        "alerts": "Alerts",
+        "modals": "Modals",
+        "tables": "Tables",
+        "extended": "Extended",
+        "layout": "Layout",
+        "headers": "Header & Footer",
+        "utilities": "Utility Classes",
+    }
+
+
+def get_drawer_template(lang: str, active_key: str, index_lang_href: str) -> str:
+    labels = get_nav_labels(lang)
+
+    def li(href: str, key: str, icon: str) -> str:
+        cls = " class=\"ak-active\"" if key == active_key else ""
+        return f'<li><a href="{href}"{cls} data-page="{key}"><i data-lucide="{icon}" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>{labels[key]}</span></a></li>'
+
+    suffix = ""
+    if lang == "de":
+        suffix = ".de"
+    elif lang == "tr":
+        suffix = ".tr"
+
+    return f"""
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">{get_drawer_title(lang)}</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    {li(index_lang_href, "index", "home")}
+                    {li(f"typography{suffix}.html", "typography", "type")}
+                    {li(f"sections{suffix}.html", "sections", "layers")}
+                    {li(f"{index_lang_href}#colors", "colors", "palette")}
+                    {li(f"backgrounds{suffix}.html", "backgrounds", "image")}
+                    {li(f"buttons{suffix}.html", "buttons", "mouse-pointer-click")}
+                    {li(f"loaders{suffix}.html", "loaders", "loader")}
+                    {li(f"forms{suffix}.html", "forms", "form-input")}
+                    {li(f"selection-controls{suffix}.html", "selection-controls", "check-square")}
+                    {li(f"upload{suffix}.html", "upload", "cloud-upload")}
+                    {li(f"cards{suffix}.html", "cards", "credit-card")}
+                    {li(f"alerts{suffix}.html", "alerts", "alert-circle")}
+                    {li(f"modals{suffix}.html", "modals", "layout-dashboard")}
+                    {li(f"tables{suffix}.html", "tables", "table")}
+                    {li(f"extended{suffix}.html", "extended", "layout-grid")}
+                    {li(f"layout{suffix}.html", "layout", "layout-dashboard")}
+                    {li(f"headers{suffix}.html", "headers", "layout-header")}
+                    {li(f"{index_lang_href}#utilities", "utilities", "wrench")}
+                </ul>
+            </div>
+        </div>
+    </div>
+"""
+
+
+def find_matching_closing_tag_end(content: str, start_idx: int, tag: str) -> int | None:
+    pattern = re.compile(rf"<{tag}\b[^>]*>|</{tag}\s*>", re.IGNORECASE)
+    depth = 0
+    for m in pattern.finditer(content, start_idx):
+        token = m.group(0).lower()
+        if token.startswith(f"</{tag}"):
+            depth -= 1
+            if depth == 0:
+                return m.end()
         else:
-            body_end_match = re.search(r'</body>', content)
-            if body_end_match:
-                insertion_point = body_end_match.start()
-    
-    if insertion_point != -1:
-        content = content[:insertion_point] + REFERENCE_FOOTER + '\n' + content[insertion_point:]
-    
-    with open(file_path, 'w') as f:
+            depth += 1
+    return None
+
+
+def find_matching_div_end(content: str, start_idx: int) -> int | None:
+    pattern = re.compile(r"<div\b[^>]*>|</div\s*>", re.IGNORECASE)
+    depth = 0
+    for m in pattern.finditer(content, start_idx):
+        token = m.group(0).lower()
+        if token.startswith("</div"):
+            depth -= 1
+            if depth == 0:
+                return m.end()
+        else:
+            depth += 1
+    return None
+
+
+def remove_page_footer_after_main(content: str) -> str:
+    main_end = content.rfind("</main>")
+    if main_end == -1:
+        return content
+
+    drawer_start = content.find('<div id="nav-drawer"', main_end)
+    if drawer_start == -1:
+        drawer_start = len(content)
+
+    footer_matches = list(
+        re.finditer(r'<footer\b[^>]*class="[^"]*\bak-footer\b[^"]*"[^>]*>', content[main_end:drawer_start], re.IGNORECASE)
+    )
+    if not footer_matches:
+        return content
+
+    footer_open = footer_matches[-1]
+    footer_start = main_end + footer_open.start()
+    footer_end = find_matching_closing_tag_end(content, footer_start, "footer")
+    if footer_end is None:
+        return content
+
+    return content[:footer_start] + content[footer_end:]
+
+
+def replace_page_header(content: str, new_header: str) -> str:
+    body_match = re.search(r"<body\b[^>]*>", content, re.IGNORECASE)
+    if not body_match:
+        return content
+
+    main_match = re.search(r"<main\b", content, re.IGNORECASE)
+    search_end = main_match.start() if main_match else len(content)
+
+    header_start = content.find("<header", body_match.end(), search_end)
+    if header_start == -1:
+        return content[:body_match.end()] + "\n" + new_header + content[body_match.end():]
+
+    header_end = find_matching_closing_tag_end(content, header_start, "header")
+    if header_end is None:
+        return content
+
+    return content[:header_start] + new_header + content[header_end:]
+
+
+def replace_or_insert_drawer(content: str, drawer_html: str) -> str:
+    drawer_start = content.rfind('<div id="nav-drawer"')
+    if drawer_start != -1:
+        drawer_end = find_matching_div_end(content, drawer_start)
+        if drawer_end is None:
+            return content
+        return content[:drawer_start] + drawer_html + content[drawer_end:]
+
+    insert_before = content.rfind("</body>")
+    if insert_before == -1:
+        return content + drawer_html
+    return content[:insert_before] + drawer_html + content[insert_before:]
+
+
+def remove_theme_toggle_button_from_header(content: str) -> str:
+    return re.sub(r'\s*<button[^>]*\bid="theme-toggle"[^>]*>.*?</button>\s*', "\n", content, flags=re.IGNORECASE | re.DOTALL)
+
+
+def process_file(file_path: str, filename: str) -> None:
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    lang = filename_to_lang(filename)
+    base = filename_to_base(filename)
+    active_key = base
+    if base == "index":
+        active_key = "index"
+
+    suffix = ""
+    if lang == "de":
+        suffix = ".de"
+    elif lang == "tr":
+        suffix = ".tr"
+
+    index_lang_href = f"index{suffix}.html"
+
+    title_match = re.search(r"<header\b[\s\S]*?<h1[^>]*>(.*?)</h1>", content, re.IGNORECASE)
+    if title_match:
+        title = title_match.group(1).strip()
+    else:
+        title_tag = re.search(r"<title>(.*?)</title>", content, re.IGNORECASE | re.DOTALL)
+        title = "AK Design System"
+        if title_tag:
+            title = re.sub(r"\s+-\s+AK Design System\s*$", "", title_tag.group(1).strip())
+
+    content = remove_theme_toggle_button_from_header(content)
+    new_header = get_header_template(title=title, base=base, lang=lang, index_lang_href=index_lang_href)
+    content = replace_page_header(content, new_header)
+
+    drawer_html = get_drawer_template(lang=lang, active_key=active_key, index_lang_href=index_lang_href)
+    content = replace_or_insert_drawer(content, drawer_html)
+
+    content = remove_page_footer_after_main(content)
+
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(content)
+
     print(f"Updated {filename}")
 
-def main():
-    for filename in os.listdir(DEMO_DIR):
-        if filename.endswith('.html') and 'headers' not in filename:
+
+def main() -> None:
+    for filename in sorted(os.listdir(DEMO_DIR)):
+        if filename.endswith(".html"):
             process_file(os.path.join(DEMO_DIR, filename), filename)
+
 
 if __name__ == "__main__":
     main()

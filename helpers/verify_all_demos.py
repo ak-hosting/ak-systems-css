@@ -20,7 +20,16 @@ def extract_classes_from_html(file_path):
         print(f"Error reading {file_path}: {e}")
         return set()
 
-def verify_all_demos(demo_dir, minified_file):
+def css_escape_class_selector(cls):
+    escaped = []
+    for ch in cls:
+        if ch.isalnum() or ch in ['-', '_']:
+            escaped.append(ch)
+        else:
+            escaped.append('\\' + ch)
+    return '.' + ''.join(escaped)
+
+def verify_all_demos(demo_dir, minified_files):
     """Verifies that all classes used in demo files exist in the minified CSS."""
     
     print(f"Scanning demo directory: {demo_dir}")
@@ -35,23 +44,22 @@ def verify_all_demos(demo_dir, minified_file):
 
     print(f"Total unique 'ak-' classes found in demos: {len(all_demo_classes)}")
 
-    print(f"Reading minified file: {minified_file}")
-    try:
-        with open(minified_file, 'r', encoding='utf-8') as f:
-            minified_content = f.read()
-    except Exception as e:
-        print(f"Error reading minified file: {e}")
-        return
+    minified_contents = []
+    for minified_file in minified_files:
+        print(f"Reading minified file: {minified_file}")
+        try:
+            with open(minified_file, 'r', encoding='utf-8') as f:
+                minified_contents.append(f.read())
+        except Exception as e:
+            print(f"Error reading minified file: {e}")
+            return
 
     missing_classes = []
     for cls in all_demo_classes:
-        # Handle responsive prefixes with colons
-        # HTML: class="ak-md:ak-grid-cols-2"
-        # CSS: .ak-md\:ak-grid-cols-2
-        css_selector = f".{cls.replace(':', '\\:')}"
+        css_selector = css_escape_class_selector(cls)
         
         # Check if the class exists in the minified content
-        if css_selector not in minified_content:
+        if not any(css_selector in content for content in minified_contents):
             missing_classes.append(cls)
 
     if missing_classes:
@@ -64,14 +72,17 @@ def verify_all_demos(demo_dir, minified_file):
 
 if __name__ == "__main__":
     DEMO_DIR = "demo"
-    MINIFIED_FILE = "dist/ak-design-system.min.css"
+    MINIFIED_FILES = ["dist/ak-design-system.min.css"]
+    if os.path.exists("dist/ak-backgrounds.min.css"):
+        MINIFIED_FILES.append("dist/ak-backgrounds.min.css")
     
     if not os.path.exists(DEMO_DIR):
         print(f"Error: Demo directory {DEMO_DIR} not found.")
         sys.exit(1)
         
-    if not os.path.exists(MINIFIED_FILE):
-        print(f"Error: Minified file {MINIFIED_FILE} not found.")
+    missing_minified_files = [p for p in MINIFIED_FILES if not os.path.exists(p)]
+    if missing_minified_files:
+        print(f"Error: Minified file(s) not found: {', '.join(missing_minified_files)}")
         sys.exit(1)
 
-    verify_all_demos(DEMO_DIR, MINIFIED_FILE)
+    verify_all_demos(DEMO_DIR, MINIFIED_FILES)

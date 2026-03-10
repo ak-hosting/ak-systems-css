@@ -66,6 +66,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#backgrounds" data-section="backgrounds">
+                            <i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                            <span>Hintergründe</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#buttons" data-section="buttons">
                             <i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i>
                             <span>Buttons</span>
@@ -269,6 +275,22 @@
                         </div>
                         <p class="ak-text-sm ak-mt-2">hsl(0, 84%, 60%)</p>
                     </div>
+                </div>
+            </section>
+
+            <section id="backgrounds" class="ak-section" data-testid="section-backgrounds">
+                <div class="ak-flex ak-justify-between ak-items-center ak-mb-6">
+                    <h2 class="ak-text-3xl ak-font-bold">Hintergründe</h2>
+                    <a href="backgrounds.de.html" class="ak-btn ak-btn-outline ak-btn-sm">
+                        Alle Varianten <i data-lucide="arrow-right" class="ak-w-4 ak-h-4 ak-ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="ak-section ak-card ak-p-6 ak-mb-8">
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Optionales Modul mit Mustern (Dots, Grid, Stripes, Waves) und dekorativen Hintergründen. Nutzt die Systemfarben über CSS-Variablen.</p>
+                    <div class="ak-code-block">
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-backgrounds.min.css"&gt;</div>
                 </div>
             </section>
 
@@ -1431,20 +1453,24 @@
         // Toast
         const showToast = document.getElementById('show-toast');
         const closeToast = document.getElementById('close-toast');
-        const ak-toast = document.getElementById('toast');
+        const toast = document.getElementById('toast');
         
-        showToast.addEventListener('click', () => {
-            toast.classList.add('ak-toast-show');
-            
-            // Auto hide after 3 seconds
-            setTimeout(() => {
+        if (showToast && toast) {
+            showToast.addEventListener('click', () => {
+                toast.classList.add('ak-toast-show');
+                
+                // Auto hide after 3 seconds
+                setTimeout(() => {
+                    toast.classList.remove('ak-toast-show');
+                }, 3000);
+            });
+        }
+        
+        if (closeToast && toast) {
+            closeToast.addEventListener('click', () => {
                 toast.classList.remove('ak-toast-show');
-            }, 3000);
-        });
-        
-        closeToast.addEventListener('click', () => {
-            toast.classList.remove('ak-toast-show');
-        });
+            });
+        }
     </script>
     <script src="js/ak-demo.js"></script>
 </body>

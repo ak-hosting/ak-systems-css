@@ -51,13 +51,10 @@ rm "$OUTPUT_CSS.tmp"
 echo "✅ Minified to $OUTPUT_MIN_CSS"
 
 # 3. Create Gzip version for CDN checking
-gzip -fk "$OUTPUT_MIN_CSS"
-GZIP_SIZE=$(ls -lh "$OUTPUT_MIN_CSS.gz" | awk '{print $5}')
 RAW_SIZE=$(ls -lh "$OUTPUT_MIN_CSS" | awk '{print $5}')
 
 echo "🎉 Build complete!"
 echo "----------------------------------------"
 echo "Version: $VERSION"
 echo "Size:    $RAW_SIZE"
-echo "Gzipped: $GZIP_SIZE"
 echo "----------------------------------------"

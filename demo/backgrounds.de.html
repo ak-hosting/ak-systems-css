@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hintergründe - AK Design System</title>
+    <meta name="description" content="Optionales Hintergründe-Modul: Muster, Wellen und dekorative Hintergründe.">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-backgrounds.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="ak-theme-dark">
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
+                    <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                        <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                        Back to Index
+                    </a>
+                <h1 class="ak-text-xl ak-font-bold">Hintergründe</h1>
+            </div>
+            <div class="ak-header-actions">
+                <div class="ak-flex ak-gap-2">
+                    <a href="backgrounds.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                    <a href="backgrounds.de.html" class="ak-btn ak-btn-sm ak-btn-primary">DE</a>
+                    <a href="backgrounds.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">CDN</h2>
+            <div class="ak-card ak-p-6">
+                <p class="ak-text-sm ak-text-muted ak-mb-4">Lade das optionale Hintergründe-Modul zusätzlich zum Haupt-Bundle.</p>
+                <div class="ak-code-block">
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@main/dist/ak-backgrounds.min.css"&gt;
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Muster-Typen</h2>
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Punkte</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 160px;">
+                        <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-dots ak-bg-pattern-subtle ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-pattern-dots</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-dots ak-bg-pattern-subtle"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Raster</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 160px;">
+                        <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-grid ak-bg-pattern-subtle ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-pattern-grid</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-grid ak-bg-pattern-subtle"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Streifen</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 160px;">
+                        <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-stripes ak-bg-pattern-subtle ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-pattern-stripes</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-stripes ak-bg-pattern-subtle"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Schachbrett</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 160px;">
+                        <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-checker ak-bg-pattern-subtle ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-pattern-checker</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-checker ak-bg-pattern-subtle"&gt;...&lt;/div&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Wellen</h2>
+            <div class="ak-card ak-p-6">
+                <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 200px;">
+                    <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-waves ak-bg-pattern-primary ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                        <span class="ak-text-sm ak-text-muted">ak-bg-pattern-waves</span>
+                    </div>
+                </div>
+                <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-waves ak-bg-pattern-primary"&gt;...&lt;/div&gt;</div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Farben & Größen</h2>
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Accent + Large</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 160px;">
+                        <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-grid ak-bg-pattern-accent ak-bg-pattern-lg ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-pattern-accent ak-bg-pattern-lg</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-grid ak-bg-pattern-accent ak-bg-pattern-lg"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Muted + Small</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 160px;">
+                        <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-dots ak-bg-pattern-muted ak-bg-pattern-sm ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-pattern-muted ak-bg-pattern-sm</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-dots ak-bg-pattern-muted ak-bg-pattern-sm"&gt;...&lt;/div&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Art-Hintergründe</h2>
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Hero</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 220px;">
+                        <div class="ak-bg-bg ak-bg-art ak-bg-art-hero ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-art-hero</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-bg ak-bg-art ak-bg-art-hero"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Mesh</h3>
+                    <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 220px;">
+                        <div class="ak-bg-bg ak-bg-art ak-bg-art-mesh ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end">
+                            <span class="ak-text-sm ak-text-muted">ak-bg-art-mesh</span>
+                        </div>
+                    </div>
+                    <div class="ak-code-block">&lt;div class="ak-bg-bg ak-bg-art ak-bg-art-mesh"&gt;...&lt;/div&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Eigene Variablen</h2>
+            <div class="ak-card ak-p-6">
+                <p class="ak-text-sm ak-text-muted ak-mb-4">Muster können über CSS-Variablen feinjustiert werden.</p>
+                <div class="ak-rounded ak-border ak-border-border ak-overflow-hidden ak-mb-4" style="height: 200px;">
+                    <div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-stripes ak-w-full ak-h-full ak-p-6 ak-flex ak-items-end" style="--ak-bg-pattern-size: 32px; --ak-bg-pattern-thickness: 2px; --ak-bg-pattern-ink: var(--ak-color-primary);">
+                        <span class="ak-text-sm ak-text-muted">--ak-bg-pattern-size / --ak-bg-pattern-thickness / --ak-bg-pattern-ink</span>
+                    </div>
+                </div>
+                <div class="ak-code-block">&lt;div class="ak-bg-surface ak-bg-pattern ak-bg-pattern-stripes" style="--ak-bg-pattern-size:32px;--ak-bg-pattern-thickness:2px;--ak-bg-pattern-ink:var(--ak-color-primary);"&gt;...&lt;/div&gt;</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sidebar / Drawer --><div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.de.html"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Übersicht</span></a></li>
+                    <li><a href="typography.de.html"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typografie</span></a></li>
+                    <li><a href="index.de.html#colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Farben</span></a></li>
+                    <li><a href="backgrounds.de.html" class="ak-active"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Hintergründe</span></a></li>
+                    <li><a href="buttons.de.html"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="loaders.de.html"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loader</span></a></li>
+                    <li><a href="forms.de.html"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formulare</span></a></li>
+                    <li><a href="selection-controls.de.html"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Auswahl-Steuerelemente</span></a></li>
+                    <li><a href="upload.de.html"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.de.html"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
+                    <li><a href="alerts.de.html"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
+                    <li><a href="modals.de.html"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modals</span></a></li>
+                    <li><a href="tables.de.html"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tabellen</span></a></li>
+                    <li><a href="extended.de.html"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Erweitert</span></a></li>
+                    <li><a href="layout.de.html"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="headers.de.html"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.de.html#utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utility Classes</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ak-demo.js"></script>
+</body>
+</html>

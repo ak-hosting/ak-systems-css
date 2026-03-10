@@ -2,6 +2,21 @@ import os
 import re
 
 DEMO_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", "demo"))
+VERSION_FILE = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", "VERSION"))
+
+
+def get_version_tag() -> str:
+    try:
+        with open(VERSION_FILE, "r", encoding="utf-8") as f:
+            version = f.read().strip()
+        if version:
+            return f"v{version}"
+    except OSError:
+        pass
+    return "main"
+
+
+CDN_DESIGN_SYSTEM_MIN = f"https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@{get_version_tag()}/dist/ak-design-system.min.css"
 
 
 def filename_to_lang(filename: str) -> str:
@@ -280,9 +295,29 @@ def remove_theme_toggle_button_from_header(content: str) -> str:
     return re.sub(r'\s*<button[^>]*\bid="theme-toggle"[^>]*>.*?</button>\s*', "\n", content, flags=re.IGNORECASE | re.DOTALL)
 
 
+def use_cdn_css_in_head(content: str) -> str:
+    return re.sub(
+        r'(<link\b[^>]*\brel="stylesheet"[^>]*\bhref=")(?:\.\./dist/ak-design-system(?:\.min)?\.css|https://cdn\.jsdelivr\.net/gh/ak-hosting/ak-systems-css@[^"]+/dist/ak-design-system(?:\.min)?\.css)(")',
+        rf"\1{CDN_DESIGN_SYSTEM_MIN}\2",
+        content,
+        flags=re.IGNORECASE,
+    )
+
+def normalize_cdn_urls(content: str) -> str:
+    return re.sub(
+        r"https://cdn\.jsdelivr\.net/gh/ak-hosting/ak-systems-css@[^/]+/dist/ak-design-system(?:\.min)?\.css",
+        CDN_DESIGN_SYSTEM_MIN,
+        content,
+        flags=re.IGNORECASE,
+    )
+
+
 def process_file(file_path: str, filename: str) -> None:
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
+
+    content = normalize_cdn_urls(content)
+    content = use_cdn_css_in_head(content)
 
     lang = filename_to_lang(filename)
     base = filename_to_base(filename)

@@ -7,6 +7,8 @@ DIST_DIR="dist"
 SRC_DIR="css/ak-design-system"
 OUTPUT_CSS="$DIST_DIR/ak-design-system.css"
 OUTPUT_MIN_CSS="$DIST_DIR/ak-design-system.min.css"
+BG_OUTPUT_CSS="$DIST_DIR/ak-backgrounds.css"
+BG_OUTPUT_MIN_CSS="$DIST_DIR/ak-backgrounds.min.css"
 
 echo "🏗️  Building AK Design System v$VERSION..."
 
@@ -17,6 +19,7 @@ mkdir -p "$DIST_DIR"
 echo "🔨 Compiling SCSS..."
 npx sass src/scss/ak-utilities.scss "$SRC_DIR/ak-utilities.css" --no-source-map
 npx sass src/scss/ak-components-extended.scss "$SRC_DIR/ak-components-extended.css" --no-source-map
+npx sass src/scss/ak-backgrounds.scss "$SRC_DIR/ak-backgrounds.css" --no-source-map
 echo "✅ SCSS compiled"
 
 # 1. Bundle CSS files (Concatenation instead of @import)
@@ -52,6 +55,12 @@ echo "✅ Minified to $OUTPUT_MIN_CSS"
 gzip -fk "$OUTPUT_MIN_CSS"
 GZIP_SIZE=$(ls -lh "$OUTPUT_MIN_CSS.gz" | awk '{print $5}')
 RAW_SIZE=$(ls -lh "$OUTPUT_MIN_CSS" | awk '{print $5}')
+
+cp "$SRC_DIR/ak-backgrounds.css" "$BG_OUTPUT_CSS"
+cat "$BG_OUTPUT_CSS" | perl -pe 's|/\*.*?\*/||gs' > "$BG_OUTPUT_CSS.tmp"
+tr -d '\n' < "$BG_OUTPUT_CSS.tmp" | sed 's/  */ /g' | sed 's/ {/{/g' | sed 's/{ /{/g' | sed 's/ }/}/g' | sed 's/} /}/g' | sed 's/; /;/g' | sed 's/: /:/g' > "$BG_OUTPUT_MIN_CSS"
+rm "$BG_OUTPUT_CSS.tmp"
+gzip -fk "$BG_OUTPUT_MIN_CSS"
 
 echo "🎉 Build complete!"
 echo "----------------------------------------"

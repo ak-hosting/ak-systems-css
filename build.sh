@@ -44,6 +44,7 @@ cat "$CSS_DIR/ak-core.css" \
     "$CSS_DIR/ak-base.css" \
     "$CSS_DIR/ak-layout.css" \
     "$CSS_DIR/ak-components.css" \
+    "$CSS_DIR/ak-components-extended.css" \
     "$CSS_DIR/ak-loaders.css" \
     "$CSS_DIR/ak-utilities.css" \
     "$CSS_DIR/ak-modifiers.css" >> "$OUTPUT_FILE"
@@ -121,7 +122,7 @@ if [ -f "$OUTPUT_FILE" ] && [ -f "$MIN_OUTPUT_FILE" ]; then
 fi
 
 # Count source files
-SOURCE_FILES=8
+SOURCE_FILES=9
 
 echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"

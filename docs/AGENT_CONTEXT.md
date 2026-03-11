@@ -323,6 +323,43 @@ Linear set of exclusive options.
 - **Width/Height:** `ak-w-full`, `ak-h-screen`, `ak-w-1/2`.
 - **Display:** `ak-block`, `ak-inline-block`, `ak-hidden`, `ak-md:ak-flex`.
 - **Text Align:** `ak-text-left`, `ak-text-center`, `ak-text-right`.
+- **Accessibility:** `ak-sr-only`, `ak-not-sr-only`, `ak-print-only`, `ak-print-hidden`.
+- **Interaction:** `ak-pointer-events-none`, `ak-pointer-events-auto`, `ak-select-none`, `ak-select-text`, `ak-select-all`, `ak-select-auto`.
+- **Text Flow:** `ak-whitespace-normal`, `ak-whitespace-nowrap`, `ak-whitespace-pre`, `ak-whitespace-pre-line`, `ak-whitespace-pre-wrap`, `ak-break-normal`, `ak-break-words`, `ak-break-all`.
+- **Sizing & Flex Items:** `ak-min-w-0`, `ak-min-w-full`, `ak-min-h-0`, `ak-min-h-full`, `ak-order-first`, `ak-order-last`, `ak-order-none`, `ak-self-auto`, `ak-self-start`, `ak-self-end`, `ak-self-center`, `ak-self-stretch`.
+- **Aspect Ratio:** `ak-aspect-auto`, `ak-aspect-square`, `ak-aspect-video`.
+
+### Utility Examples
+```html
+<!-- Screen reader only text -->
+<button class="ak-btn ak-btn-ghost">
+  <i data-lucide="search"></i>
+  <span class="ak-sr-only">Search</span>
+</button>
+
+<!-- Print visibility -->
+<div class="ak-print-hidden">Visible on screen only</div>
+<div class="ak-print-only">Visible in print only</div>
+
+<!-- Pointer events -->
+<div class="ak-relative">
+  <button class="ak-btn ak-btn-primary">Clickable button</button>
+  <div class="ak-absolute ak-inset-0 ak-pointer-events-none"></div>
+</div>
+
+<!-- Text flow -->
+<p class="ak-whitespace-pre-line ak-break-words">Order ID:
+AK-2026-VERY-LONG-IDENTIFIER-THAT-CAN-WRAP</p>
+
+<!-- Flex min-size and ordering -->
+<div class="ak-flex ak-gap-4">
+  <aside class="ak-w-20 ak-order-last ak-md:ak-order-none">Sidebar</aside>
+  <main class="ak-flex-1 ak-min-w-0">Long content region</main>
+</div>
+
+<!-- Aspect ratio -->
+<div class="ak-aspect-video ak-bg-muted ak-rounded"></div>
+```
 
 ## 5. JavaScript Interactions
 Since this is a CSS-only framework, interactivity must be handled by external JS.

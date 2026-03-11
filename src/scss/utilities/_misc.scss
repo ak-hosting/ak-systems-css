@@ -3,6 +3,45 @@
 // Miscellaneous Utilities
 
 @mixin generate-misc($prefix: "") {
+  // Screen Reader Visibility
+  .#{$prefix}ak-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .#{$prefix}ak-not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  // Print Visibility
+  .#{$prefix}ak-print-only {
+    display: none;
+
+    @media print {
+      display: block;
+    }
+  }
+
+  .#{$prefix}ak-print-hidden {
+    @media print {
+      display: none;
+    }
+  }
+
   // Overflow
   .#{$prefix}ak-overflow-auto { overflow: auto; }
   .#{$prefix}ak-overflow-hidden { overflow: hidden; }
@@ -34,10 +73,40 @@
   .#{$prefix}ak-z-40 { z-index: 40; }
   .#{$prefix}ak-z-50 { z-index: 50; }
   .#{$prefix}ak-z-auto { z-index: auto; }
-  
+
+  // Pointer Events
+  .#{$prefix}ak-pointer-events-none { pointer-events: none; }
+  .#{$prefix}ak-pointer-events-auto { pointer-events: auto; }
+
   // Cursor
   .#{$prefix}ak-cursor-pointer { cursor: pointer; }
   .#{$prefix}ak-cursor-not-allowed { cursor: not-allowed; }
+
+  // User Select
+  .#{$prefix}ak-select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .#{$prefix}ak-select-text {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  .#{$prefix}ak-select-all {
+    -webkit-user-select: all;
+    user-select: all;
+  }
+
+  .#{$prefix}ak-select-auto {
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
+
+  // Aspect Ratio
+  .#{$prefix}ak-aspect-auto { aspect-ratio: auto; }
+  .#{$prefix}ak-aspect-square { aspect-ratio: 1 / 1; }
+  .#{$prefix}ak-aspect-video { aspect-ratio: 16 / 9; }
 
   // Images
   .#{$prefix}ak-img-fluid { max-width: 100%; height: auto; }

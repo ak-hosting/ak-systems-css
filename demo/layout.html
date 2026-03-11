@@ -155,6 +155,71 @@
                 </div>
             </div>
         </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Utility Helpers</h2>
+            <p class="ak-text-muted ak-mb-6">Verified additive utility families for accessibility, print, text flow, sizing, flex items, and aspect ratio.</p>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-6">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Screen Reader & Print</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-4">
+                        <button class="ak-btn ak-btn-ghost ak-w-fit">
+                            <i data-lucide="search" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-sr-only">Search</span>
+                        </button>
+                        <div class="ak-bg-surface-subtle ak-border ak-border-border ak-rounded ak-p-3 ak-print-hidden">
+                            This helper is hidden when printed.
+                        </div>
+                        <div class="ak-bg-primary-subtle ak-border ak-border-primary ak-rounded ak-p-3 ak-print-only">
+                            This helper appears in print output only.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Pointer Events & User Select</h3>
+                    <div class="ak-relative ak-mb-4">
+                        <button class="ak-btn ak-btn-primary">Interactive Button</button>
+                        <div class="ak-absolute ak-inset-0 ak-pointer-events-none ak-rounded ak-border ak-border-dashed ak-border-border"></div>
+                    </div>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <p class="ak-select-none ak-bg-surface-subtle ak-p-3 ak-rounded">This text cannot be selected.</p>
+                        <p class="ak-select-all ak-bg-surface-subtle ak-p-3 ak-rounded">Clicking here selects the full line.</p>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Whitespace & Breaking</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-4">
+                        <div class="ak-bg-surface-subtle ak-p-3 ak-rounded ak-whitespace-pre-line">Line one
+Line two
+Line three</div>
+                        <div class="ak-bg-surface-subtle ak-p-3 ak-rounded ak-break-words">
+                            customer-email-with-an-extremely-long-value@subdomain.really-long-example-domain-for-testing.de
+                        </div>
+                        <div class="ak-bg-surface-subtle ak-p-3 ak-rounded ak-whitespace-nowrap ak-overflow-x-auto">
+                            ORDER-2026-VERY-LONG-IDENTIFIER-WITHOUT-SPACES-THAT-STAYS-ON-ONE-LINE
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Min Size, Order, Self & Aspect Ratio</h3>
+                    <div class="ak-flex ak-gap-4 ak-items-start ak-mb-4">
+                        <div class="ak-order-last ak-md:ak-order-none ak-w-20 ak-bg-surface-subtle ak-rounded ak-p-3 ak-text-center">Side</div>
+                        <div class="ak-flex-1 ak-min-w-0 ak-bg-surface-subtle ak-rounded ak-p-3 ak-break-words">
+                            Flexible content area with ak-min-w-0 for safer overflow behavior in flex layouts.
+                        </div>
+                    </div>
+                    <div class="ak-flex ak-gap-4 ak-items-stretch">
+                        <div class="ak-self-center ak-w-20 ak-bg-primary-subtle ak-text-primary ak-rounded ak-p-3 ak-text-center">Center</div>
+                        <div class="ak-aspect-square ak-w-24 ak-bg-muted ak-rounded ak-flex ak-items-center ak-justify-center">1:1</div>
+                        <div class="ak-aspect-video ak-w-40 ak-bg-muted ak-rounded ak-flex ak-items-center ak-justify-center">16:9</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </main>
 

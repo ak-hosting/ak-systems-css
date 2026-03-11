@@ -76,6 +76,11 @@ $sizes-fraction: (
   }
   
   // Max Width/Height
+  .#{$prefix}ak-min-w-0 { min-width: 0; }
+  .#{$prefix}ak-min-w-full { min-width: 100%; }
+  .#{$prefix}ak-min-h-0 { min-height: 0; }
+  .#{$prefix}ak-min-h-full { min-height: 100%; }
+
   .#{$prefix}ak-max-w-full { max-width: 100%; }
   .#{$prefix}ak-max-h-full { max-height: 100%; }
   

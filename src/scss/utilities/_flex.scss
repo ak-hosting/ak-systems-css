@@ -31,6 +31,14 @@ $align-items: (
   stretch: stretch
 );
 
+$align-self: (
+  auto: auto,
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch
+);
+
 @mixin generate-flex($prefix: "") {
   // Direction
   @each $key, $val in $flex-dirs {
@@ -68,6 +76,18 @@ $align-items: (
   .#{$prefix}ak-grow-0 { flex-grow: 0; }
   .#{$prefix}ak-shrink { flex-shrink: 1; }
   .#{$prefix}ak-shrink-0 { flex-shrink: 0; }
+
+  // Order
+  .#{$prefix}ak-order-first { order: -9999; }
+  .#{$prefix}ak-order-last { order: 9999; }
+  .#{$prefix}ak-order-none { order: 0; }
+
+  // Align Self
+  @each $key, $val in $align-self {
+    .#{$prefix}ak-self-#{$key} {
+      align-self: #{$val};
+    }
+  }
 
   // Flex Shorthands
   .#{$prefix}ak-flex-between { display: flex; justify-content: space-between; }

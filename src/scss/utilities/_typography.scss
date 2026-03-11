@@ -64,6 +64,22 @@ $sizes: (
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+  // White Space
+  .#{$prefix}ak-whitespace-normal { white-space: normal; }
+  .#{$prefix}ak-whitespace-nowrap { white-space: nowrap; }
+  .#{$prefix}ak-whitespace-pre { white-space: pre; }
+  .#{$prefix}ak-whitespace-pre-line { white-space: pre-line; }
+  .#{$prefix}ak-whitespace-pre-wrap { white-space: pre-wrap; }
+
+  // Word Break
+  .#{$prefix}ak-break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .#{$prefix}ak-break-words { overflow-wrap: break-word; }
+  .#{$prefix}ak-break-all { word-break: break-all; }
   
   // Text Decoration
   .#{$prefix}ak-underline {

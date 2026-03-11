@@ -2,7 +2,7 @@ import os
 import re
 
 DEMO_DIR = os.path.join(os.getcwd(), 'demo')
-CDN_LINK = 'https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.0/dist/ak-design-system.min.css'
+CDN_LINK = 'https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css'
 LOCAL_LINK = '../dist/ak-design-system.min.css'
 
 # Regex for "Modal logic" block (found in sections.html)

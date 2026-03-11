@@ -14,7 +14,7 @@ Nutzen Sie das jsDelivr CDN, um das CSS einzubinden. Dies ist der zuverlässigst
 <!-- Spezifische Version nutzen (empfohlen für Produktion) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.1/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css"
 />
 ```
 

@@ -14,7 +14,7 @@ Framework'ü kullanmanın en güvenilir yolu olan jsDelivr CDN'ini kullanın.
 <!-- Belirli bir sürümü kullanın (üretim için önerilen) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.1/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css"
 />
 ```
 

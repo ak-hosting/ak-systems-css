@@ -72,6 +72,7 @@ function normalizeDemoSidebar() {
         return;
     }
 
+    const header = document.querySelector('header.ak-header');
     const lang = document.documentElement.lang || 'en';
     const path = window.location.pathname.split('/').pop() || 'index.html';
     const menuButton = document.querySelector('header .ak-btn.ak-btn-ghost.ak-btn-sm');
@@ -80,10 +81,14 @@ function normalizeDemoSidebar() {
     const closeButton = document.getElementById('close-sidebar') || sidebarDrawer.querySelector('.ak-modal-header .ak-btn');
     const content = sidebarDrawer.querySelector('.ak-modal-content');
 
-    sidebarDrawer.style.zIndex = 'calc(var(--ak-z-modal) + 1)';
+    if (header) {
+        header.classList.add('ak-z-0');
+    }
+
+    sidebarDrawer.style.zIndex = '9999';
     if (content) {
         content.style.position = 'fixed';
-        content.style.zIndex = 'calc(var(--ak-z-modal) + 2)';
+        content.style.zIndex = '10000';
     }
 
     if (menuButton && !menuButton.id) {

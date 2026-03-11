@@ -14,7 +14,7 @@ Use the jsDelivr CDN to include the minified CSS. This is the most reliable way 
 <!-- Use a specific version (recommended for production) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.1/dist/ak-design-system.min.css"
+  href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css"
 />
 ```
 

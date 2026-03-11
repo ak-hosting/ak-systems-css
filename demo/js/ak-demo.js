@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.lucide.createIcons();
     }
 
+    normalizeDemoSidebar();
+
     // 1. Update Copyright Year and Company Name (if elements exist)
     const year = new Date().getFullYear();
     const displayYear = year >= 2026 ? year : 2026;
@@ -37,7 +39,158 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!hasPageFooter) {
         injectFooter(displayYear, companyName);
     }
+
+    const openSidebar = document.getElementById('open-sidebar');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebarDrawer = document.getElementById('nav-drawer');
+    const sidebarLinks = document.querySelectorAll('.ak-sidebar-nav a');
+
+    if (openSidebar && sidebarDrawer) {
+        openSidebar.addEventListener('click', () => {
+            openModal('nav-drawer');
+        });
+    }
+
+    if (closeSidebar && sidebarDrawer) {
+        closeSidebar.addEventListener('click', () => {
+            closeModal('nav-drawer');
+        });
+    }
+
+    if (sidebarLinks.length > 0 && sidebarDrawer) {
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeModal('nav-drawer');
+            });
+        });
+    }
 });
+
+function normalizeDemoSidebar() {
+    const sidebarDrawer = document.getElementById('nav-drawer');
+    if (!sidebarDrawer) {
+        return;
+    }
+
+    const lang = document.documentElement.lang || 'en';
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    const menuButton = document.querySelector('header .ak-btn.ak-btn-ghost.ak-btn-sm');
+    const title = sidebarDrawer.querySelector('.ak-modal-title');
+    const body = sidebarDrawer.querySelector('.ak-modal-body');
+    const closeButton = document.getElementById('close-sidebar') || sidebarDrawer.querySelector('.ak-modal-header .ak-btn');
+
+    if (menuButton && !menuButton.id) {
+        menuButton.id = 'open-sidebar';
+        menuButton.setAttribute('type', 'button');
+    }
+
+    if (closeButton) {
+        closeButton.id = 'close-sidebar';
+        closeButton.setAttribute('type', 'button');
+    }
+
+    const navText = {
+        en: {
+            title: 'Documentation',
+            close: 'Close',
+            overview: 'Overview',
+            components: 'Components',
+            layout: 'Layout',
+            forms: 'Forms',
+            tables: 'Tables',
+            utilities: 'Utilities',
+            extended: 'Extended'
+        },
+        de: {
+            title: 'Dokumentation',
+            close: 'Schließen',
+            overview: 'Übersicht',
+            components: 'Komponenten',
+            layout: 'Layout',
+            forms: 'Formulare',
+            tables: 'Tabellen',
+            utilities: 'Utilities',
+            extended: 'Erweitert'
+        },
+        tr: {
+            title: 'Dokümantasyon',
+            close: 'Kapat',
+            overview: 'Genel Bakış',
+            components: 'Bileşenler',
+            layout: 'Düzen',
+            forms: 'Formlar',
+            tables: 'Tablolar',
+            utilities: 'Utilities',
+            extended: 'Extended'
+        }
+    };
+
+    const localized = navText[lang] || navText.en;
+    const prefixes = {
+        en: '',
+        de: '.de',
+        tr: '.tr'
+    };
+    const suffix = prefixes[lang] || '';
+    const indexSuffix = path === 'index.en.html' ? '.en' : suffix;
+
+    const activeGroup = getSidebarGroup(path);
+    const items = [
+        { key: 'overview', href: `index${indexSuffix}.html` },
+        { key: 'components', href: `index${indexSuffix}.html#buttons` },
+        { key: 'layout', href: `layout${suffix}.html` },
+        { key: 'forms', href: `forms${suffix}.html` },
+        { key: 'tables', href: `tables${suffix}.html` },
+        { key: 'utilities', href: `index${indexSuffix}.html#utilities` },
+        { key: 'extended', href: `extended${suffix}.html` }
+    ];
+
+    if (title) {
+        title.textContent = localized.title;
+    }
+
+    if (closeButton) {
+        closeButton.textContent = localized.close;
+    }
+
+    if (body) {
+        body.innerHTML = `
+            <nav aria-label="${localized.title}" class="ak-sidebar-nav ak-text-left">
+                <ul class="ak-nav ak-flex-col ak-gap-1 ak-items-start ak-text-left">
+                    ${items.map(item => `
+                        <li class="ak-w-full">
+                            <a href="${item.href}" class="${item.key === activeGroup ? 'ak-active ' : ''}ak-w-full ak-text-left">${localized[item.key]}</a>
+                        </li>
+                    `).join('')}
+                </ul>
+            </nav>
+        `;
+    }
+}
+
+function getSidebarGroup(path) {
+    if (path.startsWith('layout')) {
+        return 'layout';
+    }
+
+    if (path.startsWith('forms')) {
+        return 'forms';
+    }
+
+    if (path.startsWith('tables')) {
+        return 'tables';
+    }
+
+    if (path.startsWith('extended')) {
+        return 'extended';
+    }
+
+    if (path.startsWith('index')) {
+        return 'overview';
+    }
+
+    return 'components';
+}
 
 function injectFooter(year, companyName) {
     const lang = document.documentElement.lang || 'en';

@@ -94,34 +94,67 @@ function normalizeDemoSidebar() {
             title: 'Documentation',
             close: 'Close',
             overview: 'Overview',
-            components: 'Components',
-            layout: 'Layout',
+            typography: 'Typography',
+            sections: 'Sections',
+            colors: 'Colors',
+            backgrounds: 'Backgrounds',
+            buttons: 'Buttons',
+            loaders: 'Loaders',
             forms: 'Forms',
+            selectionControls: 'Selection Controls',
+            upload: 'Upload',
+            cards: 'Cards',
+            alerts: 'Alerts',
+            modals: 'Modals',
             tables: 'Tables',
-            utilities: 'Utilities',
-            extended: 'Extended'
+            layout: 'Layout',
+            extended: 'Extended',
+            headers: 'Header & Footer',
+            utilities: 'Utility Classes'
         },
         de: {
             title: 'Dokumentation',
             close: 'Schließen',
             overview: 'Übersicht',
-            components: 'Komponenten',
-            layout: 'Layout',
+            typography: 'Typografie',
+            sections: 'Sektionen',
+            colors: 'Farben',
+            backgrounds: 'Hintergründe',
+            buttons: 'Buttons',
+            loaders: 'Loaders',
             forms: 'Formulare',
+            selectionControls: 'Auswahl',
+            upload: 'Upload',
+            cards: 'Cards',
+            alerts: 'Alerts',
+            modals: 'Modals',
             tables: 'Tabellen',
-            utilities: 'Utilities',
-            extended: 'Erweitert'
+            layout: 'Layout',
+            extended: 'Erweitert',
+            headers: 'Header & Footer',
+            utilities: 'Utilities'
         },
         tr: {
             title: 'Dokümantasyon',
             close: 'Kapat',
             overview: 'Genel Bakış',
-            components: 'Bileşenler',
-            layout: 'Düzen',
+            typography: 'Tipografi',
+            sections: 'Bölümler',
+            colors: 'Renkler',
+            backgrounds: 'Arka Planlar',
+            buttons: 'Butonlar',
+            loaders: 'Yükleyiciler',
             forms: 'Formlar',
+            selectionControls: 'Seçim Kontrolleri',
+            upload: 'Yükleme',
+            cards: 'Kartlar',
+            alerts: 'Uyarılar',
+            modals: 'Modallar',
             tables: 'Tablolar',
-            utilities: 'Utilities',
-            extended: 'Extended'
+            layout: 'Düzen',
+            extended: 'Genişletilmiş',
+            headers: 'Header & Footer',
+            utilities: 'Utility Classes'
         }
     };
 
@@ -137,12 +170,23 @@ function normalizeDemoSidebar() {
     const activeGroup = getSidebarGroup(path);
     const items = [
         { key: 'overview', href: `index${indexSuffix}.html` },
-        { key: 'components', href: `index${indexSuffix}.html#buttons` },
+        { key: 'typography', href: `typography${suffix}.html` },
+        { key: 'sections', href: `sections${suffix}.html` },
+        { key: 'colors', href: `index${indexSuffix}.html#colors` },
+        { key: 'backgrounds', href: `backgrounds${suffix}.html` },
+        { key: 'buttons', href: `buttons${suffix}.html` },
+        { key: 'loaders', href: `loaders${suffix}.html` },
         { key: 'layout', href: `layout${suffix}.html` },
         { key: 'forms', href: `forms${suffix}.html` },
+        { key: 'selectionControls', href: `selection-controls${suffix}.html` },
+        { key: 'upload', href: `upload${suffix}.html` },
+        { key: 'cards', href: `cards${suffix}.html` },
+        { key: 'alerts', href: `alerts${suffix}.html` },
+        { key: 'modals', href: `modals${suffix}.html` },
         { key: 'tables', href: `tables${suffix}.html` },
+        { key: 'extended', href: `extended${suffix}.html` },
+        { key: 'headers', href: `headers${suffix}.html` },
         { key: 'utilities', href: `index${indexSuffix}.html#utilities` },
-        { key: 'extended', href: `extended${suffix}.html` }
     ];
 
     if (title) {
@@ -169,12 +213,52 @@ function normalizeDemoSidebar() {
 }
 
 function getSidebarGroup(path) {
+    if (path.startsWith('typography')) {
+        return 'typography';
+    }
+
+    if (path.startsWith('sections')) {
+        return 'sections';
+    }
+
+    if (path.startsWith('backgrounds')) {
+        return 'backgrounds';
+    }
+
+    if (path.startsWith('buttons')) {
+        return 'buttons';
+    }
+
+    if (path.startsWith('loaders')) {
+        return 'loaders';
+    }
+
     if (path.startsWith('layout')) {
         return 'layout';
     }
 
     if (path.startsWith('forms')) {
         return 'forms';
+    }
+
+    if (path.startsWith('selection-controls')) {
+        return 'selectionControls';
+    }
+
+    if (path.startsWith('upload')) {
+        return 'upload';
+    }
+
+    if (path.startsWith('cards')) {
+        return 'cards';
+    }
+
+    if (path.startsWith('alerts')) {
+        return 'alerts';
+    }
+
+    if (path.startsWith('modals')) {
+        return 'modals';
     }
 
     if (path.startsWith('tables')) {
@@ -185,11 +269,15 @@ function getSidebarGroup(path) {
         return 'extended';
     }
 
+    if (path.startsWith('headers')) {
+        return 'headers';
+    }
+
     if (path.startsWith('index')) {
         return 'overview';
     }
 
-    return 'components';
+    return 'overview';
 }
 
 function injectFooter(year, companyName) {

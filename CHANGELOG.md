@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2026-03-11
+
+### Added
+- New utility families: Accessibility helpers (`ak-sr-only`, `ak-not-sr-only`)
+- New utility families: Print helpers (`ak-print-only`, `ak-print-hidden`)
+- New utility families: Pointer events utilities
+- New utility families: User select utilities
+- New utility families: Whitespace and word-break utilities
+- New utility families: Min-size utilities
+- New utility families: Flex order and self-alignment utilities
+- New utility families: Aspect ratio utilities
+
 ## [2.0.0] - 2026-03-05
 
 ### Added
@@ -124,4 +136,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.0.2]: https://github.com/ak-hosting/ak-systems-css/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/ak-hosting/ak-systems-css/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/ak-hosting/ak-systems-css/releases/tag/v1.0.0
-

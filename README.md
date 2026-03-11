@@ -73,6 +73,7 @@ Version 2.0 introduces a modern SCSS-based architecture for utilities, removing 
   - Flexbox (`flex`, `justify-center`)
   - Typography (`text-center`, `font-bold`)
   - Sizing (`w-full`, `h-screen`)
+  - Accessibility, print, pointer-events, user-select, whitespace/break, min-size, flex item, and aspect-ratio helpers
 
 All utilities now support responsive prefixes (e.g. `ak-md:flex`) and use CSS variables internally.
 

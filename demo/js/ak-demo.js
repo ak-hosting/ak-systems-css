@@ -78,6 +78,13 @@ function normalizeDemoSidebar() {
     const title = sidebarDrawer.querySelector('.ak-modal-title');
     const body = sidebarDrawer.querySelector('.ak-modal-body');
     const closeButton = document.getElementById('close-sidebar') || sidebarDrawer.querySelector('.ak-modal-header .ak-btn');
+    const content = sidebarDrawer.querySelector('.ak-modal-content');
+
+    sidebarDrawer.style.zIndex = 'calc(var(--ak-z-modal) + 1)';
+    if (content) {
+        content.style.position = 'fixed';
+        content.style.zIndex = 'calc(var(--ak-z-modal) + 2)';
+    }
 
     if (menuButton && !menuButton.id) {
         menuButton.id = 'open-sidebar';

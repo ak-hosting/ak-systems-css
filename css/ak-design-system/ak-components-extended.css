@@ -764,6 +764,18 @@
 
 .ak-cookie-readonly {
   cursor: not-allowed;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--ak-space-2);
+  max-width: 8rem;
+}
+
+.ak-cookie-readonly .ak-switch-label {
+  margin-left: 0;
+  flex-basis: 100%;
+  text-align: right;
+  line-height: var(--ak-line-height-tight);
 }
 
 .ak-cookie-required-note {
@@ -915,6 +927,12 @@
   .ak-cookie-actions .ak-btn {
     width: 100%;
     min-width: 0;
+  }
+  .ak-cookie-readonly {
+    max-width: none;
+  }
+  .ak-cookie-readonly .ak-switch-label {
+    text-align: left;
   }
   .ak-cookie-reopen-trigger {
     right: var(--ak-space-3);

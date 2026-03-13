@@ -2711,6 +2711,70 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
   overflow-wrap: anywhere;
 }
 
+.ak-switch-status .ak-switch-track {
+  width: auto;
+  min-width: 44px;
+  flex: 0 0 auto;
+  display: grid;
+  align-items: center;
+  justify-items: stretch;
+  padding: 1px 10px 1px 30px;
+  min-height: 24px;
+}
+
+.ak-switch-status .ak-switch-thumb {
+  left: 1px;
+}
+
+.ak-switch-input:checked + .ak-switch-track .ak-switch-thumb,
+.ak-switch-status .ak-switch-input:checked + .ak-switch-track .ak-switch-thumb {
+  left: calc(100% - 21px);
+  transform: none;
+}
+
+.ak-switch-state {
+  grid-area: 1 / 1;
+  font-size: 11px;
+  line-height: 1.1;
+  font-weight: var(--ak-font-weight-medium);
+  white-space: nowrap;
+  text-align: center;
+  padding-inline: var(--ak-space-1);
+  color: var(--ak-color-text-muted);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.ak-switch-state-on {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ak-switch-state-off {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ak-switch-status .ak-switch-input:checked + .ak-switch-track {
+  padding-left: 10px;
+  padding-right: 30px;
+}
+
+.ak-switch-status .ak-switch-input:checked + .ak-switch-track .ak-switch-state-on {
+  opacity: 1;
+  visibility: visible;
+  color: var(--ak-color-primary-text);
+}
+
+.ak-switch-status .ak-switch-input:checked + .ak-switch-track .ak-switch-state-off {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ak-switch-status .ak-switch-input:disabled + .ak-switch-track .ak-switch-state-on,
+.ak-switch-status .ak-switch-input:disabled + .ak-switch-track .ak-switch-state-off {
+  opacity: 0.75;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                  Dropdown                                  */
 /* -------------------------------------------------------------------------- */

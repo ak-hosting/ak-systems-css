@@ -191,6 +191,16 @@ Use these variables for custom styles to maintain consistency.
   <span class="ak-switch-label">Toggle me</span>
 </label>
 
+<!-- Switch with status text inside the control -->
+<label class="ak-switch ak-switch-status">
+  <input type="checkbox" class="ak-switch-input" checked>
+  <span class="ak-switch-track">
+    <span class="ak-switch-thumb"></span>
+    <span class="ak-switch-state ak-switch-state-off">Disabled</span>
+    <span class="ak-switch-state ak-switch-state-on">Enabled</span>
+  </span>
+</label>
+
 <!-- File Upload -->
 <div class="ak-upload">
   <input type="file" class="ak-upload-input">

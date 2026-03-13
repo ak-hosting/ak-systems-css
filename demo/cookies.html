@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Consent - AK Design System</title>
+    <meta name="description" content="AK Design System cookie consent banners, floating boxes, preference modals, drawers, and category toggles.">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .cookie-demo-stage {
+            position: relative;
+            min-height: 24rem;
+            overflow: hidden;
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-xl);
+            background:
+                radial-gradient(circle at top right, color-mix(in srgb, var(--ak-color-primary) 16%, transparent), transparent 42%),
+                linear-gradient(180deg, color-mix(in srgb, var(--ak-color-surface) 92%, var(--ak-color-bg)), var(--ak-color-bg));
+        }
+
+        .cookie-demo-stage .ak-cookie-consent,
+        .cookie-demo-stage .ak-cookie-reopen-trigger {
+            position: absolute;
+        }
+
+        .cookie-demo-stage .ak-cookie-inline-preferences {
+            position: static;
+        }
+
+        .cookie-preview-copy {
+            max-width: 28rem;
+        }
+    </style>
+</head>
+<body class="ak-theme-dark">
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                    <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                    Back to Index
+                </a>
+                <h1 class="ak-text-xl ak-font-bold">Cookie Consent</h1>
+            </div>
+            <div class="ak-header-actions">
+                <div class="ak-flex ak-gap-2">
+                    <a href="cookies.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                    <a href="cookies.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                    <a href="cookies.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-3">System-ready consent surfaces</h2>
+            <p class="ak-text-lg ak-text-muted ak-mb-6">The cookie module reuses existing AK buttons, cards, switches, badges, modals, drawers, spacing tokens, and z-index variables. New classes only add structure and variant behavior for consent flows.</p>
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-flex-wrap ak-gap-3 ak-items-center">
+                    <button class="ak-btn ak-btn-primary" onclick="openModal('cookie-preferences-modal')">Open Preference Modal</button>
+                    <button class="ak-btn ak-btn-secondary" onclick="openModal('cookie-preferences-drawer')">Open Preference Drawer</button>
+                    <a href="#cookie-categories" class="ak-btn ak-btn-outline">Jump to Categories</a>
+                    <a href="#cookie-trigger" class="ak-btn ak-btn-ghost">Trigger Variant</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-2">Banner Variants</h2>
+            <p class="ak-text-muted ak-mb-6">Bottom, top, floating, and minimal variants share the same content grammar while adapting to different page layouts.</p>
+
+            <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Bottom Banner</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">For desktop and app shells with enough horizontal space.</p>
+                    <div class="cookie-demo-stage">
+                        <div class="ak-cookie-consent ak-cookie-bottom ak-cookie-visible">
+                            <section class="ak-cookie-panel ak-card ak-cookie-with-details ak-cookie-mobile-stack" aria-label="Cookie banner bottom">
+                                <div class="ak-cookie-header">
+                                    <div>
+                                        <div class="ak-cookie-summary ak-mb-2">
+                                            <span class="ak-badge ak-badge-soft-primary">Consent Banner</span>
+                                            <span class="ak-badge ak-badge-outline">Bottom</span>
+                                        </div>
+                                        <h3 class="ak-cookie-title">We use cookies to improve performance and measure feature usage.</h3>
+                                    </div>
+                                </div>
+                                <div class="ak-cookie-body">
+                                    <p class="ak-cookie-text">Use the primary action for a fast opt-in, keep a necessary-only path visible, and link to full privacy information or granular settings.</p>
+                                    <div class="ak-cookie-links">
+                                        <a href="#">Privacy Policy</a>
+                                        <a href="#" onclick="openModal('cookie-preferences-modal'); return false;">Cookie Settings</a>
+                                    </div>
+                                </div>
+                                <div class="ak-cookie-footer">
+                                    <div class="ak-cookie-summary">
+                                        <span class="ak-cookie-summary-item"><i data-lucide="shield-check" class="ak-w-4 ak-h-4"></i>Necessary cookies stay enabled</span>
+                                    </div>
+                                    <div class="ak-cookie-actions">
+                                        <button class="ak-btn ak-btn-primary">Accept all</button>
+                                        <button class="ak-btn ak-btn-secondary">Necessary only</button>
+                                        <button class="ak-btn ak-btn-ghost" onclick="openModal('cookie-preferences-modal')">Settings</button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Top Banner</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Fits narrow headers, marketing sites, and layouts with fixed bottom actions.</p>
+                    <div class="cookie-demo-stage">
+                        <div class="ak-cookie-consent ak-cookie-top ak-cookie-visible">
+                            <section class="ak-cookie-panel ak-card" aria-label="Cookie banner top">
+                                <div class="ak-cookie-header">
+                                    <div>
+                                        <div class="ak-cookie-summary ak-mb-2">
+                                            <span class="ak-badge ak-badge-soft-warning">Header-safe</span>
+                                            <span class="ak-badge ak-badge-outline">Top</span>
+                                        </div>
+                                        <h3 class="ak-cookie-title">Cookies support secure sign-in, analytics, and embedded content.</h3>
+                                    </div>
+                                </div>
+                                <div class="ak-cookie-body">
+                                    <p class="ak-cookie-text">Top banners work well when the footer is already busy or when the primary CTA should remain visible near the fold.</p>
+                                    <div class="ak-cookie-links">
+                                        <a href="#">Privacy Policy</a>
+                                        <a href="#">Legal Notice</a>
+                                    </div>
+                                </div>
+                                <div class="ak-cookie-footer">
+                                    <div class="ak-cookie-actions">
+                                        <button class="ak-btn ak-btn-primary">Accept all</button>
+                                        <button class="ak-btn ak-btn-outline">Necessary only</button>
+                                        <button class="ak-btn ak-btn-ghost" onclick="openModal('cookie-preferences-drawer')">Settings</button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Floating Consent Box</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Compact box for dashboards, portals, or dense application screens.</p>
+                    <div class="cookie-demo-stage">
+                        <div class="ak-cookie-consent ak-cookie-floating-right ak-cookie-visible">
+                            <section class="ak-cookie-panel ak-card" aria-label="Floating cookie box">
+                                <div class="ak-cookie-header">
+                                    <div>
+                                        <span class="ak-badge ak-badge-soft-success ak-mb-2">Floating</span>
+                                        <h3 class="ak-cookie-title">Cookie preferences</h3>
+                                    </div>
+                                    <button class="ak-btn ak-btn-ghost ak-btn-sm" aria-label="Dismiss floating cookie box">
+                                        <i data-lucide="x" class="ak-w-4 ak-h-4"></i>
+                                    </button>
+                                </div>
+                                <div class="ak-cookie-body">
+                                    <p class="ak-cookie-text">Small footprint, still enough room for a short explanation and preference entry point.</p>
+                                </div>
+                                <div class="ak-cookie-footer">
+                                    <div class="ak-cookie-actions">
+                                        <button class="ak-btn ak-btn-primary">Accept</button>
+                                        <button class="ak-btn ak-btn-ghost" onclick="openModal('cookie-preferences-modal')">Manage</button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Minimal Variant</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">For landing pages and small sites where the message must stay concise.</p>
+                    <div class="cookie-demo-stage">
+                        <div class="ak-cookie-consent ak-cookie-bottom ak-cookie-minimal ak-cookie-visible">
+                            <section class="ak-cookie-panel ak-card" aria-label="Minimal cookie banner">
+                                <div class="ak-cookie-header">
+                                    <div>
+                                        <span class="ak-badge ak-badge-outline ak-mb-2">Minimal</span>
+                                        <h3 class="ak-cookie-title">Cookies help us run this page reliably.</h3>
+                                    </div>
+                                </div>
+                                <div class="ak-cookie-body">
+                                    <p class="ak-cookie-text">Accept all, keep only essential cookies, or open settings for details.</p>
+                                </div>
+                                <div class="ak-cookie-footer">
+                                    <div class="ak-cookie-actions">
+                                        <button class="ak-btn ak-btn-primary ak-btn-sm">Accept all</button>
+                                        <button class="ak-btn ak-btn-ghost ak-btn-sm">Necessary only</button>
+                                        <button class="ak-btn ak-btn-link ak-btn-sm" onclick="openModal('cookie-preferences-modal')">Settings</button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cookie-categories" class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-2">Category Detail Area</h2>
+            <p class="ak-text-muted ak-mb-6">Use the category list inline inside privacy pages or inside modal and drawer flows. Necessary cookies remain visibly locked.</p>
+
+            <div class="ak-card ak-p-6">
+                <div class="ak-cookie-consent ak-cookie-inline-preferences ak-cookie-with-details">
+                    <section class="ak-cookie-categories" aria-label="Cookie categories">
+                        <article class="ak-cookie-category-item ak-cookie-required">
+                            <div class="ak-cookie-category-header">
+                                <div class="ak-cookie-category-main">
+                                    <div class="ak-cookie-category-title-row">
+                                        <h3 class="ak-cookie-category-title">Necessary</h3>
+                                        <span class="ak-badge ak-badge-soft-primary">Required</span>
+                                    </div>
+                                    <p class="ak-cookie-description">Authentication, session security, language preference, and core infrastructure.</p>
+                                </div>
+                                <label class="ak-switch ak-cookie-readonly">
+                                    <input type="checkbox" class="ak-switch-input" checked disabled>
+                                    <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                    <span class="ak-switch-label">Always active</span>
+                                </label>
+                            </div>
+                            <div class="ak-cookie-category-content">
+                                <div class="ak-cookie-category-meta">
+                                    <span class="ak-badge ak-badge-outline">Session</span>
+                                    <span class="ak-badge ak-badge-outline">Security</span>
+                                </div>
+                                <p class="ak-cookie-required-note">Required cookies cannot be disabled because core product functions would stop working.</p>
+                            </div>
+                        </article>
+
+                        <article class="ak-cookie-category-item">
+                            <div class="ak-cookie-category-header">
+                                <div class="ak-cookie-category-main">
+                                    <div class="ak-cookie-category-title-row">
+                                        <h3 class="ak-cookie-category-title">Functional</h3>
+                                        <span class="ak-badge ak-badge-soft-success">Optional</span>
+                                    </div>
+                                    <p class="ak-cookie-description">Remembers layout choices, saved filters, and personalized interface settings.</p>
+                                </div>
+                                <label class="ak-switch">
+                                    <input type="checkbox" class="ak-switch-input" checked>
+                                    <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                    <span class="ak-switch-label">Enabled</span>
+                                </label>
+                            </div>
+                            <details class="ak-cookie-details">
+                                <summary>Show technologies</summary>
+                                <p class="ak-cookie-description">Used for remembered sort order, dashboard layout, and locale-specific UI preferences.</p>
+                            </details>
+                        </article>
+
+                        <article class="ak-cookie-category-item">
+                            <div class="ak-cookie-category-header">
+                                <div class="ak-cookie-category-main">
+                                    <div class="ak-cookie-category-title-row">
+                                        <h3 class="ak-cookie-category-title">Statistics</h3>
+                                        <span class="ak-badge ak-badge-soft-warning">Measurement</span>
+                                    </div>
+                                    <p class="ak-cookie-description">Anonymous traffic trends, performance telemetry, and feature adoption analysis.</p>
+                                </div>
+                                <label class="ak-switch">
+                                    <input type="checkbox" class="ak-switch-input">
+                                    <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                    <span class="ak-switch-label">Disabled</span>
+                                </label>
+                            </div>
+                            <details class="ak-cookie-details">
+                                <summary>Show technologies</summary>
+                                <p class="ak-cookie-description">Typical examples are first-party analytics and product usage reports.</p>
+                            </details>
+                        </article>
+
+                        <article class="ak-cookie-category-item">
+                            <div class="ak-cookie-category-header">
+                                <div class="ak-cookie-category-main">
+                                    <div class="ak-cookie-category-title-row">
+                                        <h3 class="ak-cookie-category-title">Marketing</h3>
+                                        <span class="ak-badge ak-badge-soft-destructive">Campaigns</span>
+                                    </div>
+                                    <p class="ak-cookie-description">Ad attribution, campaign audience building, and cross-page conversion tracking.</p>
+                                </div>
+                                <label class="ak-switch">
+                                    <input type="checkbox" class="ak-switch-input">
+                                    <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                    <span class="ak-switch-label">Disabled</span>
+                                </label>
+                            </div>
+                        </article>
+
+                        <article class="ak-cookie-category-item">
+                            <div class="ak-cookie-category-header">
+                                <div class="ak-cookie-category-main">
+                                    <div class="ak-cookie-category-title-row">
+                                        <h3 class="ak-cookie-category-title">External Media</h3>
+                                        <span class="ak-badge ak-badge-secondary">Embeds</span>
+                                    </div>
+                                    <p class="ak-cookie-description">Video, map, and social content providers that may set third-party cookies.</p>
+                                </div>
+                                <label class="ak-switch">
+                                    <input type="checkbox" class="ak-switch-input">
+                                    <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                    <span class="ak-switch-label">Disabled</span>
+                                </label>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-2">Preference Center Variants</h2>
+            <p class="ak-text-muted ak-mb-6">Use a modal when users need a focused decision flow, or a drawer when privacy settings should coexist with page context.</p>
+
+            <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Modal Preference Center</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Best for first-run consent or flows that require strong attention.</p>
+                    <div class="ak-alert ak-alert-info">
+                        <div class="ak-alert-content">
+                            <div class="ak-alert-title">Recommended for onboarding</div>
+                            <p class="ak-alert-description">Clear hierarchy, grouped categories, and enough space for policy links.</p>
+                        </div>
+                    </div>
+                    <button class="ak-btn ak-btn-primary" onclick="openModal('cookie-preferences-modal')">Preview modal</button>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-2">Drawer Preference Center</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Useful inside applications where settings live next to the current workspace.</p>
+                    <div class="ak-alert ak-alert-info">
+                        <div class="ak-alert-content">
+                            <div class="ak-alert-title">Recommended for dashboards</div>
+                            <p class="ak-alert-description">Keeps navigation context visible while exposing the same category structure.</p>
+                        </div>
+                    </div>
+                    <button class="ak-btn ak-btn-secondary" onclick="openModal('cookie-preferences-drawer')">Preview drawer</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="cookie-trigger" class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-2">Reopen / Manage Trigger</h2>
+            <p class="ak-text-muted ak-mb-6">Expose a persistent trigger after the first decision so users can reopen the preference center later.</p>
+
+            <div class="ak-card ak-p-6">
+                <div class="cookie-demo-stage">
+                    <div class="ak-flex ak-flex-col ak-justify-between ak-h-full ak-p-6">
+                        <div class="cookie-preview-copy">
+                            <span class="ak-badge ak-badge-outline ak-mb-3">Persistent Trigger</span>
+                            <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Keep preference management accessible</h3>
+                            <p class="ak-text-muted">Use the floating trigger in customer portals, or switch to the link variant in privacy and footer areas.</p>
+                        </div>
+                        <a href="#" class="ak-cookie-reopen-trigger" onclick="openModal('cookie-preferences-modal'); return false;">
+                            <i data-lucide="shield" class="ak-w-4 ak-h-4"></i>
+                            Manage cookies
+                        </a>
+                    </div>
+                </div>
+                <div class="ak-flex ak-flex-wrap ak-gap-4 ak-items-center ak-mt-6">
+                    <a href="#" class="ak-cookie-reopen-trigger ak-cookie-reopen-link" onclick="openModal('cookie-preferences-modal'); return false;">Manage preferences as inline link</a>
+                    <span class="ak-text-sm ak-text-muted">Use `ak-cookie-reopen-left` to pin the trigger to the left side.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cookie-preferences-modal" class="ak-modal ak-cookie-modal ak-modal-lg">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <div>
+                    <span class="ak-badge ak-badge-soft-primary ak-mb-2">Preference Center</span>
+                    <h3 class="ak-modal-title">Review cookie preferences</h3>
+                </div>
+                <button class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('cookie-preferences-modal')">
+                    <i data-lucide="x" class="ak-w-4 ak-h-4"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <p class="ak-cookie-text">Choose which optional categories may be used. Necessary cookies remain enabled for login, security, and core delivery.</p>
+                <div class="ak-cookie-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Legal Notice</a>
+                </div>
+                <section class="ak-cookie-categories" aria-label="Cookie preferences in modal">
+                    <article class="ak-cookie-category-item ak-cookie-required">
+                        <div class="ak-cookie-category-header">
+                            <div class="ak-cookie-category-main">
+                                <div class="ak-cookie-category-title-row">
+                                    <h4 class="ak-cookie-category-title">Necessary</h4>
+                                    <span class="ak-badge ak-badge-soft-primary">Required</span>
+                                </div>
+                                <p class="ak-cookie-description">Login state, fraud prevention, and load balancing.</p>
+                            </div>
+                            <label class="ak-switch ak-cookie-readonly">
+                                <input type="checkbox" class="ak-switch-input" checked disabled>
+                                <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                <span class="ak-switch-label">Always active</span>
+                            </label>
+                        </div>
+                    </article>
+                    <article class="ak-cookie-category-item">
+                        <div class="ak-cookie-category-header">
+                            <div class="ak-cookie-category-main">
+                                <h4 class="ak-cookie-category-title">Functional</h4>
+                                <p class="ak-cookie-description">Saves dashboard widgets, locale, and remembered form choices.</p>
+                            </div>
+                            <label class="ak-switch">
+                                <input type="checkbox" class="ak-switch-input" checked>
+                                <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                <span class="ak-switch-label">Enabled</span>
+                            </label>
+                        </div>
+                    </article>
+                    <article class="ak-cookie-category-item">
+                        <div class="ak-cookie-category-header">
+                            <div class="ak-cookie-category-main">
+                                <h4 class="ak-cookie-category-title">Statistics</h4>
+                                <p class="ak-cookie-description">Measures performance and feature usage in a privacy-aware way.</p>
+                            </div>
+                            <label class="ak-switch">
+                                <input type="checkbox" class="ak-switch-input">
+                                <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                <span class="ak-switch-label">Disabled</span>
+                            </label>
+                        </div>
+                    </article>
+                    <article class="ak-cookie-category-item">
+                        <div class="ak-cookie-category-header">
+                            <div class="ak-cookie-category-main">
+                                <h4 class="ak-cookie-category-title">Marketing</h4>
+                                <p class="ak-cookie-description">Supports campaigns, attribution, and external ad network measurement.</p>
+                            </div>
+                            <label class="ak-switch">
+                                <input type="checkbox" class="ak-switch-input">
+                                <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                                <span class="ak-switch-label">Disabled</span>
+                            </label>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            <div class="ak-modal-footer">
+                <button class="ak-btn ak-btn-ghost" onclick="closeModal('cookie-preferences-modal')">Cancel</button>
+                <button class="ak-btn ak-btn-secondary">Necessary only</button>
+                <button class="ak-btn ak-btn-primary">Save preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-preferences-drawer" class="ak-modal ak-drawer-right ak-drawer ak-cookie-drawer">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <div>
+                    <span class="ak-badge ak-badge-soft-success ak-mb-2">Side Panel</span>
+                    <h3 class="ak-modal-title">Cookie settings</h3>
+                </div>
+                <button class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('cookie-preferences-drawer')">
+                    <i data-lucide="x" class="ak-w-4 ak-h-4"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <p class="ak-cookie-text">A drawer keeps the current page visible while still supporting category toggles and policy links.</p>
+                <div class="ak-cookie-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie details</a>
+                </div>
+                <article class="ak-cookie-category-item ak-cookie-required">
+                    <div class="ak-cookie-category-header">
+                        <div class="ak-cookie-category-main">
+                            <h4 class="ak-cookie-category-title">Necessary</h4>
+                            <p class="ak-cookie-description">Required for secure account access.</p>
+                        </div>
+                        <label class="ak-switch ak-cookie-readonly">
+                            <input type="checkbox" class="ak-switch-input" checked disabled>
+                            <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                            <span class="ak-switch-label">Active</span>
+                        </label>
+                    </div>
+                </article>
+                <article class="ak-cookie-category-item">
+                    <div class="ak-cookie-category-header">
+                        <div class="ak-cookie-category-main">
+                            <h4 class="ak-cookie-category-title">External Media</h4>
+                            <p class="ak-cookie-description">Enables maps, videos, and help center embeds.</p>
+                        </div>
+                        <label class="ak-switch">
+                            <input type="checkbox" class="ak-switch-input">
+                            <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+                            <span class="ak-switch-label">Disabled</span>
+                        </label>
+                    </div>
+                </article>
+            </div>
+            <div class="ak-modal-footer">
+                <button class="ak-btn ak-btn-ghost" onclick="closeModal('cookie-preferences-drawer')">Close</button>
+                <button class="ak-btn ak-btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.html" data-page="index">Overview</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ak-demo.js"></script>
+</body>
+</html>

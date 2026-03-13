@@ -118,6 +118,7 @@ function normalizeDemoSidebar() {
             cards: 'Cards',
             alerts: 'Alerts',
             modals: 'Modals',
+            cookies: 'Cookie Consent',
             tables: 'Tables',
             layout: 'Layout',
             extended: 'Extended',
@@ -140,6 +141,7 @@ function normalizeDemoSidebar() {
             cards: 'Cards',
             alerts: 'Alerts',
             modals: 'Modals',
+            cookies: 'Cookie Consent',
             tables: 'Tabellen',
             layout: 'Layout',
             extended: 'Erweitert',
@@ -162,6 +164,7 @@ function normalizeDemoSidebar() {
             cards: 'Kartlar',
             alerts: 'Uyarılar',
             modals: 'Modallar',
+            cookies: 'Cookie Consent',
             tables: 'Tablolar',
             layout: 'Düzen',
             extended: 'Genişletilmiş',
@@ -195,6 +198,7 @@ function normalizeDemoSidebar() {
         { key: 'cards', href: `cards${suffix}.html` },
         { key: 'alerts', href: `alerts${suffix}.html` },
         { key: 'modals', href: `modals${suffix}.html` },
+        { key: 'cookies', href: `cookies${suffix}.html` },
         { key: 'tables', href: `tables${suffix}.html` },
         { key: 'extended', href: `extended${suffix}.html` },
         { key: 'headers', href: `headers${suffix}.html` },
@@ -271,6 +275,10 @@ function getSidebarGroup(path) {
 
     if (path.startsWith('modals')) {
         return 'modals';
+    }
+
+    if (path.startsWith('cookies')) {
+        return 'cookies';
     }
 
     if (path.startsWith('tables')) {

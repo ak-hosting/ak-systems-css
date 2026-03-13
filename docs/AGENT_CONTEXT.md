@@ -234,6 +234,84 @@ Linear set of exclusive options.
 </div>
 ```
 
+### Cookie Consent (`.ak-cookie-*`)
+Cookie components extend the system additively and are designed to reuse `.ak-btn`, `.ak-card`, `.ak-modal`, `.ak-drawer`, `.ak-switch`, `.ak-badge`, spacing utilities, and the existing z-index variables.
+
+#### Main Class Families
+- Wrapper / variants: `.ak-cookie-consent`, `.ak-cookie-top`, `.ak-cookie-bottom`, `.ak-cookie-floating-left`, `.ak-cookie-floating-right`, `.ak-cookie-minimal`, `.ak-cookie-inline-preferences`, `.ak-cookie-centered-preferences`
+- Layout: `.ak-cookie-panel`, `.ak-cookie-header`, `.ak-cookie-body`, `.ak-cookie-footer`, `.ak-cookie-actions`, `.ak-cookie-links`
+- Categories: `.ak-cookie-categories`, `.ak-cookie-category-item`, `.ak-cookie-category-header`, `.ak-cookie-category-title`, `.ak-cookie-category-content`, `.ak-cookie-details`
+- States: `.ak-cookie-visible`, `.ak-cookie-hidden`, `.ak-cookie-open`, `.ak-cookie-with-details`, `.ak-cookie-mobile-stack`, `.ak-cookie-required`, `.ak-cookie-readonly`
+- Reopen trigger: `.ak-cookie-reopen-trigger`, `.ak-cookie-reopen-left`, `.ak-cookie-reopen-link`
+- Preference center helpers: `.ak-cookie-modal`, `.ak-cookie-drawer`
+
+#### Recommended Banner Structure
+```html
+<div class="ak-cookie-consent ak-cookie-bottom ak-cookie-visible">
+  <section class="ak-cookie-panel ak-card ak-cookie-mobile-stack" aria-label="Cookie banner">
+    <div class="ak-cookie-header">
+      <div>
+        <h3 class="ak-cookie-title">We use cookies for core functionality and analytics.</h3>
+      </div>
+    </div>
+    <div class="ak-cookie-body">
+      <p class="ak-cookie-text">Explain the purpose briefly and link to policy pages.</p>
+      <div class="ak-cookie-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+    <div class="ak-cookie-footer">
+      <div class="ak-cookie-actions">
+        <button class="ak-btn ak-btn-primary">Accept all</button>
+        <button class="ak-btn ak-btn-secondary">Necessary only</button>
+        <button class="ak-btn ak-btn-ghost">Settings</button>
+      </div>
+    </div>
+  </section>
+</div>
+```
+
+#### Category Row Pattern
+Use disabled checked switches for necessary cookies and normal `.ak-switch` controls for optional categories.
+```html
+<article class="ak-cookie-category-item ak-cookie-required">
+  <div class="ak-cookie-category-header">
+    <div class="ak-cookie-category-main">
+      <h4 class="ak-cookie-category-title">Necessary</h4>
+      <p class="ak-cookie-description">Required for login and security.</p>
+    </div>
+    <label class="ak-switch ak-cookie-readonly">
+      <input type="checkbox" class="ak-switch-input" checked disabled>
+      <span class="ak-switch-track"><span class="ak-switch-thumb"></span></span>
+      <span class="ak-switch-label">Always active</span>
+    </label>
+  </div>
+</article>
+```
+
+#### Variant Guidance
+- Use banner variants for first-touch consent on marketing pages, CMS pages, and customer sites.
+- Use `.ak-cookie-modal` for focused consent flows with multiple categories or more explanatory text.
+- Use `.ak-cookie-drawer` inside dashboards and portals where page context should remain visible.
+- Use `.ak-cookie-minimal` for small landing pages with a short explanation and fast action set.
+- Use `.ak-cookie-inline-preferences` when preferences must be embedded directly into a privacy or account page.
+
+#### Necessary vs. Optional
+- Mark non-disableable categories with `.ak-cookie-required` and a disabled checked switch.
+- Mark optional categories with regular switches and, when useful, a badge such as `.ak-badge-soft-success`, `.ak-badge-soft-warning`, or `.ak-badge-soft-destructive`.
+- Expandable technical details can be placed in a native `<details>` element using `.ak-cookie-details`.
+
+#### Reopen Trigger
+```html
+<a href="#"
+   class="ak-cookie-reopen-trigger"
+   onclick="openModal('cookie-preferences-modal'); return false;">
+  Manage cookies
+</a>
+```
+Use `.ak-cookie-reopen-left` for a left-fixed trigger or `.ak-cookie-reopen-link` for footer/privacy-page placement.
+
 ### Badges (`.ak-badge`)
 ```html
 <span class="ak-badge">Default</span>

@@ -3909,12 +3909,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 
 .ak-switch-status .ak-switch-track {
   width: auto;
-  min-width: 44px;
+  min-width: max-content;
   flex: 0 0 auto;
-  display: grid;
+  display: inline-flex;
   align-items: center;
-  justify-items: stretch;
-  padding: 1px 10px 1px 30px;
+  justify-content: flex-end;
+  padding: 1px 12px 1px 32px;
   min-height: 24px;
 }
 
@@ -3929,41 +3929,38 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 }
 
 .ak-switch-state {
-  grid-area: 1 / 1;
-  font-size: 11px;
-  line-height: 1.1;
+  display: none;
+  font-size: 12px;
+  line-height: 1.2;
   font-weight: var(--ak-font-weight-medium);
   white-space: nowrap;
   text-align: center;
   padding-inline: var(--ak-space-1);
   color: var(--ak-color-text-muted);
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-.ak-switch-state-on {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.ak-switch-state-off {
-  opacity: 1;
-  visibility: visible;
+  transition: color 0.2s ease;
 }
 
 .ak-switch-status .ak-switch-input:checked + .ak-switch-track {
-  padding-left: 10px;
-  padding-right: 30px;
+  justify-content: flex-start;
+  padding-left: 12px;
+  padding-right: 32px;
 }
 
-.ak-switch-status .ak-switch-input:checked + .ak-switch-track .ak-switch-state-on {
-  opacity: 1;
-  visibility: visible;
-  color: var(--ak-color-primary-text);
+.ak-switch-status .ak-switch-track .ak-switch-state-off {
+  display: inline;
 }
 
 .ak-switch-status .ak-switch-input:checked + .ak-switch-track .ak-switch-state-off {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
+}
+
+.ak-switch-status .ak-switch-input:checked + .ak-switch-track .ak-switch-state-on {
+  display: inline;
+  color: var(--ak-color-primary-text);
+}
+
+.ak-switch-status .ak-switch-track .ak-switch-state-on {
+  display: none;
 }
 
 .ak-switch-status .ak-switch-input:disabled + .ak-switch-track .ak-switch-state-on,

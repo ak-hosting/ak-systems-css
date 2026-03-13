@@ -1,3 +1,4 @@
+/*! AK Design System v2.0.2 | (c) AK Systems */
 :root {
   --ak-color-bg: hsl(222, 84%, 5%);
   --ak-color-surface: hsl(217, 33%, 17%);
@@ -2235,14 +2236,19 @@ blockquote {
 
 .ak-switch {
   position: relative;
-  display: inline-block;
-  width: 44px;
-  height: 24px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--ak-space-3);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
 }
 .ak-switch input {
   opacity: 0;
   width: 0;
   height: 0;
+  flex: 0 0 auto;
 }
 .ak-switch input:checked + .ak-switch-slider {
   background-color: var(--ak-color-primary);
@@ -2255,12 +2261,13 @@ blockquote {
   box-shadow: 0 0 0 2px var(--ak-color-ring);
 }
 .ak-switch-slider {
-  position: absolute;
+  position: relative;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: inline-block;
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  height: 24px;
   background-color: var(--ak-color-muted);
   transition: 0.2s;
   border-radius: 24px;
@@ -2479,7 +2486,12 @@ blockquote {
 
 /* Switch Sizes */
 .ak-switch-sm {
+  gap: var(--ak-space-2);
+}
+.ak-switch-sm .ak-switch-slider {
+  flex-basis: 36px;
   width: 36px;
+  min-width: 36px;
   height: 20px;
 }
 .ak-switch-sm .ak-switch-slider:before {
@@ -2491,7 +2503,12 @@ blockquote {
 }
 
 .ak-switch-lg {
+  gap: var(--ak-space-3);
+}
+.ak-switch-lg .ak-switch-slider {
+  flex-basis: 52px;
   width: 52px;
+  min-width: 52px;
   height: 28px;
 }
 .ak-switch-lg .ak-switch-slider:before {
@@ -3820,9 +3837,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 
 .ak-switch {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   cursor: pointer;
   position: relative;
+  gap: var(--ak-space-3);
+  max-width: 100%;
+  vertical-align: top;
 }
 
 .ak-switch-input {
@@ -3839,10 +3859,12 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 
 .ak-switch-track {
   width: 44px;
+  min-width: 44px;
   height: 24px;
   background-color: var(--ak-color-input);
   border-radius: 9999px;
   position: relative;
+  flex: 0 0 44px;
   transition: background-color 0.2s ease;
   border: 1px solid var(--ak-color-border);
 }
@@ -3875,10 +3897,14 @@ details[open] .ak-accordion-summary .ak-accordion-trigger-icon {
 }
 
 .ak-switch-label {
-  margin-left: var(--ak-space-3);
+  margin-left: 0;
+  min-width: 0;
+  flex: 1 1 auto;
   font-size: var(--ak-font-size-sm);
   color: var(--ak-color-text);
   user-select: none;
+  line-height: var(--ak-line-height-normal);
+  overflow-wrap: anywhere;
 }
 
 /* -------------------------------------------------------------------------- */

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltips & Popovers - AK Design System</title>
+    <meta name="description" content="AK Design System tooltip and popover demos with positions, sizes, and interactive examples.">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="ak-theme-dark">
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="index.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                    <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                    Back to Index
+                </a>
+                <h1 class="ak-text-xl ak-font-bold">Tooltips & Popovers</h1>
+            </div>
+            <div class="ak-header-actions">
+                <div class="ak-flex ak-gap-2">
+                    <a href="tooltips.html" class="ak-btn ak-btn-sm ak-btn-primary">EN</a>
+                    <a href="tooltips.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                    <a href="tooltips.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-4">Guidance</h2>
+            <p class="ak-text-lg ak-text-muted ak-mb-8">Use tooltips for short, non-interactive hints. Use popovers when the content needs structure, multiple lines, or actions.</p>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">When To Use Tooltips</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Short labels for icons</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">One-line explanations for controls</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Keyboard accessible hover/focus hints</div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">When To Use Popovers</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Multi-line descriptions</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Headers, footers, and grouped content</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Inline quick actions without opening a modal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Positions</h2>
+
+            <div class="ak-card ak-p-6">
+                <p class="ak-text-sm ak-text-muted ak-mb-4">All four placement classes already exist in the framework. The default tooltip opens above the trigger.</p>
+                <div class="ak-flex ak-flex-wrap ak-gap-4">
+                    <button type="button" class="ak-tooltip-trigger ak-btn">
+                        Top Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Short helper text</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
+                        Right Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">More info</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary">
+                        Bottom Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Status details</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost">
+                        Left Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Keyboard accessible</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Patterns</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Icon Actions</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4">
+                        <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Edit item">
+                            <i data-lucide="pencil" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Edit item</span>
+                        </button>
+                        <button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-square ak-btn-outline" aria-label="Copy link">
+                            <i data-lucide="copy" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Copy link</span>
+                        </button>
+                        <button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-square ak-btn-ghost" aria-label="Archive">
+                            <i data-lucide="archive" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Archive</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Inline Help</h3>
+                    <div class="ak-form-group">
+                        <label class="ak-form-label">API Token</label>
+                        <div class="ak-flex ak-items-center ak-gap-3">
+                            <input type="text" class="ak-input" value="ak_live_1234567890" readonly>
+                            <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square ak-btn-ghost" aria-label="Token info">
+                                <i data-lucide="info" class="ak-w-4 ak-h-4"></i>
+                                <span class="ak-tooltip-content" role="tooltip">Used for server-to-server requests</span>
+                            </button>
+                        </div>
+                        <p class="ak-form-hint">Keep this token private.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Popovers</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Positions & Sizes</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4">
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-btn">
+                            Default Popover
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-header">Top Placement</div>
+                                <div class="ak-popover-body">Use this for structured guidance that is still lightweight.</div>
+                            </div>
+                        </div>
+
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-right ak-popover-sm ak-btn ak-btn-outline">
+                            Small Right
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-body">Compact status note.</div>
+                            </div>
+                        </div>
+
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-bottom ak-popover-lg ak-btn ak-btn-secondary">
+                            Large Bottom
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-header">Release Checklist</div>
+                                <div class="ak-popover-body">Popover bodies can span multiple lines and hold denser context than a tooltip.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Interactive Popover</h3>
+                    <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline">
+                        Quick Actions
+                        <div class="ak-popover-content">
+                            <div class="ak-popover-header">Team Access</div>
+                            <div class="ak-popover-body">
+                                Invite editors, copy a review link, or change visibility without leaving the current screen.
+                            </div>
+                            <div class="ak-popover-footer">
+                                <button type="button" class="ak-btn ak-btn-sm ak-btn-ghost">Later</button>
+                                <button type="button" class="ak-btn ak-btn-sm ak-btn-primary">Invite</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Overview</span></a></li>
+                    <li><a href="typography.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typography</span></a></li>
+                    <li><a href="sections.html" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Sections</span></a></li>
+                    <li><a href="index.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Colors</span></a></li>
+                    <li><a href="backgrounds.html" data-page="backgrounds"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Backgrounds</span></a></li>
+                    <li><a href="buttons.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="tooltips.html" class="ak-active" data-page="tooltips"><i data-lucide="message-square-more" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tooltips</span></a></li>
+                    <li><a href="loaders.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loaders</span></a></li>
+                    <li><a href="forms.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Forms</span></a></li>
+                    <li><a href="selection-controls.html" data-page="selection-controls"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Selection Controls</span></a></li>
+                    <li><a href="upload.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
+                    <li><a href="alerts.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
+                    <li><a href="modals.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modals</span></a></li>
+                    <li><a href="cookies.html" data-page="cookies"><i data-lucide="cookie" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cookie Consent</span></a></li>
+                    <li><a href="tables.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tables</span></a></li>
+                    <li><a href="extended.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Extended</span></a></li>
+                    <li><a href="layout.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="headers.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utility Classes</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ak-demo.js"></script>
+</body>
+</html>

@@ -126,6 +126,41 @@ Use these variables for custom styles to maintain consistency.
 <button class="ak-btn ak-loading"><span class="ak-loading-spinner"></span></button>
 ```
 
+### Tooltips & Popovers
+Use tooltips for short, non-interactive helper text. Use popovers for richer content, headers, footers, or clickable actions.
+
+```html
+<!-- Tooltip positions: top (default), right, bottom, left -->
+<button type="button" class="ak-tooltip-trigger ak-btn">
+  Save
+  <span class="ak-tooltip-content" role="tooltip">Saves your draft</span>
+</button>
+
+<button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
+  Share
+  <span class="ak-tooltip-content" role="tooltip">Copy a link</span>
+</button>
+
+<button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary">
+  Publish
+  <span class="ak-tooltip-content" role="tooltip">Visible to everyone</span>
+</button>
+
+<button type="button" class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost">
+  Archive
+  <span class="ak-tooltip-content" role="tooltip">Moves item out of view</span>
+</button>
+
+<!-- Popover for richer content -->
+<div class="ak-popover-trigger ak-popover-right ak-btn ak-btn-outline" tabindex="0">
+  More
+  <div class="ak-popover-content">
+    <div class="ak-popover-header">Quick Actions</div>
+    <div class="ak-popover-body">Use popovers for multi-line guidance or actions.</div>
+  </div>
+</div>
+```
+
 ### Cards (`.ak-card`)
 ```html
 <div class="ak-card">

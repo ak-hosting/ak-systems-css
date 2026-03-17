@@ -111,6 +111,7 @@ function normalizeDemoSidebar() {
             colors: 'Colors',
             backgrounds: 'Backgrounds',
             buttons: 'Buttons',
+            tooltips: 'Tooltips',
             loaders: 'Loaders',
             forms: 'Forms',
             selectionControls: 'Selection Controls',
@@ -134,6 +135,7 @@ function normalizeDemoSidebar() {
             colors: 'Farben',
             backgrounds: 'Hintergründe',
             buttons: 'Buttons',
+            tooltips: 'Tooltips',
             loaders: 'Loaders',
             forms: 'Formulare',
             selectionControls: 'Auswahl',
@@ -157,6 +159,7 @@ function normalizeDemoSidebar() {
             colors: 'Renkler',
             backgrounds: 'Arka Planlar',
             buttons: 'Butonlar',
+            tooltips: 'Tooltips',
             loaders: 'Yükleyiciler',
             forms: 'Formlar',
             selectionControls: 'Seçim Kontrolleri',
@@ -190,6 +193,7 @@ function normalizeDemoSidebar() {
         { key: 'colors', href: `index${indexSuffix}.html#colors` },
         { key: 'backgrounds', href: `backgrounds${suffix}.html` },
         { key: 'buttons', href: `buttons${suffix}.html` },
+        { key: 'tooltips', href: `tooltips${suffix}.html` },
         { key: 'loaders', href: `loaders${suffix}.html` },
         { key: 'layout', href: `layout${suffix}.html` },
         { key: 'forms', href: `forms${suffix}.html` },
@@ -243,6 +247,10 @@ function getSidebarGroup(path) {
 
     if (path.startsWith('buttons')) {
         return 'buttons';
+    }
+
+    if (path.startsWith('tooltips')) {
+        return 'tooltips';
     }
 
     if (path.startsWith('loaders')) {

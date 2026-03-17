@@ -8,6 +8,21 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css">
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    <style>
+        .tooltip-demo-grid,
+        .tooltip-demo-card {
+            overflow: visible;
+        }
+
+        .tooltip-demo-card {
+            position: relative;
+        }
+
+        .tooltip-demo-card:hover,
+        .tooltip-demo-card:focus-within {
+            z-index: 20;
+        }
+    </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body class="ak-theme-dark">
@@ -38,8 +53,8 @@
             <h2 class="ak-text-2xl ak-font-bold ak-mb-4">Kullanim Mantigi</h2>
             <p class="ak-text-lg ak-text-muted ak-mb-8">Tooltip kisa ve etkilesimsiz ipuclari icindir. Popover ise yapili icerik, birden fazla satir veya aksiyon gerektiginde daha uygundur.</p>
 
-            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
-                <div class="ak-card ak-p-6">
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Tooltip Ne Zaman Uygun</h3>
                     <div class="ak-flex ak-flex-col ak-gap-3">
                         <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Ikonlar icin kisa etiketler</div>
@@ -48,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="ak-card ak-p-6">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Popover Ne Zaman Uygun</h3>
                     <div class="ak-flex ak-flex-col ak-gap-3">
                         <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Cok satirli aciklamalar</div>
@@ -62,7 +77,7 @@
         <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Konumlari</h2>
 
-            <div class="ak-card ak-p-6">
+            <div class="ak-card ak-p-6 tooltip-demo-card">
                 <p class="ak-text-sm ak-text-muted ak-mb-4">Dort yerlestirme sinifi da framework icinde hazir. Varsayilan tooltip tetikleyicinin ustunde acilir.</p>
                 <div class="ak-flex ak-flex-wrap ak-gap-4">
                     <button type="button" class="ak-tooltip-trigger ak-btn">
@@ -88,8 +103,8 @@
         <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Kaliplari</h2>
 
-            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
-                <div class="ak-card ak-p-6">
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Ikon Aksiyonlari</h3>
                     <div class="ak-flex ak-flex-wrap ak-gap-4">
                         <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Ogeyi duzenle">
@@ -107,7 +122,7 @@
                     </div>
                 </div>
 
-                <div class="ak-card ak-p-6">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Satir Ici Yardim</h3>
                     <div class="ak-form-group">
                         <label class="ak-form-label">API Token</label>
@@ -127,8 +142,8 @@
         <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Popovers</h2>
 
-            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
-                <div class="ak-card ak-p-6">
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Konumlar & Boyutlar</h3>
                     <div class="ak-flex ak-flex-wrap ak-gap-4">
                         <div tabindex="0" role="button" class="ak-popover-trigger ak-btn">
@@ -156,7 +171,7 @@
                     </div>
                 </div>
 
-                <div class="ak-card ak-p-6">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Etkilesimli Popover</h3>
                     <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline">
                         Hizli Aksiyonlar

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltips & Popovers - AK Design System</title>
+    <meta name="description" content="AK Design System tooltip ve popover demolari; konumlar, boyutlar ve etkilesimli ornekler.">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="ak-theme-dark">
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                    <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                    Indekse Don
+                </a>
+                <h1 class="ak-text-xl ak-font-bold">Tooltips & Popovers</h1>
+            </div>
+            <div class="ak-header-actions">
+                <div class="ak-flex ak-gap-2">
+                    <a href="tooltips.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                    <a href="tooltips.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                    <a href="tooltips.tr.html" class="ak-btn ak-btn-sm ak-btn-primary">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-4">Kullanim Mantigi</h2>
+            <p class="ak-text-lg ak-text-muted ak-mb-8">Tooltip kisa ve etkilesimsiz ipuclari icindir. Popover ise yapili icerik, birden fazla satir veya aksiyon gerektiginde daha uygundur.</p>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Tooltip Ne Zaman Uygun</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Ikonlar icin kisa etiketler</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Kontroller icin tek satirlik aciklamalar</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Hover ve klavye odagi ipuclari</div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Popover Ne Zaman Uygun</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Cok satirli aciklamalar</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Baslik, footer ve gruplanmis icerik</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Modal acmadan hizli aksiyonlar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Konumlari</h2>
+
+            <div class="ak-card ak-p-6">
+                <p class="ak-text-sm ak-text-muted ak-mb-4">Dort yerlestirme sinifi da framework icinde hazir. Varsayilan tooltip tetikleyicinin ustunde acilir.</p>
+                <div class="ak-flex ak-flex-wrap ak-gap-4">
+                    <button type="button" class="ak-tooltip-trigger ak-btn">
+                        Ust Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Kisa yardim metni</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
+                        Sag Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Daha fazla bilgi</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary">
+                        Alt Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Durum ayrintilari</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost">
+                        Sol Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Klavye ile odaklanabilir</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Kaliplari</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Ikon Aksiyonlari</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4">
+                        <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Ogeyi duzenle">
+                            <i data-lucide="pencil" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Ogeyi duzenle</span>
+                        </button>
+                        <button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-square ak-btn-outline" aria-label="Baglantiyi kopyala">
+                            <i data-lucide="copy" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Baglantiyi kopyala</span>
+                        </button>
+                        <button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-square ak-btn-ghost" aria-label="Arsivle">
+                            <i data-lucide="archive" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Arsivle</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Satir Ici Yardim</h3>
+                    <div class="ak-form-group">
+                        <label class="ak-form-label">API Token</label>
+                        <div class="ak-flex ak-items-center ak-gap-3">
+                            <input type="text" class="ak-input" value="ak_live_1234567890" readonly>
+                            <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square ak-btn-ghost" aria-label="Token bilgisi">
+                                <i data-lucide="info" class="ak-w-4 ak-h-4"></i>
+                                <span class="ak-tooltip-content" role="tooltip">Sunucu ile sunucu arasindaki isteklerde kullanilir</span>
+                            </button>
+                        </div>
+                        <p class="ak-form-hint">Bu token gizli tutulmalidir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Popovers</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Konumlar & Boyutlar</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4">
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-btn">
+                            Varsayilan Popover
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-header">Ust Konum</div>
+                                <div class="ak-popover-body">Basit tooltipten daha zengin ama hala hafif kalan yapili aciklamalar icin uygundur.</div>
+                            </div>
+                        </div>
+
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-right ak-popover-sm ak-btn ak-btn-outline">
+                            Kucuk Sag
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-body">Kompakt durum mesaji.</div>
+                            </div>
+                        </div>
+
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-bottom ak-popover-lg ak-btn ak-btn-secondary">
+                            Buyuk Alt
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-header">Yayin Kontrol Listesi</div>
+                                <div class="ak-popover-body">Popover, tooltipten daha yogun icerik tasiyabilir ve yine de modal kadar agir hissettirmez.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Etkilesimli Popover</h3>
+                    <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline">
+                        Hizli Aksiyonlar
+                        <div class="ak-popover-content">
+                            <div class="ak-popover-header">Takim Erisimi</div>
+                            <div class="ak-popover-body">
+                                Editor davet edin, inceleme baglantisi kopyalayin veya gorunurlugu degistirin; ekrandan ayrilmaniz gerekmez.
+                            </div>
+                            <div class="ak-popover-footer">
+                                <button type="button" class="ak-btn ak-btn-sm ak-btn-ghost">Sonra</button>
+                                <button type="button" class="ak-btn ak-btn-sm ak-btn-primary">Davet Et</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigasyon</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.tr.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Genel Bakis</span></a></li>
+                    <li><a href="typography.tr.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tipografi</span></a></li>
+                    <li><a href="sections.tr.html" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Bolumler</span></a></li>
+                    <li><a href="index.tr.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Renkler</span></a></li>
+                    <li><a href="backgrounds.tr.html" data-page="backgrounds"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Arka Planlar</span></a></li>
+                    <li><a href="buttons.tr.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Butonlar</span></a></li>
+                    <li><a href="tooltips.tr.html" class="ak-active" data-page="tooltips"><i data-lucide="message-square-more" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tooltips</span></a></li>
+                    <li><a href="loaders.tr.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yukleyiciler</span></a></li>
+                    <li><a href="forms.tr.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formlar</span></a></li>
+                    <li><a href="selection-controls.tr.html" data-page="selection-controls"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Secim Kontrolleri</span></a></li>
+                    <li><a href="upload.tr.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Yukleme</span></a></li>
+                    <li><a href="cards.tr.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Kartlar</span></a></li>
+                    <li><a href="alerts.tr.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Uyarilar</span></a></li>
+                    <li><a href="modals.tr.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modallar</span></a></li>
+                    <li><a href="cookies.tr.html" data-page="cookies"><i data-lucide="cookie" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cookie Consent</span></a></li>
+                    <li><a href="tables.tr.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tablolar</span></a></li>
+                    <li><a href="extended.tr.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Genisletilmis</span></a></li>
+                    <li><a href="layout.tr.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Duzen</span></a></li>
+                    <li><a href="headers.tr.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.tr.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utility Classes</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ak-demo.js"></script>
+</body>
+</html>

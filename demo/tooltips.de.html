@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltips & Popover - AK Design System</title>
+    <meta name="description" content="AK Design System Tooltip- und Popover-Demos mit Positionen, Groessen und interaktiven Beispielen.">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="ak-theme-dark">
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="index.de.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                    <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                    Zurueck zum Index
+                </a>
+                <h1 class="ak-text-xl ak-font-bold">Tooltips & Popover</h1>
+            </div>
+            <div class="ak-header-actions">
+                <div class="ak-flex ak-gap-2">
+                    <a href="tooltips.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                    <a href="tooltips.de.html" class="ak-btn ak-btn-sm ak-btn-primary">DE</a>
+                    <a href="tooltips.tr.html" class="ak-btn ak-btn-sm ak-btn-ghost">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container">
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-4">Einordnung</h2>
+            <p class="ak-text-lg ak-text-muted ak-mb-8">Tooltips sind fuer kurze, nicht-interaktive Hinweise gedacht. Popover sind die bessere Wahl, wenn Struktur, mehrere Zeilen oder Aktionen noetig sind.</p>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Wann Tooltips passen</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Kurze Labels fuer Icons</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Einzeilige Erklaerungen fuer Controls</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Hinweise fuer Hover und Tastaturfokus</div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Wann Popover besser sind</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Mehrzeilige Beschreibungen</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Header, Footer und gruppierte Inhalte</div>
+                        <div class="ak-p-3 ak-border ak-border-border ak-rounded-md">Schnellaktionen ohne Modal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip-Positionen</h2>
+
+            <div class="ak-card ak-p-6">
+                <p class="ak-text-sm ak-text-muted ak-mb-4">Alle vier Platzierungen sind im Framework bereits vorhanden. Standardmaessig oeffnet der Tooltip oberhalb des Triggers.</p>
+                <div class="ak-flex ak-flex-wrap ak-gap-4">
+                    <button type="button" class="ak-tooltip-trigger ak-btn">
+                        Oben Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Kurzer Hilfetext</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline">
+                        Rechts Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Mehr Info</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary">
+                        Unten Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Statusdetails</span>
+                    </button>
+                    <button type="button" class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost">
+                        Links Tooltip
+                        <span class="ak-tooltip-content" role="tooltip">Per Tastatur fokusierbar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip-Muster</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Icon-Aktionen</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4">
+                        <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Element bearbeiten">
+                            <i data-lucide="pencil" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Element bearbeiten</span>
+                        </button>
+                        <button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-square ak-btn-outline" aria-label="Link kopieren">
+                            <i data-lucide="copy" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Link kopieren</span>
+                        </button>
+                        <button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-square ak-btn-ghost" aria-label="Archivieren">
+                            <i data-lucide="archive" class="ak-w-4 ak-h-4"></i>
+                            <span class="ak-tooltip-content" role="tooltip">Archivieren</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Inline-Hilfe</h3>
+                    <div class="ak-form-group">
+                        <label class="ak-form-label">API-Token</label>
+                        <div class="ak-flex ak-items-center ak-gap-3">
+                            <input type="text" class="ak-input" value="ak_live_1234567890" readonly>
+                            <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square ak-btn-ghost" aria-label="Token-Info">
+                                <i data-lucide="info" class="ak-w-4 ak-h-4"></i>
+                                <span class="ak-tooltip-content" role="tooltip">Fuer Server-zu-Server Requests gedacht</span>
+                            </button>
+                        </div>
+                        <p class="ak-form-hint">Diesen Token vertraulich behandeln.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Popover</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8">
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Positionen & Groessen</h3>
+                    <div class="ak-flex ak-flex-wrap ak-gap-4">
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-btn">
+                            Standard Popover
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-header">Oben platziert</div>
+                                <div class="ak-popover-body">Gut fuer strukturierte Hilfetexte, die ueber einen einfachen Tooltip hinausgehen.</div>
+                            </div>
+                        </div>
+
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-right ak-popover-sm ak-btn ak-btn-outline">
+                            Klein Rechts
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-body">Kompakter Statushinweis.</div>
+                            </div>
+                        </div>
+
+                        <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-bottom ak-popover-lg ak-btn ak-btn-secondary">
+                            Gross Unten
+                            <div class="ak-popover-content">
+                                <div class="ak-popover-header">Release-Checkliste</div>
+                                <div class="ak-popover-body">Popover koennen deutlich dichtere Inhalte tragen als Tooltips und bleiben trotzdem leichtgewichtig.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Interaktiver Popover</h3>
+                    <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline">
+                        Schnellaktionen
+                        <div class="ak-popover-content">
+                            <div class="ak-popover-header">Team-Zugriff</div>
+                            <div class="ak-popover-body">
+                                Editoren einladen, Review-Link kopieren oder Sichtbarkeit aendern, ohne den Kontext zu verlassen.
+                            </div>
+                            <div class="ak-popover-footer">
+                                <button type="button" class="ak-btn ak-btn-sm ak-btn-ghost">Spaeter</button>
+                                <button type="button" class="ak-btn ak-btn-sm ak-btn-primary">Einladen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Navigation</h2>
+                <button id="close-sidebar" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="ak-modal-body">
+                <ul class="ak-nav ak-flex-col ak-gap-2 ak-sidebar-nav">
+                    <li><a href="index.de.html" data-page="index"><i data-lucide="home" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Uebersicht</span></a></li>
+                    <li><a href="typography.de.html" data-page="typography"><i data-lucide="type" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Typografie</span></a></li>
+                    <li><a href="sections.de.html" data-page="sections"><i data-lucide="layers" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Sektionen</span></a></li>
+                    <li><a href="index.de.html#colors" data-page="colors"><i data-lucide="palette" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Farben</span></a></li>
+                    <li><a href="backgrounds.de.html" data-page="backgrounds"><i data-lucide="image" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Hintergruende</span></a></li>
+                    <li><a href="buttons.de.html" data-page="buttons"><i data-lucide="mouse-pointer-click" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Buttons</span></a></li>
+                    <li><a href="tooltips.de.html" class="ak-active" data-page="tooltips"><i data-lucide="message-square-more" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tooltips</span></a></li>
+                    <li><a href="loaders.de.html" data-page="loaders"><i data-lucide="loader" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Loaders</span></a></li>
+                    <li><a href="forms.de.html" data-page="forms"><i data-lucide="form-input" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Formulare</span></a></li>
+                    <li><a href="selection-controls.de.html" data-page="selection-controls"><i data-lucide="check-square" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Auswahl</span></a></li>
+                    <li><a href="upload.de.html" data-page="upload"><i data-lucide="cloud-upload" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Upload</span></a></li>
+                    <li><a href="cards.de.html" data-page="cards"><i data-lucide="credit-card" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cards</span></a></li>
+                    <li><a href="alerts.de.html" data-page="alerts"><i data-lucide="alert-circle" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Alerts</span></a></li>
+                    <li><a href="modals.de.html" data-page="modals"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Modals</span></a></li>
+                    <li><a href="cookies.de.html" data-page="cookies"><i data-lucide="cookie" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Cookie Consent</span></a></li>
+                    <li><a href="tables.de.html" data-page="tables"><i data-lucide="table" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Tabellen</span></a></li>
+                    <li><a href="extended.de.html" data-page="extended"><i data-lucide="layout-grid" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Erweitert</span></a></li>
+                    <li><a href="layout.de.html" data-page="layout"><i data-lucide="layout-dashboard" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Layout</span></a></li>
+                    <li><a href="headers.de.html" data-page="headers"><i data-lucide="layout-header" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Header & Footer</span></a></li>
+                    <li><a href="index.de.html#utilities" data-page="utilities"><i data-lucide="wrench" class="ak-w-4 ak-h-4 ak-mr-2"></i><span>Utilities</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ak-demo.js"></script>
+</body>
+</html>

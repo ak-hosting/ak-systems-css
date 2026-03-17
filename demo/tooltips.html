@@ -22,6 +22,19 @@
         .tooltip-demo-card:focus-within {
             z-index: 20;
         }
+
+        .demo-code {
+            margin-top: var(--ak-space-4);
+            padding: var(--ak-space-4);
+            overflow-x: auto;
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-md);
+            background-color: color-mix(in srgb, var(--ak-color-surface) 80%, black);
+            font-family: var(--ak-font-family-mono);
+            font-size: var(--ak-font-size-xs);
+            line-height: 1.6;
+            white-space: pre;
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
@@ -75,6 +88,44 @@
         </div>
 
         <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Framework Contract</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Tooltip Classes</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <p><code>.ak-tooltip-trigger</code> creates the relative positioning context.</p>
+                        <p><code>.ak-tooltip-content</code> is the floating hint element.</p>
+                        <p><code>.ak-tooltip-right</code>, <code>.ak-tooltip-bottom</code>, <code>.ak-tooltip-left</code> change placement.</p>
+                        <p>Top placement is the default when no direction modifier is present.</p>
+                    </div>
+                    <pre class="demo-code">&lt;button type="button" class="ak-tooltip-trigger ak-btn"&gt;
+  Save
+  &lt;span class="ak-tooltip-content" role="tooltip"&gt;Saves your draft&lt;/span&gt;
+&lt;/button&gt;</pre>
+                </div>
+
+                <div class="ak-card ak-p-6 tooltip-demo-card">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Popover Classes</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <p><code>.ak-popover-trigger</code> creates the positioning context.</p>
+                        <p><code>.ak-popover-content</code> is the floating panel.</p>
+                        <p><code>.ak-popover-header</code>, <code>.ak-popover-body</code>, <code>.ak-popover-footer</code> structure content.</p>
+                        <p><code>.ak-popover-sm</code>, <code>.ak-popover-lg</code>, <code>.ak-popover-interactive</code> extend behavior.</p>
+                    </div>
+                    <pre class="demo-code">&lt;div tabindex="0" role="button"
+  class="ak-popover-trigger ak-popover-right ak-btn ak-btn-outline"&gt;
+  More
+  &lt;div class="ak-popover-content"&gt;
+    &lt;div class="ak-popover-header"&gt;Quick Actions&lt;/div&gt;
+    &lt;div class="ak-popover-body"&gt;Structured guidance or actions.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Positions</h2>
 
             <div class="ak-card ak-p-6 tooltip-demo-card">
@@ -97,6 +148,10 @@
                         <span class="ak-tooltip-content" role="tooltip">Keyboard accessible</span>
                     </button>
                 </div>
+                <pre class="demo-code">&lt;button type="button" class="ak-tooltip-trigger ak-btn"&gt;...&lt;/button&gt;
+&lt;button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline"&gt;...&lt;/button&gt;
+&lt;button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary"&gt;...&lt;/button&gt;
+&lt;button type="button" class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost"&gt;...&lt;/button&gt;</pre>
             </div>
         </div>
 
@@ -106,6 +161,7 @@
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Icon Actions</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Recommended for icon-only buttons where the visible label would add clutter.</p>
                     <div class="ak-flex ak-flex-wrap ak-gap-4">
                         <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Edit item">
                             <i data-lucide="pencil" class="ak-w-4 ak-h-4"></i>
@@ -120,10 +176,15 @@
                             <span class="ak-tooltip-content" role="tooltip">Archive</span>
                         </button>
                     </div>
+                    <pre class="demo-code">&lt;button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Edit item"&gt;
+  &lt;i data-lucide="pencil" class="ak-w-4 ak-h-4"&gt;&lt;/i&gt;
+  &lt;span class="ak-tooltip-content" role="tooltip"&gt;Edit item&lt;/span&gt;
+&lt;/button&gt;</pre>
                 </div>
 
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Inline Help</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Use this when a field needs one compact explanation, but not a whole help panel.</p>
                     <div class="ak-form-group">
                         <label class="ak-form-label">API Token</label>
                         <div class="ak-flex ak-items-center ak-gap-3">
@@ -135,6 +196,13 @@
                         </div>
                         <p class="ak-form-hint">Keep this token private.</p>
                     </div>
+                    <pre class="demo-code">&lt;div class="ak-flex ak-items-center ak-gap-3"&gt;
+  &lt;input type="text" class="ak-input"&gt;
+  &lt;button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square ak-btn-ghost"&gt;
+    &lt;i data-lucide="info" class="ak-w-4 ak-h-4"&gt;&lt;/i&gt;
+    &lt;span class="ak-tooltip-content" role="tooltip"&gt;Used for server-to-server requests&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</pre>
                 </div>
             </div>
         </div>
@@ -145,6 +213,7 @@
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Positions & Sizes</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Use popovers when the content needs hierarchy, multiple lines, or a clearer visual container.</p>
                     <div class="ak-flex ak-flex-wrap ak-gap-4">
                         <div tabindex="0" role="button" class="ak-popover-trigger ak-btn">
                             Default Popover
@@ -169,10 +238,18 @@
                             </div>
                         </div>
                     </div>
+                    <pre class="demo-code">&lt;div tabindex="0" role="button" class="ak-popover-trigger ak-popover-bottom ak-popover-lg ak-btn ak-btn-secondary"&gt;
+  Large Bottom
+  &lt;div class="ak-popover-content"&gt;
+    &lt;div class="ak-popover-header"&gt;Release Checklist&lt;/div&gt;
+    &lt;div class="ak-popover-body"&gt;Popover bodies can span multiple lines.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
                 </div>
 
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Interactive Popover</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Choose <code>.ak-popover-interactive</code> only when the floating panel contains clickable controls.</p>
                     <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline">
                         Quick Actions
                         <div class="ak-popover-content">
@@ -186,6 +263,18 @@
                             </div>
                         </div>
                     </div>
+                    <pre class="demo-code">&lt;div tabindex="0" role="button"
+  class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline"&gt;
+  Quick Actions
+  &lt;div class="ak-popover-content"&gt;
+    &lt;div class="ak-popover-header"&gt;Team Access&lt;/div&gt;
+    &lt;div class="ak-popover-body"&gt;Invite editors or copy a review link.&lt;/div&gt;
+    &lt;div class="ak-popover-footer"&gt;
+      &lt;button type="button" class="ak-btn ak-btn-sm ak-btn-ghost"&gt;Later&lt;/button&gt;
+      &lt;button type="button" class="ak-btn ak-btn-sm ak-btn-primary"&gt;Invite&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
                 </div>
             </div>
         </div>

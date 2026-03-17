@@ -22,6 +22,19 @@
         .tooltip-demo-card:focus-within {
             z-index: 20;
         }
+
+        .demo-code {
+            margin-top: var(--ak-space-4);
+            padding: var(--ak-space-4);
+            overflow-x: auto;
+            border: 1px solid var(--ak-color-border);
+            border-radius: var(--ak-radius-md);
+            background-color: color-mix(in srgb, var(--ak-color-surface) 80%, black);
+            font-family: var(--ak-font-family-mono);
+            font-size: var(--ak-font-size-xs);
+            line-height: 1.6;
+            white-space: pre;
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
@@ -75,6 +88,44 @@
         </div>
 
         <div class="ak-mb-12">
+            <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Framework Sozlesmesi</h2>
+
+            <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
+                <div class="ak-card ak-p-6 tooltip-demo-card">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Tooltip Siniflari</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <p><code>.ak-tooltip-trigger</code> goreli konumlama baglamini olusturur.</p>
+                        <p><code>.ak-tooltip-content</code> kayan ipucu katmanidir.</p>
+                        <p><code>.ak-tooltip-right</code>, <code>.ak-tooltip-bottom</code>, <code>.ak-tooltip-left</code> yonu degistirir.</p>
+                        <p>Yon sinifi verilmezse varsayilan konum ust taraftir.</p>
+                    </div>
+                    <pre class="demo-code">&lt;button type="button" class="ak-tooltip-trigger ak-btn"&gt;
+  Kaydet
+  &lt;span class="ak-tooltip-content" role="tooltip"&gt;Taslagi kaydeder&lt;/span&gt;
+&lt;/button&gt;</pre>
+                </div>
+
+                <div class="ak-card ak-p-6 tooltip-demo-card">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Popover Siniflari</h3>
+                    <div class="ak-flex ak-flex-col ak-gap-3">
+                        <p><code>.ak-popover-trigger</code> konumlama baglamini olusturur.</p>
+                        <p><code>.ak-popover-content</code> kayan paneldir.</p>
+                        <p><code>.ak-popover-header</code>, <code>.ak-popover-body</code>, <code>.ak-popover-footer</code> icerigi yapilandirir.</p>
+                        <p><code>.ak-popover-sm</code>, <code>.ak-popover-lg</code>, <code>.ak-popover-interactive</code> davranisi genisletir.</p>
+                    </div>
+                    <pre class="demo-code">&lt;div tabindex="0" role="button"
+  class="ak-popover-trigger ak-popover-right ak-btn ak-btn-outline"&gt;
+  Daha Fazla
+  &lt;div class="ak-popover-content"&gt;
+    &lt;div class="ak-popover-header"&gt;Hizli Aksiyonlar&lt;/div&gt;
+    &lt;div class="ak-popover-body"&gt;Yapili aciklama veya aksiyonlar.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="ak-mb-12">
             <h2 class="ak-text-2xl ak-font-bold ak-mb-6">Tooltip Konumlari</h2>
 
             <div class="ak-card ak-p-6 tooltip-demo-card">
@@ -97,6 +148,10 @@
                         <span class="ak-tooltip-content" role="tooltip">Klavye ile odaklanabilir</span>
                     </button>
                 </div>
+                <pre class="demo-code">&lt;button type="button" class="ak-tooltip-trigger ak-btn"&gt;...&lt;/button&gt;
+&lt;button type="button" class="ak-tooltip-trigger ak-tooltip-right ak-btn ak-btn-outline"&gt;...&lt;/button&gt;
+&lt;button type="button" class="ak-tooltip-trigger ak-tooltip-bottom ak-btn ak-btn-secondary"&gt;...&lt;/button&gt;
+&lt;button type="button" class="ak-tooltip-trigger ak-tooltip-left ak-btn ak-btn-ghost"&gt;...&lt;/button&gt;</pre>
             </div>
         </div>
 
@@ -106,6 +161,7 @@
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Ikon Aksiyonlari</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Gorunur etiketin gereksiz kalabalik yarattigi ikon butonlari icin onerilir.</p>
                     <div class="ak-flex ak-flex-wrap ak-gap-4">
                         <button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Ogeyi duzenle">
                             <i data-lucide="pencil" class="ak-w-4 ak-h-4"></i>
@@ -120,10 +176,15 @@
                             <span class="ak-tooltip-content" role="tooltip">Arsivle</span>
                         </button>
                     </div>
+                    <pre class="demo-code">&lt;button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square" aria-label="Ogeyi duzenle"&gt;
+  &lt;i data-lucide="pencil" class="ak-w-4 ak-h-4"&gt;&lt;/i&gt;
+  &lt;span class="ak-tooltip-content" role="tooltip"&gt;Ogeyi duzenle&lt;/span&gt;
+&lt;/button&gt;</pre>
                 </div>
 
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Satir Ici Yardim</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Bir alan yalnizca tek ve kisa bir aciklama istiyorsa, tum yardim paneli yerine bunu kullanin.</p>
                     <div class="ak-form-group">
                         <label class="ak-form-label">API Token</label>
                         <div class="ak-flex ak-items-center ak-gap-3">
@@ -135,6 +196,13 @@
                         </div>
                         <p class="ak-form-hint">Bu token gizli tutulmalidir.</p>
                     </div>
+                    <pre class="demo-code">&lt;div class="ak-flex ak-items-center ak-gap-3"&gt;
+  &lt;input type="text" class="ak-input"&gt;
+  &lt;button type="button" class="ak-tooltip-trigger ak-btn ak-btn-square ak-btn-ghost"&gt;
+    &lt;i data-lucide="info" class="ak-w-4 ak-h-4"&gt;&lt;/i&gt;
+    &lt;span class="ak-tooltip-content" role="tooltip"&gt;Sunucu ile sunucu arasindaki isteklerde kullanilir&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</pre>
                 </div>
             </div>
         </div>
@@ -145,6 +213,7 @@
             <div class="ak-grid ak-grid-cols-1 ak-md:ak-grid-cols-2 ak-gap-8 tooltip-demo-grid">
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Konumlar & Boyutlar</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Icerik hiyerarsi, birden fazla satir veya daha belirgin bir kap gerektiriyorsa popover tercih edin.</p>
                     <div class="ak-flex ak-flex-wrap ak-gap-4">
                         <div tabindex="0" role="button" class="ak-popover-trigger ak-btn">
                             Varsayilan Popover
@@ -169,10 +238,18 @@
                             </div>
                         </div>
                     </div>
+                    <pre class="demo-code">&lt;div tabindex="0" role="button" class="ak-popover-trigger ak-popover-bottom ak-popover-lg ak-btn ak-btn-secondary"&gt;
+  Buyuk Alt
+  &lt;div class="ak-popover-content"&gt;
+    &lt;div class="ak-popover-header"&gt;Yayin Kontrol Listesi&lt;/div&gt;
+    &lt;div class="ak-popover-body"&gt;Popover icerigi birden fazla satira yayilabilir.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
                 </div>
 
                 <div class="ak-card ak-p-6 tooltip-demo-card">
                     <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Etkilesimli Popover</h3>
+                    <p class="ak-text-sm ak-text-muted ak-mb-4">Yalnizca kayan panelin icinde tiklanabilir kontroller varsa <code>.ak-popover-interactive</code> kullanin.</p>
                     <div tabindex="0" role="button" class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline">
                         Hizli Aksiyonlar
                         <div class="ak-popover-content">
@@ -186,6 +263,18 @@
                             </div>
                         </div>
                     </div>
+                    <pre class="demo-code">&lt;div tabindex="0" role="button"
+  class="ak-popover-trigger ak-popover-interactive ak-popover-right ak-btn ak-btn-outline"&gt;
+  Hizli Aksiyonlar
+  &lt;div class="ak-popover-content"&gt;
+    &lt;div class="ak-popover-header"&gt;Takim Erisimi&lt;/div&gt;
+    &lt;div class="ak-popover-body"&gt;Editor davet edin veya inceleme baglantisini kopyalayin.&lt;/div&gt;
+    &lt;div class="ak-popover-footer"&gt;
+      &lt;button type="button" class="ak-btn ak-btn-sm ak-btn-ghost"&gt;Sonra&lt;/button&gt;
+      &lt;button type="button" class="ak-btn ak-btn-sm ak-btn-primary"&gt;Davet Et&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
                 </div>
             </div>
         </div>

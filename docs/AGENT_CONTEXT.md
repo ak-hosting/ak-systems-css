@@ -129,6 +129,16 @@ Use these variables for custom styles to maintain consistency.
 ### Tooltips & Popovers
 Use tooltips for short, non-interactive helper text. Use popovers for richer content, headers, footers, or clickable actions.
 
+Rules:
+- Wrap the trigger element with `.ak-tooltip-trigger` or `.ak-popover-trigger`.
+- Put the floating element inside the trigger.
+- Tooltip content uses `.ak-tooltip-content`.
+- Popover content uses `.ak-popover-content`.
+- Direction modifiers go on the trigger: `.ak-tooltip-right`, `.ak-tooltip-bottom`, `.ak-tooltip-left`, `.ak-popover-right`, `.ak-popover-bottom`, `.ak-popover-left`.
+- Top placement is the default when no direction modifier is present.
+- Use `.ak-popover-sm` or `.ak-popover-lg` on the trigger for size changes.
+- Use `.ak-popover-interactive` only when the popover contains clickable controls.
+
 ```html
 <!-- Tooltip positions: top (default), right, bottom, left -->
 <button type="button" class="ak-tooltip-trigger ak-btn">

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../core/variables" as *;
 
 .ak-chatbot-demo-grid {
@@ -433,7 +434,7 @@
   }
 }
 
-@media (max-width: map-get($breakpoints, md)) {
+@media (max-width: map.get($breakpoints, md)) {
   .ak-chatbot-shell,
   .ak-chatbot-sidebar-layout {
     min-height: auto;

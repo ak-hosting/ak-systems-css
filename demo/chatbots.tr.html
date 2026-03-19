@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI Demo - AK Design System</title>
+    <meta name="description" content="Destek, satis, copilot ve floating widget senaryolari icin chatbot arayuzleri.">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ak-hosting/ak-systems-css@v2.0.2/dist/ak-design-system.min.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='21' font-size='16' fill='%23ffffff' text-anchor='middle' font-family='Arial, Helvetica, sans-serif'>AK</text></svg>">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="ak-theme-dark">
+    <header class="ak-header">
+        <div class="ak-header-content">
+            <div class="ak-flex ak-items-center ak-gap-4">
+                <button id="open-sidebar" type="button" class="ak-btn ak-btn-ghost ak-btn-sm ak-mr-2" onclick="openModal('nav-drawer')">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="index.tr.html" class="ak-btn ak-btn-ghost ak-btn-sm">
+                    <i data-lucide="arrow-left" class="ak-w-4 ak-h-4 ak-mr-2"></i>
+                    Indekse Don
+                </a>
+                <h1 class="ak-text-xl ak-font-bold">Chatbot UI Showcase</h1>
+            </div>
+            <div class="ak-header-actions">
+                <div class="ak-flex ak-gap-2">
+                    <a href="chatbots.html" class="ak-btn ak-btn-sm ak-btn-ghost">EN</a>
+                    <a href="chatbots.de.html" class="ak-btn ak-btn-sm ak-btn-ghost">DE</a>
+                    <a href="chatbots.tr.html" class="ak-btn ak-btn-sm ak-btn-primary">TR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="ak-container ak-py-8">
+        <section class="ak-mb-10">
+            <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-gap-8 ak-items-end">
+                <div>
+                    <span class="ak-badge ak-badge-soft-primary ak-mb-4">Yeni Extended Pattern</span>
+                    <h2 class="ak-text-4xl ak-font-bold ak-mb-4">Gomulu asistanlar, destek akislari ve demo widget'lar icin chatbot arayuzleri.</h2>
+                    <p class="ak-text-lg ak-text-muted ak-mb-6">Bu sayfa, ayni CSS katmani uzerinde birden fazla gorsel yon gosterir. Boylece CDN demonuz dokumantasyon, lead toplama ve urun copilot deneyimlerini sergileyebilir.</p>
+                    <div class="ak-chatbot-chips">
+                        <span class="ak-chatbot-chip"><i data-lucide="message-square"></i> Gomulu panel</span>
+                        <span class="ak-chatbot-chip"><i data-lucide="sparkles"></i> AI copilot</span>
+                        <span class="ak-chatbot-chip"><i data-lucide="circle-help"></i> Destek masasi</span>
+                    </div>
+                </div>
+                <div class="ak-card ak-p-6">
+                    <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Dahil edilen bloklar</h3>
+                    <div class="ak-chatbot-metrics">
+                        <div class="ak-chatbot-metric">
+                            <span class="ak-chatbot-metric-label">Layout tipi</span>
+                            <strong class="ak-chatbot-metric-value">4</strong>
+                        </div>
+                        <div class="ak-chatbot-metric">
+                            <span class="ak-chatbot-metric-label">Bubble stilleri</span>
+                            <strong class="ak-chatbot-metric-value">Bot + user</strong>
+                        </div>
+                        <div class="ak-chatbot-metric">
+                            <span class="ak-chatbot-metric-label">Embed hazir</span>
+                            <strong class="ak-chatbot-metric-value">CDN CSS</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ak-mb-12">
+            <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
+                <div>
+                    <h2 class="ak-text-2xl ak-font-bold">Tasarim onerileri</h2>
+                    <p class="ak-text-muted">Her mockup ayni komponent ailesini farkli bir urun tonu ile kullanir.</p>
+                </div>
+                <span class="ak-badge ak-badge-outline">Varsayilan olarak responsive</span>
+            </div>
+
+            <div class="ak-chatbot-demo-grid">
+                <article class="ak-chatbot-shell" data-chatbot-tone="support">
+                    <div class="ak-chatbot-header">
+                        <div class="ak-chatbot-brand">
+                            <div class="ak-chatbot-avatar"><i data-lucide="headset"></i></div>
+                            <div class="ak-chatbot-brand-meta">
+                                <div class="ak-chatbot-title">Support Assistant</div>
+                                <div class="ak-chatbot-status">Canli bilgi tabani baglantisi aktif</div>
+                            </div>
+                        </div>
+                        <div class="ak-chatbot-header-actions">
+                            <button class="ak-chatbot-icon-btn" type="button" aria-label="Bildirimler"><i data-lucide="bell"></i></button>
+                            <button class="ak-chatbot-icon-btn" type="button" aria-label="Ayarlar"><i data-lucide="sliders-horizontal"></i></button>
+                        </div>
+                    </div>
+                    <div class="ak-chatbot-body">
+                        <div class="ak-chatbot-hero">
+                            <h3 class="ak-chatbot-hero-title">Teslimat ve hesap problemlerini hizli cozen yapi.</h3>
+                            <p class="ak-chatbot-hero-copy">Net oneriler, sakin durum geri bildirimi ve okunakli kontrast ile klasik bir destek yerlesimi.</p>
+                        </div>
+                        <div class="ak-chatbot-chips">
+                            <span class="ak-chatbot-chip">Siparis takip</span>
+                            <span class="ak-chatbot-chip">Adres degistir</span>
+                            <span class="ak-chatbot-chip">Iade politikasi</span>
+                        </div>
+                        <div class="ak-chatbot-feed">
+                            <div class="ak-chatbot-message" data-side="bot">
+                                <div class="ak-chatbot-message-row">
+                                    <span class="ak-chatbot-badge">AI</span>
+                                    <div class="ak-chatbot-bubble">Merhaba Maya, kargo durumunu cekebilir veya fatura kisini guncelleyebilirim.</div>
+                                </div>
+                                <span class="ak-chatbot-meta">2 sn once</span>
+                            </div>
+                            <div class="ak-chatbot-message" data-side="user">
+                                <div class="ak-chatbot-message-row">
+                                    <span class="ak-chatbot-badge">M</span>
+                                    <div class="ak-chatbot-bubble">Lutfen AK-2038 siparisinin neden geciktigini kontrol et.</div>
+                                </div>
+                                <span class="ak-chatbot-meta">simdi</span>
+                            </div>
+                            <div class="ak-chatbot-typing" aria-label="Assistant yaziyor">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ak-chatbot-composer">
+                        <div class="ak-chatbot-input"><i data-lucide="paperclip"></i> Destek sorunuzu yazin...</div>
+                        <button class="ak-chatbot-send" type="button" aria-label="Gonder"><i data-lucide="send-horizontal"></i></button>
+                    </div>
+                </article>
+
+                <article class="ak-chatbot-shell ak-chatbot-widget" data-chatbot-tone="sales">
+                    <div class="ak-chatbot-floating-tag"><i data-lucide="sparkles"></i> Floating website widget</div>
+                    <div class="ak-chatbot-header">
+                        <div class="ak-chatbot-brand">
+                            <div class="ak-chatbot-avatar"><i data-lucide="rocket"></i></div>
+                            <div class="ak-chatbot-brand-meta">
+                                <div class="ak-chatbot-title">Revenue Concierge</div>
+                                <div class="ak-chatbot-status">Gercek zamanli lead kalifikasyonu</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ak-chatbot-body">
+                        <div class="ak-chatbot-hero">
+                            <h3 class="ak-chatbot-hero-title">Yuksek kontrastli kompakt CTA duzeni.</h3>
+                            <p class="ak-chatbot-hero-copy">Marka rengini kaybetmeden gorunur bir donusum widget'i isteyen landing page'ler icin optimize edildi.</p>
+                        </div>
+                        <div class="ak-chatbot-feed">
+                            <div class="ak-chatbot-message" data-side="bot">
+                                <div class="ak-chatbot-message-row">
+                                    <span class="ak-chatbot-badge">RC</span>
+                                    <div class="ak-chatbot-bubble">Hizli bir urun onerisi mi yoksa fiyat tahmini mi istersiniz?</div>
+                                </div>
+                            </div>
+                            <div class="ak-chatbot-message" data-side="user">
+                                <div class="ak-chatbot-message-row">
+                                    <span class="ak-chatbot-badge">JD</span>
+                                    <div class="ak-chatbot-bubble">25 kisilik destek takimi icin plani goster.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ak-chatbot-chips">
+                            <span class="ak-chatbot-chip">Demo ayarla</span>
+                            <span class="ak-chatbot-chip">Pricing PDF</span>
+                            <span class="ak-chatbot-chip">ROI hesaplayici</span>
+                        </div>
+                    </div>
+                    <div class="ak-chatbot-composer">
+                        <div class="ak-chatbot-input"><i data-lucide="mic"></i> Buyume sorunuzu yazin...</div>
+                        <button class="ak-chatbot-send" type="button" aria-label="Gonder"><i data-lucide="arrow-up-right"></i></button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="ak-mb-12">
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
+                    <div>
+                        <h2 class="ak-text-2xl ak-font-bold">Copilot workspace yerlesimi</h2>
+                        <p class="ak-text-muted">Dashboard, portal ve admin urunleri icin daha genis bir kabuk.</p>
+                    </div>
+                    <span class="ak-badge ak-badge-soft-success">Login sonrasi urunler icin uygun</span>
+                </div>
+
+                <div class="ak-chatbot-shell" data-chatbot-tone="copilot">
+                    <div class="ak-chatbot-sidebar-layout">
+                        <aside class="ak-chatbot-rail" aria-label="Copilot araclari">
+                            <div class="ak-chatbot-rail-pill"><i data-lucide="layout-dashboard"></i></div>
+                            <div class="ak-chatbot-rail-pill"><i data-lucide="search"></i></div>
+                            <div class="ak-chatbot-rail-pill"><i data-lucide="files"></i></div>
+                            <div class="ak-chatbot-rail-pill"><i data-lucide="history"></i></div>
+                        </aside>
+                        <div class="ak-flex ak-flex-col">
+                            <div class="ak-chatbot-header">
+                                <div class="ak-chatbot-brand">
+                                    <div class="ak-chatbot-avatar"><i data-lucide="bot"></i></div>
+                                    <div class="ak-chatbot-brand-meta">
+                                        <div class="ak-chatbot-title">Ops Copilot</div>
+                                        <div class="ak-chatbot-status">CRM, ticket ve release log baglantilari acik</div>
+                                    </div>
+                                </div>
+                                <div class="ak-chatbot-header-actions">
+                                    <button class="ak-chatbot-icon-btn" type="button"><i data-lucide="panel-right-open"></i></button>
+                                    <button class="ak-chatbot-icon-btn" type="button"><i data-lucide="ellipsis"></i></button>
+                                </div>
+                            </div>
+                            <div class="ak-chatbot-body">
+                                <div class="ak-chatbot-split-preview">
+                                    <div class="ak-chatbot-feed">
+                                        <div class="ak-chatbot-message" data-side="bot">
+                                            <div class="ak-chatbot-message-row">
+                                                <span class="ak-chatbot-badge">OP</span>
+                                                <div class="ak-chatbot-bubble">Uc hesabin churn riski yuksek. En guclu sinyal haftalik aktif ajan sayisinin dusmesi ve ilk yanit suresinin uzamasi.</div>
+                                            </div>
+                                        </div>
+                                        <div class="ak-chatbot-message" data-side="user">
+                                            <div class="ak-chatbot-message-row">
+                                                <span class="ak-chatbot-badge">PM</span>
+                                                <div class="ak-chatbot-bubble">Bir outreach plani hazirla ve ARR'ye gore sirala.</div>
+                                            </div>
+                                        </div>
+                                        <div class="ak-chatbot-message" data-side="bot">
+                                            <div class="ak-chatbot-message-row">
+                                                <span class="ak-chatbot-badge">OP</span>
+                                                <div class="ak-chatbot-bubble">Segmentli aksiyon listesi hazir; renewal tarihleri, owner'lar ve adoption engelleri eklendi.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ak-chatbot-preview-panel">
+                                        <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Onerilen aksiyonlar</h3>
+                                        <div class="ak-chatbot-preview-list">
+                                            <div class="ak-chatbot-preview-item">
+                                                <span>Nova Retail</span>
+                                                <span class="ak-badge ak-badge-soft-warning">Yuksek risk</span>
+                                            </div>
+                                            <div class="ak-chatbot-preview-item">
+                                                <span>Flowly GmbH</span>
+                                                <span class="ak-badge ak-badge-soft-success">Renewal penceresi</span>
+                                            </div>
+                                            <div class="ak-chatbot-preview-item">
+                                                <span>Helio Freight</span>
+                                                <span class="ak-badge ak-badge-outline">Takip gerekli</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ak-chatbot-composer">
+                                <div class="ak-chatbot-input"><i data-lucide="command"></i> Copilot'tan ozet, taslak veya kayit guncellemesi isteyin...</div>
+                                <button class="ak-chatbot-send" type="button" aria-label="Calistir"><i data-lucide="play"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ak-mb-12">
+            <div class="ak-card ak-p-6">
+                <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
+                    <div>
+                        <h2 class="ak-text-2xl ak-font-bold">Luxury concierge varyasyonu</h2>
+                        <p class="ak-text-muted">Hospitality, etkinlik veya premium commerce icin daha yumusak ve editor yalnizligi tasiyan yon.</p>
+                    </div>
+                    <span class="ak-badge ak-badge-outline">Ayni siniflar, farkli ton</span>
+                </div>
+
+                <div class="ak-chatbot-shell" data-chatbot-tone="concierge">
+                    <div class="ak-chatbot-header">
+                        <div class="ak-chatbot-brand">
+                            <div class="ak-chatbot-avatar"><i data-lucide="gem"></i></div>
+                            <div class="ak-chatbot-brand-meta">
+                                <div class="ak-chatbot-title">Aurora Concierge</div>
+                                <div class="ak-chatbot-status">Premium yolculuklar icin rezervasyon asistani</div>
+                            </div>
+                        </div>
+                        <div class="ak-header-actions">
+                            <span class="ak-badge ak-badge-soft-primary">7/24 live handoff</span>
+                        </div>
+                    </div>
+                    <div class="ak-chatbot-body">
+                        <div class="ak-chatbot-hero">
+                            <h3 class="ak-chatbot-hero-title">Daha atmosferik bir arayuz ile kurateli oneriler.</h3>
+                            <p class="ak-chatbot-hero-copy">Bu yon, asistanin bir arac yerine ev sahipligi yapan bir servis gibi hissedilmesini isteyen markalar icin daha zengin gradient ve daha yumusak kartlar kullanir.</p>
+                        </div>
+                        <div class="ak-chatbot-chips">
+                            <span class="ak-chatbot-chip">Hafta sonu rotasi</span>
+                            <span class="ak-chatbot-chip">Ozel transfer</span>
+                            <span class="ak-chatbot-chip">Aksam yemegi rezervasyonu</span>
+                        </div>
+                        <div class="ak-chatbot-feed">
+                            <div class="ak-chatbot-message" data-side="bot">
+                                <div class="ak-chatbot-message-row">
+                                    <span class="ak-chatbot-badge">AU</span>
+                                    <div class="ak-chatbot-bubble">Berlin icin uc aksam programi hazirladim; arac servisi, tasting menu ve gec check-in secenekleri dahil.</div>
+                                </div>
+                            </div>
+                            <div class="ak-chatbot-message" data-side="user">
+                                <div class="ak-chatbot-message-row">
+                                    <span class="ak-chatbot-badge">LK</span>
+                                    <div class="ak-chatbot-bubble">Yuruyerek gidilebilsin ve bir rooftop secenegi de olsun.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ak-chatbot-composer">
+                        <div class="ak-chatbot-input"><i data-lucide="map-pinned"></i> Kurateli bir plan sorun...</div>
+                        <button class="ak-chatbot-send" type="button" aria-label="Gonder"><i data-lucide="sparkles"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="nav-drawer" class="ak-modal ak-drawer-left" data-testid="sidebar">
+        <div class="ak-modal-content">
+            <div class="ak-modal-header">
+                <h2 class="ak-modal-title">Dokumantasyon</h2>
+                <button id="close-sidebar" type="button" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="closeModal('nav-drawer')">Kapat</button>
+            </div>
+            <div class="ak-modal-body"></div>
+        </div>
+    </div>
+
+    <script src="js/ak-demo.js"></script>
+</body>
+</html>

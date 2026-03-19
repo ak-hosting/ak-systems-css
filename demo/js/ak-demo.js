@@ -121,6 +121,7 @@ function normalizeDemoSidebar() {
             modals: 'Modals',
             cookies: 'Cookie Consent',
             tables: 'Tables',
+            chatbots: 'Chatbots',
             layout: 'Layout',
             extended: 'Extended',
             headers: 'Header & Footer',
@@ -145,6 +146,7 @@ function normalizeDemoSidebar() {
             modals: 'Modals',
             cookies: 'Cookie Consent',
             tables: 'Tabellen',
+            chatbots: 'Chatbots',
             layout: 'Layout',
             extended: 'Erweitert',
             headers: 'Header & Footer',
@@ -169,6 +171,7 @@ function normalizeDemoSidebar() {
             modals: 'Modallar',
             cookies: 'Cookie Consent',
             tables: 'Tablolar',
+            chatbots: 'Chatbotlar',
             layout: 'Düzen',
             extended: 'Genişletilmiş',
             headers: 'Header & Footer',
@@ -204,6 +207,7 @@ function normalizeDemoSidebar() {
         { key: 'modals', href: `modals${suffix}.html` },
         { key: 'cookies', href: `cookies${suffix}.html` },
         { key: 'tables', href: `tables${suffix}.html` },
+        { key: 'chatbots', href: `chatbots${suffix}.html` },
         { key: 'extended', href: `extended${suffix}.html` },
         { key: 'headers', href: `headers${suffix}.html` },
         { key: 'utilities', href: `index${indexSuffix}.html#utilities` },
@@ -291,6 +295,10 @@ function getSidebarGroup(path) {
 
     if (path.startsWith('tables')) {
         return 'tables';
+    }
+
+    if (path.startsWith('chatbots')) {
+        return 'chatbots';
     }
 
     if (path.startsWith('extended')) {

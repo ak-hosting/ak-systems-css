@@ -35,51 +35,28 @@
 
     <main class="ak-container">
         <section class="ak-mb-10">
-            <p class="ak-text-lg ak-text-muted">Destek deneyimleri, satis widget'lari ve urun ici copilot senaryolari icin gomulu chatbot yerlesimleri.</p>
-        </section>
-
-        <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Genel bakis</h2>
-            <p class="ak-text-muted ak-mb-6">Bu sayfa, ayni CSS katmani uzerinde birden fazla chatbot yonu gosterir. Boylece CDN demosu farkli asistan stillerini ayri komponent sistemleri kurmadan sergileyebilir.</p>
-
-            <div class="ak-card ak-p-6">
-                <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-gap-8 ak-items-end">
-                    <div>
-                        <span class="ak-badge ak-badge-soft-primary ak-mb-4">Yeni Extended Pattern</span>
-                        <h3 class="ak-text-2xl ak-font-bold ak-mb-4">Gomulu asistanlar, destek akislari ve demo widget'lar icin chatbot arayuzleri.</h3>
-                        <div class="ak-chatbot-chips">
-                            <span class="ak-chatbot-chip"><i data-lucide="message-square"></i> Gomulu panel</span>
-                            <span class="ak-chatbot-chip"><i data-lucide="sparkles"></i> AI copilot</span>
-                            <span class="ak-chatbot-chip"><i data-lucide="circle-help"></i> Destek masasi</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Dahil edilen bloklar</h3>
-                        <div class="ak-chatbot-metrics">
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Layout tipi</span>
-                                <strong class="ak-chatbot-metric-value">4</strong>
-                            </div>
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Bubble stilleri</span>
-                                <strong class="ak-chatbot-metric-value">Bot + user</strong>
-                            </div>
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Embed hazir</span>
-                                <strong class="ak-chatbot-metric-value">CDN CSS</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="ak-text-2xl ak-font-bold">Chatbot tasarimlari</h2>
+            <p class="ak-text-lg ak-text-muted ak-mb-6">Dort farkli yon: klasik destek sohbeti, floating sales widget, urun ici copilot ve concierge stili.</p>
+            <div class="ak-chatbot-chips">
+                <span class="ak-chatbot-chip"><i data-lucide="message-square"></i> Gomulu panel</span>
+                <span class="ak-chatbot-chip"><i data-lucide="sparkles"></i> Widget</span>
+                <span class="ak-chatbot-chip"><i data-lucide="bot"></i> Copilot</span>
+                <span class="ak-chatbot-chip"><i data-lucide="gem"></i> Concierge</span>
             </div>
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Destek ve satis varyantlari</h2>
-            <p class="ak-text-muted ak-mb-6">Servis ve donusum senaryolari icin iki kompakt showcase yerlesimi. Ikisi de farkli ton ayarlariyla ayni chatbot siniflarini kullanir.</p>
+            <h2 class="ak-text-2xl ak-font-bold">Kompakt varyantlar</h2>
+            <p class="ak-text-muted ak-mb-6">Web siteleri, yardim merkezleri ve landing page'ler icin iki gomulu chatbot tasarimi.</p>
 
             <div class="ak-chatbot-demo-grid">
-                <article class="ak-chatbot-shell" data-chatbot-tone="support">
+                <article class="ak-card ak-p-6">
+                    <div class="ak-mb-5">
+                        <span class="ak-badge ak-badge-soft-primary ak-mb-3">Design 1</span>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Support Chat</h3>
+                        <p class="ak-text-sm ak-text-muted">Yardim merkezi, teslimat sorulari ve hesap sorunlari icin klasik servis chatbot'u.</p>
+                    </div>
+                    <div class="ak-chatbot-shell" data-chatbot-tone="support">
                     <div class="ak-chatbot-header">
                         <div class="ak-chatbot-brand">
                             <div class="ak-chatbot-avatar"><i data-lucide="headset"></i></div>
@@ -127,9 +104,16 @@
                         <div class="ak-chatbot-input"><i data-lucide="paperclip"></i> Destek sorunuzu yazin...</div>
                         <button class="ak-chatbot-send" type="button" aria-label="Gonder"><i data-lucide="send-horizontal"></i></button>
                     </div>
+                    </div>
                 </article>
 
-                <article class="ak-chatbot-shell ak-chatbot-widget" data-chatbot-tone="sales">
+                <article class="ak-card ak-p-6">
+                    <div class="ak-mb-5">
+                        <span class="ak-badge ak-badge-soft-warning ak-mb-3">Design 2</span>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Sales Widget</h3>
+                        <p class="ak-text-sm ak-text-muted">Demo, fiyatlandirma ve lead kalifikasyonu icin landing page odakli kompakt widget.</p>
+                    </div>
+                    <div class="ak-chatbot-shell ak-chatbot-widget" data-chatbot-tone="sales">
                     <div class="ak-chatbot-floating-tag"><i data-lucide="sparkles"></i> Floating website widget</div>
                     <div class="ak-chatbot-header">
                         <div class="ak-chatbot-brand">
@@ -169,19 +153,21 @@
                         <div class="ak-chatbot-input"><i data-lucide="mic"></i> Buyume sorunuzu yazin...</div>
                         <button class="ak-chatbot-send" type="button" aria-label="Gonder"><i data-lucide="arrow-up-right"></i></button>
                     </div>
+                    </div>
                 </article>
             </div>
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Copilot yerlesimi</h2>
-            <p class="ak-text-muted ak-mb-6">Dashboard, portal ve login sonrasi urun alanlari icin daha genis bir kompozisyon.</p>
+            <h2 class="ak-text-2xl ak-font-bold">Genis urun varyantlari</h2>
+            <p class="ak-text-muted ak-mb-6">SaaS urunleri, portallar ve premium servis deneyimleri icin daha buyuk chatbot tasarimlari.</p>
 
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
                     <div>
-                        <h3 class="ak-text-xl ak-font-semibold">Copilot workspace yerlesimi</h3>
-                        <p class="ak-text-muted">Dashboard, portal ve admin urunleri icin daha genis bir kabuk.</p>
+                        <span class="ak-badge ak-badge-soft-success ak-mb-3">Design 3</span>
+                        <h3 class="ak-text-xl ak-font-semibold">Copilot Workspace</h3>
+                        <p class="ak-text-muted">Admin urunleri, backoffice araclari ve ic asistanlar icin genis chatbot arayuzu.</p>
                     </div>
                     <span class="ak-badge ak-badge-soft-success">Login sonrasi urunler icin uygun</span>
                 </div>
@@ -260,14 +246,12 @@
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Concierge varyasyonu</h2>
-            <p class="ak-text-muted ak-mb-6">Hospitality, etkinlik ve premium servis markalari icin daha yumusak bir yon.</p>
-
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
                     <div>
-                        <h3 class="ak-text-xl ak-font-semibold">Luxury concierge varyasyonu</h3>
-                        <p class="ak-text-muted">Hospitality, etkinlik veya premium commerce icin daha yumusak ve editor yalnizligi tasiyan yon.</p>
+                        <span class="ak-badge ak-badge-outline ak-mb-3">Design 4</span>
+                        <h3 class="ak-text-xl ak-font-semibold">Luxury Concierge</h3>
+                        <p class="ak-text-muted">Hospitality, seyahat, etkinlik ve premium commerce icin daha yumusak, premium yon.</p>
                     </div>
                     <span class="ak-badge ak-badge-outline">Ayni siniflar, farkli ton</span>
                 </div>

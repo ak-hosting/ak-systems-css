@@ -35,153 +35,139 @@
 
     <main class="ak-container">
         <section class="ak-mb-10">
-            <p class="ak-text-lg ak-text-muted">Eingebettete Chatbot-Layouts fuer Support-Erlebnisse, Sales-Widgets und produktinterne Copilots.</p>
-        </section>
-
-        <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Ueberblick</h2>
-            <p class="ak-text-muted ak-mb-6">Diese Seite zeigt mehrere Chatbot-Richtungen auf derselben CSS-Basis, damit die CDN-Demo unterschiedliche Assistenten-Stile ohne getrennte Komponentensysteme praesentieren kann.</p>
-
-            <div class="ak-card ak-p-6">
-                <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-gap-8 ak-items-end">
-                    <div>
-                        <span class="ak-badge ak-badge-soft-primary ak-mb-4">Neues Extended Pattern</span>
-                        <h3 class="ak-text-2xl ak-font-bold ak-mb-4">Chat-Oberflaechen fuer eingebettete Assistenten, Support-Flows und Demo-Widgets.</h3>
-                        <div class="ak-chatbot-chips">
-                            <span class="ak-chatbot-chip"><i data-lucide="message-square"></i> Eingebettetes Panel</span>
-                            <span class="ak-chatbot-chip"><i data-lucide="sparkles"></i> AI Copilot</span>
-                            <span class="ak-chatbot-chip"><i data-lucide="circle-help"></i> Support Desk</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Enthaltene Bausteine</h3>
-                        <div class="ak-chatbot-metrics">
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Layout-Typen</span>
-                                <strong class="ak-chatbot-metric-value">4</strong>
-                            </div>
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Bubble-Stile</span>
-                                <strong class="ak-chatbot-metric-value">Bot + User</strong>
-                            </div>
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Embed-ready</span>
-                                <strong class="ak-chatbot-metric-value">CDN CSS</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="ak-text-2xl ak-font-bold">Chatbot-Designs</h2>
+            <p class="ak-text-lg ak-text-muted ak-mb-6">Vier verschiedene Richtungen fuer Chatbots: klassischer Support, schwebendes Sales-Widget, produktinterner Copilot und Concierge-Variante.</p>
+            <div class="ak-chatbot-chips">
+                <span class="ak-chatbot-chip"><i data-lucide="message-square"></i> Eingebettetes Panel</span>
+                <span class="ak-chatbot-chip"><i data-lucide="sparkles"></i> Widget</span>
+                <span class="ak-chatbot-chip"><i data-lucide="bot"></i> Copilot</span>
+                <span class="ak-chatbot-chip"><i data-lucide="gem"></i> Concierge</span>
             </div>
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Support- und Sales-Varianten</h2>
-            <p class="ak-text-muted ak-mb-6">Zwei kompakte Showcase-Layouts fuer Service- und Conversion-Szenarien. Beide verwenden dieselben Chatbot-Klassen mit unterschiedlicher Tonalitaet.</p>
+            <h2 class="ak-text-2xl ak-font-bold">Kompakte Varianten</h2>
+            <p class="ak-text-muted ak-mb-6">Zwei direkt eingebettete Designs, wie sie auf Webseiten oder Landingpages gezeigt werden koennen.</p>
 
             <div class="ak-chatbot-demo-grid">
-                <article class="ak-chatbot-shell" data-chatbot-tone="support">
-                    <div class="ak-chatbot-header">
-                        <div class="ak-chatbot-brand">
-                            <div class="ak-chatbot-avatar"><i data-lucide="headset"></i></div>
-                            <div class="ak-chatbot-brand-meta">
-                                <div class="ak-chatbot-title">Support Assistant</div>
-                                <div class="ak-chatbot-status">Live mit Wissensdatenbank verbunden</div>
-                            </div>
-                        </div>
-                        <div class="ak-chatbot-header-actions">
-                            <button class="ak-chatbot-icon-btn" type="button" aria-label="Benachrichtigungen"><i data-lucide="bell"></i></button>
-                            <button class="ak-chatbot-icon-btn" type="button" aria-label="Einstellungen"><i data-lucide="sliders-horizontal"></i></button>
-                        </div>
+                <article class="ak-card ak-p-6">
+                    <div class="ak-mb-5">
+                        <span class="ak-badge ak-badge-soft-primary ak-mb-3">Design 1</span>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Support Chat</h3>
+                        <p class="ak-text-sm ak-text-muted">Ein klassischer Service-Chatbot fuer Hilfe-Center, Versandfragen und Kontoanliegen.</p>
                     </div>
-                    <div class="ak-chatbot-body">
-                        <div class="ak-chatbot-hero">
-                            <h3 class="ak-chatbot-hero-title">Liefer- und Kontoprobleme schnell loesen.</h3>
-                            <p class="ak-chatbot-hero-copy">Ein klassisches Service-Layout mit klaren Vorschlaegen, ruhigem Status-Feedback und gut lesbaren Bubbles.</p>
-                        </div>
-                        <div class="ak-chatbot-chips">
-                            <span class="ak-chatbot-chip">Bestellung tracken</span>
-                            <span class="ak-chatbot-chip">Adresse aendern</span>
-                            <span class="ak-chatbot-chip">Rueckerstattung</span>
-                        </div>
-                        <div class="ak-chatbot-feed">
-                            <div class="ak-chatbot-message" data-side="bot">
-                                <div class="ak-chatbot-message-row">
-                                    <span class="ak-chatbot-badge">AI</span>
-                                    <div class="ak-chatbot-bubble">Hi Maya, ich kann den Sendungsstatus abrufen oder den Rechnungskontakt aktualisieren.</div>
+                    <div class="ak-chatbot-shell" data-chatbot-tone="support">
+                        <div class="ak-chatbot-header">
+                            <div class="ak-chatbot-brand">
+                                <div class="ak-chatbot-avatar"><i data-lucide="headset"></i></div>
+                                <div class="ak-chatbot-brand-meta">
+                                    <div class="ak-chatbot-title">Support Assistant</div>
+                                    <div class="ak-chatbot-status">Live mit Wissensdatenbank verbunden</div>
                                 </div>
-                                <span class="ak-chatbot-meta">vor 2 Sek.</span>
                             </div>
-                            <div class="ak-chatbot-message" data-side="user">
-                                <div class="ak-chatbot-message-row">
-                                    <span class="ak-chatbot-badge">M</span>
-                                    <div class="ak-chatbot-bubble">Bitte pruefe, warum Bestellung AK-2038 aktuell verzoegert ist.</div>
-                                </div>
-                                <span class="ak-chatbot-meta">gerade eben</span>
-                            </div>
-                            <div class="ak-chatbot-typing" aria-label="Assistant tippt">
-                                <span></span><span></span><span></span>
+                            <div class="ak-chatbot-header-actions">
+                                <button class="ak-chatbot-icon-btn" type="button" aria-label="Benachrichtigungen"><i data-lucide="bell"></i></button>
+                                <button class="ak-chatbot-icon-btn" type="button" aria-label="Einstellungen"><i data-lucide="sliders-horizontal"></i></button>
                             </div>
                         </div>
-                    </div>
-                    <div class="ak-chatbot-composer">
-                        <div class="ak-chatbot-input"><i data-lucide="paperclip"></i> Support-Frage eingeben...</div>
-                        <button class="ak-chatbot-send" type="button" aria-label="Senden"><i data-lucide="send-horizontal"></i></button>
+                        <div class="ak-chatbot-body">
+                            <div class="ak-chatbot-hero">
+                                <h3 class="ak-chatbot-hero-title">Liefer- und Kontoprobleme schnell loesen.</h3>
+                                <p class="ak-chatbot-hero-copy">Ein klassisches Service-Layout mit klaren Vorschlaegen, ruhigem Status-Feedback und gut lesbaren Bubbles.</p>
+                            </div>
+                            <div class="ak-chatbot-chips">
+                                <span class="ak-chatbot-chip">Bestellung tracken</span>
+                                <span class="ak-chatbot-chip">Adresse aendern</span>
+                                <span class="ak-chatbot-chip">Rueckerstattung</span>
+                            </div>
+                            <div class="ak-chatbot-feed">
+                                <div class="ak-chatbot-message" data-side="bot">
+                                    <div class="ak-chatbot-message-row">
+                                        <span class="ak-chatbot-badge">AI</span>
+                                        <div class="ak-chatbot-bubble">Hi Maya, ich kann den Sendungsstatus abrufen oder den Rechnungskontakt aktualisieren.</div>
+                                    </div>
+                                    <span class="ak-chatbot-meta">vor 2 Sek.</span>
+                                </div>
+                                <div class="ak-chatbot-message" data-side="user">
+                                    <div class="ak-chatbot-message-row">
+                                        <span class="ak-chatbot-badge">M</span>
+                                        <div class="ak-chatbot-bubble">Bitte pruefe, warum Bestellung AK-2038 aktuell verzoegert ist.</div>
+                                    </div>
+                                    <span class="ak-chatbot-meta">gerade eben</span>
+                                </div>
+                                <div class="ak-chatbot-typing" aria-label="Assistant tippt">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ak-chatbot-composer">
+                            <div class="ak-chatbot-input"><i data-lucide="paperclip"></i> Support-Frage eingeben...</div>
+                            <button class="ak-chatbot-send" type="button" aria-label="Senden"><i data-lucide="send-horizontal"></i></button>
+                        </div>
                     </div>
                 </article>
 
-                <article class="ak-chatbot-shell ak-chatbot-widget" data-chatbot-tone="sales">
-                    <div class="ak-chatbot-floating-tag"><i data-lucide="sparkles"></i> Schwebendes Website-Widget</div>
-                    <div class="ak-chatbot-header">
-                        <div class="ak-chatbot-brand">
-                            <div class="ak-chatbot-avatar"><i data-lucide="rocket"></i></div>
-                            <div class="ak-chatbot-brand-meta">
-                                <div class="ak-chatbot-title">Revenue Concierge</div>
-                                <div class="ak-chatbot-status">Qualifiziert Leads in Echtzeit</div>
-                            </div>
-                        </div>
+                <article class="ak-card ak-p-6">
+                    <div class="ak-mb-5">
+                        <span class="ak-badge ak-badge-soft-warning ak-mb-3">Design 2</span>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Sales Widget</h3>
+                        <p class="ak-text-sm ak-text-muted">Ein kompaktes Chatbot-Widget fuer Landingpages, das auf Demo, Pricing und Lead-Qualifizierung zielt.</p>
                     </div>
-                    <div class="ak-chatbot-body">
-                        <div class="ak-chatbot-hero">
-                            <h3 class="ak-chatbot-hero-title">Kompaktes CTA-Layout mit hohem Kontrast.</h3>
-                            <p class="ak-chatbot-hero-copy">Optimiert fuer Landingpages, die ein sichtbares Conversion-Widget brauchen, ohne die Markenfarbe zu verlieren.</p>
-                        </div>
-                        <div class="ak-chatbot-feed">
-                            <div class="ak-chatbot-message" data-side="bot">
-                                <div class="ak-chatbot-message-row">
-                                    <span class="ak-chatbot-badge">RC</span>
-                                    <div class="ak-chatbot-bubble">Moechtest du eine schnelle Produktempfehlung oder eine Preisabschaetzung?</div>
-                                </div>
-                            </div>
-                            <div class="ak-chatbot-message" data-side="user">
-                                <div class="ak-chatbot-message-row">
-                                    <span class="ak-chatbot-badge">JD</span>
-                                    <div class="ak-chatbot-bubble">Zeig mir den Plan fuer ein 25-koepfiges Support-Team.</div>
+                    <div class="ak-chatbot-shell ak-chatbot-widget" data-chatbot-tone="sales">
+                        <div class="ak-chatbot-floating-tag"><i data-lucide="sparkles"></i> Schwebendes Website-Widget</div>
+                        <div class="ak-chatbot-header">
+                            <div class="ak-chatbot-brand">
+                                <div class="ak-chatbot-avatar"><i data-lucide="rocket"></i></div>
+                                <div class="ak-chatbot-brand-meta">
+                                    <div class="ak-chatbot-title">Revenue Concierge</div>
+                                    <div class="ak-chatbot-status">Qualifiziert Leads in Echtzeit</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="ak-chatbot-chips">
-                            <span class="ak-chatbot-chip">Demo buchen</span>
-                            <span class="ak-chatbot-chip">Pricing PDF</span>
-                            <span class="ak-chatbot-chip">ROI Rechner</span>
+                        <div class="ak-chatbot-body">
+                            <div class="ak-chatbot-hero">
+                                <h3 class="ak-chatbot-hero-title">Kompaktes CTA-Layout mit hohem Kontrast.</h3>
+                                <p class="ak-chatbot-hero-copy">Optimiert fuer Landingpages, die ein sichtbares Conversion-Widget brauchen, ohne die Markenfarbe zu verlieren.</p>
+                            </div>
+                            <div class="ak-chatbot-feed">
+                                <div class="ak-chatbot-message" data-side="bot">
+                                    <div class="ak-chatbot-message-row">
+                                        <span class="ak-chatbot-badge">RC</span>
+                                        <div class="ak-chatbot-bubble">Moechtest du eine schnelle Produktempfehlung oder eine Preisabschaetzung?</div>
+                                    </div>
+                                </div>
+                                <div class="ak-chatbot-message" data-side="user">
+                                    <div class="ak-chatbot-message-row">
+                                        <span class="ak-chatbot-badge">JD</span>
+                                        <div class="ak-chatbot-bubble">Zeig mir den Plan fuer ein 25-koepfiges Support-Team.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ak-chatbot-chips">
+                                <span class="ak-chatbot-chip">Demo buchen</span>
+                                <span class="ak-chatbot-chip">Pricing PDF</span>
+                                <span class="ak-chatbot-chip">ROI Rechner</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ak-chatbot-composer">
-                        <div class="ak-chatbot-input"><i data-lucide="mic"></i> Wachstumsfrage stellen...</div>
-                        <button class="ak-chatbot-send" type="button" aria-label="Senden"><i data-lucide="arrow-up-right"></i></button>
+                        <div class="ak-chatbot-composer">
+                            <div class="ak-chatbot-input"><i data-lucide="mic"></i> Wachstumsfrage stellen...</div>
+                            <button class="ak-chatbot-send" type="button" aria-label="Senden"><i data-lucide="arrow-up-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </div>
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Copilot Layout</h2>
-            <p class="ak-text-muted ak-mb-6">Eine breitere Komposition fuer Dashboards, Portale und eingeloggte Produktbereiche.</p>
+            <h2 class="ak-text-2xl ak-font-bold">Breite Produkt-Varianten</h2>
+            <p class="ak-text-muted ak-mb-6">Groessere Chatbot-Designs fuer SaaS-Produkte, Portale und Premium-Erlebnisse.</p>
 
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
                     <div>
-                        <h3 class="ak-text-xl ak-font-semibold">Copilot Workspace Layout</h3>
-                        <p class="ak-text-muted">Eine breitere Shell fuer Dashboards, Portale und Admin-Produkte.</p>
+                        <span class="ak-badge ak-badge-soft-success ak-mb-3">Design 3</span>
+                        <h3 class="ak-text-xl ak-font-semibold">Copilot Workspace</h3>
+                        <p class="ak-text-muted">Eine breite Chatbot-Oberflaeche fuer Admin-Produkte, Backoffice-Tools und interne Assistenten.</p>
                     </div>
                     <span class="ak-badge ak-badge-soft-success">Ideal fuer eingeloggte Produkte</span>
                 </div>
@@ -260,14 +246,12 @@
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Concierge Variante</h2>
-            <p class="ak-text-muted ak-mb-6">Eine weichere Richtung fuer Hospitality, Events und Premium-Service-Marken.</p>
-
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
                     <div>
-                        <h3 class="ak-text-xl ak-font-semibold">Luxury Concierge Variante</h3>
-                        <p class="ak-text-muted">Eine weichere, editorialere Richtung fuer Hospitality, Events oder Premium-Commerce.</p>
+                        <span class="ak-badge ak-badge-outline ak-mb-3">Design 4</span>
+                        <h3 class="ak-text-xl ak-font-semibold">Luxury Concierge</h3>
+                        <p class="ak-text-muted">Eine weichere, hochwertigere Richtung fuer Hospitality, Reisen, Events oder Premium-Commerce.</p>
                     </div>
                     <span class="ak-badge ak-badge-outline">Dieselben Klassen mit anderer Tonalitaet</span>
                 </div>

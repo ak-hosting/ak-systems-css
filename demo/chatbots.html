@@ -35,51 +35,28 @@
 
     <main class="ak-container">
         <section class="ak-mb-10">
-            <p class="ak-text-lg ak-text-muted">Embedded chatbot layouts for support experiences, sales widgets and in-product copilots.</p>
-        </section>
-
-        <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Overview</h2>
-            <p class="ak-text-muted ak-mb-6">This page shows several chatbot directions built on the same CSS layer, so the CDN demo can present different assistant styles without needing separate component systems.</p>
-
-            <div class="ak-card ak-p-6">
-                <div class="ak-grid ak-grid-cols-1 ak-lg:ak-grid-cols-2 ak-gap-8 ak-items-end">
-                    <div>
-                        <span class="ak-badge ak-badge-soft-primary ak-mb-4">New Extended Pattern</span>
-                        <h3 class="ak-text-2xl ak-font-bold ak-mb-4">Chat interfaces for embedded assistants, support flows and demo widgets.</h3>
-                        <div class="ak-chatbot-chips">
-                            <span class="ak-chatbot-chip"><i data-lucide="message-square"></i> Embedded panel</span>
-                            <span class="ak-chatbot-chip"><i data-lucide="sparkles"></i> AI copilot</span>
-                            <span class="ak-chatbot-chip"><i data-lucide="circle-help"></i> Support desk</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="ak-text-lg ak-font-semibold ak-mb-4">Included building blocks</h3>
-                        <div class="ak-chatbot-metrics">
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Layout types</span>
-                                <strong class="ak-chatbot-metric-value">4</strong>
-                            </div>
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Bubble styles</span>
-                                <strong class="ak-chatbot-metric-value">Bot + user</strong>
-                            </div>
-                            <div class="ak-chatbot-metric">
-                                <span class="ak-chatbot-metric-label">Embed ready</span>
-                                <strong class="ak-chatbot-metric-value">CDN CSS</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="ak-text-2xl ak-font-bold">Chatbot Designs</h2>
+            <p class="ak-text-lg ak-text-muted ak-mb-6">Four different directions for chatbots: classic support, floating sales widget, in-product copilot and concierge style.</p>
+            <div class="ak-chatbot-chips">
+                <span class="ak-chatbot-chip"><i data-lucide="message-square"></i> Embedded panel</span>
+                <span class="ak-chatbot-chip"><i data-lucide="sparkles"></i> Widget</span>
+                <span class="ak-chatbot-chip"><i data-lucide="bot"></i> Copilot</span>
+                <span class="ak-chatbot-chip"><i data-lucide="gem"></i> Concierge</span>
             </div>
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Support & Sales Variants</h2>
-            <p class="ak-text-muted ak-mb-6">Two compact showcase layouts for service and conversion use cases. Both use the same chatbot classes with different tone settings.</p>
+            <h2 class="ak-text-2xl ak-font-bold">Compact Variants</h2>
+            <p class="ak-text-muted ak-mb-6">Two embedded designs that work for websites, help centers and landing pages.</p>
 
             <div class="ak-chatbot-demo-grid">
-                <article class="ak-chatbot-shell" data-chatbot-tone="support">
+                <article class="ak-card ak-p-6">
+                    <div class="ak-mb-5">
+                        <span class="ak-badge ak-badge-soft-primary ak-mb-3">Design 1</span>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Support Chat</h3>
+                        <p class="ak-text-sm ak-text-muted">A classic service chatbot for help centers, delivery questions and account issues.</p>
+                    </div>
+                    <div class="ak-chatbot-shell" data-chatbot-tone="support">
                     <div class="ak-chatbot-header">
                         <div class="ak-chatbot-brand">
                             <div class="ak-chatbot-avatar"><i data-lucide="headset"></i></div>
@@ -127,9 +104,16 @@
                         <div class="ak-chatbot-input"><i data-lucide="paperclip"></i> Ask for support help...</div>
                         <button class="ak-chatbot-send" type="button" aria-label="Send"><i data-lucide="send-horizontal"></i></button>
                     </div>
+                    </div>
                 </article>
 
-                <article class="ak-chatbot-shell ak-chatbot-widget" data-chatbot-tone="sales">
+                <article class="ak-card ak-p-6">
+                    <div class="ak-mb-5">
+                        <span class="ak-badge ak-badge-soft-warning ak-mb-3">Design 2</span>
+                        <h3 class="ak-text-xl ak-font-semibold ak-mb-2">Sales Widget</h3>
+                        <p class="ak-text-sm ak-text-muted">A compact chatbot widget for landing pages focused on demos, pricing and lead qualification.</p>
+                    </div>
+                    <div class="ak-chatbot-shell ak-chatbot-widget" data-chatbot-tone="sales">
                     <div class="ak-chatbot-floating-tag"><i data-lucide="sparkles"></i> Floating website widget</div>
                     <div class="ak-chatbot-header">
                         <div class="ak-chatbot-brand">
@@ -169,19 +153,21 @@
                         <div class="ak-chatbot-input"><i data-lucide="mic"></i> Type your growth question...</div>
                         <button class="ak-chatbot-send" type="button" aria-label="Send"><i data-lucide="arrow-up-right"></i></button>
                     </div>
+                    </div>
                 </article>
             </div>
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Copilot Layout</h2>
-            <p class="ak-text-muted ak-mb-6">A wider composition for dashboards, portals and authenticated product areas.</p>
+            <h2 class="ak-text-2xl ak-font-bold">Wide Product Variants</h2>
+            <p class="ak-text-muted ak-mb-6">Larger chatbot designs for SaaS products, portals and premium service experiences.</p>
 
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
                     <div>
-                        <h3 class="ak-text-xl ak-font-semibold">Copilot workspace layout</h3>
-                        <p class="ak-text-muted">A wider shell for dashboards, portals and admin products.</p>
+                        <span class="ak-badge ak-badge-soft-success ak-mb-3">Design 3</span>
+                        <h3 class="ak-text-xl ak-font-semibold">Copilot Workspace</h3>
+                        <p class="ak-text-muted">A wide chatbot surface for admin products, backoffice tools and internal assistants.</p>
                     </div>
                     <span class="ak-badge ak-badge-soft-success">Best for authenticated products</span>
                 </div>
@@ -260,14 +246,12 @@
         </section>
 
         <section class="ak-mb-12">
-            <h2 class="ak-text-2xl ak-font-bold">Concierge Variant</h2>
-            <p class="ak-text-muted ak-mb-6">A softer direction for hospitality, events and premium service brands.</p>
-
             <div class="ak-card ak-p-6">
                 <div class="ak-flex ak-items-center ak-justify-between ak-gap-4 ak-mb-6">
                     <div>
-                        <h3 class="ak-text-xl ak-font-semibold">Luxury concierge variation</h3>
-                        <p class="ak-text-muted">A softer, more editorial direction for hospitality, events or premium commerce.</p>
+                        <span class="ak-badge ak-badge-outline ak-mb-3">Design 4</span>
+                        <h3 class="ak-text-xl ak-font-semibold">Luxury Concierge</h3>
+                        <p class="ak-text-muted">A softer, premium direction for hospitality, travel, events and high-end commerce.</p>
                     </div>
                     <span class="ak-badge ak-badge-outline">Uses the same classes with another tone</span>
                 </div>

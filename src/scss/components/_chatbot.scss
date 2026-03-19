@@ -7,6 +7,170 @@
   gap: var(--ak-space-6);
 }
 
+.ak-chatbot-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--ak-space-4);
+}
+
+.ak-chatbot-showcase-card {
+  --ak-chatbot-showcase-accent: var(--ak-color-primary);
+  position: relative;
+  min-height: 240px;
+  padding: var(--ak-space-4);
+  border-radius: 24px;
+  border: 1px solid color-mix(in srgb, var(--ak-chatbot-showcase-accent) 20%, var(--ak-color-border));
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--ak-chatbot-showcase-accent) 28%, transparent), transparent 40%),
+    linear-gradient(180deg, color-mix(in srgb, var(--ak-color-surface) 96%, transparent), color-mix(in srgb, var(--ak-color-surface) 88%, var(--ak-color-bg)));
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.ak-chatbot-showcase-card[data-chatbot-tone="support"] {
+  --ak-chatbot-showcase-accent: #2f7df4;
+}
+
+.ak-chatbot-showcase-card[data-chatbot-tone="sales"] {
+  --ak-chatbot-showcase-accent: #dc5f35;
+}
+
+.ak-chatbot-showcase-card[data-chatbot-tone="copilot"] {
+  --ak-chatbot-showcase-accent: #009688;
+}
+
+.ak-chatbot-showcase-card[data-chatbot-tone="concierge"] {
+  --ak-chatbot-showcase-accent: #8e44ec;
+}
+
+.ak-chatbot-showcase-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ak-space-3);
+  margin-bottom: var(--ak-space-4);
+}
+
+.ak-chatbot-showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ak-chatbot-showcase-accent) 16%, var(--ak-color-surface));
+  border: 1px solid color-mix(in srgb, var(--ak-chatbot-showcase-accent) 20%, var(--ak-color-border));
+  color: var(--ak-color-text);
+  font-size: var(--ak-font-size-xs);
+  font-weight: var(--ak-font-weight-semibold);
+}
+
+.ak-chatbot-showcase-window {
+  position: absolute;
+  inset: 64px 16px 16px;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--ak-chatbot-showcase-accent) 18%, var(--ak-color-border));
+  background: color-mix(in srgb, var(--ak-color-surface) 92%, var(--ak-color-bg));
+  overflow: hidden;
+}
+
+.ak-chatbot-showcase-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ak-chatbot-showcase-accent) 16%, var(--ak-color-border));
+  background: color-mix(in srgb, var(--ak-color-surface) 88%, transparent);
+}
+
+.ak-chatbot-showcase-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--ak-chatbot-showcase-accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--ak-chatbot-showcase-accent) 16%, transparent);
+}
+
+.ak-chatbot-showcase-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.ak-chatbot-showcase-line {
+  height: 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ak-color-text-muted) 30%, transparent);
+}
+
+.ak-chatbot-showcase-line.ak-chatbot-showcase-line-short {
+  width: 38%;
+}
+
+.ak-chatbot-showcase-line.ak-chatbot-showcase-line-medium {
+  width: 58%;
+}
+
+.ak-chatbot-showcase-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+.ak-chatbot-showcase-bubble {
+  max-width: 80%;
+  min-height: 34px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--ak-chatbot-showcase-accent) 14%, var(--ak-color-surface));
+  border: 1px solid color-mix(in srgb, var(--ak-chatbot-showcase-accent) 18%, transparent);
+}
+
+.ak-chatbot-showcase-bubble.ak-chatbot-showcase-bubble-user {
+  margin-left: auto;
+  background: color-mix(in srgb, var(--ak-chatbot-showcase-accent) 72%, white 28%);
+}
+
+.ak-chatbot-showcase-bubble.ak-w-1 {
+  width: 72%;
+}
+
+.ak-chatbot-showcase-bubble.ak-w-2 {
+  width: 54%;
+}
+
+.ak-chatbot-showcase-bubble.ak-w-3 {
+  width: 64%;
+}
+
+.ak-chatbot-showcase-footer {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--ak-color-surface) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ak-chatbot-showcase-accent) 16%, var(--ak-color-border));
+}
+
+.ak-chatbot-showcase-input {
+  flex: 1;
+  height: 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ak-color-text-muted) 24%, transparent);
+}
+
+.ak-chatbot-showcase-send {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--ak-chatbot-showcase-accent), color-mix(in srgb, var(--ak-chatbot-showcase-accent) 45%, black));
+}
+
 .ak-chatbot-shell {
   --ak-chatbot-accent: var(--ak-color-primary);
   --ak-chatbot-accent-soft: color-mix(in srgb, var(--ak-chatbot-accent) 16%, transparent);
@@ -441,7 +605,8 @@
   }
 
   .ak-chatbot-sidebar-layout,
-  .ak-chatbot-split-preview {
+  .ak-chatbot-split-preview,
+  .ak-chatbot-showcase-grid {
     grid-template-columns: 1fr;
   }
 
